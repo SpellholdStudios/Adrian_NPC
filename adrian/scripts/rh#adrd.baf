@@ -1,0 +1,157 @@
+// talk 1
+IF
+    Global("rh#AdrianJoined","GLOBAL",1)
+    InParty(Myself)
+    See(Player1)
+    !StateCheck("Myself",CD_STATE_NOTVALID)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !See([ENEMY])
+    OR(11)
+    	AreaCheck("AR0021")
+    	AreaCheck("AR0313")
+    	AreaCheck("AR0406")
+    	AreaCheck("AR0509")
+    	AreaCheck("AR0513")
+    	AreaCheck("AR0522")
+    	AreaCheck("AR0704")
+    	AreaCheck("AR0709")
+    	AreaCheck("AR1105")
+    	AreaCheck("AR1602")
+    	AreaCheck("AR2010")
+    Global("rh#AdrianTalks","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("rh#AdrianTalks","GLOBAL",2)
+    MoveToObject(Player1)
+    StartDialogueNoSet(Player1)
+END
+
+// talk 16
+IF
+    RealGlobalTimerExpired("rh#AdrianTalksTimer","GLOBAL")
+    InParty(Myself)
+    See(Player1)
+    !StateCheck("Myself",CD_STATE_NOTVALID)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !See([ENEMY])
+    AreaType(OUTDOOR)
+    !AreaType(CITY)
+    !AreaCheck("AR1500")
+    !AreaCheck("AR2807")
+    Global("rh#AdrianTalks","GLOBAL",31)
+THEN
+  RESPONSE #100
+    IncrementGlobal("rh#AdrianTalks","GLOBAL",1)
+    PlaySong(0)
+    PlaySound("rh#adrom")
+    MoveToObject(Player1)
+    StartDialogueNoSet(Player1)
+END
+
+// talk 20
+IF
+    RealGlobalTimerExpired("rh#AdrianTalksTimer","GLOBAL")
+    InParty(Myself)
+    See(Player1)
+    !StateCheck("Myself",CD_STATE_NOTVALID)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !See([ENEMY])
+    Global("rh#AdrianRomanceActive","GLOBAL",2)
+    Global("rh#AdrianTalks","GLOBAL",39)
+THEN
+  RESPONSE #100
+    IncrementGlobal("rh#AdrianTalks","GLOBAL",1)
+    PlaySong(0)
+    PlaySound("rh#adrom")
+    MoveToObject(Player1)
+    StartDialogueNoSet(Player1)
+END
+
+IF
+    RealGlobalTimerExpired("rh#AdrianTalksTimer","GLOBAL")
+    InParty(Myself)
+    See(Player1)
+    !StateCheck("Myself",CD_STATE_NOTVALID)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !See([ENEMY])
+    Global("rh#AdrianFriendshipActive","GLOBAL",1)
+    Global("rh#AdrianTalks","GLOBAL",39)
+THEN
+  RESPONSE #100
+    IncrementGlobal("rh#AdrianTalks","GLOBAL",1)
+    MoveToObject(Player1)
+    StartDialogueNoSet(Player1)
+END
+
+// talk 27 (night)
+IF
+	RealGlobalTimerExpired("rh#AdrianTalksTimer","GLOBAL")
+	InParty("rh#Adrian")
+	See(Player1)
+	!ActuallyInCombat()
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	Global("rh#AdrianTalks","GLOBAL",53)
+	Global("rh#AdrianRomanceActive","GLOBAL",2)
+THEN
+RESPONSE #100
+	IncrementGlobal("rh#AdrianTalks","GLOBAL",1)
+	PlaySong(0)
+    PlaySound("rh#adrom")
+	MoveToObject(Player1)
+	StartDialogueNoSet(Player1)
+END
+
+
+// sex
+IF
+    InParty(Myself)
+    See(Player1)
+    !StateCheck("Myself",CD_STATE_NOTVALID)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !See([ENEMY])
+    Global("rh#AdrAskedSex","GLOBAL",3)
+    Global("rh#AdrFirstSex","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("rh#AdrFirstSex","GLOBAL",1)
+    MoveToObject(Player1)
+    StartDialogueNoSet(Player1)
+END
+
+
+// Mazzy
+
+IF
+	InParty("rh#Adrian")
+	InParty("Mazzy")
+	See("Mazzy")
+	!See([ENEMY])
+	!ActuallyInCombat()
+	!StateCheck("Mazzy",CD_STATE_NOTVALID)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	Global("rh#AdrianMazzy1","GLOBAL",1)
+	Global("rh#AdrianMazzy4","GLOBAL",0)
+	RealGlobalTimerExpired("rh#AdrianMazzyTalkTimer","GLOBAL")
+	OR(11)
+    	AreaCheck("AR0021")
+    	AreaCheck("AR0313")
+    	AreaCheck("AR0406")
+    	AreaCheck("AR0509")
+    	AreaCheck("AR0513")
+    	AreaCheck("AR0522")
+    	AreaCheck("AR0704")
+   		AreaCheck("AR0709")
+    	AreaCheck("AR1105")
+    	AreaCheck("AR1602")
+    	AreaCheck("AR2010")
+THEN
+RESPONSE #100
+	IncrementGlobal("rh#AdrianMazzy4","GLOBAL",1)
+	StartDialogueNoSet("Mazzy")
+END

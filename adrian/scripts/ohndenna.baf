@@ -1,0 +1,14 @@
+IF
+	Global("OHN_TOB_PLOT","GLOBAL",11)
+	!GlobalTimerNotExpired("ohn_intro_timer","locals")
+	!GlobalTimerNotExpired("ohb_mc_shout_timer","locals")
+	Global("rh#ohn_adrian_intro","locals",0)
+	InParty("rh#Adrian")
+	!Dead("rh#Adrian")
+  THEN
+RESPONSE #100
+	SetGlobal("rh#ohn_adrian_intro","locals",1)
+	SetGlobalTimer("ohn_intro_timer","locals",9)
+	SetGlobalTimer("ohb_mc_shout_timer","locals",6)
+	DisplayStringHead(Myself,@0 /* An ARCHMAGE strides into the arena! What will prove more DIFFICULT for him: the coming battle or explaining his CRIMSON ROBES to the Red Wizards afterwards? */)
+END

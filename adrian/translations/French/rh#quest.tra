@@ -1,0 +1,323 @@
+@0    = ~Mon seigneur Vasiliev... toujours en vie, à ce que je vois. Je ne m'attendais pas à vous voir de ce côté des Neuf Enfers.~
+@1    = ~C'est certainement gentil de votre part... qui que vous soyez, mais vous faites erreur sur la personne. Par les dieux, n'y a-t-il dans cette ville que de fichus imbéciles ?~
+@2    = ~Plus charmant que jamais, je vois, mais ce nouveau nom elfe rutilant ne cache pas grand-chose.~
+@3    = ~J'ai tout d'abord cru que vous travailliez peut-être à nouveau sous couverture, mais comme je connais chaque agent de la ville, je sais, mon seigneur, que vous n'êtes pas du nombre.~
+@4    = ~Vous auriez mieux fait de garder profil bas, si vous ne vouliez pas être retrouvé... mais je suppose que vous n'avez jamais brillé outre mesure dans ce domaine.~
+@5    = ~Qu'est-ce que tu veux, Tanya ?~
+@6    = ~Eh bien garder ma tête, pour commencer. Soyez sûr, Vasiliev, que si quoi que ce soit devait m'arriver, il se trouverait quelques petits oiseaux pour porter la nouvelle à Sombrefort...~
+@7    = ~Oh, je vois. Vous ne souhaitiez pas m'entendre prononcer ce nom, n'est-ce pas ? Vous ne vouliez pas que vos nouveaux amis en apprennent de trop sur vos anciens ? Des mensonges qui recouvrent d'autres mensonges... j'imagine que certaines choses ne changent jamais.~
+@8    = ~Surveille ta langue, femme. Je ne te laisserai pas parler à mes amis sur ce ton.~
+@9    = ~Quoi encore ? Je suppose que j'aurais dû m'attendre à quelque chose de ce genre tôt ou tard.~
+@10   = ~Par tous les enfers, que se passe-t-il ici !?~
+@11   = ~Coucou, on se souvient de moi ? Le chef de ce groupe ? Juste là.~ ~Coucou, on se souvient de moi ? La chef de ce groupe ? Juste là.~
+@12   = ~<CHARNAME>, c'est cela ? Oui, nous avons entendu une ou deux choses sur vous... plus ou moins sain d'esprit pour un enfant de Bhaal, j'imagine, mais ces choses échappent à notre contrôle.~ ~<CHARNAME>, c'est cela ? Oui, nous avons entendu une ou deux choses sur vous... plus ou moins saine d'esprit pour une enfant de Bhaal, j'imagine, mais ces choses échappent à notre contrôle.~
+@13   = ~À présent, au sujet de votre ami ici présent, mon Seigneur l'enfant de Bhaal... nous n'aimons pas trop les traîtres et les renégats...~ ~À présent, au sujet de votre ami ici présent, ma dame l'enfant de Bhaal... nous n'aimons pas trop les traîtres et les renégats...~
+@14   = ~Traître ? Tes maîtres à la Citadelle nous ont abandonnés à notre mort, Tanya. Tout ce que je leur dois, ce sont des boules de feu.~
+@15   = ~Eh bien. Il répond maintenant en plus, mmh ? Je crains que nous n'aimions pas trop cela non plus.~
+@16   = ~Quoi qu'il en soit, je vous ai toujours apprécié, mon seigneur. Vous étiez plutôt utile avant que vous ne vous retrouviez impliqué auprès de cette putain Calim... que lui est-il arrivé, au fait ?~
+@17   = ~Je suis dangereusement près de te tuer ici et maintenant, et tant pis pour tes maudits petits oiseaux, Tanya.~
+@18   = ~Toujours aussi susceptible, à ce que je vois. Comme je le disais, je vous ai toujours apprécié et pour l'instant, personne au nord d'Athkatla n'a connaissance de vos récentes aventures, alors je suis encline à vous proposer un marché.~
+@19   = ~Je vous demanderais bien de faire quelques menus travaux pour moi, mais je préfère garder mes affaires privées. Je pense à quelque chose de plus... sonnant et trébuchant.~
+@20   = ~1000 pièces d'or tous les dix jours, et je garderai le silence. Vous n'aurez pas à craindre que des assassins Zhentarim se lancent aux trousses de votre précieux sorcier. Qu'en pensez-vous, mon seigneur l'enfant de Bhaal ?~ ~1000 pièces d'or tous les dix jours, et je garderai le silence. Vous n'aurez pas à craindre que des assassins Zhentarim se lancent aux trousses de votre précieux sorcier. Qu'en pensez-vous, ma dame l'enfant de Bhaal ?~
+@21   = ~1000 pièces d'or tous les dix jours, et je garderai le silence. Vous n'aurez pas à craindre que des assassins Zhentarim se lancent aux trousses de votre précieux magicien. Qu'en pensez-vous, mon seigneur l'enfant de Bhaal ?~ ~1000 pièces d'or tous les dix jours, et je garderai le silence. Vous n'aurez pas à craindre que des assassins Zhentarim se lancent aux trousses de votre précieux magicien. Qu'en pensez-vous, ma dame l'enfant de Bhaal ?~
+@22   = ~<CHARNAME>, je t'en prie.~
+@23   = ~Entendu. Voilà votre or. Et bon débarras.~
+@24   = ~Entendu. Vous aurez votre or cette fois-ci, mais n'espérez pas voir cela se transformer en habitude.~
+@25   = ~Je n'ai pas autant d'or sur moi.~
+@26   = ~Qu'est-ce qui vous empêche d'empocher l'argent et de nous dénoncer malgré tout ?~
+@27   = ~Je savais que tu étais un sale type, mais un groupe pareil ? Fiche le camp. Tout de suite.~
+@28   = ~Tu représentes un danger désormais, Adrian. Vous pouvez le garder, Zhent.~
+@29   = ~Vous n'aurez ni mon or, ni Adrian.~
+@30   = ~Je crois que je préfère vous tuer maintenant, Tanya.~
+@31   = ~Voilà qui est parfait. Ce n'était pas si dur, n'est-ce pas ? Vous pouvez vous attendre à une nouvelle visite sous dix jours, <CHARNAME>. Et n'essayez pas de fuir à nouveau, Adrian. Vous n'y excellez pas vraiment.~
+@32   = ~Un Jeu de Chantage Zhentarim
+
+J'ai eu le malheur de rencontrer une ancienne associée d'Adrian, une prêtresse de Cyric du nom de Tanya Damarov. En tant que renégat des célèbres Zhentarim, Adrian a un passé haut en couleurs. Tanya a menacé d'informer ses anciens maîtres sur sa localisation et elle exerce à présent du chantage sur moi avec cette information. Avec un peu de chance, un plan qui ne nécessite pas de continuer à la payer se présentera à nous.~
+@33   = ~Ah non ? Maître Linvail ferait bien de se trouver une autre poule aux oeufs d'or. Enfin, à la vue de votre situation, je consens à accepter 500 pièces maintenant et le reste dans dix jours.~
+@34   = ~Linvail ? Que savez-vous de ma situation avec les Voleurs de l'Ombre ?!~
+@35   = ~Je n'ai toujours pas autant d'or sur moi.~
+@36   = ~Pas une pièce en poche et vous êtes resté avec lui malgré tout, Vasiliev ? Je trouve cela difficile à croire.~ ~Pas une pièce en poche et vous êtes resté avec elle malgré tout, Vasiliev ? Je trouve cela difficile à croire.~
+@37   = ~Très bien. Je ne m'attendais pas à ce que vous soyez inutile à ce point, <CHARNAME>. Je vais devoir me contenter de choisir un objet magique quelconque sur vos cadavres.~
+@38   = ~Un Jeu de Chantage Zhentarim
+
+J'ai eu le malheur de rencontrer une ancienne associée d'Adrian, une prêtresse de Cyric du nom de Tanya Damarov. En tant que renégat des célèbres Zhentarim, Adrian a un passé haut en couleurs. Et ce passé a fini par le rattraper.~
+@39   = ~Vous êtes une âme innocente, n'est-ce pas, <CHARNAME> ? Peut-être que mon ancien associé ici présent daignerait vous expliquer la nature de ce qu'est le chantage : si je vous dénonce, je ne serai pas payée. Même s'il serait agréable de ramener la tête du traître à la maison, j'apprécie l'or encore davantage.~
+@40   = ~Je savais que tu étais un sale type, Adrian, mais un groupe pareil ? Fiche le camp. Tout de suite.~
+@41   = ~<CHARNAME>, je te jure que tu vas le regretter...~
+@42   = ~On dirait que vous devriez mieux choisir vos amis, Adrian. Mais après tout, pourquoi commencer maintenant ?~
+@43   = ~<CHARNAME>, je t'en prie, fais ce qu'elle dit. Nous en parlerons plus tard.~
+@44   = ~Il n'y a rien à dire. Tanya, il est l'heure de mourir.~
+@45   = ~Voilà qui est dommage. Je vais devoir me contenter de choisir un objet magique quelconque sur vos cadavres, j'imagine.~
+@46   = ~Je suis navrée, <CHARNAME>, peut-être ai-je donné l'impression que c'était une négociation ? Ce que je sais des Voleurs de l'Ombre me regarde. Vous ferez ce que je vous ordonne, Enfant de Bhaal, sans quoi vous ne vivrez pas assez longtemps pour le regretter.~
+@47   = ~Parfait. Gardez-le. Je n'ai aucune intention de protéger un homme impliqué auprès d'un groupe comme le vôtre, de toute façon.~
+@48   = ~Bon sang. Je devrais me considérer heureux qu'elle préfère l'or au sang, mais ce n'est qu'une question de temps avant qu'elle ne change d'avis.~
+@49   = ~Et maintenant tu vas requérir de la protection, à n'en pas douter. Tu as de la chance que <CHARNAME> ne se soit pas contenté de te remettre aux Cyricistes.~
+@50   = ~Et moi qui ai toujours cru que les tiens aimaient secourir les gens du Zhentarim.~
+@51   = ~Tu n'es pas une victime, Adrian.~
+@52   = ~Bien sûr que non. Diantre, Ménestrel. Cela pourrait-il attendre plus tard ? Je suis un peu plus inquiet au sujet de Tanya pour l'heure.~
+@53   = ~De ce dont je me rappelle, elle a toujours été bien trop minutieuse. Elle avait tendance à garder une trace écrite de ses affaires... une effroyable habitude, mais je ne me suis jamais attendu à beaucoup de compétence venant d'une Cyriciste.~
+@54   = ~Si nous sommes très chanceux, elle garde peut-être même des notes sur ses associés. Si nous pouvons découvrir où elle réside, identifier et traquer tous les contacts qu'elle a en ville, ce problème devrait se régler de lui-même. J'espère. <CHARNAME> ?~
+@55   = ~Explique-toi. Tout de suite.~
+@56   = ~Tu aurais dû me parler de cela plus tôt.~
+@57   = ~J'espère que je n'aurai pas à m'inquiéter de rencontrer d'autres de tes anciens amis.~
+@58   = ~Je t'ai peut-être donné un coup d'avance sur tes anciens amis, mais ne prends pas cela pour de la tolérance. Fiche le camp. Tout de suite.~
+@59   = ~Je... suppose que ce n'est pas ainsi que j'aurais aimé que cela se passe mais... enfin, que voulais-tu que je te dise ? "Ah au fait, <CHARNAME>, je travaillais pour l'une des pires organisations des Royaumes, et il se pourrait qu'ils en aient après moi suite à ma disparition. Je peux me joindre à toi ?"~
+@60   = ~Nous nous occuperons de Tanya et après... je ne sais pas, <CHARNAME>. Si elle n'a rien dit, ils n'ont aucune raison de croire que je suis toujours vivant et je ne suis assurément pas d'une grande priorité pour l'heure, mais... je ne peux rien promettre. J'ai déjà vu la vengeance Zhentarim. Ils prennent leur réputation à coeur.~
+@61   = ~Je devrais certainement... expliquer ce qui s'est passé. Je... ma foi, je ne peux pas dire que j'étais en odeur de sainteté même avant le siège de Château-Zhentil. Même si je suppose que tu étais trop occupé à stopper ta propre guerre de ton côté pour entendre grand-chose de la nôtre.~ ~Je devrais certainement... expliquer ce qui s'est passé. Je... ma foi, je ne peux pas dire que j'étais en odeur de sainteté même avant le siège de Château-Zhentil. Même si je suppose que tu étais trop occupée à stopper ta propre guerre de ton côté pour entendre grand-chose de la nôtre.~
+@62   = ~Cyric en personne, soi-disant protecteur de la cité... le Dieu Fou l'a complètement anéantie au cours d'une crise d'incompétence mégalomaniaque. Il nous a accidentellement envoyé une armée de dragons et de géants. La moitié de la ville a été massacrée et le reste du monde riait.~
+@63   = ~"Le décadent Château-Zhentil, berceau des maléfiques Zhentarim, a enfin été détruit." Peu importe si les dirigeants Zhentarim siégeaient au nord de la Citadelle du Corbeau, occupés à ne rien faire.~
+@64   = ~J'étais un Magiciel, je voyageais à dos de monture, alors j'ai passé la première semaine à transmettre des messages furieux entre le Château pulvérisé et la Citadelle. Ces ordures ont refusé de nous aider, évidemment. Ce n'était pas une grande surprise et j'en ai... tout simplement eu assez et me suis enfui. Directement dans les bras de bandits à proximité de Melvonte. Nous ne sommes pas les seuls esclavagistes de la Mer de Lune, et j'étais alors bien plus vulnérable que je n'aurais dû.~
+@65   = ~La suite... ma foi, tu la connais.~
+@66   = ~Cela fait énormément de carnages et d'agitation, même pour quelqu'un qui y est habitué.~
+@67   = ~Je suppose que cela explique pourquoi tu es inexplicablement en colère la moitié du temps.~
+@68   = ~Je suis... désolé. Sincèrement.~ ~Je suis... désolée. Sincèrement.~
+@69   = ~Un Zhent, réduit en esclavage. Accorde-moi une seconde le temps de savourer l'ironie.~
+@70   = ~Et maintenant j'ai l'impression que j'aurais dû te laisser avec ces duergars. Fiche le camp.~
+@71   = ~Tu serais surpris. Nous ne sommes pas tous épris de violence. Pour moi, cela aurait été le signe que quelque chose s'était horriblement mal passé.~ ~Tu serais surprise. Nous ne sommes pas tous épris de violence. Pour moi, cela aurait été le signe que quelque chose s'était horriblement mal passé.~
+@72   = ~Inexplicablement en colère ? Ah. Je n'ai jamais eu pour habitude d'être aussi transparent à ce sujet, mais j'imagine que j'ai retiré mon masque de raffinement en quittant la Sembie.~
+@73   = ~<CHARNAME>, enfant de Bhaal... en effet, je ne peux nier que tu as toi aussi été la victime d'interventions divines. Je... merci, j'imagine.~
+@74   = ~Ris si cela te chante. Tu fais fausse route si tu penses que je m'en soucie.~
+@75   = ~Je ne prétendrai pas que tout ce que tu as vraisemblablement entendu n'est que de la propagande, car ce n'en est pas. Mais ce qui vaut pour le groupe dans son ensemble ne vaut pas nécessairement pour tous ceux qui ont travaillé en son sein.~
+@76   = ~Je ne vais pas te mentir et te faire croire que j'ai appris ma leçon et que j'ai changé, ou d'autres bêtises de ce genre, mais... je ne suis pourtant plus la personne que j'étais alors. Je ne le suis plus depuis un moment. Je... n'attends pas la meilleure occasion pour te poignarder dans le dos, <CHARNAME>.~
+@77   = ~Bon, tu appartenais à une organisation maléfique qui veut conquérir le monde. Pour ce que j'en dis, ce n'est qu'une raison de plus de te garder avec moi.~
+@78   = ~Toute cette situation ne me ravit pas, mais je ne compte pas te rejeter juste pour cela.~
+@79   = ~Tu as été digne de confiance jusqu'à présent, alors je vais te donner le bénéfice du doute. Mais je te tiendrai à l'oeil.~
+@80   = ~Je ne vais pas te rejeter, Adrian. Je juge les gens sur leur présent, et non sur leur passé.~
+@81   = ~Je ne peux te faire confiance après quelque chose de pareil. Désolé.~ ~Je ne peux te faire confiance après quelque chose de pareil. Désolée.~
+@82   = ~Je ne donne pas asile aux monstres. Fiche le camp. Tout de suite.~
+@83   = ~Je... comprends tes réserves. Mais je te remercie, <CHARNAME>.~
+@84   = ~Un Jeu de Chantage Zhentarim
+
+Adrian m'a expliqué que Tanya Damarov garde des notes personnelles détaillées sur ses affaires en cours : une habitude malheureuse pour une supposée espionne, mais une habitude dont il serait facile de tirer profit. Je vais devoir faire le tour des aubergistes pour savoir où elle loge ; je doute qu'Adrian nous soit très utile tant que cette affaire ne sera pas réglée.~
+@85   = ~Je n'en attends pas moins de toi. Je sais pertinemment que tu n'as pas survécu à l'année écoulée en vouant une confiance aveugle à n'importe qui. Mais je... je te remercie, <CHARNAME>.~
+@86   = ~Une telle naïveté te tuera probablement un jour ou l'autre, <CHARNAME>, mais pour cette fois, je t'en suis reconnaissant. Peut-être même pourrai-je te protéger des ennemis que tu te refuses de voir.~
+@87   = ~Je te suggère de modérer ton goût pour la mauvaise réputation, <CHARNAME>. Il n'y à rien de *drôle* là-dedans. Mais... merci quand même.~
+@88   = ~Juste comme ça, hein ? Bien. En temps normal, je te souhaiterais bonne chance, mais cette fois-ci je vais plutôt croiser les doigts pour les dragons.~
+@89   = ~Un Jeu de Chantage Zhentarim
+
+Après avoir appris pour les anciens contacts d'Adrian, j'ai décidé qu'il valait mieux que nous nous séparions du magicien.~
+@90   = ~Va donc dire cela au Magicien Rouge. Bien. En temps normal, je te souhaiterais bonne chance, mais cette fois-ci je vais plutôt croiser les doigts pour les dragons.~
+@91   = ~Va donc dire cela à l'elfe noire. Bien. En temps normal, je te souhaiterais bonne chance, mais cette fois-ci je vais plutôt croiser les doigts pour les dragons.~
+@92   = ~Un monstre, hein ? Bien. En temps normal, je te souhaiterais bonne chance, mais cette fois-ci je vais plutôt croiser les doigts pour les dragons.~
+@93   = ~Je suis à la recherche d'une femme blonde qui porte peut-être le symbole sacré de Cyric. L'aurais-tu vue quelque part ?~
+@94   = ~Une Cyriciste ? Pas le genre d'affaires auxquelles j'aime me mêler, mais j'ai entendu dire que l'une des leurs séjournait au District du Pont. Elle correspond assez à la description que tu m'en fais. Je te dirais bien de faire attention avec ces gens-là, mais je pense que tu le sais déjà.~
+@95   = ~Peut pas prétendre l'avoir vue, non. On voit pas beaucoup d'étrangers par-ici.~
+@96   = ~Ah, la Zhent. Oui, je l'ai vue traîner un peu dans les environs. Les siens ne sont pas les bienvenus ici... j'irais voir aux Docks ou au Pont si j'étais vous. Et gardez en tête que ceux qui l'hébergent pourraient ne pas vouloir trahir sa présence. Peut-être qu'il faudrait parler aux clients aussi. Surtout les petites-personnes, ils en savent toujours long.~
+@97   = ~Bah ! J'ai pas le temps de reluquer les jolies filles, Cyriciste ou pas. Allez, du balai maintenant !~
+@98   = ~Certes, Le Pouce voit beaucoup de choses, mais cette dame dont vous parlez... non, je ne peux pas dire l'avoir vue. Je m'en souviendrai la prochaine fois que des Cyricistes s'arrêteront ici, mon ami.~ ~Certes, Le Pouce voit beaucoup de choses, mais cette dame dont vous parlez... non, je ne peux pas dire l'avoir vue. Je m'en souviendrai la prochaine fois que des Cyricistes s'arrêteront ici, mon amie.~
+@99   = ~Oui. Il y a des centaines de filles ici, vous ne les voyez pas ? J'accueillerais presque avec plaisir une Cyriciste, du moment que c'est une femme.~
+@100  = ~Au Mithrest ? Non mon bon monsieur, nous n'accueillons pas de Cyricistes ici.~ ~Au Mithrest ? Non ma bonne dame, nous n'accueillons pas de Cyricistes ici.~
+@101  = ~Ah, mon ami, cela ne me dit rien. Ah... non. Les Cyricistes... les Cyricistes n'apportent rien de bon, mon ami.~ ~Ah, mon amie, cela ne me dit rien. Ah... non. Les Cyricistes... les Cyricistes n'apportent rien de bon, mon amie.~
+@102  = ~Hé ! Vous vous renseigniez sur cette blonde, hein ? Une vraie harpie celle-là. Elle dort ici, pour sûr. La première chambre à gauche, en haut des escaliers.~
+@103  = ~Bien... très bien. Voilà exactement ce que j'espérais trouver. Qu'est-ce que je disais ? Elle est trop stupide pour se souvenir de quoi que ce soit.~
+@104  = ~Peut-être devrais-tu être reconnaissant que ton organisation dans son ensemble n'attire que ceux qui manquent de compétence, Vasiliev.~
+@105  = ~Je suis reconnaissant au point de fermer les yeux sur tes persiflages, Ménestrel.~
+@106  = ~Excellent, excellent. Je ne pensais pas pouvoir être encore moins impressionné que je ne le suis déjà par la compétence de ton organisation... ou plutôt son absence de compétence. Quelle heureuse surprise.~
+@107  = ~La ferme, Edwin.~
+@108  = ~Mmh. Au moins les notes ne sont-elles pas écrites en commun, même si elle n'est pas allée chercher bien loin son choix de langue étrangère. Quiconque d'à peu près lettré au nord des Vaux pourrait lire cela.~
+@109  = ~Il me faudra quelques minutes pour passer au crible ces documents. Je préférerais ne pas les emporter avec moi, alors espérons qu'elle ne revienne pas entretemps. Enfin, elle est sans doute trop occupée à courir les docks à cette heure-ci de la journée.~
+@110  = ~Mais je t'en prie, prends tout ton temps.~
+@111  = ~Si elle revient, ce sera juste une nuit un peu plus chargée que prévue.~
+@112  = ~J'espère que tu sais lire vite.~
+@113  = ~Laisse tomber. Tu as tes papiers, alors maintenant occupe-toi du reste tout seul.~
+@114  = ~Mmh. Voyons voir... cette chère Tanya a vraiment été fort occupée ces jours-ci.~
+@115  = ~Deryn séjourne visiblement à l'Auberge de Delosar, Orlanna semble se trouver à la Couronne de Cuivre et Salka est à la Bonté Marine. Ercias... ma foi, j'ai envoyé quelqu'un tuer cette ordure la dernière fois que nous l'avons croisé, alors il ne nous ennuiera plus. Il ne nous reste que les trois autres, donc.~
+@116  = ~Deryn séjourne visiblement à l'Auberge de Delosar, Orlanna semble se trouver à la Couronne de Cuivre et Salka est à la Bonté Marine. Ercias... ma foi, Ercias semble loger lui aussi aux Cinq Chopes. Nous ferions peut-être bien de nous occuper de lui en premier.~
+@117  = ~Deryn séjourne visiblement à l'Auberge de Delosar, Orlanna semble se trouver à la Couronne de Cuivre et Salka est à la Bonté Marine. Ercias... ma foi, il a visiblement disparu aussitôt après sa rencontre avec une certaine Ménestrel. Inutile de nous soucier de lui pour le moment. Il ne nous reste que les autres, donc.~
+@118  = ~Deryn séjourne visiblement à l'Auberge de Delosar, Orlanna semble se trouver à la Couronne de Cuivre et Salka est à la Bonté Marine. Ercias... ma foi, comme il est déjà mort, il ne devrait plus nous ennuyer. Il ne nous reste que les autres, donc.~
+@119  = ~Les petits oiseaux de Tanya. C'est une sacrée bonne clerc, mais une fois que nous nous serons occupés des derniers petits détails à régler, nous pourrons l'éliminer elle aussi sans plus avoir à nous inquiéter de... malheureuses conséquences. Je reconnais que nous ferons mieux de ne pas attendre trop longtemps après avoir tué ses laquais pour la traquer. Cela s'avérerait dangereux.~
+@120  = ~C'est comme si c'était fait.~
+@121  = ~D'accord. Et donc, combien de meurtres comptes-tu me faire commettre en ton nom ?~
+@122  = ~Et si elle a plus d'associés que ceux-là ?~
+@123  = ~Bon, nous avons l'information à présent. Nous pourrons nous en charger quand nous trouverons le temps.~
+@124  = ~Ne pouvons-nous pas simplement donner leurs noms aux Ménestrels et les laisser s'en occuper ?~
+@125  = ~Laisse tomber. Tu as ton information, maintenant occupe-toi du reste tout seul.~
+@126  = ~Je te remercie d'avance. Mais garde à l'esprit qu'une fois que nous aurons éliminé l'un d'entre eux, le temps nous sera compté.~
+@127  = ~Un Jeu de Chantage Zhentarim
+
+Après avoir eu l'occasion de jeter un oeil sur les documents de Tanya, Adrian a identifié trois agents : Deryn à l'Auberge de Delosar, Orlanna à la Couronne de Cuivre et Salka à la Bonté Marine. Une fois que j'aurai tué l'un d'entre eux, il me faudra tuer les autres rapidement avant que Tanya ne réalise ce qui est en train de se passer.~
+@128  = ~Merci, <CHARNAME>. Mais garde à l'esprit qu'une fois que nous aurons éliminé l'un d'entre eux, le temps nous sera compté.~
+@129  = ~Un Jeu de Chantage Zhentarim
+
+Après avoir eu l'occasion de jeter un oeil sur les documents de Tanya, Adrian a identifié quatre agents : Deryn à l'Auberge de Delosar, Orlanna à la Couronne de Cuivre, Salka à la Bonté Marine et Ercias se trouve juste ici aux Cinq Chopes. Une fois que j'aurai tué l'un d'entre eux, il me faudra tuer les autres rapidement avant que Tanya ne réalise ce qui est en train de se passer.~
+@130  = ~Cinq ou six, en fonction du nombre de gardes qu'elle aura avec elle.~
+@131  = ~Ils ont un dicton à Valombre, <CHARNAME> : "Tuez les Zhentarim à vue. Ils en feraient autant pour vous." Ce n'est pas une opinion que j'apprécie d'ordinaire, mais ce sera eux ou moi. Si ce n'est pas maintenant, alors ce sera plus tard. Ce ne sont pas vraiment des gens innocents.~
+@132  = ~Bien. Nous allons nous en occuper.~
+@133  = ~Pas plus que toi. Tu as ton information, maintenant occupe-toi du reste tout seul.~
+@134  = ~Alors je me retrouverai plongé dans de très gros ennuis. Mais c'est un risque que nous devons courir.~
+@135  = ~Alors nous le courrons.~
+@136  = ~Non, c'est un risque que *tu* dois courir. Tu as ton information, maintenant occupe-toi du reste tout seul.~
+@137  = ~Oui. Bien sûr. Mais si tu n'as pas envie de lui donner de l'or tous les dix jours en croisant les doigts pour qu'elle change d'avis sur la question... le plus tôt serait le mieux. Mais souviens-toi que dès que nous aurons éliminé l'un d'entre eux, le temps nous sera compté.~
+@138  = ~Pardon !? Comme si j'allais confier ma vie à l'incompétence des Ménestrels ! Même sans cela, ils voudront sans doute me tuer dans le même mouvement pour faire bonne mesure.~
+@139  = ~Bien. Nous avons l'information à présent. Nous pourrons nous en charger quand nous trouverons le temps.~
+@140  = ~Bien. Nous avons l'information à présent. Nous pourrons nous en charger quand nous trouverons le temps.~
+@141  = ~Et je ne peux pas dire que je leur en tiendrais rigueur. Tu as ton information, maintenant occupe-toi du reste tout seul.~
+@142  = ~Je... vois. Eh bien n'espère pas me revoir, <CHARNAME>. Je compte quitter ce pays aussi tôt que possible après m'être occupé de cela.~
+@143  = ~Un Jeu de Chantage Zhentarim
+
+Nous avons certes découvert l'identité des agents de Tanya Damarov à Athkatla, mais me charger des assassinats pour le compte d'Adrian ne m'intéressait pas. Il est parti gérer seul cette situation. Je ne pense pas le revoir un jour.~
+@144  = ~Par le coeur noir de Cyric ! Écoute, j'te propose un marché...~
+@145  = ~Désolé, Deryn. Pas de marché.~
+@146  = ~Bon dieu ! Tanya aurait dû s'contenter de t'buter !~
+@147  = ~Un Jeu de Chantage Zhentarim
+
+J'ai tué Deryn, l'un des agents Zhentarim.~
+@148  = ~Toi ! La poule aux oeufs d'or de Tanya, hein ? Tu aurais mieux fait d'accepter le marché proposé !~
+@149  = ~Un Jeu de Chantage Zhentarim
+
+J'ai tué Orlanna, l'un des agents Zhentarim.~
+@150  = ~Hein ? Tu crois qu'tu peux t'montrer plus malin qu'nous ?~
+@151  = ~Un Jeu de Chantage Zhentarim
+
+J'ai tué Salka, l'un des agents Zhentarim.~
+@152  = ~Toi ! Je compte pas mourir sans me défendre !~
+@153  = ~Un Jeu de Chantage Zhentarim
+
+J'ai tué Ercias, l'un des agents Zhentarim.~
+@154  = ~Bien. Maintenant que nous nous sommes occupés de cette situation, nous ferions bien de retourner aux Cinq Chopes le plus vite possible pour essayer de l'éliminer elle.~
+@155  = ~Un Jeu de Chantage Zhentarim
+
+Maintenant que les espions sont tous morts, Adrian a suggéré que nous retournions aux Cinq Chopes pour éliminer Tanya. Avec un peu de chance, elle sera sur place à cette heure de la journée.~
+@156  = ~Je vois que les actes miséricordieux ne servent à rien avec toi, Vasiliev.~
+@157  = ~Je n'ai rien à te dire, Tanya.~
+@158  = ~Et vous, <CHARNAME> ? Comptez-vous risquer votre vie pour de la vermine pareille ? Il n'a rien du badaud innocent.~
+@159  = ~Et vous, <CHARNAME> ? Vous n'êtes ni un croisé désintéressé, ni un protecteur de la veuve et de l'orphelin.~
+@160  = ~Vous seriez avisé de vous tenir loin des affaires qui ne vous regardent pas.~ ~Vous seriez avisée de vous tenir loin des affaires qui ne vous regardent pas.~
+@161  = ~Je protège mes amis. Peu importe le reste.~
+@162  = ~Vos menaces sont vaines, Tanya. Cette conversation est terminée.~
+@163  = ~Bah, j'imagine que je n'ai jamais été très avisé.~ ~Bah, j'imagine que je n'ai jamais été très avisée.~
+@164  = ~Peut-être avez-vous raison.~
+@165  = ~C'est un sentiment tellement dénué de sens, au final. Comme vous voudrez.~
+@166  = ~Si brave et si sot. Comme vous voudrez.~ ~Si brave et si sotte. Comme vous voudrez.~
+@167  = ~Cela expliquerait beaucoup de choses.~
+@168  = ~Une réalité découverte bien trop tard, <CHARNAME>.~
+@169  = ~Mmh. Cela fait une Cyriciste de moins dans le monde. Formidable. Prononcer ces trois mots commence à me fatiguer, mais... je te remercie, <CHARNAME>. Beaucoup.~
+@170  = ~Avec un peu de chance, nous n'aurons pas à nous inquiéter de rencontres ultérieures. Ils finiront certainement par remarquer la disparition d'agents à Athkatla, mais accuseront-ils les Voleurs de l'Ombre ou bien les Ménestrels ? Tant de choix à disposition.~
+@171  = ~Tu serais avisé de ne pas te montrer effronté, Zhent. C'est ton imprudence qui a conduit à cette situation.~
+@172  = ~Ne prétends pas ne pas avoir apprécié toute cette situation, Ménestrel.~
+@173  = ~Quant aux documents que notre regrettée Tanya Damarov a laissé derrière elle... c'est dommage que nous n'ayons pas le temps de leur accorder l'attention qu'ils méritent. Contrebande, chantage... mais j'hésite à me mêler à la pègre de ce cette ville tant qu'elle ne se sera pas stabilisée un peu davantage.~
+@174  = ~De toute façon les Voleurs de l'Ombre ne tarderont pas à engloutir ces opérations... mieux vaut les y aider qu'essayer de leur faire obstacle.~
+@175  = ~J'aime l'odeur du profit potentiel. Garde ces documents précieusement.~
+@176  = ~Nul doute que Bodhi les voudra.~
+@177  = ~Je suis sûr que ces papiers se révèleront riches d'enseignements pour les Ménestrels d'Athkatla.~ ~Je suis sûre que ces papiers se révèleront riches d'enseignements pour les Ménestrels d'Athkatla.~
+@178  = ~Le magistrat voudra jeter un coup d'oeil à ces documents.~
+@179  = ~Joue au plus fin avec des opérations de Zhentarim récemment disparus et tu pourrais bien te refaire remarquer.~
+@180  = ~J'en ai assez de tout ceci. Laisse ces papiers là où tu les as trouvés.~
+@181  = ~Par pitié, dis-moi qu'il n'y a pas de vaste complot contre Athkatla qu'il nous faudrait déjouer.~
+@182  = ~Avec plaisir, mon ami.~ ~Avec plaisir, mon amie.~
+@183  = ~Nul doute que Bodhi est déjà au courant, tu veux dire.~
+@184  = ~... à bien y réfléchir, je suppose que j'aurais dû m'y attendre.~
+@185  = ~Tu... non, je ne peux pas vraiment disputer cette logique. Nous avons attiré assez d'attention comme cela.~
+@186  = ~Bien. Je suppose que nous avons attiré assez d'attention comme cela.~
+@187  = ~Rien d'aussi passionnant, je le crains. Mais je pense tout de même emporter quelques informations avec moi.~
+@188  = ~Je t'en prie. J'aime l'odeur du profit potentiel.~
+@189  = ~Je pense plutôt que tu vas les restituer aux autorités.~
+@190  = ~En tout cas... merci, <CHARNAME>. Avec un peu de chance, c'était la dernière fois que j'avais besoin de te demander de l'aide.~
+@191  = ~De rien. Tu ne crois tout de même pas que je compte t'abandonner au moindre petit signe de d'ennui, si ?~
+@192  = ~Je ne me plaindrais certainement pas de l'opportunité de nettoyer Athkatla de certains de ces éléments les moins plaisants.~
+@193  = ~À vrai dire, c'était le moins que je puisse faire.~
+@194  = ~Ah ça, j'espère bien. Recevoir la visite d'assassins toutes les nuits, merci bien.~
+@195  = ~Je... non. Je suppose que non. Contentons-nous de poursuivre notre route.~
+@196  = ~Un Jeu de Chantage Zhentarim
+
+Après avoir eu l'occasion de jeter un oeil sur les documents de Tanya, Adrian a identifié trois agents : Deryn à l'Auberge de Delosar, Orlanna à la Couronne de Cuivre et Salka à la Bonté Marine. Une fois que j'aurai tué l'un d'entre eux, il me faudra tuer les autres rapidement avant que Tanya ne réalise ce qui est en train de se passer.~
+@197  = ~Un Jeu de Chantage Zhentarim
+
+J'ai réussi à éliminer Tanya Damarov, une prêtresse de Cyric et membre du Zhentarim. Adrian estime raisonnable de penser que nous n'aurons pas à nous inquiéter de futures poursuites. Le temps nous le dira.~
+@198  = ~Ma foi, du moment que je ne suis pas du nombre, je ne me plaindrai pas.~
+@199  = ~Je... suppose. Contentons-nous de poursuivre notre route.~
+@200  = ~Diantre, moi non plus.~
+@201  = ~J'ai là des informations qui pourraient vous intéresser.~
+@202  = ~Je vois. J'ignorais que des Zhents opéraient au sein d'Athkatla, mais cela ne me surprend pas énormément. Je vais faire décrypter ces documents sur l'heure. Vous avez mes remerciements, citoyen.~
+@203  = ~En effet... très intéressant. Vous semblez vous frotter au Réseau Noir autant que nous, <CHARNAME>, mais je prendrai avec plaisir ces documents.~
+@204  = ~J'ai d'autres informations qui pourraient vous intéresser.~
+@205  = ~Ah, si ce n'est pas mon vieil ami <CHARNAME>. Vous savez, je peux toujours deviner quand quelqu'un a de bonnes nouvelles à m'apporter.~ ~Ah, si ce n'est pas ma vieille amie <CHARNAME>. Vous savez, je peux toujours deviner quand quelqu'un a de bonnes nouvelles à m'apporter.~
+@206  = ~Je n'ai rien à vous dire.~
+@207  = ~Je vois... comme si les choses n'étaient pas déjà assez compliquées comme ça. Je vous remercie, <CHARNAME>, voilà un peu d'or pour votre peine.~
+@208  = ~Je vois. Alors je suppose que je n'ai pas besoin de vous montrer la sortie.~
+@209  = ~Ce n'est pas exactement le résultat que j'espérais, mais cela n'en demeure pas moins un résultat plaisant. Je vous suggère de demeurer en dehors de mon chemin à l'avenir, <CHARNAME>.~
+@210  = ~<CHARNAME>, je... diantre, je t'avais demandé de ne *pas* faire cela !~
+@211  = ~Je ne peux rester ici. Pas si ses menaces étaient réelles. Je suis navré.~
+@212  = ~J'espère que je n'ai pas à te rappeler qu'il nous faut en finir avec ce travail... et avec Tanya... le plus vite possible ?~
+@213  = ~Bon sang, <CHARNAME>, n'avais-je pas dit que le temps était capital ?~
+@214  = ~Je ne peux rester ici. Pas... après cela. Je suis navré.~
+@215  = ~Un Jeu de Chantage Zhentarim
+
+On dirait que j'ai trop attendu pour éliminer les anciens ennemis d'Adrian. Il est peu probable que je le revois un jour.~
+@216  = ~Eh bien, en voilà une coïncidence. J'espère que vous avez compris comment cela marchait à présent, <CHARNAME>.~
+@217  = ~1000 pièces d'or et vous nous laisserez tranquilles quelques temps. Tenez.~
+@218  = ~Bien. Vous pouvez avoir l'argent pour cette fois, mais n'espérez pas trop voir cela continuer éternellement.~
+@219  = ~Je n'ai pas l'argent.~
+@220  = ~Je ne le referai pas. Contentez-vous de l'embarquer avec vous.~
+@221  = ~Je crois que je préférerais vous tuer tout de suite.~
+@222  = ~Je savais que vous vous révéleriez être un bon investissement. Un plaisir, comme toujours.~
+@223  = ~C'est vous qui le dites. Un plaisir, comme toujours.~
+@224  = ~Vous connaissiez les termes de notre accord, <CHARNAME>.~
+@225  = ~Très bien. Je vais devoir me contenter de choisir un objet magique quelconque sur vos cadavres, j'imagine.~
+@226  = ~Un Jeu de Chantage Zhentarim
+
+J'ai cessé de payer l'ancienne associée d'Adrian, Tanya Damarov. Adrian n'a pas l'air ravi des conséquences.~
+@227  = ~Un Jeu de Chantage Zhentarim
+
+J'ai finalement décidé de restituer Adrian à ses anciens associés. Je ne pense pas que ces gens reviendront m'ennuyer.~
+@228  = ~Voilà qui est regrettable. Très bien. Je vais devoir me contenter de choisir un objet magique quelconque sur vos cadavres, j'imagine.~
+@229  = ~Ah, les voilà : les héros de Franc-Marché !~
+@230  = ~Tu sembles te trouver du mauvais côté de cette querelle, Adrian. Je me serais plutôt attendu à te voir tourmenter les marchands.~
+@231  = ~Talsar Soargyl... si loin de chez lui. L'exil te sied à merveille, dirait-on. Qu'est-ce donc, un habit en or ?~
+@232  = ~Naturellement. Cela dit, ta tenue d'aventurier couverte de boue semble t'aller mieux que je ne l'aurais cru possible.~
+@233  = ~Tout comme le butin et la magie qui l'accompagne... mais je suis sûr que tu ne nous as pas approchés seulement pour le plaisir de la conversation, Soargyl. Que veux-tu ?~
+@234  = ~J'ai une offre à te faire, si elle t'intéresse. J'avais un marché imminent auprès d'un marchand Calishite avant que les génies n'arrivent... bien sûr, les détails doivent rester privés.~
+@235  = ~J'ai peine à voir en quoi tes anciens marchés sont importants, de près ou de loin.~
+@236  = ~Je ne suis pas totalement convaincu de la... sincérité de mon partenaire, dirons-nous. Tu sais comment sont les Calishites.~
+@237  = ~Je sais aussi comment peuvent être les Sembiens.~
+@238  = ~Oui... c'est ici, bien sûr, que tu entres en jeu.~
+@239  = ~Je peux vous assurer, seigneur <CHARNAME>, que la paie sera plus que suffisante. À présent, si vous voulez bien me suivre dans ma demeure, où nous pourrons discuter plus avant ?~ ~Je peux vous assurer, dame <CHARNAME>, que la paie sera plus que suffisante. À présent, si vous voulez bien me suivre dans ma demeure, où nous pourrons discuter plus avant ?~
+@240  = ~La paie a intérêt à être suffisante.~
+@241  = ~Je vais au moins écouter ce que vous avez à proposer.~
+@242  = ~Tu connais cet homme, Adrian. Qu'en penses-tu ?~
+@243  = ~Je ne veux rien avoir à faire avec vous ou votre commerce.~
+@244  = ~Je suis un homme riche, <CHARNAME>. Vous n'avez pas d'inquiétude à avoir.~
+@245  = ~Je suis sûr que vous trouverez notre arrangement très lucratif.~
+@246  = ~C'est une ordure rusée, et je ne dis pas cela à la légère. Je détesterais laisser un travail inachevé, mais je dois t'enjoindre de procéder prudemment.~
+@247  = ~Qu'en dites-vous, <CHARNAME> ?~
+@248  = ~Vraiment ? C'est regrettable. Si jamais vous changez d'avis, vous pourrez me trouver à la taverne.~
+@249  = ~Quittes au Bout du Compte
+
+Talsar Soargyl, un marchand de Franc-Marché, souhaite faire affaire avec moi. J'ai refusé, mais je le trouverai à la taverne si je change d'avis.~
+@250  = ~La douce mélodie du profit et tu accours, mmh ? Je ne devrais pas m'en étonner.~
+@251  = ~Voilà qui est un petit peu hypocrite, tu ne crois pas ?~
+@252  = ~Cinq ans que j'attends cela, Adrian. Cinq ans. Tu m'as utilisé... tu m'as attiré dans ton nid de mensonges pour me poignarder dans le dos à l'instant où tu en avais fini avec moi. Ne va pas t'imaginer que je n'ai pas découvert ce qui avait mal tourné au juste.~
+@253  = ~Tu t'es montré cupide, Soargyl. Et stupide. Cela a tendance à être une combinaison tragique.~
+@254  = ~J'ai tout d'abord pensé que les Caperenard t'avaient payé pour cela... pour éliminer un rival. Mais ils n'en savaient rien, n'est-ce pas ? À quel jeu jouais-tu ?~
+@255  = ~Je te le dirais bien, mais... ma foi, tu sais ce qu'on dit dans ces cas-là. Enfin je te l'accorde, j'ai l'intention de te tuer quoi qu'il arrive.~
+@256  = ~Ah vraiment ? Et tes amis que voilà ont l'intention de t'y aider ?~
+@257  = ~Je ne compte pas m'en prendre à tous les ennemis que tu t'es fait dans ta vie, Adrian. Tu es seul sur ce coup.~
+@258  = ~Quand un homme m'attire dans un piège, je ne le laisse pas en vie.~
+@259  = ~Tu seras mort avant qu'il ne finisse de lancer son premier sort.~
+@260  = ~Quoi qu'il se soit passé auparavant, c'est révolu. Cette historie n'a pas à se terminer en bain de sang.~
+@261  = ~En ce cas, pardonnez-moi de ne pas me donner la peine de rester.~
+@262  = ~Quittes au Bout du Compte
+
+L'un des marchands de Franc-Marché était moins ravi de mon intervention qu'il ne l'aurait dû. Talsar Soargyl, un exilé Sembien, avait l'intention de nous tendre une embuscade parce que nous abritions Adrian, l'un de ses vieux ennemis. Je n'avais aucun intérêt à m'impliquer là-dedans.~
+@263  = ~Nous verrons bien.~
+@264  = ~Quittes au Bout du Compte
+
+L'un des marchands de Franc-Marché était moins ravi de mon intervention qu'il ne l'aurait dû. Talsar Soargyl, un exilé Sembien, nous a tendu une embuscade parce que nous abritions Adrian, l'un de ses vieux ennemis. Quoi qu'il se soit passé entre eux, cela appartient désormais au passé.~
+@265  = ~Je crains que vous ayez raison.~
+@266  = ~Lâche jusqu'au bout, à ce que je vois. Vous ne m'êtes plus d'aucune utilité, <CHARNAME>. Je suis sûr que vous trouverez la sortie.~
+@267  = ~Je ne me souvenais pas qu'il était aussi doué en nécromancie. Il y a cinq ans, il n'arrivait pas même à exécuter des tours de passe-passe.~
+@268  = ~Que lui as-tu fait au juste ?~
+@269  = ~Doué, tu dis ? Il n'a pas résisté bien longtemps.~
+@270  = ~Comment comptes-tu expliquer cela au Haut Marchand ?~
+@271  = ~Je n'apprécie pas d'assassiner tous les gens que tu as jamais rencontrés.~
+@272  = ~Je présume que tu l'avais vu venir ?~
+@273  = ~C'était... une victime toute trouvée, dirons-nous. La Sembie est remplie de gens pareils si tu sais te jouer d'eux.~
+@274  = ~Quoi qu'il en soit, nous devrions probablement partir d'ici. Si tu veux des détails, demande-moi plus tard.~
+@275  = ~Comparé à des tours de magie, c'était impressionnant. J'imagine que même pour les imbéciles invétérés, la rage et la vengeance sont de puissantes motivations.~
+@276  = ~Je doute que Talsar soit le premier hors-la-loi Sembien à trouver la mort. Ils ont tendance à exceller dans ce domaine.~
+@277  = ~Je ne peux pas dire que je suis étonné de découvrir qu'il m'en voulait encore, mais je ne m'attendais vraiment pas à le voir ici, <CHARNAME>. Autrement, je me serais montré plus prudent.~
+@278  = ~Ma foi, je ne comptais pas l'assassiner au beau milieu de la rue.~
+@279  = ~Avez-vous réfléchi, mon seigneur ?~ ~Avez-vous réfléchi, ma dame ?~
+@280  = ~Oui. La paie a intérêt à être suffisante.~
+@281  = ~Je ne veux toujours rien avoir à faire avec vous ou votre commerce.~
+@282  = ~C'est regrettable. Vous savez où me trouver si jamais vous changez d'avis.~

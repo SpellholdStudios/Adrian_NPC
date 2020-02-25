@@ -1,0 +1,16 @@
+IF
+    Dead("rh#Adrian")
+    Global("rh#AdrianRaised","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("rh#AdrianRaised","GLOBAL",1)
+END
+
+IF
+    Dead("rh#Adrian")
+    Global("rh#AdrianRaised","GLOBAL",2)
+THEN
+  RESPONSE #100
+    SetGlobal("rh#AdrianRaised","GLOBAL",3)
+END
+

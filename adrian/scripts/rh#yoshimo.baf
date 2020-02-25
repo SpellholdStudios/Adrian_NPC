@@ -1,0 +1,36 @@
+IF
+	InParty("rh#Adrian")
+	InParty("Yoshimo")
+	Global("rh#AdrianYoshimo2","GLOBAL",0)
+THEN
+RESPONSE #100
+	IncrementGlobal("rh#AdrianYoshimo2","GLOBAL",1)
+	RealSetGlobalTimer("rh#AdrianYoshimoTalkTimer","GLOBAL",3600)
+END
+
+IF
+	RealGlobalTimerExpired("rh#AdrianYoshimoTalkTimer","GLOBAL")
+	InParty("rh#Adrian")
+	InParty("Yoshimo")
+	See("rh#Adrian")
+	!ActuallyInCombat()
+	!StateCheck("rh#Adrian",CD_STATE_NOTVALID)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	Global("rh#AdrianYoshimo2","GLOBAL",1)
+THEN
+RESPONSE #100
+	IncrementGlobal("rh#AdrianYoshimo2","GLOBAL",1)
+END
+
+IF
+	RealGlobalTimerExpired("rh#AdrianYoshimoTalkTimer","GLOBAL")
+	InParty("rh#Adrian")
+	InParty("Yoshimo")
+	See("rh#Adrian")
+	!StateCheck("rh#Adrian",CD_STATE_NOTVALID)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	Global("rh#AdrianYoshimo2","GLOBAL",2)
+ THEN
+RESPONSE #100
+	StartDialogueNoSet("rh#Adrian")
+END

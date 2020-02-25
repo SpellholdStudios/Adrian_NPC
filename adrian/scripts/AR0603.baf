@@ -1,0 +1,9 @@
+IF
+Global("rh#AdrianExists","AR0603",0)
+THEN
+RESPONSE #100
+SetGlobal("rh#AdrianExists","AR0603",1)
+CreateCreature("rh#adr",[3636.769],3) // 1137.2046 are the x.y coordinates that will cause him to show up. 3 is the direction he's facing. It ranges from 0 (South), to 15, going clockwise.
+Continue()
+END
+ 

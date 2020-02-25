@@ -1,0 +1,29 @@
+IF
+   CheckStatGT("rh#Adrian",40,INTOXICATION)
+   InParty(Myself)
+   InParty("rh#Adrian") 
+   InMyArea("rh#Adrian")
+   Global("rh#AdrianHaerDalis2","GLOBAL",1)
+   Global("rh#AdrianHaerdalis4","GLOBAL",0) 
+   CombatCounter(0)
+   !See([ENEMY])
+   !StateCheck("Haerdalis",CD_STATE_NOTVALID)
+   !StateCheck("rh#Adrian",CD_STATE_NOTVALID)
+THEN
+RESPONSE #100
+	SetGlobal("rh#AdrianHaerdalis4","GLOBAL",1)
+END
+
+IF
+	InParty("rh#Adrian")
+	InParty("HaerDalis")
+	See("rh#Adrian")
+	!ActuallyInCombat()
+	!See([ENEMY])
+	!StateCheck("rh#Adrian",CD_STATE_NOTVALID)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	Global("rh#AdrianHaerdalis4","GLOBAL",1)
+ THEN
+RESPONSE #100
+	StartDialogueNoSet("rh#Adrian")
+END

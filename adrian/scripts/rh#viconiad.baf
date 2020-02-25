@@ -1,0 +1,29 @@
+// 5.
+
+IF
+	InParty("rh#Adrian")
+	InParty("Viconia")
+	See("rh#Adrian")
+	!See([ENEMY])
+	!ActuallyInCombat()
+	!StateCheck("Viconia",CD_STATE_NOTVALID)
+	!StateCheck("rh#Adrian",CD_STATE_NOTVALID)
+	Global("rh#AdrianViconia5","GLOBAL",0)
+	RealGlobalTimerExpired("rh#AdrianViconiaTalkTimer","GLOBAL")
+	OR(11)
+    	AreaCheck("AR0021")
+    	AreaCheck("AR0313")
+    	AreaCheck("AR0406")
+    	AreaCheck("AR0509")
+    	AreaCheck("AR0513")
+    	AreaCheck("AR0522")
+    	AreaCheck("AR0704")
+    	AreaCheck("AR0709")
+    	AreaCheck("AR1105")
+    	AreaCheck("AR1602")
+    	AreaCheck("AR2010")
+THEN
+RESPONSE #100
+	SetGlobal("rh#AdrianViconia5","GLOBAL",1)
+	StartDialogueNoSet("rh#Adrian")
+END

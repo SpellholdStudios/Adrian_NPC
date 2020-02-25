@@ -1,0 +1,1760 @@
+// JOINING PARTY
+
+IF
+	Global("rh#AdrianInitiate","GLOBAL",0) 
+	See(Player1)
+	Dead("duergar1")
+	CombatCounter(0)
+	Allegiance(Myself,NEUTRAL)
+	!Dead("rh#Adrian")
+THEN
+RESPONSE #100
+	SetGlobal("rh#AdrianInitiate","GLOBAL",1)
+END
+
+IF
+    Global("rh#AdrianInitiate","GLOBAL",1)
+THEN
+RESPONSE #100
+	StartDialogueNoSet(Player1)
+END
+
+IF
+	PartyHasItem("rh#key")
+	See(Player1)
+	CombatCounter(0)
+	Allegiance(Myself,NEUTRAL)
+	!Dead("rh#Adrian")
+	Global("rh#AdrianInitiate","GLOBAL",2)
+	!Global("rh#FirstTalk","GLOBAL",1)
+	!Global("rh#AdrianRefused","GLOBAL",1)
+THEN
+RESPONSE #100
+	StartDialogueNoSet(Player1)
+END
+
+// Romance checks
+IF
+	Global("rh#AdrianRomanceCheck","GLOBAL",0)
+	Gender(Player1,FEMALE)
+	CheckStatGT(Player1,11,INT)
+	CheckStatGT(Player1,11,CHR)
+	OR(2)
+		Race(Player1,HALF_ELF)
+		Race(Player1,HUMAN)
+THEN
+RESPONSE #100
+	SetGlobal("rh#AdrianRomanceCheck","GLOBAL",1)
+END
+
+IF
+	Global("rh#AdrianRomanceCheck","GLOBAL",0)
+THEN
+RESPONSE #100
+	SetGlobal("rh#AdrianRomanceCheck","GLOBAL",2)
+END
+
+IF
+	Global("rh#AdrianTalks","GLOBAL",13)
+	Global("rh#AdrianFriendshipActive","GLOBAL",0)
+	Global("rh#AdrianRomanceActive","GLOBAL",0)
+	Global("rh#AdrianRomanceCheck","GLOBAL",1)
+	Gender(Player1,FEMALE)
+	GlobalGT("rh#AdrianLikesPC","GLOBAL",3)
+THEN
+RESPONSE #100
+	SetGlobal("rh#AdrianRomanceActive","GLOBAL",1)
+END
+
+IF
+	Global("rh#AdrianTalks","GLOBAL",13)
+	Global("rh#AdrianFriendshipActive","GLOBAL",0)
+	Global("rh#AdrianRomanceActive","GLOBAL",0)
+	OR(3)
+        	Global("rh#AdrianRomanceCheck","GLOBAL",2)
+        	!GlobalGT("rh#AdrianLikesPC","GLOBAL",3)
+        	!Gender(Player1,FEMALE)
+THEN
+RESPONSE #100
+	SetGlobal("rh#AdrianFriendshipActive","GLOBAL",1)
+END
+
+
+// First talk in dream script
+
+// Talks 2-4
+
+IF
+	RealGlobalTimerExpired("rh#AdrianTalksTimer","GLOBAL")
+	InParty("rh#Adrian")
+	See(Player1)
+	!ActuallyInCombat()
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	GlobalGT("ShadowWork","GLOBAL",0)
+	OR(3)
+		Global("rh#AdrianTalks","GLOBAL",3)
+		Global("rh#AdrianTalks","GLOBAL",5)
+		Global("rh#AdrianTalks","GLOBAL",7)
+THEN
+RESPONSE #100
+	IncrementGlobal("rh#AdrianTalks","GLOBAL",1)
+END
+
+IF
+	RealGlobalTimerExpired("rh#AdrianTalksTimer","GLOBAL")
+	InParty("rh#Adrian")
+	See(Player1)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!ActuallyInCombat()
+	GlobalGT("ShadowWork","GLOBAL",0)
+	OR(3)
+		Global("rh#AdrianTalks","GLOBAL",4)
+		Global("rh#AdrianTalks","GLOBAL",6)
+		Global("rh#AdrianTalks","GLOBAL",8)
+ THEN
+RESPONSE #100
+	MoveToObject(Player1)
+	StartDialogueNoSet(Player1)
+END
+
+// Orphan: talk 5
+IF
+	RealGlobalTimerExpired("rh#AdrianSpawnTimer","GLOBAL")
+	InParty("rh#Adrian")
+	See(Player1)
+	!ActuallyInCombat()
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	PartyGoldGT(249)
+	OR(6)
+		AreaCheck("AR0020")
+		AreaCheck("AR0300")
+		AreaCheck("AR0400")
+		AreaCheck("AR0500")
+		AreaCheck("AR0700")
+		AreaCheck("AR0900")
+	Global("rh#AdrianTalks","GLOBAL",9)
+	Global("rh#OrphanSpawn","GLOBAL",0)
+ THEN
+RESPONSE #100
+	SetGlobal("rh#OrphanSpawn","GLOBAL",1)
+	CreateCreatureObjectOffset("rh#orph",Myself,[-15.-15])
+END
+
+IF
+	RealGlobalTimerExpired("rh#AdrianTalksTimer","GLOBAL")
+	Global("rh#AdrianTalks","GLOBAL",9)
+	Global("rh#OrphanSpawn","GLOBAL",2)
+	InParty("rh#Adrian")
+	See(Player1)
+	!ActuallyInCombat()
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	InParty("b!gavin2")
+THEN
+RESPONSE #100
+	IncrementGlobal("rh#AdrianTalks","GLOBAL",1)
+	SetGlobal("rh#AdrianGavinWasThere","GLOBAL",1)
+END
+
+IF
+	RealGlobalTimerExpired("rh#AdrianTalksTimer","GLOBAL")
+	Global("rh#AdrianTalks","GLOBAL",9)
+	Global("rh#OrphanSpawn","GLOBAL",2)
+	InParty("rh#Adrian")
+	See(Player1)
+	!ActuallyInCombat()
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!InParty("b!gavin2")
+THEN
+RESPONSE #100
+	IncrementGlobal("rh#AdrianTalks","GLOBAL",1)
+END
+
+IF
+	RealGlobalTimerExpired("rh#AdrianTalksTimer","GLOBAL")
+	InParty("rh#Adrian")
+	See(Player1)
+	!ActuallyInCombat()
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	Global("rh#AdrianTalks","GLOBAL",10)
+ THEN
+RESPONSE #100
+	MoveToObject(Player1)
+	StartDialogueNoSet(Player1)
+END
+
+// talk 6 (encounter)
+
+IF
+	RealGlobalTimerExpired("rh#AdrianDamarovTimer","GLOBAL")
+	InParty("rh#Adrian")
+	See(Player1)
+	!ActuallyInCombat()
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	PartyGoldGT(499)
+	AreaType(CITY)
+	AreaType(OUTDOOR)
+	OR(3)
+	     Global("chapter","GLOBAL",%bg2_chapter_2%)
+	     Global("chapter","GLOBAL",%bg2_chapter_3%)
+	     Global("chapter","GLOBAL",%bg2_chapter_6%)
+	Global("rh#AdrianTalks","GLOBAL",11)
+	Global("rh#DamarovQuest","GLOBAL",0)
+ THEN
+RESPONSE #100
+    SetGlobal("rh#DamarovQuest","GLOBAL",1)
+	CreateCreatureObjectOffScreen("rh#tanya",Myself,0,0,0) // Tanya Damarov
+END
+
+// this is where quest stuff goes
+
+IF
+ 	RealGlobalTimerExpired("rh#AdrianTalksTimer","GLOBAL")
+ 	Global("rh#AdrianTalks","GLOBAL",11)
+    Global("rh#DamarovQuest","GLOBAL",2)
+ 	InParty("rh#Adrian")
+ 	See(Player1)
+ 	!ActuallyInCombat()
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+THEN
+RESPONSE #100
+ 	IncrementGlobal("rh#AdrianTalks","GLOBAL",1)
+END
+
+IF
+	RealGlobalTimerExpired("rh#AdrianTalksTimer","GLOBAL")
+	InParty("rh#Adrian")
+	See(Player1)
+	!ActuallyInCombat()
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	Global("rh#AdrianTalks","GLOBAL",12)
+THEN
+RESPONSE #100
+	MoveToObject(Player1)
+	StartDialogueNoSet(Player1)
+END
+
+IF
+	Global("rh#DamarovQuest","GLOBAL",2)
+	PartyHasItem("rh#note")
+    InParty(Myself)
+THEN
+RESPONSE #100
+	SetGlobal("rh#DamarovQuest","GLOBAL",3)
+END
+
+IF
+	Global("rh#DamarovQuest","GLOBAL",3)
+	PartyHasItem("rh#note")
+	InParty("rh#Adrian")
+	See(Player1)
+	!ActuallyInCombat()
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+ THEN
+ RESPONSE #100
+	StartDialogueNoSet(Player1)
+END
+
+IF
+Global("rh#DamarovQuest","GLOBAL",4)
+InParty(Myself)
+Dead("rh#Salka")
+Dead("rh#Orlanna")
+Dead("rh#Deryn")
+OR(3) Global("rh#ErciasDead","GLOBAL",1) Dead("ercias") Global("rh#Adrian_spydies","GLOBAL",2)
+THEN
+RESPONSE #100
+	SetGlobal("rh#DamarovQuest","GLOBAL",5)
+END
+
+IF
+	Global("rh#DamarovQuest","GLOBAL",5)
+	InParty("rh#Adrian")
+	See(Player1)
+	!ActuallyInCombat()
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+ THEN
+ RESPONSE #100
+	StartDialogueNoSet(Player1)
+END
+
+IF
+InParty(Myself)
+Global("rh#DamarovQuest","GLOBAL",7)
+Dead("rh#Tanya")
+THEN
+RESPONSE #100
+	SetGlobal("rh#DamarovQuest","GLOBAL",8)
+END
+
+IF
+	Global("rh#DamarovQuest","GLOBAL",8)
+	InParty("rh#Adrian")
+	See(Player1)
+	!ActuallyInCombat()
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+ THEN
+ RESPONSE #100
+	StartDialogueNoSet(Player1)
+END
+
+// broken quest
+
+IF
+	InParty(Myself)
+	Global("rh#DamarovQuest","GLOBAL",20)
+	Dead("rh#Tanya")
+THEN
+RESPONSE #100
+	SetGlobal("rh#DamarovQuest","GLOBAL",21)
+END
+
+IF
+	Global("rh#DamarovQuest","GLOBAL",21)
+	InParty("rh#Adrian")
+	See(Player1)
+	!ActuallyInCombat()
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+ THEN
+ RESPONSE #100
+	StartDialogueNoSet(Player1)
+END
+
+// tanya potentially returning
+
+IF
+	InParty(Myself)
+	Global("rh#DamarovReturns","GLOBAL",1)
+	Global("rh#DamarovQuest","GLOBAL",2)
+	GlobalTimerExpired("rh#DamarovReturnsTimer","GLOBAL")
+THEN
+  RESPONSE #100
+	SetGlobal("rh#DamarovReturns","GLOBAL",2)
+END
+
+IF
+	InParty("rh#Adrian")
+	See(Player1)
+	!ActuallyInCombat()
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	AreaType(CITY)
+	AreaType(OUTDOOR)
+	OR(3)
+	     Global("chapter","GLOBAL",%bg2_chapter_2%)
+	     Global("chapter","GLOBAL",%bg2_chapter_3%)
+	     Global("chapter","GLOBAL",%bg2_chapter_6%)
+	Global("rh#DamarovQuest","GLOBAL",2)
+    Global("rh#DamarovReturns","GLOBAL",2)
+    GlobalTimerExpired("rh#DamarovReturnsTimer","GLOBAL")
+ THEN
+RESPONSE #100
+    SetGlobal("rh#DamarovReturns","GLOBAL",3)
+	CreateCreatureObjectOffset("rh#tanya",Myself,[-15.-15])
+END
+
+// running the timer after you kill the first spy
+
+IF
+	Global("rh#DamarovQuest","GLOBAL",4)
+	InParty(Myself)
+	OR(3) Dead("rh#Salka") Dead("rh#Orlanna") Dead("rh#Deryn")
+	Global("rh#DamarovTimerRuns","GLOBAL",0)
+THEN
+RESPONSE #100
+	SetGlobal("rh#DamarovTimerRuns","GLOBAL",1)
+	SetGlobalTimer("rh#AdrianDamarovSpyTimer","GLOBAL",ONE_DAY)
+END
+
+IF
+	!GlobalGT("rh#DamarovQuest","GLOBAL",6)
+	OR(2) 
+		Global("rh#DamarovTimerRuns","GLOBAL",1)
+		Global("rh#DamarovTimerRuns","GLOBAL",3)
+	InParty("rh#Adrian")
+	See(Player1)
+	!ActuallyInCombat()
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	GlobalTimerExpired("rh#AdrianDamarovSpyTimer","GLOBAL")
+ THEN
+ RESPONSE #100
+	IncrementGlobal("rh#DamarovTimerRuns","GLOBAL",1)
+END	
+	
+IF
+	GlobalTimerExpired("rh#AdrianDamarovSpyTimer","GLOBAL")
+	!GlobalGT("rh#DamarovQuest","GLOBAL",6)
+	OR(2) 
+		Global("rh#DamarovTimerRuns","GLOBAL",2)
+		Global("rh#DamarovTimerRuns","GLOBAL",4)
+	InParty("rh#Adrian")
+	See(Player1)
+	!ActuallyInCombat()
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+ THEN
+ RESPONSE #100
+	StartDialogueNoSet(Player1)
+END
+
+// talk 7 (once quest is finished; set variables)
+
+IF
+	Global("rh#DamarovQuest","GLOBAL",9)
+	OR(2)
+    	Global("rh#AdrianRomanceActive","GLOBAL",1)
+    	Global("rh#AdrianFriendshipActive","GLOBAL",1)
+	Global("rh#AdrianTalks","GLOBAL",13)
+	InParty("rh#Adrian")
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+THEN
+RESPONSE #100
+	SetGlobal("rh#DamarovQuest","GLOBAL",10)
+	RealSetGlobalTimer("rh#AdrianTalksTimer","GLOBAL",2700)
+END
+
+IF
+	RealGlobalTimerExpired("rh#AdrianTalksTimer","GLOBAL")
+	InParty("rh#Adrian")
+	See(Player1)
+	!ActuallyInCombat()
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	Global("rh#DamarovQuest","GLOBAL",10)
+	Global("rh#AdrianTalks","GLOBAL",13)
+THEN
+RESPONSE #100
+	IncrementGlobal("rh#AdrianTalks","GLOBAL",1)
+END
+
+IF
+	RealGlobalTimerExpired("rh#AdrianTalksTimer","GLOBAL")
+	InParty("rh#Adrian")
+	See(Player1)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	Global("rh#AdrianRomanceActive","GLOBAL",1)
+	Global("rh#AdrianTalks","GLOBAL",14)
+ THEN
+RESPONSE #100
+	PlaySong(0)
+    PlaySound("rh#adrom")
+    MoveToObject(Player1)
+	StartDialogueNoSet(Player1)
+END
+
+IF
+	RealGlobalTimerExpired("rh#AdrianTalksTimer","GLOBAL")
+	InParty("rh#Adrian")
+	See(Player1)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	Global("rh#AdrianFriendshipActive","GLOBAL",1)
+	Global("rh#AdrianTalks","GLOBAL",14)
+ THEN
+RESPONSE #100
+    MoveToObject(Player1)
+	StartDialogueNoSet(Player1)
+END
+
+// Talks 8-11
+IF
+	RealGlobalTimerExpired("rh#AdrianTalksTimer","GLOBAL")
+	InParty("rh#Adrian")
+	See(Player1)
+	!ActuallyInCombat()
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	OR(4)
+		Global("rh#AdrianTalks","GLOBAL",15)
+		Global("rh#AdrianTalks","GLOBAL",17)
+		Global("rh#AdrianTalks","GLOBAL",19)
+		Global("rh#AdrianTalks","GLOBAL",21)
+THEN
+RESPONSE #100
+	IncrementGlobal("rh#AdrianTalks","GLOBAL",1)
+END
+
+IF
+	RealGlobalTimerExpired("rh#AdrianTalksTimer","GLOBAL")
+	InParty("rh#Adrian")
+	See(Player1)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!ActuallyInCombat()
+	Global("rh#AdrianRomanceActive","GLOBAL",1)
+	OR(4)
+		Global("rh#AdrianTalks","GLOBAL",16)
+		Global("rh#AdrianTalks","GLOBAL",18)
+		Global("rh#AdrianTalks","GLOBAL",20)
+		Global("rh#AdrianTalks","GLOBAL",22)
+ THEN
+RESPONSE #100
+	PlaySong(0)
+    PlaySound("rh#adrom")
+	MoveToObject(Player1)
+	StartDialogueNoSet(Player1)
+END
+
+IF
+	RealGlobalTimerExpired("rh#AdrianTalksTimer","GLOBAL")
+	InParty("rh#Adrian")
+	See(Player1)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!ActuallyInCombat()
+	Global("rh#AdrianFriendshipActive","GLOBAL",1)
+	OR(5)
+		Global("rh#AdrianTalks","GLOBAL",16)
+		Global("rh#AdrianTalks","GLOBAL",18)
+		Global("rh#AdrianTalks","GLOBAL",20)
+		Global("rh#AdrianTalks","GLOBAL",22)
+		Global("rh#AdrianTalks","GLOBAL",44)
+ THEN
+RESPONSE #100
+	MoveToObject(Player1)
+	StartDialogueNoSet(Player1)
+END
+
+// Friendship talk #13 (22)
+IF
+	RealGlobalTimerExpired("rh#AdrianTalksTimer","GLOBAL")
+	InParty("rh#Adrian")
+	See(Player1)
+	!ActuallyInCombat()
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	Global("rh#AdrianFriendshipActive","GLOBAL",1)
+	Global("rh#AdrianTalks","GLOBAL",43)
+THEN
+RESPONSE #100
+	IncrementGlobal("rh#AdrianTalks","GLOBAL",1)
+END
+
+// Romance talks - (12-28)
+IF
+	RealGlobalTimerExpired("rh#AdrianTalksTimer","GLOBAL")
+	InParty("rh#Adrian")
+	See(Player1)
+	!ActuallyInCombat()
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	OR(2)
+    	Global("rh#AdrianRomanceActive","GLOBAL",1)
+    	Global("rh#AdrianRomanceActive","GLOBAL",2)
+	OR(12)
+		Global("rh#AdrianTalks","GLOBAL",23)
+		Global("rh#AdrianTalks","GLOBAL",27)
+		Global("rh#AdrianTalks","GLOBAL",29)
+		Global("rh#AdrianTalks","GLOBAL",35)
+		Global("rh#AdrianTalks","GLOBAL",37)
+		Global("rh#AdrianTalks","GLOBAL",41)
+		Global("rh#AdrianTalks","GLOBAL",43)
+		Global("rh#AdrianTalks","GLOBAL",45)
+		Global("rh#AdrianTalks","GLOBAL",47)
+		Global("rh#AdrianTalks","GLOBAL",49)
+		Global("rh#AdrianTalks","GLOBAL",51)
+		Global("rh#AdrianTalks","GLOBAL",55)
+THEN
+RESPONSE #100
+	IncrementGlobal("rh#AdrianTalks","GLOBAL",1)
+END
+
+IF
+	RealGlobalTimerExpired("rh#AdrianTalksTimer","GLOBAL")
+	InParty("rh#Adrian")
+	See(Player1)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!ActuallyInCombat()
+	OR(2)
+    	Global("rh#AdrianRomanceActive","GLOBAL",1)
+        Global("rh#AdrianRomanceActive","GLOBAL",2)
+	OR(14)
+		Global("rh#AdrianTalks","GLOBAL",24)
+		Global("rh#AdrianTalks","GLOBAL",26)
+		Global("rh#AdrianTalks","GLOBAL",28)
+		Global("rh#AdrianTalks","GLOBAL",30)
+		Global("rh#AdrianTalks","GLOBAL",34)
+		Global("rh#AdrianTalks","GLOBAL",36)
+		Global("rh#AdrianTalks","GLOBAL",38)
+		Global("rh#AdrianTalks","GLOBAL",42)
+		Global("rh#AdrianTalks","GLOBAL",44)
+		Global("rh#AdrianTalks","GLOBAL",46)
+		Global("rh#AdrianTalks","GLOBAL",48)
+		Global("rh#AdrianTalks","GLOBAL",50)
+		Global("rh#AdrianTalks","GLOBAL",52)
+		Global("rh#AdrianTalks","GLOBAL",56)
+ THEN
+RESPONSE #100
+	PlaySong(0)
+    PlaySound("rh#adrom")
+	MoveToObject(Player1)
+	StartDialogueNoSet(Player1)
+END
+
+// talk 13 (outdoors in athkatla, trademeet, or wilderness)
+IF
+	RealGlobalTimerExpired("rh#AdrianTalksTimer","GLOBAL")
+	InParty("rh#Adrian")
+	See(Player1)
+	!ActuallyInCombat()
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	OR(3)
+          AreaType(OUTDOOR)
+          AreaType(CITY) 
+          AreaType(FOREST)
+	Global("rh#AdrianTalks","GLOBAL",25)
+	Global("rh#AdrianRomanceActive","GLOBAL",1)
+	OR(9)
+		AreaCheck("AR0020")
+		AreaCheck("AR0300")
+		AreaCheck("AR0400")
+		AreaCheck("AR0500")
+		AreaCheck("AR0700")
+		AreaCheck("AR0900")
+		AreaCheck("AR1000")
+		AreaCheck("AR2000")
+		AreaType(FOREST)
+THEN
+RESPONSE #100
+	IncrementGlobal("rh#AdrianTalks","GLOBAL",1)
+END
+
+// talk 17 (morning)
+
+IF
+	InParty("rh#Adrian")
+	See(Player1)
+	!ActuallyInCombat()
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	Global("rh#AdrianTalks","GLOBAL",33)
+	Global("rh#AdrianRomanceActive","GLOBAL",1)
+THEN
+RESPONSE #100
+	IncrementGlobal("rh#AdrianTalks","GLOBAL",1)
+END
+
+
+// Brynnlaw
+
+IF
+    InParty(Myself)
+    AreaCheck("AR1600")
+    Global("rh#AdrianTalkBrynnlaw","GLOBAL",0)
+    OR(3)
+	Global("rh#AdrianRomanceActive","GLOBAL",1)
+	Global("rh#AdrianRomanceActive","GLOBAL",2)
+	Global("rh#AdrianFriendshipActive","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("rh#AdrianTalkBrynnlaw","GLOBAL",1)
+    RealSetGlobalTimer("rh#AdrianTalkBrynnlawTimer","GLOBAL",900)
+END
+
+IF
+    InParty(Myself)
+    See(Player1)
+    !StateCheck(Myself,CD_STATE_NOTVALID)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !Detect([ENEMY])
+    Global("rh#AdrianTalkBrynnlaw","GLOBAL",1)
+    AreaCheck("AR1600")
+    RealGlobalTimerExpired("rh#AdrianTalkBrynnlawTimer","GLOBAL")
+THEN
+  RESPONSE #100
+    SetGlobal("rh#AdrianTalkBrynnlaw","GLOBAL",2)
+END
+
+IF
+    InParty(Myself)
+    See(Player1)
+    !StateCheck(Myself,CD_STATE_NOTVALID)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !Detect([ENEMY])
+    AreaCheck("AR1600")
+    Global("rh#AdrianTalkBrynnlaw","GLOBAL",2)
+THEN
+  RESPONSE #100
+    MoveToObject(Player1)
+    StartDialogueNoSet(Player1)
+END
+
+// Spellhold
+
+IF
+    InParty(Myself)
+    AreaCheck("AR1512")
+    Global("rh#AdrianTalkSpellhold","GLOBAL",0)
+	Global("rh#AdrianRomanceActive","GLOBAL",2)
+THEN
+  RESPONSE #100
+    SetGlobal("rh#AdrianTalkSpellhold","GLOBAL",1)
+    RealSetGlobalTimer("rh#AdrianTalkSpellholdTimer","GLOBAL",300)
+END
+
+IF
+    InParty(Myself)
+    See(Player1)
+    !StateCheck(Myself,CD_STATE_NOTVALID)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !Detect([ENEMY])
+    Global("rh#AdrianTalkSpellhold","GLOBAL",1)
+    RealGlobalTimerExpired("rh#AdrianTalkSpellholdTimer","GLOBAL")
+THEN
+  RESPONSE #100
+    SetGlobal("rh#AdrianTalkSpellhold","GLOBAL",2)
+END
+
+IF
+    InParty(Myself)
+    See(Player1)
+    !StateCheck(Myself,CD_STATE_NOTVALID)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !Detect([ENEMY])
+    Global("rh#AdrianTalkSpellhold","GLOBAL",2)
+THEN
+  RESPONSE #100
+    MoveToObject(Player1)
+    StartDialogueNoSet(Player1)
+END
+
+// Underdark
+
+IF
+    InParty(Myself)
+    AreaCheck("AR2100")
+    Global("rh#AdrianTalkUnderdark","GLOBAL",0)
+    OR(3)
+	Global("rh#AdrianRomanceActive","GLOBAL",1)
+	Global("rh#AdrianRomanceActive","GLOBAL",2)
+	Global("rh#AdrianFriendshipActive","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("rh#AdrianTalkUnderdark","GLOBAL",1)
+    RealSetGlobalTimer("rh#AdrianTalkUnderdarkTimer","GLOBAL",600)
+END
+
+IF
+    InParty(Myself)
+    See(Player1)
+    !StateCheck(Myself,CD_STATE_NOTVALID)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !Detect([ENEMY])
+    Global("rh#AdrianTalkUnderdark","GLOBAL",1)
+    RealGlobalTimerExpired("rh#AdrianTalkUnderdarkTimer","GLOBAL")
+THEN
+  RESPONSE #100
+    SetGlobal("rh#AdrianTalkUnderdark","GLOBAL",2)
+END
+
+IF
+    InParty(Myself)
+    See(Player1)
+    !StateCheck(Myself,CD_STATE_NOTVALID)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !Detect([ENEMY])
+    Global("rh#AdrianTalkUnderdark","GLOBAL",2)
+THEN
+  RESPONSE #100
+    MoveToObject(Player1)
+    StartDialogueNoSet(Player1)
+END
+
+// Suldanessellar
+
+IF
+    InParty(Myself)
+    Global("ElvenAvatar","GLOBAL",1)
+    GlobalGT("rh#Adfyfyriad","GLOBAL",0)
+    Global("rh#AdrianTalkElf","GLOBAL",0)
+    OR(3)
+	Global("rh#AdrianRomanceActive","GLOBAL",1)
+	Global("rh#AdrianRomanceActive","GLOBAL",2)
+	Global("rh#AdrianFriendshipActive","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("rh#AdrianTalkElf","GLOBAL",1)
+    RealSetGlobalTimer("rh#AdrianTalkElfTimer","GLOBAL",5)
+END
+
+IF
+    InParty(Myself)
+    See(Player1)
+    !StateCheck(Myself,CD_STATE_NOTVALID)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !Detect([ENEMY])
+    Global("rh#AdrianTalkElf","GLOBAL",1)
+    RealGlobalTimerExpired("rh#AdrianTalkElfTimer","GLOBAL")
+THEN
+  RESPONSE #100
+    SetGlobal("rh#AdrianTalkElf","GLOBAL",2)
+END
+
+IF
+    InParty(Myself)
+    See(Player1)
+    !StateCheck(Myself,CD_STATE_NOTVALID)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !Detect([ENEMY])
+    Global("rh#AdrianTalkElf","GLOBAL",2)
+THEN
+  RESPONSE #100
+    MoveToObject(Player1)
+    StartDialogueNoSet(Player1)
+END
+
+// Slavers
+
+IF
+    InParty(Myself)
+    Global("FreeSlaves","GLOBAL",1)
+    Dead("Haegan")
+    Global("rh#AdrianTalkSlavers","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("rh#AdrianTalkSlavers","GLOBAL",1)
+    RealSetGlobalTimer("rh#AdrianTalkSlaversTimer","GLOBAL",300)
+END
+
+IF
+    InParty(Myself)
+    See(Player1)
+    !StateCheck(Myself,CD_STATE_NOTVALID)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !Detect([ENEMY])
+    Global("rh#AdrianTalkSlavers","GLOBAL",1)
+    RealGlobalTimerExpired("rh#AdrianTalkSlaversTimer","GLOBAL")
+THEN
+  RESPONSE #100
+    SetGlobal("rh#AdrianTalkSlavers","GLOBAL",2)
+END
+
+IF
+    InParty(Myself)
+    See(Player1)
+    !StateCheck(Myself,CD_STATE_NOTVALID)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !Detect([ENEMY])
+    Global("rh#AdrianTalkSlavers","GLOBAL",2)
+THEN
+  RESPONSE #100
+    MoveToObject(Player1)
+    StartDialogueNoSet(Player1)
+END
+
+// Lavok
+
+IF
+    InParty(Myself)
+    Dead("lavok02")
+    Global("rh#AdrianTalkLavok","GLOBAL",0)
+    OR(3)
+	Global("rh#AdrianRomanceActive","GLOBAL",1)
+	Global("rh#AdrianRomanceActive","GLOBAL",2)
+	Global("rh#AdrianFriendshipActive","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("rh#AdrianTalkLavok","GLOBAL",1)
+    RealSetGlobalTimer("rh#AdrianTalkLavokTimer","GLOBAL",300)
+END
+
+IF
+    InParty(Myself)
+    See(Player1)
+    !StateCheck(Myself,CD_STATE_NOTVALID)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !Detect([ENEMY])
+    Global("rh#AdrianTalkLavok","GLOBAL",1)
+    RealGlobalTimerExpired("rh#AdrianTalkLavokTimer","GLOBAL")
+THEN
+  RESPONSE #100
+    SetGlobal("rh#AdrianTalkLavok","GLOBAL",2)
+END
+
+IF
+    InParty(Myself)
+    See(Player1)
+    !StateCheck(Myself,CD_STATE_NOTVALID)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !Detect([ENEMY])
+    Global("rh#AdrianTalkLavok","GLOBAL",2)
+THEN
+  RESPONSE #100
+    MoveToObject(Player1)
+    StartDialogueNoSet(Player1)
+END
+
+// Linvail
+
+IF
+    InParty(Myself)
+    Global("WorkingForAran","GLOBAL",1)
+    Global("rh#AdrianLinvailTalk","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("rh#AdrianLinvailTalk","GLOBAL",1)
+    RealSetGlobalTimer("rh#AdrianLinvailTalkTimer","GLOBAL",300)
+END
+
+IF
+    InParty(Myself)
+    See(Player1)
+    !StateCheck(Myself,CD_STATE_NOTVALID)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !Detect([ENEMY])
+    Global("rh#AdrianLinvailTalk","GLOBAL",1)
+    RealGlobalTimerExpired("rh#AdrianLinvailTalkTimer","GLOBAL")
+THEN
+  RESPONSE #100
+    SetGlobal("rh#AdrianLinvailTalk","GLOBAL",2)
+END
+
+IF
+    InParty(Myself)
+    See(Player1)
+    !StateCheck(Myself,CD_STATE_NOTVALID)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !Detect([ENEMY])
+    Global("rh#AdrianLinvailTalk","GLOBAL",2)
+THEN
+  RESPONSE #100
+    MoveToObject(Player1)
+    StartDialogueNoSet(Player1)
+END
+
+// Bodhi
+
+IF
+    InParty(Myself)
+    Global("WorkingForBodhi","GLOBAL",1)
+    Global("rh#AdrianBodhiTalk","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("rh#AdrianBodhiTalk","GLOBAL",1)
+    RealSetGlobalTimer("rh#AdrianBodhiTalkTimer","GLOBAL",300)
+END
+
+IF
+    InParty(Myself)
+    See(Player1)
+    !StateCheck(Myself,CD_STATE_NOTVALID)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !Detect([ENEMY])
+    Global("rh#AdrianBodhiTalk","GLOBAL",1)
+    RealGlobalTimerExpired("rh#AdrianBodhiTalkTimer","GLOBAL")
+THEN
+  RESPONSE #100
+    SetGlobal("rh#AdrianBodhiTalk","GLOBAL",2)
+END
+
+IF
+    InParty(Myself)
+    See(Player1)
+    !StateCheck(Myself,CD_STATE_NOTVALID)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !Detect([ENEMY])
+    Global("rh#AdrianBodhiTalk","GLOBAL",2)
+THEN
+  RESPONSE #100
+    MoveToObject(Player1)
+    StartDialogueNoSet(Player1)
+END
+
+// Firkraaaaaaag
+
+IF
+    InParty(Myself)
+    See(Player1)
+    !StateCheck(Myself,CD_STATE_NOTVALID)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    Dead("firkra02")
+    Global("rh#AdrianFirkraagTalk","GLOBAL",0)
+THEN
+  RESPONSE #50
+    SetGlobal("rh#AdrianFirkraagTalk","GLOBAL",1)
+    RealSetGlobalTimer("rh#AdrianFirkraagTalkTimer","GLOBAL",5)
+END
+
+IF
+    InParty(Myself)
+    See(Player1)
+    Global("rh#AdrianFirkraagTalk","GLOBAL",1)
+    RealGlobalTimerExpired("rh#AdrianFirkraagTalkTimer","GLOBAL")
+THEN
+  RESPONSE #100
+    SetGlobal("rh#AdrianFirkraagTalk","GLOBAL",2)
+END
+
+IF
+    InParty(Myself)
+    See(Player1)
+    !StateCheck(Myself,CD_STATE_NOTVALID)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !Detect([ENEMY])
+    Global("rh#AdrianFirkraagTalk","GLOBAL",2)
+THEN
+  RESPONSE #100
+    MoveToObject(Player1)
+    StartDialogueNoSet(Player1)
+END
+
+// Post-Elhan
+IF
+    InParty(Myself)
+    See(Player1)
+    !StateCheck(Myself,CD_STATE_NOTVALID)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    AreaCheck("AR2500")
+    Global("rh#AdrianTalkElhan","GLOBAL",0)
+    Global("ElhanFinishedSpeaking","GLOBAL",1)
+THEN
+  RESPONSE #50
+    SetGlobal("rh#AdrianTalkElhan","GLOBAL",1)
+    RealSetGlobalTimer("rh#AdrianTalkElhanTimer","GLOBAL",15)
+END
+
+IF
+    InParty(Myself)
+    See(Player1)
+    Global("rh#AdrianTalkElhan","GLOBAL",1)
+    RealGlobalTimerExpired("rh#AdrianTalkElhanTimer","GLOBAL")
+THEN
+  RESPONSE #100
+    SetGlobal("rh#AdrianTalkElhan","GLOBAL",2)
+END
+
+IF
+    InParty(Myself)
+    See(Player1)
+    !StateCheck(Myself,CD_STATE_NOTVALID)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !Detect([ENEMY])
+    Global("rh#AdrianTalkElhan","GLOBAL",2)
+THEN
+  RESPONSE #100
+    MoveToObject(Player1)
+    StartDialogueNoSet(Player1)
+END
+
+
+// SCENERY TALK: EMBARL
+
+IF
+	InParty("rh#Adrian")
+	See(Player1)
+	!ActuallyInCombat()
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	Global("MaeVarWork","GLOBAL",5)
+	AreaCheck("AR0300")
+	Global("rh#AdrianEmbarlJob","GLOBAL",0)
+ THEN
+RESPONSE #100
+	SetGlobal("rh#AdrianEmbarlJob","GLOBAL",1)	
+END
+
+IF
+	InParty("rh#Adrian")
+	See(Player1)
+	!ActuallyInCombat()
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	Global("MaeVarWork","GLOBAL",5)
+	AreaCheck("AR0300")
+	Global("rh#AdrianEmbarlJob","GLOBAL",1)
+ THEN
+RESPONSE #100
+	StartDialogueNoSet(Player1)	
+END
+
+// Encounter
+IF
+    Dead("cefald01")
+    InParty("rh#Adrian")
+    !Dead("rh#Adrian")
+    Global("geniesgone","GLOBAL",1)
+    AreaCheck("AR2000")
+    GlobalGT("loganjob2","GLOBAL",1)
+    Global("rh#SoargylEncounter","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("rh#SoargylEncounter","GLOBAL",1)
+    CreateCreature("rh#sgyl",[1092.2343],2)
+    ActionOverride("rh#sgyl",MakeGlobal())
+END
+
+IF
+	InParty("rh#Adrian")
+	See(Player1)
+	!ActuallyInCombat()
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	Dead("rh#sgyl")
+	AreaCheck("rh#ad1")
+	Global("rh#SoargylAftermath","GLOBAL",0)
+ THEN
+RESPONSE #100
+	SetGlobal("rh#SoargylAftermath","GLOBAL",1)
+END
+
+IF
+	InParty("rh#Adrian")
+	See(Player1)
+	!ActuallyInCombat()
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	Global("rh#SoargylAftermath","GLOBAL",1)
+ THEN
+RESPONSE #100
+	StartDialogueNoSet(Player1)	
+END
+
+
+
+// Romance Kills
+
+IF
+ OR(5)
+    	Global("AnomenRomanceActive","GLOBAL",2)
+	Global("EdwinRomanceActive","GLOBAL",2)
+	Global("RasaadRomanceActive","GLOBAL",2)
+	Global("HexxatRomanceActive","GLOBAL",2)
+	Global("DornRomanceActive","GLOBAL",2)
+	!Global("rh#AdrianRomanceActive","GLOBAL",0)
+	!Global("rh#AdrianRomanceActive","GLOBAL",3)
+THEN
+  RESPONSE #100
+	SetGlobal("rh#AdrianRomanceActive","GLOBAL",3)
+END
+
+IF
+	Global("rh#AdrianRomanceActive","GLOBAL",2)
+	!Global("AnomenRomanceActive","GLOBAL",0)
+	!Global("AnomenRomanceActive","GLOBAL",3)
+THEN
+  RESPONSE #100
+	SetGlobal("AnomenRomanceActive","GLOBAL",3)
+	SetGlobal("AnomenMatch","GLOBAL",3)
+END
+
+IF
+	Global("rh#AdrianRomanceActive","GLOBAL",2)
+	OR(2)
+		Global("RasaadRomanceActive","GLOBAL",1)
+		Global("RasaadRomanceActive","GLOBAL",2)
+THEN
+  RESPONSE #100
+  	SetGlobal("RasaadRomanceActive","GLOBAL",3)
+END
+
+IF
+	Global("rh#AdrianRomanceActive","GLOBAL",2)
+	OR(2)
+		Global("HexxatRomanceActive","GLOBAL",1)
+		Global("HexxatRomanceActive","GLOBAL",2)
+THEN
+  RESPONSE #100
+  	SetGlobal("HexxatRomanceActive","GLOBAL",3)
+END
+
+IF
+	Global("rh#AdrianRomanceActive","GLOBAL",2)
+	OR(2)
+		Global("DornRomanceActive","GLOBAL",1)
+		Global("DornRomanceActive","GLOBAL",2)
+THEN
+  RESPONSE #100
+  	SetGlobal("DornRomanceActive","GLOBAL",3)
+END
+
+IF
+	Global("rh#AdrianRomanceActive","GLOBAL",3)
+	Global("rh#AdrianFriendshipActive","GLOBAL",0)
+	GlobalLT("rh#AdrianTalks","GLOBAL",23)
+THEN
+  RESPONSE #100
+	SetGlobal("rh#AdrianFriendshipActive","GLOBAL",1)
+END
+
+IF
+	Global("rh#AdrianRomanceActive","GLOBAL",3)
+	Global("rh#AdrianFriendshipActive","GLOBAL",0)
+	GlobalGT("rh#AdrianTalks","GLOBAL",22)
+	GlobalLT("rh#AdrianTalks","GLOBAL",37)
+THEN
+  RESPONSE #100
+	SetGlobal("rh#AdrianFriendshipActive","GLOBAL",1)
+	SetGlobal("rh#AdrianTalks","GLOBAL",39)
+	RealSetGlobalTimer("rh#AdrianTalksTimer","GLOBAL",2700)
+END
+
+IF
+	Global("rh#AdrianRomanceActive","GLOBAL",3)
+	Global("rh#AdrianFriendshipActive","GLOBAL",0)
+	GlobalGT("rh#AdrianTalks","GLOBAL",36)
+THEN
+  RESPONSE #100
+	SetGlobal("rh#AdrianFriendshipActive","GLOBAL",3)
+END
+
+// Anomen Challenge
+
+IF
+    InParty(Myself)
+    InParty("Anomen")
+    See(Player1)
+    !StateCheck(Myself,CD_STATE_NOTVALID)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !Detect([ENEMY])
+    Global("rh#AnomenChallenges2","GLOBAL",1)
+    OR(2)
+		Global("rh#AdrianRomanceActive","GLOBAL",1)
+		Global("rh#AdrianRomanceActive","GLOBAL",2)
+	Global("AnomenRomanceActive","GLOBAL",1)
+    RealGlobalTimerExpired("rh#AnomenChallenges2Timer","GLOBAL")
+THEN
+  RESPONSE #100
+    SetGlobal("rh#AnomenChallenges2","GLOBAL",2)
+END
+
+IF
+    InParty(Myself)
+    InParty("Anomen")
+    See(Player1)
+    !StateCheck(Myself,CD_STATE_NOTVALID)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !Detect([ENEMY])
+    Global("rh#AnomenChallenges2","GLOBAL",2)
+    OR(2)
+		Global("rh#AdrianRomanceActive","GLOBAL",1)
+		Global("rh#AdrianRomanceActive","GLOBAL",2)
+	Global("AnomenRomanceActive","GLOBAL",1)
+    RealGlobalTimerExpired("rh#AnomenChallenges2Timer","GLOBAL")
+THEN
+  RESPONSE #100
+    MoveToObject(Player1)
+    StartDialogueNoSet(Player1)
+END
+
+// Edwin Challenge
+
+IF
+    InParty(Myself)
+    InParty("Edwin")
+    See(Player1)
+    !StateCheck(Myself,CD_STATE_NOTVALID)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !Detect([ENEMY])
+    Global("rh#EdwinChallenge","GLOBAL",1)
+    OR(2)
+		Global("rh#AdrianRomanceActive","GLOBAL",1)
+		Global("rh#AdrianRomanceActive","GLOBAL",2)
+	Global("EdwinRomanceActive","GLOBAL",1)
+    RealGlobalTimerExpired("rh#EdwinChallengeTimer","GLOBAL")
+THEN
+  RESPONSE #100
+    SetGlobal("rh#EdwinChallenge","GLOBAL",2)
+END
+
+IF
+    InParty(Myself)
+    InParty("Edwin")
+    See(Player1)
+    !StateCheck(Myself,CD_STATE_NOTVALID)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !Detect([ENEMY])
+    Global("rh#EdwinChallenge","GLOBAL",2)
+    OR(2)
+		Global("rh#AdrianRomanceActive","GLOBAL",1)
+		Global("rh#AdrianRomanceActive","GLOBAL",2)
+	Global("EdwinRomanceActive","GLOBAL",1)
+THEN
+  RESPONSE #100
+    MoveToObject(Player1)
+    StartDialogueNoSet(Player1)
+END
+
+// if you've been sleeping with Haer'dalis before committing to this relationship, you'll need to break up with him
+
+IF
+	InParty(Myself)
+    InParty("Haerdalis")
+    Global("rh#AdrianRomanceActive","GLOBAL",2)
+	Global("LS_HaerDalisRomanceActive","GLOBAL",1)
+	Global("LS_HaerDalisSex","GLOBAL",2)
+	Global("rh#HaerDalisChallenge1","GLOBAL",0)
+THEN
+RESPONSE #100
+	RealSetGlobalTimer("rh#HaerDalisChallenge1Timer","GLOBAL",600)
+	SetGlobal("rh#HaerDalisChallenge1","GLOBAL",1)
+END
+
+IF
+	InParty(Myself)
+    InParty("Haerdalis")
+    !StateCheck("rh#Adrian",CD_STATE_NOTVALID)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !See([ENEMY])
+	RealGlobalTimerExpired("rh#HaerDalisChallenge1Timer","GLOBAL")
+	Global("rh#HaerDalisChallenge1","GLOBAL",1)
+	Global("rh#AdrianRomanceActive","GLOBAL",2)
+	Global("LS_HaerDalisRomanceActive","GLOBAL",1)
+THEN
+RESPONSE #100
+	SetGlobal("rh#HaerDalisChallenge1","GLOBAL",2)
+END
+
+IF
+    InParty(Myself)
+    InParty("Haerdalis")
+    See(Player1)
+    !StateCheck("rh#Adrian",CD_STATE_NOTVALID)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !See([ENEMY])
+    Global("rh#HaerDalisChallenge1","GLOBAL",2)
+    Global("rh#AdrianRomanceActive","GLOBAL",2)
+	Global("LS_HaerDalisRomanceActive","GLOBAL",1)
+THEN
+RESPONSE #100
+    MoveToObject(Player1)
+    Dialogue(Player1)
+END
+
+// if you haven't slept with Haer'dalis but keep on talking to him, Adrian won't care for a while but will eventually ask you to break it off
+
+IF
+	Global("LS_HaerDalisRomanceActive","GLOBAL",1)
+	Global("rh#AdrianRomanceActive","GLOBAL",2)
+	Global("LS_HaerDalisSex","GLOBAL",0)
+	Global("rh#HaerDalisChallenge1","GLOBAL",0)
+	Global("rh#HaerDalisChallenge2","GLOBAL",0)
+THEN
+RESPONSE #100
+	SetGlobal("rh#HaerDalisChallenge1","GLOBAL",10)
+	SetGlobal("rh#HaerDalisChallenge2","GLOBAL",1)
+	RealSetGlobalTimer("rh#HaerDalisChallenge2Timer","GLOBAL",7200)
+END
+
+IF
+	InParty(Myself)
+    InParty("Haerdalis")
+    See(Player1)
+    !StateCheck("rh#Adrian",CD_STATE_NOTVALID)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !See([ENEMY])
+	Global("rh#AdrianRomanceActive","GLOBAL",2)
+	Global("LS_HaerDalisRomanceActive","GLOBAL",1)
+	RealGlobalTimerExpired("rh#HaerDalisChallenge2Timer","GLOBAL")
+	Global("rh#HaerDalisChallenge2","GLOBAL",1)
+THEN
+RESPONSE #100
+    SetGlobal("rh#HaerDalisChallenge2","GLOBAL",2)
+END
+
+IF
+    InParty(Myself)
+    InParty("Haerdalis")
+    See(Player1)
+    !StateCheck("rh#Adrian",CD_STATE_NOTVALID)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    Global("rh#HaerDalisChallenge2","GLOBAL",2)
+    CombatCounter(0)
+    !See([ENEMY])
+    Global("rh#AdrianRomanceActive","GLOBAL",2)
+	Global("LS_HaerDalisRomanceActive","GLOBAL",1)
+THEN
+RESPONSE #100
+    MoveToObject(Player1)
+    Dialogue(Player1)
+END
+
+// if you start sleeping with HD afterwards, Adrian will be verrrrry unhappy
+
+IF
+	InParty(Myself)
+    InParty("Haerdalis")
+	Global("LS_HaerDalisRomanceActive","GLOBAL",1)
+	Global("rh#AdrianRomanceActive","GLOBAL",2)
+	Global("LS_HaerDalisSex","GLOBAL",2)
+	Global("rh#HaerDalisChallenge1","GLOBAL",10)
+	Global("rh#HaerDalisChallenge3","GLOBAL",0)
+THEN
+RESPONSE #100
+	RealSetGlobalTimer("rh#HaerDalisChallenge3Timer","GLOBAL",600)
+	SetGlobal("rh#HaerDalisChallenge3","GLOBAL",1)
+END
+
+IF
+	InParty(Myself)
+	InParty("Haerdalis")
+    See(Player1)
+    !StateCheck("rh#Adrian",CD_STATE_NOTVALID)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !See([ENEMY])
+	RealGlobalTimerExpired("rh#HaerDalisChallenge3Timer","GLOBAL")
+	Global("rh#HaerDalisChallenge3","GLOBAL",1)
+	Global("rh#AdrianRomanceActive","GLOBAL",2)
+	Global("LS_HaerDalisRomanceActive","GLOBAL",1)
+THEN
+RESPONSE #100
+	SetGlobal("rh#HaerDalisChallenge3","GLOBAL",2)
+END
+
+IF
+    InParty(Myself)
+    InParty("Haerdalis")
+    See(Player1)
+    !StateCheck("rh#Adrian",CD_STATE_NOTVALID)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !See([ENEMY])
+    Global("rh#HaerDalisChallenge3","GLOBAL",2)
+    Global("rh#AdrianRomanceActive","GLOBAL",2)
+	Global("LS_HaerDalisRomanceActive","GLOBAL",1)
+THEN
+RESPONSE #100
+    MoveToObject(Player1)
+    Dialogue(Player1)
+END
+
+// reputation
+
+IF
+    InParty(Myself)
+    See(Player1)
+    !StateCheck(Myself,CD_STATE_NOTVALID)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !Detect([ENEMY])
+    OR(2)
+    	ReputationLT(Player1,4)
+        ReputationGT(Player1,18)
+    Global("rh#AdrianReputation","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("rh#AdrianReputation","GLOBAL",1)
+END
+
+IF
+    InParty(Myself)
+    See(Player1)
+    !StateCheck(Myself,CD_STATE_NOTVALID)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !Detect([ENEMY])
+     OR(2)
+    	ReputationLT(Player1,4)
+        ReputationGT(Player1,18)
+    Global("rh#AdrianReputation","GLOBAL",1)
+THEN
+  RESPONSE #100
+    StartDialogueNoSet(Player1)
+END
+
+// FLIRTS
+
+IF 
+	Global("rh#AdrStartFlirts","GLOBAL",0)
+	Global("rh#AdrianFlirtsEnabled","GLOBAL",1)
+	Global("rh#AdrianRomanceActive","GLOBAL",2)
+ THEN
+RESPONSE #100
+	SetGlobal("rh#AdrStartFlirts","GLOBAL",1)
+	RealSetGlobalTimer("rh#AdrianFlirtTimer","GLOBAL",1800)
+END
+
+IF
+	InParty("rh#Adrian")
+	See(Player1)
+	!ActuallyInCombat()
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	RealGlobalTimerExpired("rh#AdrianFlirtTimer","GLOBAL")
+	Global("rh#AdrianFlirtsEnabled","GLOBAL",1)
+	Global("rh#AdrTimeForFlirt","GLOBAL",0)
+	Global("rh#AdrianRomanceActive","GLOBAL",2)
+ THEN
+RESPONSE #100	
+	SetGlobal("rh#AdrTimeForFlirt","GLOBAL",1)
+END
+
+IF
+	InParty("rh#Adrian")
+	See(Player1)
+	!ActuallyInCombat()
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	RealGlobalTimerExpired("rh#AdrianFlirtTimer","GLOBAL")
+	Global("rh#AdrianFlirtsEnabled","GLOBAL",1)
+	Global("rh#AdrTimeForFlirt","GLOBAL",1)
+ THEN
+RESPONSE #100
+	StartDialogueNoSet(Player1)
+END
+
+
+// Jaheira
+
+// 5.
+
+IF
+	InParty("rh#Adrian")
+	InParty("Jaheira")
+	Global("JaheiraTraitor","GLOBAL",1)
+	Global("rh#AdrianJaheira3","GLOBAL",5)
+THEN
+RESPONSE #100
+	SetGlobal("rh#AdrianJaheira3","GLOBAL",6)
+	RealSetGlobalTimer("rh#AdrianJaheiraTalkTimer","GLOBAL",3600)
+END
+
+IF
+	RealGlobalTimerExpired("rh#AdrianJaheiraTalkTimer","GLOBAL")
+	InParty("rh#Adrian")
+	InParty("Jaheira")
+	See("Jaheira")
+	!ActuallyInCombat()
+	!StateCheck("Jaheira",CD_STATE_NOTVALID)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!See([ENEMY])
+	Global("rh#AdrianJaheira3","GLOBAL",6)
+THEN
+RESPONSE #100
+	SetGlobal("rh#AdrianJaheira3","GLOBAL",7)
+END
+
+IF
+	RealGlobalTimerExpired("rh#AdrianJaheiraTalkTimer","GLOBAL")
+	InParty("rh#Adrian")
+	InParty("Jaheira")
+	See("Jaheira")
+	!StateCheck("Jaheira",CD_STATE_NOTVALID)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!See([ENEMY])
+	Global("rh#AdrianJaheira3","GLOBAL",7)
+ THEN
+RESPONSE #100
+	StartDialogueNoSet("Jaheira")
+END
+
+// 7.
+
+IF
+	Global("ElminsterForgives","GLOBAL",1)
+	Global("rh#AdrianJaheira3","GLOBAL",10)
+	Global("rh#AdrianJaheira7","GLOBAL",0)
+THEN
+RESPONSE #100
+	SetGlobal("rh#AdrianJaheira7","GLOBAL",1)
+	RealSetGlobalTimer("rh#AdrianJaheiraTalkTimer","GLOBAL",15)
+END
+
+IF
+	RealGlobalTimerExpired("rh#AdrianJaheiraTalkTimer","GLOBAL")
+	InParty("rh#Adrian")
+	InParty("Jaheira")
+	See("Jaheira")
+	!See([ENEMY])
+	!ActuallyInCombat()
+	!StateCheck("Jaheira",CD_STATE_NOTVALID)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	Global("rh#AdrianJaheira7","GLOBAL",1)	
+THEN
+RESPONSE #100
+	SetGlobal("rh#AdrianJaheira7","GLOBAL",2)
+END
+
+IF
+	RealGlobalTimerExpired("rh#AdrianJaheiraTalkTimer","GLOBAL")
+	InParty("rh#Adrian")
+	InParty("Jaheira")
+	See("Jaheira")
+	!See([ENEMY])
+	!StateCheck("Jaheira",CD_STATE_NOTVALID)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	Global("rh#AdrianJaheira7","GLOBAL",2)
+THEN
+RESPONSE #100
+	StartDialogueNoSet("Jaheira")
+END
+
+// 9.
+IF
+	Global("chapter","GLOBAL",%bg2_chapter_7%)
+	GlobalGT("rh#AdrianTalks","GLOBAL",22)
+	Global("rh#AdrianJaheira3","GLOBAL",10)
+	Global("rh#AdrianJaheira9","GLOBAL",0)
+THEN
+RESPONSE #100
+	SetGlobal("rh#AdrianJaheira9","GLOBAL",1)
+	RealSetGlobalTimer("rh#AdrianJaheiraTalkTimer","GLOBAL",300)
+END
+
+IF
+	RealGlobalTimerExpired("rh#AdrianJaheiraTalkTimer","GLOBAL")
+	InParty("rh#Adrian")
+	InParty("Jaheira")
+	See("Jaheira")
+	!See([ENEMY])
+	!ActuallyInCombat()
+	!StateCheck("Jaheira",CD_STATE_NOTVALID)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	Global("rh#AdrianJaheira9","GLOBAL",1)	
+THEN
+RESPONSE #100
+	SetGlobal("rh#AdrianJaheira9","GLOBAL",2)
+END
+
+IF
+	RealGlobalTimerExpired("rh#AdrianJaheiraTalkTimer","GLOBAL")
+	InParty("rh#Adrian")
+	InParty("Jaheira")
+	See("Jaheira")
+	!See([ENEMY])
+	!StateCheck("Jaheira",CD_STATE_NOTVALID)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	Global("rh#AdrianJaheira9","GLOBAL",2)
+THEN
+RESPONSE #100
+	StartDialogueNoSet("Jaheira")
+END
+
+// Nalia
+
+IF
+	InParty("Nalia")
+	InParty("rh#Adrian")
+	OR(2)
+		Global("RoenalControl","GLOBAL",1)
+		Global("PCKeepOwner","GLOBAL",1)
+	Global("RH#AdrianNalia5","GLOBAL",0)
+THEN
+RESPONSE #100
+	SetGlobal("RH#AdrianNalia5","GLOBAL",1)
+	RealSetGlobalTimer("rh#AdrianNaliaTalkTimer","GLOBAL",600)
+END
+
+IF
+	RealGlobalTimerExpired("rh#AdrianNaliaTalkTimer","GLOBAL")
+	InParty("Nalia")
+	InParty("rh#Adrian")
+	See("Nalia")
+	!StateCheck("Nalia",CD_STATE_NOTVALID)
+	!StateCheck("rh#Adrian",CD_STATE_NOTVALID)
+	CombatCounter(0)
+	!See([ENEMY])
+	Global("RH#AdrianNalia5","GLOBAL",1)
+THEN
+RESPONSE #100
+	IncrementGlobal("RH#AdrianNalia5","GLOBAL",1)
+END
+
+IF
+	RealGlobalTimerExpired("rh#AdrianNaliaTalkTimer","GLOBAL")
+	InParty("Nalia")
+	InParty("rh#Adrian")
+	See("Nalia")
+	!StateCheck("Nalia",CD_STATE_NOTVALID)
+	!StateCheck("rh#Adrian",CD_STATE_NOTVALID)
+	CombatCounter(0)
+	!See([ENEMY])
+	Global("RH#AdrianNalia5","GLOBAL",2)
+THEN
+RESPONSE #100
+	StartDialogueNoSet("Nalia")
+END
+
+// string fixer
+
+IF 
+    HotKey(K)  
+THEN 
+    RESPONSE #100       
+        SetName(~Adrian~) 
+        SetPlayerSound(Myself,~Oh, I don't think so.~ [rh#ad1],MORALE) 
+        SetPlayerSound(Myself,~I must admit, this is rather effective.~ [rh#ad2],HAPPY) 
+        SetPlayerSound(Myself,~Well, we certainly know how to waste our time.~ [rh#ad3],UNHAPPY_ANNOYED)
+        SetPlayerSound(Myself,~Is this sort of nonsense really necessary?~ [rh#ad4],UNHAPPY_SERIOUS)
+        SetPlayerSound(Myself,~Oh, I don't mind this at all.~ [rh#ad5],LEADER)
+        SetPlayerSound(Myself,~What is this, a Thayvian plantation? Couldn't we find an inn?~[rh#ad6],TIRED)
+        SetPlayerSound(Myself,~If I'm drunk again by the time you decide to do something, you've only yourself to blame.~ [rh#ad7],BORED)
+        SetPlayerSound(Myself,~Damn!~ [rh#ad8],DAMAGE)
+        SetPlayerSound(Myself,~No... not like this...~ [rh#ad9],DYING)
+        SetPlayerSound(Myself,~Where's a damn cleric when I need one?~ [rh#ad10],HURT)
+        SetPlayerSound(Myself,~It's not exactly Cormanthor, is it?~ [rh#ad11],AREA_FOREST)
+        SetPlayerSound(Myself,~Ah, the sights and smells of the city... I could do without the latter.~ [rh#ad12],AREA_CITY)
+        SetPlayerSound(Myself,~Quite the setting... I'm beginning to wish we'd simply paid someone to do this for us.~ [rh#ad13],AREA_DUNGEON)
+        SetPlayerSound(Myself,~A lovely day, isn't it? Shame about the locale.~ [rh#ad14],AREA_DAY)
+        SetPlayerSound(Myself,~Mmm... the sun sets, and the day truly begins.~ [rh#ad15],AREA_NIGHT)
+        SetPlayerSound(Myself,~That should just about finish this.~ [rh#ad16],CRITICAL_HIT)
+        SetPlayerSound(Myself,~Dammit!~ [rh#ad17],CRITICAL_MISS)
+        SetPlayerSound(Myself,~Oh, this is working wonderfully. If you don't find me a better weapon soon, I might as well just sit in a corner and watch.~ [rh#ad18],TARGET_IMMUNE)
+        SetPlayerSound(Myself,~I'm a mage, not a pack mule.~ [rh#ad19],INVENTORY_FULL)
+        SetPlayerSound(Myself,~Some cover over here, if you don't mind...~ [rh#ad20],SPELL_DISRUPTED)
+        SetPlayerSound(Myself,~This is sure to be entertaining.~ [rh#ad21],SET_A_TRAP)
+        SetPlayerSound(Myself,~It's not quite invisibility, but I suppose it'll do.~ [rh#ad22],HIDDEN_IN_SHADOWS)
+        SetPlayerSound(Myself,~Well, what have we here?~ [rh#ad23],PICKED_POCKET)
+        SetPlayerSound(Myself,~To the Abyss with you!~ [rh#ad24],BATTLE_CRY1) 
+        SetPlayerSound(Myself,~No mercy for scum like this!~ [rh#ad25],BATTLE_CRY2) 
+        SetPlayerSound(Myself,~Die, already!~ [rh#ad26],BATTLE_CRY3) 
+        SetPlayerSound(Myself,~I can already count the gold.~ [rh#ad27],BATTLE_CRY4) 
+        SetPlayerSound(Myself,~Don't even bother to run.~ [rh#ad28],BATTLE_CRY5)   
+        SetPlayerSound(Myself,~Yes?~ [rh#ad29],SELECT_COMMON1)
+        SetPlayerSound(Myself,~What is it?~ [rh#ad30],SELECT_COMMON2)
+        SetPlayerSound(Myself,~Speak up.~ [rh#ad31],SELECT_COMMON3)
+        SetPlayerSound(Myself,~What now?~ [rh#ad32],SELECT_COMMON4)
+        SetPlayerSound(Myself,~Spit it out already.~ [rh#ad33],SELECT_COMMON5)
+        SetPlayerSound(Myself,~Hmm?~ [rh#ad34],SELECT_COMMON6)
+        SetPlayerSound(Myself,~Certainly.~ [rh#ad35],SELECT_ACTION1)
+        SetPlayerSound(Myself,~Of course.~ [rh#ad36],SELECT_ACTION2)
+        SetPlayerSound(Myself,~If you insist. And you always do, don't you?~ [rh#ad37],SELECT_ACTION3)
+        SetPlayerSound(Myself,~A waste of a mage's talents, if you ask me.~ [rh#ad38],SELECT_ACTION4)
+        SetPlayerSound(Myself,~Yes, yes, yes. I'm working on it.~ [rh#ad39],SELECT_ACTION5)
+        SetPlayerSound(Myself,~Oh, not this again.~ [rh#ad40],SELECT_ACTION6) 
+        SetPlayerSound(Myself,~You can do better than that.~ [rh#ad41],SELECT_ACTION7) 
+        SetPlayerSound(Myself,~Go point that thing at someone else.~ [rh#ad42],SELECT_RARE1) 
+        SetPlayerSound(Myself,~Well, you do have a way with words, don't you?~ [rh#ad43],SELECT_RARE2)
+END

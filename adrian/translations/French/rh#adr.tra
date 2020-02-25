@@ -1,0 +1,91 @@
+@0    = ~Mais que faites-vous ? Occupez-vous de ces satanés nains avant de nous faire tuer tous les deux !~
+@1    = ~Oh, les dieux en soient remerciés... enfin, la plupart en tout cas. Je n'aurais jamais cru...~
+@2    = ~Peu importe. Il y a une clef sur le nain, juste là... vous pourriez me l'apporter s'il vous plaît ?~
+@3    = ~C'est improbable qu'un serviteur d'Irenicus se retrouve enchaîné, mais pas impossible. Je suis toutefois réticente à l'idée d'abandonner un autre prisonnier à la merci du mage.~
+@4    = ~Je suis loin d'être une menace pour vous, ma dame, et... assurément pas dans cet état. Je vous en prie, la clef.~
+@5    = ~Bien sûr. Une seconde.~
+@6    = ~Je crois que je l'ai déjà trouvée.~
+@7    = ~Comme si j'allais faire confiance à quoi que ce soit dans ce donjon !~
+@8    = ~Pas si vite. Dites-moi qui vous êtes d'abord.~
+@9    = ~Je ne crois pas, non. J'apprécie assez de voir un homme enchaîné.~
+@10   = ~Je ne compte pas me faire avoir ainsi. Tu peux mourir avec le reste de tes amis.~
+@11   = ~Merci ! Vite, je vous prie.~
+@12   = ~Trouver la clef.
+
+Je suis tombé sur un autre prisonnier dans le donjon d'Irenicus : un jeteur de sort demi-elfe. Il prétend que la clef qui le libérera de ses chaînes se trouve sur l'un des duergars que je viens de tuer. Je ferais bien de la lui apporter dès que je l'aurai trouvée.~
+@13   = ~Vraiment ? Passez-la moi s'il vous plaît, avant que d'autres créatures de ce maudit mage n'arrivent !~
+@14   = ~Bien sûr. Voilà.~
+@15   = ~Pourquoi devrais-je vous faire confiance ?~
+@16   = ~Je ne suis pas là par choix, mon seigneur, je peux vous l'assurer. Je m'appelle...~ ~Je ne suis pas là par choix, ma dame, je peux vous l'assurer. Je m'appelle...~
+@17   = ~Adrian. Adrian Sianodel. Je suis l'un des... jouets du maître, acheté auprès d'esclavagistes d'Athkatla il y a une ou deux semaines de cela. Il a semblé fâché que mon sang soit loin d'être pur, mais hormis cela... je ne sais pas.~
+@18   = ~Ma sorcellerie l'a brièvement intéressé, même s'il s'est... rapidement lassé de moi malgré tout. J'aurais sans doute dû terminer comme ses autres expériences ratées, mais ma compétence à créer des baguettes m'a rendu... utile.~
+@19   = ~Je ne peux concevoir que ma magie aurait pu intéresser bien longtemps un homme pareil et il s'est... assez vite lassé de moi. J'aurais sans doute dû terminer comme ses autres expériences ratées, mais ma compétence à créer des baguettes m'a rendu... utile.~
+@20   = ~Une existence pitoyable, mais qui vaut mieux que les alternatives.~
+@21   = ~J'imagine que cela explique toutes les baguettes de la salle précédente.~
+@22   = ~Ce n'est pas vraiment le mieux que je puisse faire, mais dans ces circonstances...~
+@23   = ~Je vois. Donnez-moi un instant et je vous trouve cette clef.~
+@24   = ~Je vois. Je vais vous libérer immédiatement.~
+@25   = ~Un esclave, hein ? Peut-être que tu es à ta place, enchaîné.~
+@26   = ~Que peux-tu me dire d'Irenicus ?~
+@27   = ~Tu m'as fait perdre assez de mon temps. Bonne chance.~
+@28   = ~Je ne compte pas faire l'erreur de croire quoi que ce soit en provenance de ce donjon. Désolé.~ ~Je ne compte pas faire l'erreur de croire quoi que ce soit en provenance de ce donjon. Désolée.~
+@29   = ~Je suis... j'étais son esclave, pas son confident. C'est certainement le mage le plus puissant que j'ai vu de ma vie, et je... enfin, disons que je fais partie de cercles puissants.~
+@30   = ~Je vois. Je vais vous trouver votre clef.~
+@31   = ~En tant qu'esclave, peut-être que tu es à ta place, enchaîné.~
+@32   = ~Je suis loin d'être le seul ici qui vive des temps difficiles, mon seigneur. Mais si vous me libérez, je pourrais vous être utile.~ ~Je suis loin d'être le seul ici qui vive des temps difficiles, ma dame. Mais si vous me libérez, je pourrais vous être utile.~
+@33   = ~Ce mage... Irenicus... vous aurez besoin de tous les talents arcaniques que vous pourrez trouver s'il s'est piqué d'intérêt pour vous, et j'en ai à revendre. Ce n'est pas un atout à dédaigner aussi légèrement.~
+@34   = ~Je suppose que non. Je vais chercher votre clef.~
+@35   = ~Je suppose que non. Je vais vous libérer immédiatement.~
+@36   = ~Peut-être pas. Qui êtes-vous ?~
+@37   = ~Étant donné votre situation actuelle, je ne suis pas impressionné. Bonne chance.~ ~Étant donné votre situation actuelle, je ne suis pas impressionnée. Bonne chance.~
+@38   = ~Je n'arrive pas à déterminer qui de votre désespoir ou de votre arrogance est le plus irritant, mais je pense que je vais me contenter de vous tuer.~
+@39   = ~Pardon !? Vous... soyez maudit ! Que cet enfer soit votre tombe à vous aussi !~ ~Pardon !? Vous... soyez maudite ! Que cet enfer soit votre tombe à vous aussi !~
+@40   = ~Vous... vous comptez m'abandonner là, alors ? Soyez maudit ! Que cet enfer soit votre tombe à vous aussi !~ ~Vous... vous comptez m'abandonner là, alors ? Soyez maudite ! Que cet enfer soit votre tombe à vous aussi !~
+@41   = ~Je vous en remercie.~
+@42   = ~C'est ça. Restez-là à me railler. Si Irenicus revient, peut-être aurais-je le plaisir de le regarder vous massacrer.~
+@43   = ~Vite ! Elle devrait se trouver sur ce duergar, juste là.~
+@44   = ~Vous l'avez ! Passez-la moi s'il vous plaît, avant que d'autres créatures de ce maudit mage n'arrivent !~
+@45   = ~Bien sûr. Tenez.~
+@46   = ~Du calme. Patientez un moment et je vous libère.~
+@47   = ~Très bien, mais vous avez intérêt à en valoir la peine.~
+@48   = ~Dites-moi d'abord qui vous êtes.~
+@49   = ~À la réflexion, je vais plutôt vous abandonner là.~
+@50   = ~Je serai à votre service pendant le temps qu'il vous faudra.~
+@51   = ~Bien sûr. Adrian. Adrian Sianodel. Ce maudit mage a envoyé ses agents m'acheter à des esclavagistes d'Athkatla, il y a une ou deux semaines de cela. Il a semblé fâché que mon sang soit loin d'être pur, mais hormis cela... je ne sais pas.~
+@52   = ~Si vous pouviez me libérer à présent, s'il vous plaît ?~
+@53   = ~Au fait, mon nom. Adrian. Adrian Sianodel. Ce maudit mage a envoyé ses agents m'acheter à des esclavagistes d'Athkatla, il y a une ou deux semaines de cela. Il a semblé fâché que mon sang soit loin d'être pur, mais hormis cela... je ne sais pas.~
+@54   = ~Vous êtes... <CHARNAME>, c'est cela ? De la Porte de Baldur ? Les duergars ont prononcé votre nom une ou deux fois quand ils n'étaient pas... occupés ailleurs.~
+@55   = ~En effet. C'est un plaisir de faire votre connaissance.~
+@56   = ~Pourrions-nous garder les politesses pour plus tard ? Il faut que l'on sorte de ce donjon.~
+@57   = ~Que savez-vous de moi ?~
+@58   = ~Oui, c'est ça, enchanté. Je vous ai libéré mais votre compagnie ne m'intéresse pas. Trouvez la sortie par vos propres moyens.~
+@59   = ~De même. Bref, nous ferions bien de sortir de ce donjon avant que le mage ou davantage de ses créatures ne se montrent.~
+@60   = ~Bien sûr. Allons-y.~
+@61   = ~Trouver la clef.
+
+Adrian, le mage trouvé dans le donjon d'Irenicus, était très heureux de rester avec moi après que je l'eus libéré de ses chaînes. Espérons que se faire capturer ne devienne pas une habitude chez lui.~
+@62   = ~C'est la meilleure idée de la journée que j'ai entendue.~
+@63   = ~Vous feriez bien de vous souvenir de qui commande ici.~
+@64   = ~Je vous ai libéré mais votre compagnie ne m'intéresse pas. Trouvez la sortie par vos propres moyens.~
+@65   = ~Hormis le fait que vous êtes le nouveau sujet d'expérimentation d'Irenicus ? Très peu. Bref, nous ferions bien de sortir de ce donjon avant que le mage ou davantage de ses créatures ne se montrent.~
+@66   = ~Ce n'est pas faux. Après vous.~
+@67   = ~Mon seigneur, je peux vous assurer que c'est évident.~ ~Ma dame, je peux vous assurer que c'est évident.~
+@68   = ~Je vois. Continuez sur votre lancée alors, je serai dans votre sillage. Nous ne nous reverrons pas.~
+@69   = ~Trouver la clef.
+
+J'ai certes libéré Adrian de ses chaînes, mais j'ai décidé qu'il valait mieux que nous continuions chacun de notre côté. Il pourra essayer de s'échapper de ce donjon de lui-même.~
+@70   = ~Vous... vous m'agiteriez de l'espoir sous le nez, juste pour me le retirer ? Bien. Nous pourrons toujours nous retrouver dans les Neufs Enfers, mon seigneur. Plutôt tôt que tard, si mes prières sont entendues.~ ~Vous... vous m'agiteriez de l'espoir sous le nez, juste pour me le retirer ? Bien. Nous pourrons toujours nous retrouver dans les Neufs Enfers, ma dame. Plutôt tôt que tard, si mes prières sont entendues.~
+@71   = ~De retour ? Avez-vous l'intention de m'aider ou n'êtes-vous là que pour me railler ? Je vous en prie, perdez donc votre temps. Peut-être pourrons-nous mourir ensemble.~
+@72   = ~Voilà votre clef.~
+@73   = ~Je m'apprêtais à vous libérer, mais je doute que vous m'en soyez même reconnaissant.~
+@74   = ~J'aime railler.~
+@75   = ~Pour être franc, je suis venu vous tuer.~ ~Pour être franche, je suis venue vous tuer.~
+@76   = ~Vous avez ma gratitude, mais pas mon amitié. Nous ne nous reverrons pas.~
+@77   = ~Trouver la clef.
+
+J'ai certes libéré Adrian de ses chaînes, mais il n'a pas goûté mes moqueries précédentes et il est parti de lui-même. Il pourra essayer de s'échapper de ce donjon de lui-même.~
+@78   = ~Vous... bien, je suis navré. S'il vous plaît.~
+@79   = ~Très bien. Voilà votre clef.~
+@80   = ~Vous êtes doué pour supplier, j'apprécie assez le spectacle.~
+@81   = ~Approchez un peu et vous aurez l'occasion de savoir si vous appréciez aussi d'être mordu.~ ~Approchez un peu et vous aurez l'occasion de savoir si vous appréciez aussi d'être mordue.~
+@82   = ~Vous... rendez-vous aux abysses, <CHARNAME> !~

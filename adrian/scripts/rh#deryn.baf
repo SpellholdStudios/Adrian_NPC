@@ -1,0 +1,43 @@
+IF
+	Range(Player1,15)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    Global("rh#DerynSpeaks","GLOBAL",0)
+THEN
+RESPONSE #100
+	SetGlobal("rh#DerynSpeaks","GLOBAL",1)
+END
+
+IF
+	Range(Player1,15)
+	InParty("rh#Adrian")
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    !StateCheck("rh#Adrian",CD_STATE_NOTVALID)
+    Global("rh#DerynSpeaks","GLOBAL",1)
+THEN
+RESPONSE #100
+	StartDialogueNoSet(Player1)
+END
+
+IF
+    Global("rh#DerynSpeaks","GLOBAL",2)
+    Global("rh#enemies","LOCALS",0)
+THEN
+  RESPONSE #100
+    SetGlobal("rh#enemies","LOCALS",1)
+    Enemy()
+    ReallyForceSpell(Myself,WIZARD_INVISIBILITY)
+    RandomWalk()
+END
+
+IF
+    !StateCheck(Myself,STATE_INVISIBLE)
+    Global("rh#enemies","LOCALS",1)
+    Detect(Player1)
+THEN
+  RESPONSE #100
+    DisplayStringHead(Myself,@0 /* Blast! Ye'll pay for this! */)
+    SetGlobal("rh#enemies","LOCALS",2)
+    Attack(NearestEnemyOf(Myself))
+END

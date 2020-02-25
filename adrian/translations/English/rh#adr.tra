@@ -1,0 +1,91 @@
+@0    = ~What are you doing over here? Take care of those damned dwarves before you get us both killed!~
+@1    = ~Oh, thank all the gods... or most of them, at least. I never thought--~
+@2    = ~No matter. There's a key on the dwarf over there... please, if you could just bring it to me?~
+@3    = ~It is unlikely that a servant of Irenicus would be found in chains, but not impossible. Still, I am reluctant to abandon another prisoner to the mage's mercy.~
+@4    = ~I'm hardly a threat to you, my lady, and... certainly not in this state. Please, the key.~
+@5    = ~Of course. One moment.~
+@6    = ~I believe I've already found it.~
+@7    = ~As if I'd trust anything in this dungeon!~
+@8    = ~Not so quickly. Tell me who you are first.~
+@9    = ~I don't think so. I rather enjoy seeing a man in chains.~
+@10   = ~I'm not falling for this. You can die with the rest of your friends.~
+@11   = ~Thank you! Quickly, please.~
+@12   = ~Find the key.
+
+I have discovered another prisoner in Irenicus' dungeon: a half-elven spellcaster. He claims that the key to his chains is on one of the duergar I just defeated. I should bring it to him once I have found it.~
+@13   = ~You have? Please, hand it here before more of that damned mage's creatures arrive!~
+@14   = ~Of course. Here you are.~
+@15   = ~Why should I trust you?~
+@16   = ~I'm not here by choice, my <PRO_LADYLORD>, I can assure you of that much. My name...~
+@17   = ~Adrian. Adrian Sianodel. I'm one of the master's... pets, purchased from slavers in Athkatla a week, perhaps two weeks ago. He seemed displeased that my blood was less than pure, but beyond that... I don't know.~
+@18   = ~My sorcery was of brief interest to him, though he... tired of me quickly regardless. I'd have likely ended up like his other failed experiments, but my skill at crafting wands made me... useful.~
+@19   = ~I can't imagine that my magic would have been of much interest to a man like that, and he... tired of me quickly enough. I'd have likely ended up like his other failed experiments, but my skill at crafting wands made me... useful.~
+@20   = ~A miserable existence, but better than the alternatives.~
+@21   = ~I guess that would explain all those wands in the other room.~
+@22   = ~Not exactly my best work, but under the circumstances...~
+@23   = ~I see. Give me a moment and I'll find you your key.~
+@24   = ~I see. I'll release you immediately.~
+@25   = ~A slave, is it? Perhaps you belong in chains.~
+@26   = ~What can you tell me about Irenicus?~
+@27   = ~You've wasted enough of my time. Good luck.~
+@28   = ~I'm not making the mistake of trusting anything in this dungeon. Sorry.~
+@29   = ~I am-- was his slave, not his confidant. He's probably the most potent wizard I've ever seen, and I... well, suffice to say, I run in powerful circles.~
+@30   = ~I see. I'll find you your key.~
+@31   = ~As a slave, perhaps you belong in chains.~
+@32   = ~I hardly look like the only one present who's fallen upon hard times, my <PRO_LADYLORD>, but if you free me, I could be of use to you.~
+@33   = ~That mage... Irenicus... you'll need all of the arcane talent you can muster if he's taken an interest in you, and I have more than a bit. That isn't an asset to throw away lightly.~
+@34   = ~I suppose not. I'll look for your key.~
+@35   = ~I suppose not. I'll release you immediately.~
+@36   = ~Perhaps not. Who are you?~
+@37   = ~Given your current predicament, I'm unimpressed. Good luck.~
+@38   = ~I can't decide if your desperation or arrogance is more irritating, but I think I'd rather just kill you.~
+@39   = ~What!? You... damn you! May you find your grave in this hell also!~
+@40   = ~You... you'll just leave me here, then? Damn you! May you find your grave in this hell also!~
+@41   = ~My thanks.~
+@42   = ~Fine. Stay here and taunt me. If Irenicus returns, perhaps I'll still have the pleasure of watching him butcher you.~
+@43   = ~Quickly! It should be on that duergar over there.~
+@44   = ~You've found it! Please, hand it here before more of that damned mage's creatures arrive!~
+@45   = ~Of course. Here you go.~
+@46   = ~Calm down. Hold on a moment, and I'll release you.~
+@47   = ~Very well, but you had better make it worth my time.~
+@48   = ~First tell me who you are.~
+@49   = ~On second thought, I'd rather just leave you here.~
+@50   = ~You can have my services for as long as you require them.~
+@51   = ~Of course. Adrian. Adrian Sianodel. That damned mage had his agents purchase me from slavers in Athkatla a week, perhaps two weeks ago. He seemed displeased that my blood was less than pure, but beyond that... I don't know.~
+@52   = ~Please, if you could release me now?~
+@53   = ~My name, by the way. Adrian. Adrian Sianodel. That damned mage had his agents purchase me from slavers in Athkatla a week, perhaps two weeks ago. He seemed displeased that my blood was less than pure, but beyond that... I don't know.~
+@54   = ~You're... <CHARNAME>, was it? From Baldur's Gate? The duergar might have mentioned you a time or two when they weren't... otherwise engaged.~
+@55   = ~I am. It's a pleasure to meet you.~
+@56   = ~Could we save the pleasantries for later? We need to get out of this dungeon.~
+@57   = ~What do you know about me?~
+@58   = ~Enchanted, I'm sure. I released you but I'm not interested in your company. Find your own way out.~
+@59   = ~Likewise. Regardless, we'd best find a way out of this dungeon before the mage or more of his creatures show up.~
+@60   = ~Of course. Let's go.~
+@61   = ~Find the key.
+
+Adrian, the mage I discovered in Irenicus' dungeon, was all too happy to remain in my company upon being freed from his chains. Hopefully he will not make a habit of being kidnapped.~
+@62   = ~I haven't heard a better idea all <DAYNIGHT>.~
+@63   = ~You'd best remember who is in command here.~
+@64   = ~I released you but I'm not interested in your company. Find your own way out.~
+@65   = ~Aside from the fact that you were Irenicus' newest test subject? Very little. Regardless, we'd best find a way out of this dungeon before the mage or more of his creatures show up.~
+@66   = ~True enough. After you.~
+@67   = ~My <PRO_LADYLORD>, I assure you, it's quite obvious.~
+@68   = ~I see. Forge ahead and I'll follow in your wake, then. We won't meet again.~
+@69   = ~Find the key.
+
+While I freed Adrian from his chains, I decided that it was best if we continued separately. He can attempt to escape this dungeon on his own.~
+@70   = ~You... you would taunt me with hope and then take it away? Fine. We may yet meet in the Nine Hells, my <PRO_LADYLORD>. Sooner rather than later if any of my prayers are answered.~
+@71   = ~Back again, then? Do you intend to help me or have you simply come to taunt? By all means, waste your time. Perhaps we can yet die together.~
+@72   = ~Here's your key.~
+@73   = ~I was going to free you, but I doubt you'd even appreciate it.~
+@74   = ~I enjoy taunting.~
+@75   = ~Actually, I'm here to kill you.~
+@76   = ~You have my gratitude if not my friendship. We won't meet again.~
+@77   = ~Find the key.
+
+While I freed Adrian from his chains, he didn't appreciate my earlier taunting and took off by himself. He can attempt to escape this dungeon on his own.~
+@78   = ~You... fine, I'm sorry. Please.~
+@79   = ~Very well. Here's your key.~
+@80   = ~You beg nicely, don't you? I rather enjoy that.~
+@81   = ~Come any closer and you may get to see if you enjoy being bitten also.~
+@82   = ~You... to the abyss with you, <CHARNAME>!~

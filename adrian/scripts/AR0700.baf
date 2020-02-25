@@ -1,0 +1,11 @@
+IF
+	Global("rh#PostCutSpeak","AR0700",0)
+	Global("CutScene01","AR0700",5)
+	GlobalTimerExpired("CutScene01Timer","AR0700")
+	InParty("rh#Adrian")
+	!StateCheck("rh#Adrian",CD_STATE_NOTVALID)
+THEN
+RESPONSE #100
+	SetGlobal("rh#PostCutSpeak","AR0700",1)
+	ActionOverride("rh#Adrian",StartDialogueNoSet(Player1))
+END

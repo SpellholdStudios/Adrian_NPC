@@ -1,0 +1,28 @@
+IF
+	Range(Player1,15)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    Global("rh#OrlannaSpeaks","GLOBAL",0)
+THEN
+RESPONSE #100
+	SetGlobal("rh#OrlannaSpeaks","GLOBAL",1)
+END
+
+IF
+	Range(Player1,15)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    Global("rh#OrlannaSpeaks","GLOBAL",1)
+THEN
+RESPONSE #100
+	StartDialogueNoSet(Player1)
+END
+
+IF
+    Global("rh#OrlannaSpeaks","GLOBAL",2)
+    Global("rh#enemies","LOCALS",0)
+THEN
+  RESPONSE #100
+    SetGlobal("rh#enemies","LOCALS",1)
+    Attack(NearestEnemyOf(Myself))
+END

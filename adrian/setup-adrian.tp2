@@ -1,0 +1,830 @@
+BACKUP ~adrian/backup~
+AUTHOR ~spellholdstudios.net~
+VERSION ~v4.3~
+README ~adrian/translations/%LANGUAGE%/Adrian_Readme.html~
+
+ALWAYS
+// eet compatibility
+ACTION_IF (GAME_IS ~eet~) BEGIN
+  OUTER_SET bg2_chapter = 12
+END ELSE BEGIN
+  OUTER_SET bg2_chapter = 0
+END
+OUTER_FOR (i=1; i<=10; i=i+1) BEGIN
+  OUTER_SET bg2_chapter = bg2_chapter + 1
+  OUTER_SPRINT name_source ~bg2_chapter_%i%~
+  OUTER_SET EVAL ~%name_source%~ = bg2_chapter
+END
+
+  // Borrowed from Edwin Romance: convert strings to UTF-8 for BGEE/BG2EE
+
+  // setup.tra contains in game texts as well as installation texts
+  // and need to be converted
+  ACTION_DEFINE_ARRAY rh#noconvert BEGIN END
+  ACTION_DEFINE_ARRAY rh#reload BEGIN setup END
+
+  LAF HANDLE_CHARSETS
+    INT_VAR
+      infer_charset = 1
+    STR_VAR
+      tra_path = EVAL ~%MOD_FOLDER%/translations~
+      // charset_table = rh#charsets // Use HANDLE_CHARSETS built-in rule for charset choice
+      noconvert_array = rh#noconvert
+      reload_array = rh#reload
+  END
+END
+
+AUTO_TRA ~adrian/translations/%s~
+LANGUAGE ~English~
+         ~English~
+         ~adrian/translations/english/setup.tra~
+LANGUAGE ~French (Translated by Ixyon)~ 
+         ~French~ 
+         ~adrian/translations/french/setup.tra~
+
+BEGIN @0 /* Adrian for BGII */
+REQUIRE_PREDICATE GAME_INCLUDES ~tob~ @1 /* You must have Throne of Bhaal installed. */
+
+APPEND ~STATE.IDS~ ~0x80101FEF CD_STATE_NOTVALID~
+UNLESS ~CD_STATE_NOTVALID~
+
+// Fixing Imoen's dialogue file
+ACTION_IF FILE_EXISTS_IN_GAME ~mel01.cre~ THEN BEGIN
+  COPY_EXISTING ~interdia.2da~ ~override~
+    SET_2DA_ENTRY 17 1 2 ~BIMOEN2~ // fixes ToB version
+    BUT_ONLY_IF_IT_CHANGES
+END ELSE BEGIN
+  APPEND ~interdia.2da~ ~IMOEN       BIMOEN2~ // fixes SoA version
+    UNLESS ~BIMOEN2~
+END
+
+// Audio
+COPY ~adrian/audio/rh#blank.mus~ ~music~
+
+COPY_EXISTING ~songlist.2da~ ~override~
+  SET_2DA_ENTRY 0 2 3 ~rh#blank.mus~
+
+LAF HANDLE_AUDIO
+  INT_VAR
+    music = 1
+  STR_VAR
+    audio_path = ~adrian/audio/music~
+    oggdec_path = ~adrian/audio~
+    sox_path = ~adrian/audio~
+END
+
+COMPILE ~adrian/dialogue/rh#adr.d~
+COMPILE EVALUATE_BUFFER ~adrian/dialogue/rh#adrj.d~
+COMPILE EVALUATE_BUFFER ~adrian/dialogue/rh#adrp.d~
+COMPILE ~adrian/dialogue/brh#adr.d~
+COMPILE EVALUATE_BUFFER ~adrian/dialogue/rh#quest.d~
+
+COMPILE EVALUATE_BUFFER ~adrian/scripts/rh#adr.baf~
+COMPILE ~adrian/scripts/rh#adrd.baf~
+COMPILE ~adrian/scripts/rh#tanya.baf~
+COMPILE ~adrian/scripts/rh#orph.baf~
+COMPILE ~adrian/scripts/rh#cut2.baf~
+COMPILE ~adrian/scripts/rh#sgyl.baf~
+COMPILE ~adrian/scripts/rh#sggrd.baf~
+COMPILE ~adrian/scripts/rh#advmp.baf~
+COMPILE ~adrian/scripts/rh#cut1.baf~
+COMPILE ~adrian/scripts/rh#salk.baf~
+COMPILE ~adrian/scripts/rh#orla.baf~
+COMPILE ~adrian/scripts/rh#deryn.baf~
+COMPILE ~adrian/scripts/rh#zhgrd.baf~
+COMPILE ~adrian/scripts/rh#ercia.baf~
+
+EXTEND_TOP ~ar0603.bcs~ ~adrian/scripts/AR0603.baf~
+EXTEND_TOP ~ar0511.bcs~ ~adrian/scripts/AR0511.baf~
+EXTEND_BOTTOM ~ar0700.bcs~ ~adrian/scripts/AR0700.baf~
+EXTEND_BOTTOM ~ar0314.bcs~ ~adrian/scripts/ar0314.baf~
+EXTEND_BOTTOM ~ar0515.bcs~ ~adrian/scripts/ar0515.baf~
+EXTEND_BOTTOM ~ar0406.bcs~ ~adrian/scripts/ar0406.baf~
+EXTEND_BOTTOM ~ar0809.bcs~ ~adrian/scripts/ar0809.baf~
+EXTEND_BOTTOM ~duergar1.bcs~ ~adrian/scripts/rh#duergar1.baf~
+EXTEND_BOTTOM ~baldur.bcs~   ~adrian/scripts/baldur.baf~
+EXTEND_BOTTOM ~cleanse.bcs~  ~adrian/scripts/cleanse.baf~
+EXTEND_BOTTOM ~bodhiamb.bcs~ ~adrian/scripts/bodhiamb.baf~
+EXTEND_BOTTOM ~vampamb.bcs~  ~adrian/scripts/vampamb.baf~
+EXTEND_BOTTOM ~bguard1.bcs~ ~adrian/scripts/rh#bguard1.baf~
+EXTEND_BOTTOM ~anomen.bcs~ ~adrian/scripts/rh#anomen.baf~
+EXTEND_BOTTOM ~edwin.bcs~ ~adrian/scripts/rh#edwin.baf~
+EXTEND_BOTTOM ~haerdali.bcs~ ~adrian/scripts/rh#haerdalis.baf~
+EXTEND_BOTTOM ~jaheira.bcs~ ~adrian/scripts/rh#jaheira.baf~
+EXTEND_BOTTOM ~korgand.bcs~ ~adrian/scripts/rh#korgand.baf~
+EXTEND_BOTTOM ~vicond.bcs~ ~adrian/scripts/rh#viconiad.baf~
+EXTEND_BOTTOM ~yoshimo.bcs~ ~adrian/scripts/rh#yoshimo.baf~
+
+
+// ToB
+COMPILE ~adrian/dialogue/rh#ad25.d~
+COMPILE EVALUATE_BUFFER ~adrian/dialogue/rh#ad25j.d~
+COMPILE EVALUATE_BUFFER ~adrian/dialogue/rh#ad25p.d~
+COMPILE ~adrian/dialogue/brh#ad25.d~
+
+COMPILE EVALUATE_BUFFER ~adrian/scripts/rh#ad25.baf~
+COMPILE ~adrian/scripts/rh#ad25d.baf~
+COMPILE ~adrian/scripts/rh#cut4.baf~
+EXTEND_BOTTOM ~edwi25.bcs~ ~adrian/scripts/rh#edw25.baf~
+EXTEND_BOTTOM ~jahe25.bcs~ ~adrian/scripts/rh#jah25.baf~
+EXTEND_TOP ~ar6200.bcs~ ~adrian/scripts/ar6200.baf~
+EXTEND_BOTTOM ~cut218g.bcs~ ~adrian/scripts/rh#218.baf~
+
+ACTION_IF GAME_IS ~eet~ BEGIN
+  INCLUDE ~EET/other/EET_functions.tph~ // functions from EET mod
+  LAF ~EET_NPC_TRANSITION~
+    INT_VAR
+      type = 2 // NPC is summonable if met before
+    STR_VAR
+      dv = "rh#Adrian" // death variable of your NPC
+      override_SoA = "rh#adr" // override script of your NPC (SoA)
+      override_ToB = "rh#ad25" // override script of your NPC (ToB)
+      dialog_ToB = "rh#ad25" // joining dialogue for ToB
+      traFile = EVAL "Adrian/translations/%LANGUAGE%/rh#ad25.tra"
+      string = "@1"
+      stringPosDV = "Aerie"
+  END
+END ELSE BEGIN
+  COMPILE ~adrian/dialogue/rh#fatesp.d~ USING ~adrian/translations/%LANGUAGE%/rh#ad25.tra~
+END
+
+// BG2EE
+
+ACTION_IF GAME_IS ~BG2EE EET~ THEN BEGIN
+
+ADD_JOURNAL @12 @61 @69 @77 USING ~adrian/translations/%LANGUAGE%/rh#adr.tra~
+ADD_JOURNAL @32 @38 @82 @84 @89 @127 @129 @143 @147 @149 @151 @153 @155 @196 @197 @215 @226 @227 @249 @262 @264 USING ~adrian/translations/%LANGUAGE%/rh#quest.tra~
+ADD_JOURNAL EXISTING TITLE (#74337) @23 @38 @67 USING ~adrian/translations/%LANGUAGE%/rh#adrp.tra~
+
+COMPILE ~adrian/dialogue/bgee.d~
+EXTEND_BOTTOM ~dorn.bcs~ ~adrian/scripts/dorn.baf~
+EXTEND_BOTTOM ~rh#adr.bcs~ ~adrian/scripts/rh#adree.baf~
+EXTEND_TOP ~ohndenna.bcs~ ~adrian/scripts/ohndenna.baf~
+END
+
+// Area stuff
+
+ACTION_IF GAME_IS ~EET~ THEN BEGIN
+  COPY ~adrian/eet/areas~ ~override~
+END ELSE BEGIN
+COPY ~adrian/areas~ ~override~
+END
+APPEND ~mastarea.2da~
+  ~RH#AD1  value~
+UNLESS ~RH#AD1~
+
+// Copying images and creatures
+
+ACTION_IF (GAME_IS ~bg2ee eet~) BEGIN
+  COPY ~adrian/images/rh#adrl.bmp~ ~override~
+  COPY ~adrian/images/rh#adrl.bmp~ ~override/rh#adrm.bmp~
+  COPY ~adrian/images/rh#adrl.bmp~ ~override/rh#adrs.bmp~
+END ELSE BEGIN
+COPY ~adrian/images~ ~override~
+END
+
+COPY ~adrian/creatures/rh#adr.cre~ ~override/rh#adr.cre~
+  SAY NAME1 @2 /* Adrian */
+  SAY NAME2 @2 /* Adrian */
+  WRITE_ASCII 0X34 ~rh#adrS~ #8   //small portrait
+  WRITE_ASCII 0x3c ~rh#adrM~ #8   //medium portrait
+  SAY BIO @3 /* When asked about his past, ADRIAN smiles slightly and says that there are enough demons to face in the present without worrying about yesterday's as well. Given his recent enslavement, it would appear that he has more than a few of his own with which to contend. Despite his slippery responses, you eventually glean that he spent some time in Sembia, working as a hirespell wizard for a rising merchant prince. You quickly learn that further prodding will win you nothing but headaches. */
+  SAY MORALE @4 /* Oh, I don't think so. */ 
+  SAY HAPPY @5 /* I must admit, this is rather effective. */ 
+  SAY UNHAPPY_ANNOYED @6 /* Well, we certainly know how to waste our time. */ 
+  SAY UNHAPPY_SERIOUS @7 /* Is this sort of nonsense really necessary? */ 
+  SAY LEADER @8 /* Oh, I don't mind this at all. */ 
+  SAY TIRED @9 /* What is this, a Thayvian plantation? Couldn't we find an inn? */
+  SAY BORED @10 /* If I'm drunk again by the time you decide to do something, you've only yourself to blame. */ 
+  SAY DAMAGE @11 /* Damn! */ 
+  SAY DYING @12 /* No... not like this... */ 
+  SAY HURT @13 /* Where's a damn cleric when I need one? */ 
+  SAY AREA_FOREST @14 /* It's not exactly Cormanthor, is it? */ 
+  SAY AREA_CITY @15 /* Ah, the sights and smells of the city... I could do without the latter. */ 
+  SAY AREA_DUNGEON @16 /* Quite the setting... I'm beginning to wish we'd simply paid someone to do this for us. */ 
+  SAY AREA_DAY @17 /* A lovely day, isn't it? Shame about the locale. */ 
+  SAY AREA_NIGHT @18 /* Mmm... the sun sets, and the day truly begins. */ 
+  SAY CRITICAL_HIT @19 /* That should just about finish this. */ 
+  SAY CRITICAL_MISS @20 /* Dammit! */ 
+  SAY TARGET_IMMUNE @21 /* Oh, this is working wonderfully. If you don't find me a better weapon soon, I might as well just sit in a corner and watch. */ 
+  SAY INVENTORY_FULL @22 /* I'm a mage, not a pack mule. */ 
+  SAY SPELL_DISRUPTED @23 /* Some cover over here, if you don't mind... */ 
+  SAY SET_A_TRAP @24 /* This is sure to be entertaining. */ 
+  SAY HIDDEN_IN_SHADOWS @25 /* It's not quite invisibility, but I suppose it'll do. */ 
+  SAY PICKED_POCKET @26 /* Well, what have we here? */ 
+  SAY BATTLE_CRY1 @27 /* To the Abyss with you! */ 
+  SAY BATTLE_CRY2 @28 /* No mercy for scum like this! */ 
+  SAY BATTLE_CRY3 @29 /* Die, already! */ 
+  SAY BATTLE_CRY4 @30 /* I can already count the gold. */ 
+  SAY BATTLE_CRY5 @31 /* Don't even bother to run. */ 
+  SAY SELECT_COMMON1 @32 /* Yes? */ 
+  SAY SELECT_COMMON2 @33 /* What is it? */ 
+  SAY SELECT_COMMON3 @34 /* Speak up. */ 
+  SAY SELECT_COMMON4 @35 /* What now? */ 
+  SAY SELECT_COMMON5 @36 /* Spit it out already. */ 
+  SAY SELECT_COMMON6 @37 /* Hmm? */ 
+  SAY SELECT_ACTION1 @38 /* Certainly. */ 
+  SAY SELECT_ACTION2 @39 /* Of course. */ 
+  SAY SELECT_ACTION3 @40 /* If you insist. And you always do, don't you? */ 
+  SAY SELECT_ACTION4 @41 /* A waste of a mage's talents, if you ask me. */ 
+  SAY SELECT_ACTION5 @42 /* Yes, yes, yes. I'm working on it. */ 
+  SAY SELECT_ACTION6 @43 /* Oh, not this again. */ 
+  SAY SELECT_ACTION7 @44 /* You can do better than that. */ 
+  SAY SELECT_RARE1 @45 /* Go point that thing at someone else. */ 
+  SAY SELECT_RARE2 @46 /* Well, you do have a way with words, don't you? */ 
+
+COPY ~adrian/creatures/rh#adr25.cre~ ~override/rh#adr25.cre~
+  SAY NAME1 @2 /* Adrian */
+  SAY NAME2 @2 /* Adrian */
+  WRITE_ASCII 0X34 ~rh#adrS~ #8   //small portrait
+  WRITE_ASCII 0x3c ~rh#adrM~ #8   //medium portrait
+  SAY BIO @3 /* When asked about his past, ADRIAN smiles slightly and says that there are enough demons to face in the present without worrying about yesterday's as well. Given his recent enslavement, it would appear that he has more than a few of his own with which to contend. Despite his slippery responses, you eventually glean that he spent some time in Sembia, working as a hirespell wizard for a rising merchant prince. You quickly learn that further prodding will win you nothing but headaches. */
+  SAY MORALE @4 /* Oh, I don't think so. */ 
+  SAY HAPPY @5 /* I must admit, this is rather effective. */ 
+  SAY UNHAPPY_ANNOYED @6 /* Well, we certainly know how to waste our time. */ 
+  SAY UNHAPPY_SERIOUS @7 /* Is this sort of nonsense really necessary? */ 
+  SAY LEADER @8 /* Oh, I don't mind this at all. */ 
+  SAY TIRED @9 /* What is this, a Thayvian plantation? Couldn't we find an inn? */
+  SAY BORED @10 /* If I'm drunk again by the time you decide to do something, you've only yourself to blame. */ 
+  SAY DAMAGE @11 /* Damn! */ 
+  SAY DYING @12 /* No... not like this... */ 
+  SAY HURT @13 /* Where's a damn cleric when I need one? */ 
+  SAY AREA_FOREST @47 /* It isn't exactly Cormanthor, is it? */ 
+  SAY AREA_CITY @15 /* Ah, the sights and smells of the city... I could do without the latter. */ 
+  SAY AREA_DUNGEON @16 /* Quite the setting... I'm beginning to wish we'd simply paid someone to do this for us. */ 
+  SAY AREA_DAY @17 /* A lovely day, isn't it? Shame about the locale. */ 
+  SAY AREA_NIGHT @48 /* Mmm, the sun sets, and the day truly begins. */ 
+  SAY CRITICAL_HIT @19 /* That should just about finish this. */ 
+  SAY CRITICAL_MISS @20 /* Dammit! */ 
+  SAY TARGET_IMMUNE @21 /* Oh, this is working wonderfully. If you don't find me a better weapon soon, I might as well just sit in a corner and watch. */ 
+  SAY INVENTORY_FULL @22 /* I'm a mage, not a pack mule. */ 
+  SAY SPELL_DISRUPTED @23 /* Some cover over here, if you don't mind... */ 
+  SAY SET_A_TRAP @24 /* This is sure to be entertaining. */ 
+  SAY HIDDEN_IN_SHADOWS @25 /* It's not quite invisibility, but I suppose it'll do. */ 
+  SAY PICKED_POCKET @26 /* Well, what have we here? */ 
+  SAY BATTLE_CRY1 @27 /* To the Abyss with you! */ 
+  SAY BATTLE_CRY2 @28 /* No mercy for scum like this! */ 
+  SAY BATTLE_CRY3 @29 /* Die, already! */ 
+  SAY BATTLE_CRY4 @30 /* I can already count the gold. */ 
+  SAY BATTLE_CRY5 @31 /* Don't even bother to run. */ 
+  SAY SELECT_COMMON1 @32 /* Yes? */ 
+  SAY SELECT_COMMON2 @33 /* What is it? */ 
+  SAY SELECT_COMMON3 @34 /* Speak up. */ 
+  SAY SELECT_COMMON4 @35 /* What now? */ 
+  SAY SELECT_COMMON5 @36 /* Spit it out already. */ 
+  SAY SELECT_COMMON6 @37 /* Hmm? */ 
+  SAY SELECT_ACTION1 @38 /* Certainly. */ 
+  SAY SELECT_ACTION2 @39 /* Of course. */ 
+  SAY SELECT_ACTION3 @40 /* If you insist. And you always do, don't you? */ 
+  SAY SELECT_ACTION4 @41 /* A waste of a mage's talents, if you ask me. */ 
+  SAY SELECT_ACTION5 @42 /* Yes, yes, yes. I'm working on it. */ 
+  SAY SELECT_ACTION6 @43 /* Oh, not this again. */ 
+  SAY SELECT_ACTION7 @44 /* You can do better than that. */ 
+  SAY SELECT_RARE1 @45 /* Go point that thing at someone else. */ 
+  SAY SELECT_RARE2 @46 /* Well, you do have a way with words, don't you? */ 
+
+// Orphan:
+COPY_EXISTING ~burch2.cre~ ~override/rh#orph.cre~
+  SAY NAME1 @49 /* Girl */
+  SAY NAME2 @49 /* Girl */
+  WRITE_EVALUATED_ASCII DIALOG          ~%DEST_RES%~ #8
+  WRITE_EVALUATED_ASCII DEATHVAR        ~%DEST_RES%~ #32
+  WRITE_EVALUATED_ASCII SCRIPT_OVERRIDE ~%DEST_RES%~ #8
+  WRITE_EVALUATED_ASCII SCRIPT_DEFAULT  ~~ #8
+
+// Tanya:
+COPY ~adrian/creatures/rh#tanya.cre~ ~override~
+  SAY NAME1 @50 /* Tanya */
+  SAY NAME2 @51 /* Tanya Damarov */
+  WRITE_EVALUATED_ASCII DIALOG          ~rh#tanya~ #8
+  WRITE_EVALUATED_ASCII DEATHVAR        ~rh#Tanya~ #32
+  WRITE_EVALUATED_ASCII SCRIPT_OVERRIDE ~rh#tanya~ #8
+  WRITE_EVALUATED_ASCII SCRIPT_DEFAULT  ~~ #8
+  ADD_CRE_ITEM ~chan08~ #0 #0 #0 ~NONE~ ~armor~
+  ADD_CRE_ITEM ~blun15~ #0 #0 #0 ~NONE~ ~weapon1~ EQUIP
+  ADD_CRE_ITEM ~potn52~ #0 #0 #0 ~IDENTIFIED~ ~inv1~ 
+  ADD_CRE_ITEM ~potn21~ #0 #0 #0 ~NONE~ ~inv2~
+
+// Tanya's guards: thief8 (x2)
+COPY_EXISTING ~ffcust01.cre~ ~override/rh#zhgrd.cre~
+  SAY NAME1 @52 /* Zhentarim Guard */
+  SAY NAME2 @52 /* Zhentarim Guard */
+  WRITE_EVALUATED_ASCII DIALOG          ~%DEST_RES%~ #8
+  WRITE_EVALUATED_ASCII DEATHVAR        ~%DEST_RES%~ #32
+  WRITE_EVALUATED_ASCII SCRIPT_OVERRIDE ~%DEST_RES%~ #8
+  WRITE_EVALUATED_ASCII SCRIPT_DEFAULT  ~~ #8
+
+// Spies:
+COPY_EXISTING ~ffcust01.cre~ ~override/rh#deryn.cre~
+  SAY NAME1 @53 /* Deryn */
+  SAY NAME2 @53 /* Deryn */
+  WRITE_EVALUATED_ASCII DIALOG          ~rh#dery~ #8
+  WRITE_EVALUATED_ASCII DEATHVAR        ~rh#Deryn~ #32
+  WRITE_EVALUATED_ASCII SCRIPT_OVERRIDE ~%DEST_RES%~ #8
+  WRITE_EVALUATED_ASCII SCRIPT_DEFAULT  ~~ #8
+  ADD_CRE_ITEM ~potn10~ #0 #0 #0 ~NONE~ ~inv1~
+
+COPY_EXISTING ~thief3.cre~ ~override/rh#orla.cre~
+  SAY NAME1 @54 /* Orlanna */
+  SAY NAME2 @54 /* Orlanna */
+  WRITE_EVALUATED_ASCII DIALOG          ~%DEST_RES%~ #8
+  WRITE_EVALUATED_ASCII DEATHVAR        ~rh#Orlanna~ #32
+  WRITE_EVALUATED_ASCII SCRIPT_OVERRIDE ~%DEST_RES%~ #8
+  WRITE_EVALUATED_ASCII SCRIPT_DEFAULT  ~~ #8
+
+COPY_EXISTING ~thief3.cre~ ~override/rh#salk.cre~
+  SAY NAME1 @55 /* Salka */
+  SAY NAME2 @55 /* Salka */
+  WRITE_EVALUATED_ASCII DIALOG          ~%DEST_RES%~ #8
+  WRITE_EVALUATED_ASCII DEATHVAR        ~rh#Salka~ #32
+  WRITE_EVALUATED_ASCII SCRIPT_OVERRIDE ~%DEST_RES%~ #8
+  WRITE_EVALUATED_ASCII SCRIPT_DEFAULT  ~~ #8
+
+// Soargyl:
+COPY ~adrian/creatures/rh#sgyl.cre~ ~override~
+  SAY NAME1 @56 /* Soargyl */
+  SAY NAME2 @57 /* Talsar Soargyl */
+  WRITE_EVALUATED_ASCII DIALOG          ~rh#sgyl~ #8
+  WRITE_EVALUATED_ASCII DEATHVAR        ~rh#sgyl~ #32
+  WRITE_EVALUATED_ASCII SCRIPT_OVERRIDE ~rh#sgyl~ #8
+  WRITE_EVALUATED_ASCII SCRIPT_DEFAULT  ~~ #8
+  ADD_CRE_ITEM ~rh#hdbd~ #0 #0 #0 ~NONE~ ~helmet~
+  ADD_CRE_ITEM ~dagg24~ #0 #0 #0 ~NONE~ ~weapon1~ EQUIP
+  ADD_CRE_ITEM ~potn52~ #0 #0 #0 ~IDENTIFIED~ ~inv1~ 
+  ADD_CRE_ITEM ~potn37~ #0 #0 #0 ~NONE~ ~inv2~
+
+// Soargyl's guards: trfuedo3
+COPY_EXISTING ~trfued03.cre~ ~override/rh#sggrd.cre~
+  SAY NAME1 @58 /* Soargyl Guard */
+  SAY NAME2 @58 /* Soargyl Guard */
+  WRITE_EVALUATED_ASCII DIALOG          ~%DEST_RES%~ #8
+  WRITE_EVALUATED_ASCII DEATHVAR        ~%DEST_RES%~ #32
+  WRITE_EVALUATED_ASCII SCRIPT_OVERRIDE ~%DEST_RES%~ #8
+  WRITE_EVALUATED_ASCII SCRIPT_DEFAULT  ~~ #8
+
+
+// Vampire Adrian
+COPY_EXISTING ~vampano.cre~ ~override/rh#advmp.cre~
+  SAY NAME1 @2 /* Adrian */
+  SAY NAME2 @2 /* Adrian */
+  WRITE_EVALUATED_ASCII DIALOG          ~rh#vadr~ #8
+  WRITE_EVALUATED_ASCII DEATHVAR        ~%DEST_RES%~ #32
+  WRITE_EVALUATED_ASCII SCRIPT_OVERRIDE ~%DEST_RES%~ #8
+  WRITE_BYTE            0x0237          2
+  WRITE_BYTE            0x0275          2
+  WRITE_ASCII           0x0034          ~rh#adrs~ #8
+  WRITE_ASCII           0x003c          ~rh#adrm~ #8
+  REPLACE_CRE_ITEM ~RH#ADBDY~ #0 #0 #0 ~IDENTIFIED~ ~QITEM1~
+
+
+// Wraith Scene
+COPY_EXISTING ~degard.cre~ ~override/rh#mikai.cre~
+  SAY NAME1 @59 /* Mikail */
+  SAY NAME2 @60 /* Mikail Vasiliev */
+  WRITE_EVALUATED_ASCII DIALOG          ~rh#mikai~ #8
+  WRITE_EVALUATED_ASCII DEATHVAR        ~rh#mikai~ #32
+  WRITE_EVALUATED_ASCII SCRIPT_OVERRIDE ~%DEST_RES%~ #8
+
+
+COPY_EXISTING ~duergar1.cre~ ~override~
+  ADD_CRE_ITEM ~rh#key~ #0 #0 #0 ~IDENTIFIED~ ~inv10~
+
+
+COPY_EXISTING ~ffcust01.cre~ ~override~
+  WRITE_EVALUATED_ASCII SCRIPT_OVERRIDE ~rh#ercia~ #8
+
+// Items
+
+COPY ~Adrian/Items/rh#adrng.itm~ ~override~
+  SAY NAME1 @61 /* Vasiliev Signet Ring */
+  SAY NAME2 @61 /* Vasiliev Signet Ring */
+  SAY DESC @62 /* This was once the signet ring of Adrian's grandfather, a minor lord of Zhentil Keep. While the ring has no magical properties, its significance to Adrian is obvious. */
+
+COPY ~Adrian/Items/rh#note.itm~ ~override~
+  SAY NAME1 @63 /* Tanya's Documents */
+  SAY NAME2 @63 /* Tanya's Documents */
+  SAY DESC @64 /* These documents, discovered in Tanya's room in the Five Flagons, are apparently what Adrian was hoping to find. */
+
+COPY ~Adrian/Items/rh#adbdy.itm~ ~override~
+  SAY NAME1 @65 /* Adrian's Body */
+  SAY NAME2 @65 /* Adrian's Body */
+  SAY DESC @66 /* Adrian was captured by Bodhi and infected with vampirism, forcing you to slay him. There may be some way to revive him, though you don't know what it would be. */
+
+COPY ~Adrian/Items/rh#hdbd.itm~ ~override~
+  SAY NAME1 @67 /* Headband */
+  SAY NAME2 @68 /* Headband of Intellect */
+  SAY UNIDENTIFIED_DESC @69 /* This device is a light cord with a small gem set so that it rests upon the forehead of the wearer. Its purpose is uncertain. */
+  SAY DESC @70 /* This device is a light cord with a small gem set so that it rests upon the forehead of the wearer. The headband adds to the wearer's Intelligence score in the form of an enhancement bonus of +1.
+
+STATISTICS:
+
++1 to Intelligence */
+
+COPY_EXISTING ~key09.itm~ ~override/rh#key.itm~
+  SAY NAME1 @71 /* Key */
+  SAY NAME2 @71 /* Key */
+  SAY DESC @72 /* This is a fairly rusty looking key. It looks like it might fit Adrian's manacles. */
+
+
+APPEND ~pdialog.2da~
+  ~rh#Adrian rh#adrP rh#adrj rh#adrD rh#ad25p rh#ad25j rh#ad25d rh#ad25~
+UNLESS ~rh#Adrian~
+
+APPEND ~interdia.2da~
+  ~rh#Adrian brh#adr brh#ad25~
+UNLESS ~rh#Adrian~
+
+
+// Epilogues
+
+// 1. non-romanced, lawful neutral, Jaheira not in party.
+
+COPY ~Adrian/epilogue/rh#adrep.2da~ ~override/rh#end1.2da~
+REPLACE ~99999~ @73 /* The years following Adrian's travels with <CHARNAME> were surprisingly quiet. Finding himself with too many questions and no true answers, he soon gave up adventuring and took up residence near a temple of Azuth in Cimbar. A life of contemplation, however, ultimately proved unsuitable, and he was encouraged to leave the city after a violent clash with a Chessentan nobleman. Shortly after Bane's resurrection and the resurgence of his church, Adrian relocated to Waterdeep. He would claim the two incidents unrelated, but most believed that for his own protection, he had entered into an arrangement with the Blackstaff. While the truth of this is uncertain, Adrian remained well behaved and is believed to have kept his dealings with the Waterdhavian underworld reasonably limited. He never married nor had children of his own, though he eventually chose to take on apprentices. How he found time to teach them whilst embroiled in Waterdhavian intrigue is considered one of Faerun's greatest mysteries. */
+
+// 2. non-romanced, Jaheira in party.
+
+COPY ~Adrian/epilogue/rh#adrep.2da~ ~override/rh#end2.2da~
+REPLACE ~99999~ @74 /* The years following Adrian's travels with <CHARNAME> were surprisingly quiet. As she had promised, Jaheira accompanied him to Shadowdale, where he attempted to reconcile with his father. The road was as rocky as could be expected, and after a clash with a local Harper, Adrian was kindly invited to leave. He would remain on good terms with Jaheira in the following years and eventually established a functional relationship with his father, but his opinion of the Dale remained as low as it had ever been. Shortly after Bane's resurrection and the resurgence of his church, Adrian relocated to Waterdeep. He would claim the two incidents unrelated, but most believed that for his own protection, he had entered into an arrangement with the Blackstaff. While the truth of this is uncertain, Adrian remained well behaved and is believed to have kept his dealings with the Waterdhavian underworld reasonably limited. He never married nor had children of his own, though he eventually chose to take on apprentices. How he found time to teach them whilst embroiled in Waterdhavian intrigue is considered one of Faerun's greatest mysteries. */
+
+// 3. lawful evil.
+
+COPY ~Adrian/epilogue/rh#adrep.2da~ ~override/rh#end3.2da~
+REPLACE ~99999~ @75 /* Adrian's experiences with <CHARNAME> further embittered him. Never a great admirer of elves, he found his fury towards the late Irenicus turning more and more upon the people of Suldanessellar who, in his mind, had created the monster. Adrian wandered the northern lands for a time after his travels with <CHARNAME>, trying without success to alleviate his bitterness. In failure, he finally returned home to the Moonsea, where he truly came into his power. Taking advantage of the recent turmoil within the ranks of the Zhentarim, he lured away a number of members, promising them the wealth of Suldanessellar instead. This ultimately proved to be his undoing, as he would meet his end at the hands of the famous ranger Drizzt Do'Urden, on the very steps of the city he had once helped to save. */
+
+// 4. romanced, PC ascended.
+
+COPY ~Adrian/epilogue/rh#adrep.2da~ ~override/rh#end4.2da~
+REPLACE ~99999~ @76 /* Despite his assurances that he would survive without her, the months following <CHARNAME>'s ascension were surprisingly difficult for Adrian. He quickly fell out of contact with his former companions and soon left the Sword Coast altogether, taking up residence near a temple of Azuth in Cimbar instead. A life of contemplation, however, ultimately proved unsuitable, and he was encouraged to leave the city after a drunken altercation with a Chessentan nobleman. Shortly after Bane's resurrection and the resurgence of his church, Adrian relocated to Waterdeep. He would claim the two incidents unrelated, but most believed that for his own protection, he had entered into an arrangement with the Blackstaff. While the truth of this is uncertain, Adrian remained well behaved and is believed to have kept his dealings with the Waterdhavian underworld reasonably limited. It was ultimately Cyricists rather than Banites who caught up with Adrian. How they lured so powerful a mage to his death is uncertain, though it is a long established fact that any man can be bested. Their intent, however, was all too clear. When the clerics finally tossed the body onto the steps of <CHARNAME>'s temple, one laughingly claimed, "If that doesn't send a message, I don't know what will." */
+
+// 5. romanced, unmarried, no children, Jaheira not in party.
+
+COPY ~Adrian/epilogue/rh#adrep.2da~ ~override/rh#end5.2da~
+REPLACE ~99999~ @77 /* Mere days after the final defeat of Melissan, <CHARNAME> and Adrian put Tethyr behind them. Concerned about a community's ability to tolerate a child of Bhaal, Adrian's own difficulties notwithstanding, the couple was reluctant to finally settle down in any one place. For a short time, their days together resembled a long (if somewhat tempestuous) honeymoon. It was shortly after Bane's resurrection and the resurgence of his church that the pair finally established themselves in Waterdeep. Adrian would claim the two incidents unrelated, but most believed that for his own protection, he had entered into an arrangement with the Blackstaff. While the truth of this is uncertain, he is said to have kept his dealings with the Waterdhavian underworld reasonably limited. The stories concerning <CHARNAME> herself were considerably more fanciful, however. Half the populace was convinced that she had become one of the Masked Lords of Waterdeep. Others just as happily speculated that she had played everyone for a fool and taken over the criminal underworld. No few insisted that both claims were true. Despite the increasingly wild rumors, <CHARNAME> and Adrian enjoyed life in the City of Splendors. They never had children of their own, though Adrian eventually did choose to take on apprentices. "They're less of a time commitment," he would joke when asked about it. "And more importantly, I can kick them out if they annoy me." */
+
+// 6. romanced, unmarried, no children, Jaheira in party.
+
+COPY ~Adrian/epilogue/rh#adrep.2da~ ~override/rh#end6.2da~
+REPLACE ~99999~ @78 /* Mere days after the final defeat of Melissan, <CHARNAME> and Adrian put Tethyr behind them. Concerned about a community's ability to tolerate a child of Bhaal, Adrian's own difficulties notwithstanding, the couple was reluctant to finally settle down in any one place. For a short time, their days together resembled a long (if somewhat tempestuous) honeymoon. Accompanied by Jaheira, they briefly traveled to Shadowdale, where Adrian attempted to reconcile with his father. The road was as rocky as could be expected, and after a clash with a local Harper, they were kindly invited to leave. It was shortly after Bane's resurrection and the resurgence of his church that the pair finally established themselves in Waterdeep. Adrian would claim the two incidents unrelated, but most believed that for his own protection, he had entered into an arrangement with the Blackstaff. While the truth of this is uncertain, he remained well behaved and is believed to have kept his dealings with the Waterdhavian underworld reasonably limited. The stories concerning <CHARNAME> herself were considerably more fanciful, however. Half the populace was convinced that she had become one of the Masked Lords of Waterdeep. Others just as happily speculated that she had played everyone for a fool and taken over the criminal underworld. No few insisted that both claims were true.  Despite the increasingly wild rumors, <CHARNAME> and Adrian enjoyed life in the City of Splendors. They never had children of their own, though Adrian eventually did choose to take on apprentices. "They're less of a time commitment," he would joke when asked about it. "And more importantly, I can kick them out if they annoy me." */
+
+// 7. married, no children, Jaheira not in party.
+
+COPY ~Adrian/epilogue/rh#adrep.2da~ ~override/rh#end7.2da~
+REPLACE ~99999~ @79 /* Mere days after the final defeat of Melissan, <CHARNAME> and Adrian put Tethyr behind them. They briefly returned to Athkatla, where they were married in a quiet, private ceremony. They were reluctant to settle down immediately, however, and for a short time, their days together resembled a long (if somewhat tempestuous) honeymoon. It was shortly after Bane's resurrection and the resurgence of his church that the pair finally established themselves in Waterdeep. Adrian would claim the two incidents unrelated, but most believed that for his own protection, he had entered into an arrangement with the Blackstaff. While the truth of this is uncertain, he remained well behaved and remained well behaved and is believed to have kept his dealings with the Waterdhavian underworld reasonably limited. The stories concerning <CHARNAME> herself were considerably more fanciful, however. Half the populace was convinced that she had become one of the Masked Lords of Waterdeep. Others just as happily speculated that she had played everyone for a fool and taken over the criminal underworld. No few insisted that both claims were true. Despite the increasingly wild rumors, <CHARNAME> and Adrian enjoyed life in the City of Splendors. They never had children of their own, though Adrian eventually did choose to take on apprentices. "They're less of a time commitment," he would joke when asked about it. "And more importantly, I can kick them out if they annoy me." */
+
+// 8. married, no children, Jaheira in party.
+
+COPY ~Adrian/epilogue/rh#adrep.2da~ ~override/rh#end8.2da~
+REPLACE ~99999~ @80 /* Mere days after the final defeat of Melissan, <CHARNAME> and Adrian put Tethyr behind them. They briefly returned to Athkatla, where they were married in a quiet, private ceremony. They were reluctant to settle down immediately, however, and for a short time, their days together resembled a long (if somewhat tempestuous) honeymoon. Accompanied by Jaheira, they briefly traveled to Shadowdale, where Adrian attempted to reconcile with his father. The road was as rocky as could be expected, and after a clash with a local Harper, they were kindly invited to leave. It was shortly after Bane's resurrection and the resurgence of his church that the pair finally established themselves in Waterdeep. Adrian would claim the two incidents unrelated, but most believed that for his own protection, he had entered into an arrangement with the Blackstaff. While the truth of this is uncertain, he remained well behaved and is believed to have kept his dealings with the Waterdhavian underworld reasonably limited. The stories concerning <CHARNAME> herself were considerably more fanciful, however. Half the populace was convinced that she had become one of the Masked Lords of Waterdeep. Others just as happily speculated that she had played everyone for a fool and taken over the criminal underworld. No few insisted that both claims were true. Despite the increasingly wild rumors, <CHARNAME> and Adrian enjoyed life in the City of Splendors. They never had children of their own, though Adrian eventually did choose to take on apprentices. "They're less of a time commitment," he would joke when asked about it. "And more importantly, I can kick them out if they annoy me." */
+
+// 9. unmarried, one child, Jaheira not in party.
+
+COPY ~Adrian/epilogue/rh#adrep.2da~ ~override/rh#end9.2da~
+REPLACE ~99999~ @81 /* Mere days after the final defeat of Melissan, <CHARNAME> and Adrian put Tethyr behind them. Concerned about a community's ability to tolerate a child of Bhaal, Adrian's own difficulties notwithstanding, the couple was reluctant to finally settle down in any one place. For a short time, their days together resembled a long (if somewhat tempestuous) honeymoon. It was shortly after Bane's resurrection and the resurgence of his church that the pair finally established themselves in Waterdeep. Adrian would claim the two incidents unrelated, but most believed that for his own protection, he had entered into an arrangement with the Blackstaff. While the truth of this is uncertain, he remained well behaved and is believed to have kept his dealings with the Waterdhavian underworld reasonably limited. The stories concerning <CHARNAME> herself were considerably more fanciful, however. Half the populace was convinced that she had become one of the Masked Lords of Waterdeep. Others just as happily speculated that she had played everyone for a fool and taken over the criminal underworld. No few insisted that both claims were true. Despite the increasingly wild rumors, <CHARNAME> and Adrian enjoyed life in the City of Splendors... at least until the birth of their daughter. Despite his lukewarm assent to the concept of children, Adrian found the reality much more difficult to handle. He began drinking far more heavily than he ever had before, and he avoided the responsibilities of fatherhood as much as possible without running away entirely. His relationship with <CHARNAME> quickly deteriorated, though what ultimately became of them and their daughter, no tale tells. */
+
+// 10. unmarried, one child, Jaheira in party.
+
+COPY ~Adrian/epilogue/rh#adrep.2da~ ~override/rh#end10.2da~
+REPLACE ~99999~ @82 /* Mere days after the final defeat of Melissan, <CHARNAME> and Adrian put Tethyr behind them. Concerned about a community's ability to tolerate a child of Bhaal, Adrian's own difficulties notwithstanding, the couple was reluctant to finally settle down in any one place. For a short time, their days together resembled a long (if somewhat tempestuous) honeymoon. Accompanied by Jaheira, they briefly traveled to Shadowdale, where Adrian attempted to reconcile with his father. The road was as rocky as could be expected, and after a clash with a local Harper, they were kindly invited to leave. It was shortly after Bane's resurrection and the resurgence of his church that the pair finally established themselves in Waterdeep. Adrian would claim the two incidents unrelated, but most believed that for his own protection, he had entered into an arrangement with the Blackstaff. While the truth of this is uncertain, he remained well behaved while in the city and is said to have kept his dealings with the Waterdhavian underworld reasonably limited. The stories concerning <CHARNAME> herself were considerably more fanciful, however. Half the populace was convinced that she had become one of the Masked Lords of Waterdeep. Others just as happily speculated that she had played everyone for a fool and taken over the criminal underworld. No few insisted that both claims were true. Despite the increasingly wild rumors, <CHARNAME> and Adrian enjoyed life in the City of Splendors, though the birth of their daughter sorely tested their relationship. Despite his lukewarm assent to the concept of children, Adrian found the reality much more difficult to handle, and he began to drink more heavily than he ever had before. Disturbed by this behavior, his own father unexpectedly came to Waterdeep to speak with him. Nobody outside of the family knows exactly what passed between them, but Adrian has not had a drop of wine to drink since. Despite the rocky beginning, he ultimately proved to be an attentive parent. Too attentive, perhaps, as their daughter grew up to be everything one might expect of a pampered young noblewoman with too much money and too much time... */
+
+// 11. married, one child, Jaheira not in party.
+
+COPY ~Adrian/epilogue/rh#adrep.2da~ ~override/rh#end11.2da~
+REPLACE ~99999~ @83 /* Mere days after the final defeat of Melissan, <CHARNAME> and Adrian put Tethyr behind them. They briefly returned to Athkatla, where they were married in a quiet, private ceremony. They were reluctant to settle down immediately, however, and for a short time, their days together resembled a long (if somewhat tempestuous) honeymoon. It was shortly after Bane's resurrection and the resurgence of his church that the pair finally established themselves in Waterdeep. Adrian would claim the two incidents unrelated, but most believed that for his own protection, he had entered into an arrangement with the Blackstaff. While the truth of this is uncertain, he remained well behaved while in the city and is said to have kept his dealings with the Waterdhavian underworld reasonably limited. The stories concerning <CHARNAME> herself were considerably more fanciful, however. Half the populace was convinced that she had become one of the Masked Lords of Waterdeep. Others just as happily speculated that she had played everyone for a fool and taken over the criminal underworld. No few insisted that both claims were true. Despite the increasingly wild rumors, <CHARNAME> and Adrian enjoyed life in the City of Splendors... at least until the birth of their daughter. Despite his lukewarm assent to the concept of children, Adrian found the reality much more difficult to handle. He began drinking far more heavily than he ever had before, and he avoided the responsibilities of fatherhood as much as possible without running away entirely. His relationship with <CHARNAME> quickly deteriorated, though what ultimately became of them and their daughter, no tale tells. */
+
+// 12. married, one child, Jaheira in party.
+
+COPY ~Adrian/epilogue/rh#adrep.2da~ ~override/rh#end12.2da~
+REPLACE ~99999~ @84 /* Mere days after the final defeat of Melissan, <CHARNAME> and Adrian put Tethyr behind them. They briefly returned to Athkatla, where they were married in a quiet, private ceremony. They were reluctant to settle down immediately, however, and for a short time, their days together resembled a long (if somewhat tempestuous) honeymoon. Accompanied by Jaheira, they briefly traveled to Shadowdale, where Adrian attempted to reconcile with his father. The road was as rocky as could be expected, and after a clash with a local Harper, they were kindly invited to leave. It was shortly after Bane's resurrection and the resurgence of his church that the pair finally established themselves in Waterdeep. Adrian would claim the two incidents unrelated, but most believed that for his own protection, he had entered into an arrangement with the Blackstaff. While the truth of this is uncertain, he remained well behaved while in the city and is said to have kept his dealings with the Waterdhavian underworld reasonably limited. The stories concerning <CHARNAME> herself were considerably more fanciful, however. Half the populace was convinced that she had become one of the Masked Lords of Waterdeep. Others just as happily speculated that she had played everyone for a fool and taken over the criminal underworld. No few insisted that both claims were true. Despite the increasingly wild rumors, <CHARNAME> and Adrian enjoyed life in the City of Splendors, though the birth of their daughter sorely tested their relationship. Despite his lukewarm assent to the concept of children, Adrian found the reality much more difficult to handle, and he began to drink more heavily than he ever had before. Disturbed by this behavior, his own father unexpectedly came to Waterdeep to speak with him. Nobody outside of the family knows exactly what passed between them, but Adrian has not had a drop of wine to drink since. Despite the rocky beginning, he ultimately proved to be an attentive parent. Too attentive, perhaps, as their daughter grew up to be everything one might expect of a pampered young noblewoman with too much money and too much time... */
+
+// Optional Soundsets
+
+BEGIN @88 /* Phaelin's soundset */
+REQUIRE_COMPONENT ~setup-adrian.tp2~ ~0~ @89 /* Please install Adrian before additional content */
+SUBCOMPONENT  @90 /* Install optional soundset for Adrian? */
+
+LAF HANDLE_AUDIO
+  STR_VAR
+    audio_path = ~adrian/audio/phaelin~
+    oggdec_path = ~adrian/audio~
+    sox_path = ~adrian/audio~
+END
+
+BEGIN @91 /* Tatterdemalion's soundset */
+REQUIRE_COMPONENT ~setup-adrian.tp2~ ~0~ @89 /* Please install Adrian before additional content */
+SUBCOMPONENT  @90 /* Install optional soundset for Adrian? */
+
+LAF HANDLE_AUDIO
+  STR_VAR
+    audio_path = ~adrian/audio/tatterdemalion~
+    oggdec_path = ~adrian/audio~
+    sox_path = ~adrian/audio~
+END
+
+BEGIN @85 /* Change Adrian's class to Cleric/Mage */
+REQUIRE_COMPONENT ~setup-adrian.tp2~ ~0~ @89 /* Please install Adrian before additional content */
+SUBCOMPONENT @86 /* Install alternate class for Adrian? */
+
+COPY ~adrian/creatures/rh#adr1.cre~ ~override/rh#adr.cre~
+  SAY NAME1 @2 /* Adrian */
+  SAY NAME2 @2 /* Adrian */
+  WRITE_ASCII 0X34 ~rh#adrS~ #8   //small portrait
+  WRITE_ASCII 0x3c ~rh#adrM~ #8   //medium portrait
+  SAY BIO @3 /* When asked about his past, ADRIAN smiles slightly and says that there are enough demons to face in the present without worrying about yesterday's as well. Given his recent enslavement, it would appear that he has more than a few of his own with which to contend. Despite his slippery responses, you eventually glean that he spent some time in Sembia, working as a hirespell wizard for a rising merchant prince. You quickly learn that further prodding will win you nothing but headaches. */
+  SAY MORALE @4 /* Oh, I don't think so. */ 
+  SAY HAPPY @5 /* I must admit, this is rather effective. */ 
+  SAY UNHAPPY_ANNOYED @6 /* Well, we certainly know how to waste our time. */ 
+  SAY UNHAPPY_SERIOUS @7 /* Is this sort of nonsense really necessary? */ 
+  SAY LEADER @8 /* Oh, I don't mind this at all. */ 
+  SAY TIRED @9 /* What is this, a Thayvian plantation? Couldn't we find an inn? */
+  SAY BORED @10 /* If I'm drunk again by the time you decide to do something, you've only yourself to blame. */ 
+  SAY DAMAGE @11 /* Damn! */ 
+  SAY DYING @12 /* No... not like this... */ 
+  SAY HURT @13 /* Where's a damn cleric when I need one? */ 
+  SAY AREA_FOREST @14 /* It's not exactly Cormanthor, is it? */ 
+  SAY AREA_CITY @15 /* Ah, the sights and smells of the city... I could do without the latter. */ 
+  SAY AREA_DUNGEON @16 /* Quite the setting... I'm beginning to wish we'd simply paid someone to do this for us. */ 
+  SAY AREA_DAY @17 /* A lovely day, isn't it? Shame about the locale. */ 
+  SAY AREA_NIGHT @48 /* Mmm, the sun sets, and the day truly begins. */ 
+  SAY CRITICAL_HIT @19 /* That should just about finish this. */ 
+  SAY CRITICAL_MISS @20 /* Dammit! */ 
+  SAY TARGET_IMMUNE @21 /* Oh, this is working wonderfully. If you don't find me a better weapon soon, I might as well just sit in a corner and watch. */ 
+  SAY INVENTORY_FULL @22 /* I'm a mage, not a pack mule. */ 
+  SAY SPELL_DISRUPTED @23 /* Some cover over here, if you don't mind... */ 
+  SAY SET_A_TRAP @24 /* This is sure to be entertaining. */ 
+  SAY HIDDEN_IN_SHADOWS @25 /* It's not quite invisibility, but I suppose it'll do. */ 
+  SAY PICKED_POCKET @26 /* Well, what have we here? */ 
+  SAY BATTLE_CRY1 @27 /* To the Abyss with you! */ 
+  SAY BATTLE_CRY2 @28 /* No mercy for scum like this! */ 
+  SAY BATTLE_CRY3 @29 /* Die, already! */ 
+  SAY BATTLE_CRY4 @30 /* I can already count the gold. */ 
+  SAY BATTLE_CRY5 @31 /* Don't even bother to run. */ 
+  SAY SELECT_COMMON1 @32 /* Yes? */ 
+  SAY SELECT_COMMON2 @33 /* What is it? */ 
+  SAY SELECT_COMMON3 @34 /* Speak up. */ 
+  SAY SELECT_COMMON4 @35 /* What now? */ 
+  SAY SELECT_COMMON5 @36 /* Spit it out already. */ 
+  SAY SELECT_COMMON6 @37 /* Hmm? */ 
+  SAY SELECT_ACTION1 @38 /* Certainly. */ 
+  SAY SELECT_ACTION2 @39 /* Of course. */ 
+  SAY SELECT_ACTION3 @40 /* If you insist. And you always do, don't you? */ 
+  SAY SELECT_ACTION4 @41 /* A waste of a mage's talents, if you ask me. */ 
+  SAY SELECT_ACTION5 @42 /* Yes, yes, yes. I'm working on it. */ 
+  SAY SELECT_ACTION6 @43 /* Oh, not this again. */ 
+  SAY SELECT_ACTION7 @44 /* You can do better than that. */ 
+  SAY SELECT_RARE1 @45 /* Go point that thing at someone else. */ 
+  SAY SELECT_RARE2 @46 /* Well, you do have a way with words, don't you? */ 
+
+COPY ~adrian/creatures/rh#ad25c.cre~ ~override/rh#adr25.cre~
+  SAY NAME1 @2 /* Adrian */
+  SAY NAME2 @2 /* Adrian */
+  WRITE_ASCII 0X34 ~rh#adrS~ #8   //small portrait
+  WRITE_ASCII 0x3c ~rh#adrM~ #8   //medium portrait
+  SAY BIO @3 /* When asked about his past, ADRIAN smiles slightly and says that there are enough demons to face in the present without worrying about yesterday's as well. Given his recent enslavement, it would appear that he has more than a few of his own with which to contend. Despite his slippery responses, you eventually glean that he spent some time in Sembia, working as a hirespell wizard for a rising merchant prince. You quickly learn that further prodding will win you nothing but headaches. */
+  SAY MORALE @4 /* Oh, I don't think so. */ 
+  SAY HAPPY @5 /* I must admit, this is rather effective. */ 
+  SAY UNHAPPY_ANNOYED @6 /* Well, we certainly know how to waste our time. */ 
+  SAY UNHAPPY_SERIOUS @7 /* Is this sort of nonsense really necessary? */ 
+  SAY LEADER @8 /* Oh, I don't mind this at all. */ 
+  SAY TIRED @9 /* What is this, a Thayvian plantation? Couldn't we find an inn? */
+  SAY BORED @10 /* If I'm drunk again by the time you decide to do something, you've only yourself to blame. */ 
+  SAY DAMAGE @11 /* Damn! */ 
+  SAY DYING @12 /* No... not like this... */ 
+  SAY HURT @13 /* Where's a damn cleric when I need one? */ 
+  SAY AREA_FOREST @14 /* It's not exactly Cormanthor, is it? */ 
+  SAY AREA_CITY @15 /* Ah, the sights and smells of the city... I could do without the latter. */ 
+  SAY AREA_DUNGEON @16 /* Quite the setting... I'm beginning to wish we'd simply paid someone to do this for us. */ 
+  SAY AREA_DAY @17 /* A lovely day, isn't it? Shame about the locale. */ 
+  SAY AREA_NIGHT @48 /* Mmm, the sun sets, and the day truly begins. */ 
+  SAY CRITICAL_HIT @19 /* That should just about finish this. */ 
+  SAY CRITICAL_MISS @20 /* Dammit! */ 
+  SAY TARGET_IMMUNE @21 /* Oh, this is working wonderfully. If you don't find me a better weapon soon, I might as well just sit in a corner and watch. */ 
+  SAY INVENTORY_FULL @22 /* I'm a mage, not a pack mule. */ 
+  SAY SPELL_DISRUPTED @23 /* Some cover over here, if you don't mind... */ 
+  SAY SET_A_TRAP @24 /* This is sure to be entertaining. */ 
+  SAY HIDDEN_IN_SHADOWS @25 /* It's not quite invisibility, but I suppose it'll do. */ 
+  SAY PICKED_POCKET @26 /* Well, what have we here? */ 
+  SAY BATTLE_CRY1 @27 /* To the Abyss with you! */ 
+  SAY BATTLE_CRY2 @28 /* No mercy for scum like this! */ 
+  SAY BATTLE_CRY3 @29 /* Die, already! */ 
+  SAY BATTLE_CRY4 @30 /* I can already count the gold. */ 
+  SAY BATTLE_CRY5 @31 /* Don't even bother to run. */ 
+  SAY SELECT_COMMON1 @32 /* Yes? */ 
+  SAY SELECT_COMMON2 @33 /* What is it? */ 
+  SAY SELECT_COMMON3 @34 /* Speak up. */ 
+  SAY SELECT_COMMON4 @35 /* What now? */ 
+  SAY SELECT_COMMON5 @36 /* Spit it out already. */ 
+  SAY SELECT_COMMON6 @37 /* Hmm? */ 
+  SAY SELECT_ACTION1 @38 /* Certainly. */ 
+  SAY SELECT_ACTION2 @39 /* Of course. */ 
+  SAY SELECT_ACTION3 @40 /* If you insist. And you always do, don't you? */ 
+  SAY SELECT_ACTION4 @41 /* A waste of a mage's talents, if you ask me. */ 
+  SAY SELECT_ACTION5 @42 /* Yes, yes, yes. I'm working on it. */ 
+  SAY SELECT_ACTION6 @43 /* Oh, not this again. */ 
+  SAY SELECT_ACTION7 @44 /* You can do better than that. */ 
+  SAY SELECT_RARE1 @45 /* Go point that thing at someone else. */ 
+  SAY SELECT_RARE2 @46 /* Well, you do have a way with words, don't you? */ 
+
+BEGIN @87 /* Change Adrian's class to Mage/Thief */
+REQUIRE_COMPONENT ~setup-adrian.tp2~ ~0~ @89 /* Please install Adrian before additional content */
+SUBCOMPONENT @86 /* Install alternate class for Adrian? */
+
+COPY ~adrian/creatures/rh#adr2.cre~ ~override/rh#adr.cre~
+  SAY NAME1 @2 /* Adrian */
+  SAY NAME2 @2 /* Adrian */
+  WRITE_ASCII 0X34 ~rh#adrS~ #8   //small portrait
+  WRITE_ASCII 0x3c ~rh#adrM~ #8   //medium portrait
+  SAY BIO @3 /* When asked about his past, ADRIAN smiles slightly and says that there are enough demons to face in the present without worrying about yesterday's as well. Given his recent enslavement, it would appear that he has more than a few of his own with which to contend. Despite his slippery responses, you eventually glean that he spent some time in Sembia, working as a hirespell wizard for a rising merchant prince. You quickly learn that further prodding will win you nothing but headaches. */
+  SAY MORALE @4 /* Oh, I don't think so. */ 
+  SAY HAPPY @5 /* I must admit, this is rather effective. */ 
+  SAY UNHAPPY_ANNOYED @6 /* Well, we certainly know how to waste our time. */ 
+  SAY UNHAPPY_SERIOUS @7 /* Is this sort of nonsense really necessary? */ 
+  SAY LEADER @8 /* Oh, I don't mind this at all. */ 
+  SAY TIRED @9 /* What is this, a Thayvian plantation? Couldn't we find an inn? */
+  SAY BORED @10 /* If I'm drunk again by the time you decide to do something, you've only yourself to blame. */ 
+  SAY DAMAGE @11 /* Damn! */ 
+  SAY DYING @12 /* No... not like this... */ 
+  SAY HURT @13 /* Where's a damn cleric when I need one? */ 
+  SAY AREA_FOREST @14 /* It's not exactly Cormanthor, is it? */ 
+  SAY AREA_CITY @15 /* Ah, the sights and smells of the city... I could do without the latter. */ 
+  SAY AREA_DUNGEON @16 /* Quite the setting... I'm beginning to wish we'd simply paid someone to do this for us. */ 
+  SAY AREA_DAY @17 /* A lovely day, isn't it? Shame about the locale. */ 
+  SAY AREA_NIGHT @48 /* Mmm, the sun sets, and the day truly begins. */ 
+  SAY CRITICAL_HIT @19 /* That should just about finish this. */ 
+  SAY CRITICAL_MISS @20 /* Dammit! */ 
+  SAY TARGET_IMMUNE @21 /* Oh, this is working wonderfully. If you don't find me a better weapon soon, I might as well just sit in a corner and watch. */ 
+  SAY INVENTORY_FULL @22 /* I'm a mage, not a pack mule. */ 
+  SAY SPELL_DISRUPTED @23 /* Some cover over here, if you don't mind... */ 
+  SAY SET_A_TRAP @24 /* This is sure to be entertaining. */ 
+  SAY HIDDEN_IN_SHADOWS @25 /* It's not quite invisibility, but I suppose it'll do. */ 
+  SAY PICKED_POCKET @26 /* Well, what have we here? */ 
+  SAY BATTLE_CRY1 @27 /* To the Abyss with you! */ 
+  SAY BATTLE_CRY2 @28 /* No mercy for scum like this! */ 
+  SAY BATTLE_CRY3 @29 /* Die, already! */ 
+  SAY BATTLE_CRY4 @30 /* I can already count the gold. */ 
+  SAY BATTLE_CRY5 @31 /* Don't even bother to run. */ 
+  SAY SELECT_COMMON1 @32 /* Yes? */ 
+  SAY SELECT_COMMON2 @33 /* What is it? */ 
+  SAY SELECT_COMMON3 @34 /* Speak up. */ 
+  SAY SELECT_COMMON4 @35 /* What now? */ 
+  SAY SELECT_COMMON5 @36 /* Spit it out already. */ 
+  SAY SELECT_COMMON6 @37 /* Hmm? */ 
+  SAY SELECT_ACTION1 @38 /* Certainly. */ 
+  SAY SELECT_ACTION2 @39 /* Of course. */ 
+  SAY SELECT_ACTION3 @40 /* If you insist. And you always do, don't you? */ 
+  SAY SELECT_ACTION4 @41 /* A waste of a mage's talents, if you ask me. */ 
+  SAY SELECT_ACTION5 @42 /* Yes, yes, yes. I'm working on it. */ 
+  SAY SELECT_ACTION6 @43 /* Oh, not this again. */ 
+  SAY SELECT_ACTION7 @44 /* You can do better than that. */ 
+  SAY SELECT_RARE1 @45 /* Go point that thing at someone else. */ 
+  SAY SELECT_RARE2 @46 /* Well, you do have a way with words, don't you? */ 
+
+COPY ~adrian/creatures/rh#ad25t.cre~ ~override/rh#adr25.cre~
+  SAY NAME1 @2 /* Adrian */
+  SAY NAME2 @2 /* Adrian */
+  WRITE_ASCII 0X34 ~rh#adrS~ #8   //small portrait
+  WRITE_ASCII 0x3c ~rh#adrM~ #8   //medium portrait
+  SAY BIO @3 /* When asked about his past, ADRIAN smiles slightly and says that there are enough demons to face in the present without worrying about yesterday's as well. Given his recent enslavement, it would appear that he has more than a few of his own with which to contend. Despite his slippery responses, you eventually glean that he spent some time in Sembia, working as a hirespell wizard for a rising merchant prince. You quickly learn that further prodding will win you nothing but headaches. */
+  SAY MORALE @4 /* Oh, I don't think so. */ 
+  SAY HAPPY @5 /* I must admit, this is rather effective. */ 
+  SAY UNHAPPY_ANNOYED @6 /* Well, we certainly know how to waste our time. */ 
+  SAY UNHAPPY_SERIOUS @7 /* Is this sort of nonsense really necessary? */ 
+  SAY LEADER @8 /* Oh, I don't mind this at all. */ 
+  SAY TIRED @9 /* What is this, a Thayvian plantation? Couldn't we find an inn? */
+  SAY BORED @10 /* If I'm drunk again by the time you decide to do something, you've only yourself to blame. */ 
+  SAY DAMAGE @11 /* Damn! */ 
+  SAY DYING @12 /* No... not like this... */ 
+  SAY HURT @13 /* Where's a damn cleric when I need one? */ 
+  SAY AREA_FOREST @14 /* It's not exactly Cormanthor, is it? */ 
+  SAY AREA_CITY @15 /* Ah, the sights and smells of the city... I could do without the latter. */ 
+  SAY AREA_DUNGEON @16 /* Quite the setting... I'm beginning to wish we'd simply paid someone to do this for us. */ 
+  SAY AREA_DAY @17 /* A lovely day, isn't it? Shame about the locale. */ 
+  SAY AREA_NIGHT @48 /* Mmm, the sun sets, and the day truly begins. */ 
+  SAY CRITICAL_HIT @19 /* That should just about finish this. */ 
+  SAY CRITICAL_MISS @20 /* Dammit! */ 
+  SAY TARGET_IMMUNE @21 /* Oh, this is working wonderfully. If you don't find me a better weapon soon, I might as well just sit in a corner and watch. */ 
+  SAY INVENTORY_FULL @22 /* I'm a mage, not a pack mule. */ 
+  SAY SPELL_DISRUPTED @23 /* Some cover over here, if you don't mind... */ 
+  SAY SET_A_TRAP @24 /* This is sure to be entertaining. */ 
+  SAY HIDDEN_IN_SHADOWS @25 /* It's not quite invisibility, but I suppose it'll do. */ 
+  SAY PICKED_POCKET @26 /* Well, what have we here? */ 
+  SAY BATTLE_CRY1 @27 /* To the Abyss with you! */ 
+  SAY BATTLE_CRY2 @28 /* No mercy for scum like this! */ 
+  SAY BATTLE_CRY3 @29 /* Die, already! */ 
+  SAY BATTLE_CRY4 @30 /* I can already count the gold. */ 
+  SAY BATTLE_CRY5 @31 /* Don't even bother to run. */ 
+  SAY SELECT_COMMON1 @32 /* Yes? */ 
+  SAY SELECT_COMMON2 @33 /* What is it? */ 
+  SAY SELECT_COMMON3 @34 /* Speak up. */ 
+  SAY SELECT_COMMON4 @35 /* What now? */ 
+  SAY SELECT_COMMON5 @36 /* Spit it out already. */ 
+  SAY SELECT_COMMON6 @37 /* Hmm? */ 
+  SAY SELECT_ACTION1 @38 /* Certainly. */ 
+  SAY SELECT_ACTION2 @39 /* Of course. */ 
+  SAY SELECT_ACTION3 @40 /* If you insist. And you always do, don't you? */ 
+  SAY SELECT_ACTION4 @41 /* A waste of a mage's talents, if you ask me. */ 
+  SAY SELECT_ACTION5 @42 /* Yes, yes, yes. I'm working on it. */ 
+  SAY SELECT_ACTION6 @43 /* Oh, not this again. */ 
+  SAY SELECT_ACTION7 @44 /* You can do better than that. */ 
+  SAY SELECT_RARE1 @45 /* Go point that thing at someone else. */ 
+  SAY SELECT_RARE2 @46 /* Well, you do have a way with words, don't you? */ 
+
+
+// Crossmod Content
+
+BEGIN ~Crossmod Content~
+REQUIRE_COMPONENT ~setup-adrian.tp2~ ~0~ ~Please install Adrian before additional content~
+
+// Adrian-Angelo Material
+ACTION_IF FILE_EXISTS_IN_GAME ~rh#adr.dlg~ AND FILE_EXISTS_IN_GAME ~adangel.dlg~
+THEN BEGIN
+  PRINT ~Adding banters between Adrian and Sister Vigilante's Angelo...~
+  COMPILE ~adrian/crossmod/angelo.d~ USING ~adrian/translations/%LANGUAGE%/crossmod.tra~
+END
+
+// Adrian-Arath Material
+ACTION_IF FILE_EXISTS_IN_GAME ~rh#adr.dlg~ AND FILE_EXISTS_IN_GAME ~lk#arath.dlg~
+THEN BEGIN
+  PRINT ~Adding banters between Adrian and Arath...~
+  COMPILE EVALUATE_BUFFER ~adrian/crossmod/arath.d~ USING ~adrian/translations/%LANGUAGE%/crossmod.tra~
+END
+
+// Adrian-Darian Material
+ACTION_IF FILE_EXISTS_IN_GAME ~rh#adr.dlg~ AND FILE_EXISTS_IN_GAME ~t1dar.dlg~
+THEN BEGIN
+  PRINT ~Adding banters between Adrian and Darian...~
+  COMPILE ~adrian/crossmod/darian.d~ USING ~adrian/translations/%LANGUAGE%/crossmod.tra~
+END
+
+// Adrian-Faren Material
+ACTION_IF FILE_EXISTS_IN_GAME ~rh#adr.dlg~ AND FILE_EXISTS_IN_GAME ~fhfrn.dlg~
+THEN BEGIN
+  PRINT ~Adding banters between Adrian and Faren...~
+  COMPILE ~adrian/crossmod/faren.d~ USING ~adrian/translations/%LANGUAGE%/crossmod.tra~
+  EXTEND_BOTTOM ~fhfrn.bcs~ ~adrian/crossmod/faren_fhfrn.baf~
+END
+
+// Adrian-Gavin Material
+ACTION_IF FILE_EXISTS_IN_GAME ~rh#adr.dlg~ AND FILE_EXISTS_IN_GAME ~b!gav25j.dlg~
+THEN BEGIN
+  PRINT ~Adding banters between Adrian and Gavin...~
+  COMPILE ~adrian/crossmod/gavin.d~ USING ~adrian/translations/%LANGUAGE%/crossmod.tra~
+  EXTEND_BOTTOM ~rh#adr.bcs~ ~adrian/crossmod/gavin_rh#adr.baf~
+END
+
+// Adrian-Kivan of Shilmista Material
+ACTION_IF FILE_EXISTS_IN_GAME ~rh#adr.dlg~ AND FILE_EXISTS_IN_GAME ~p#kiv25.dlg~
+THEN BEGIN
+  PRINT ~Adding banters between Adrian and Kivan of Shilmista...~
+  COMPILE EVALUATE_BUFFER ~adrian/crossmod/kivan.d~ USING ~adrian/translations/%LANGUAGE%/crossmod.tra~
+  EXTEND_BOTTOM ~rh#adrd.bcs~ ~adrian/crossmod/kivan_rh#adrd.baf~
+END
+
+// Adrian-Kulyok's Coran Material
+ACTION_IF FILE_EXISTS_IN_GAME ~rh#adr.dlg~ AND FILE_EXISTS_IN_GAME ~o#cor25.dlg~
+THEN BEGIN
+  PRINT ~Adding banters between Adrian and Kulyok's Coran...~
+  COMPILE ~adrian/crossmod/coran.d~ USING ~adrian/translations/%LANGUAGE%/crossmod.tra~
+END
+
+// Adrian-Kulyok's Tiax Material
+ACTION_IF FILE_EXISTS_IN_GAME ~rh#adr.dlg~ AND FILE_EXISTS_IN_GAME ~o#tiax.dlg~
+THEN BEGIN
+  PRINT ~Adding banters between Adrian and Kulyok's Tiax...~
+  COMPILE ~adrian/crossmod/tiax.d~ USING ~adrian/translations/%LANGUAGE%/crossmod.tra~
+END
+
+// Adrian-Kulyok's Xan Material
+ACTION_IF FILE_EXISTS_IN_GAME ~rh#adr.dlg~ AND FILE_EXISTS_IN_GAME ~o#xan25.dlg~
+THEN BEGIN
+  PRINT ~Adding banters between Adrian and Kulyok's Xan...~
+  COMPILE ~adrian/crossmod/xan.d~ USING ~adrian/translations/%LANGUAGE%/crossmod.tra~
+END
+
+// Adrian-Nephele Material
+ACTION_IF FILE_EXISTS_IN_GAME ~rh#adr.dlg~ AND FILE_EXISTS_IN_GAME ~lk#neph.dlg~
+THEN BEGIN
+  PRINT ~Adding banters between Adrian and Nephele...~
+  COMPILE ~adrian/crossmod/nephele.d~ USING ~adrian/translations/%LANGUAGE%/crossmod.tra~
+END
+
+// Adrian-Ninde Material
+ACTION_IF FILE_EXISTS_IN_GAME ~rh#adr.dlg~ AND FILE_EXISTS_IN_GAME ~lk#ni25.dlg~
+THEN BEGIN
+  PRINT ~Adding banters between Adrian and Ninde...~
+  COMPILE ~adrian/crossmod/ninde.d~ USING ~adrian/translations/%LANGUAGE%/crossmod.tra~
+END
+
+// Adrian-Xulaye Material
+ACTION_IF FILE_EXISTS_IN_GAME ~rh#adr.dlg~ AND FILE_EXISTS_IN_GAME ~lk#xula.dlg~
+THEN BEGIN
+  PRINT ~Adding banters between Adrian and Xulaye...~
+  COMPILE ~adrian/crossmod/xulaye.d~ USING ~adrian/translations/%LANGUAGE%/crossmod.tra~
+END
+
+// Adrian-Iylos Material
+ACTION_IF FILE_EXISTS_IN_GAME ~rh#ad25.dlg~ AND FILE_EXISTS_IN_GAME ~lk#iylo.dlg~
+THEN BEGIN
+  PRINT ~Adding banters between Adrian and Iylos...~
+  COMPILE ~adrian/crossmod/iylos.d~ USING ~adrian/translations/%LANGUAGE%/crossmod.tra~
+END

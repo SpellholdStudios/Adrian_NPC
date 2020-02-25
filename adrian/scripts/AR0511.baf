@@ -1,0 +1,82 @@
+IF
+   Global("rh#AdrianItemSpawn","AR0511",0)
+    Global("rh#DamarovQuest","GLOBAL",2)
+THEN
+   RESPONSE #100
+      SetGlobal("rh#AdrianItemSpawn","AR0511",1)
+      ActionOverride("Container 1",CreateItem("rh#note",0,0,0))
+      Continue()
+END
+
+IF
+   Global("rh#AdrianItemSpawn2","AR0511",0)
+   Dead("rh#tanya")
+THEN
+   RESPONSE #100
+      ActionOverride("Container 1",CreateItem("MISC07",512,0,0))
+      Continue()
+END
+
+IF
+   Global("rh#AdrianItemSpawn2","AR0511",0)
+   Dead("rh#tanya")
+THEN
+  RESPONSE #100
+      ActionOverride("Container 1",CreateItem("MISC20",0,0,0))
+      Continue()
+END
+
+IF
+   Global("rh#AdrianItemSpawn2","AR0511",0)
+   Dead("rh#tanya")
+THEN
+  RESPONSE #100
+      ActionOverride("Container 1",CreateItem("MISC41",0,0,0))
+      Continue()
+END
+
+IF
+   Global("rh#AdrianItemSpawn2","AR0511",0)
+   Dead("rh#tanya")
+THEN
+  RESPONSE #100
+      ActionOverride("Container 1",CreateItem("MISC43",0,0,0))
+      SetGlobal("rh#AdrianItemSpawn2","AR0511",1)
+      Continue()
+END
+
+IF
+    Global("rh#Adrian_spydies","GLOBAL",1)
+    OR(2)
+      RealGlobalTimerExpired("rh#Adrian_spydies_timer","GLOBAL")
+      Global("rh#DamarovQuest","GLOBAL",2)
+THEN
+RESPONSE #100
+    SetGlobal("rh#Adrian_spydies","GLOBAL",2)
+    ActionOverride("ercias",DestroySelf())
+    Continue()
+END
+
+// battle
+
+IF
+    Global("rh#TanyaSpawn","AR0511",0)
+    Global("rh#DamarovQuest","GLOBAL",6)
+THEN
+  RESPONSE #100
+    CreateCreature("rh#tanya",[176.815],3)
+    SetGlobal("rh#TanyaSpawn","AR0511",1)
+    Continue()
+END
+
+IF
+    Global("rh#TanyaGuardSpawn","AR0511",0)
+    Global("rh#DamarovQuest","GLOBAL",6)
+THEN
+  RESPONSE #100
+    CreateCreature("rh#zhgrd",[125.785],4)
+    CreateCreature("rh#zhgrd",[344.851],7)
+    CreateCreature("rh#zhgrd",[175.881],4)
+    SetGlobal("rh#TanyaGuardSpawn","AR0511",1)
+    Continue()
+END

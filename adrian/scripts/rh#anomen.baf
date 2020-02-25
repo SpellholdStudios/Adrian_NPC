@@ -1,0 +1,95 @@
+// drunk
+
+IF  
+   CheckStatGT("rh#Adrian",40,INTOXICATION)
+   InParty(Myself)
+   InParty("rh#Adrian") 
+   InMyArea("rh#Adrian") 
+   Alignment("Anomen",LAWFUL_NEUTRAL)
+   CombatCounter(0)
+   !See([ENEMY])
+   !StateCheck("Anomen",CD_STATE_NOTVALID)
+   !StateCheck("rh#Adrian",CD_STATE_NOTVALID)
+   Global("rh#AdrianAnomen5","GLOBAL",0)
+THEN
+RESPONSE #100
+	SetGlobal("rh#AdrianAnomen5","GLOBAL",1)
+END
+
+IF
+	InParty("rh#Adrian")
+	InParty(Myself)
+	See("rh#Adrian")
+	CombatCounter(0)
+	!See([ENEMY])
+	!StateCheck("rh#Adrian",CD_STATE_NOTVALID)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	Global("rh#AdrianAnomen5","GLOBAL",1)
+ THEN
+RESPONSE #100
+	StartDialogueNoSet("rh#Adrian")
+END
+
+// romance conflict
+
+IF
+    InParty(Myself)
+    InParty("rh#Adrian")
+    See(Player1)
+    !StateCheck(Myself,CD_STATE_NOTVALID)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    GlobalGT("rh#AdrianTalks","GLOBAL",34)
+    Global("rh#AnomenChallenges1","GLOBAL",0)
+    Global("AnomenRomanceActive","GLOBAL",1)
+	Global("rh#AdrianRomanceActive","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("rh#AnomenChallenges1","GLOBAL",1)
+    RealSetGlobalTimer("rh#AnomenChallenges1Timer","GLOBAL",1200)
+END
+
+IF
+    InParty(Myself)
+    InParty("rh#Adrian")
+    See(Player1)
+    Global("rh#AnomenChallenges1","GLOBAL",1)
+    Global("AnomenRomanceActive","GLOBAL",1)
+	Global("rh#AdrianRomanceActive","GLOBAL",1)
+    RealGlobalTimerExpired("rh#AnomenChallenges1Timer","GLOBAL")
+THEN
+  RESPONSE #100
+    SetGlobal("rh#AnomenChallenges1","GLOBAL",2)
+END
+
+IF
+    InParty(Myself)
+    InParty("rh#Adrian")
+    See(Player1)
+    !StateCheck(Myself,CD_STATE_NOTVALID)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !Detect([ENEMY])
+    Global("rh#AnomenChallenges1","GLOBAL",2)
+THEN
+  RESPONSE #100
+    MoveToObject(Player1)
+    StartDialogueNoSet(Player1)
+END
+
+// conflict
+
+IF
+    InParty("rh#Adrian")
+    InParty("Anomen")
+    GlobalGT("LoveTalk","LOCALS",23)
+    Global("AnomenMatch","GLOBAL",1)
+    OR(2)
+		Global("rh#AdrianRomanceActive","GLOBAL",1)
+		Global("rh#AdrianRomanceActive","GLOBAL",2)
+	Global("AnomenRomanceActive","GLOBAL",1)
+    Global("rh#AnomenChallenges2","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("rh#AnomenChallenges2","GLOBAL",1)
+    RealSetGlobalTimer("rh#AnomenChallenges2Timer","GLOBAL",600)
+END

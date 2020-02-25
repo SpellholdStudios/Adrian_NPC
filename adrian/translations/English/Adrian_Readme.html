@@ -1,0 +1,965 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+  <head>
+
+    <style type="text/css">
+
+    /*<![CDATA[*/
+
+    <!-- 
+
+      body {
+
+        margin: 0;
+
+        padding: 0;
+
+        cursor: default;
+
+        text-align: center;
+
+        color: #000;
+
+        background: #e3e3db url('http://spellholdstudios.net/images/sh_bg_main.jpg');
+
+      }
+
+      
+
+      #wrap {
+
+        text-align: left;
+
+        margin: 0 auto;
+
+        margin-top: 20px;
+
+        width: 88%;
+
+        font-family: Verdana, Tahoma, Arial, sans-serif;
+
+        font-size: 12px;
+
+        color: #333;
+
+      }
+
+      
+
+      #header {
+
+        text-align: center;
+
+        background: #e5e5e5;
+
+        border: 1px solid #781808;
+
+        border-top: 5px solid #781808;
+
+        border-bottom: 5px solid #781808;
+
+        padding: 5px 0 13px 0;
+
+      }
+
+      
+
+      #header .about {
+
+        margin: 7px 0 0 0;
+
+        padding: 0;
+
+        font-style: italic;
+
+        color: #555;
+
+      }
+
+      
+
+      #header .menu {
+
+        font-weight: bold;
+
+        margin: 0;
+
+        color: #999;
+
+      }
+
+      
+
+      #header .menu a:link,
+
+      #header .menu a:visited {
+
+        color: #333;
+
+      }
+
+      
+
+      #maindiv {
+
+        margin: 0 auto;
+
+        margin-top: -20px;
+
+        width: 80%;
+
+      }
+
+      
+
+      #maindiv .content {
+
+        counter-increment: kman;
+
+        counter-reset: h2;
+
+        background-color: #e8e8e6;
+
+        padding: 0 0 25px 0;
+
+        margin: 50px auto;
+
+        border-width: 1px 1px 4px 10px;
+
+        border-style: solid;
+
+        border-color: #781808;
+
+        position: relative;
+
+        display: block;
+
+      }
+
+      
+
+      #maindiv .content::before {
+
+        content: counter(kman, lower-roman);
+
+        font-size: 100%;
+
+        font-weight: bold;
+
+        text-align: center;
+
+        color: #eee;
+
+        background-color: #781808;
+
+        width: 35px;
+
+        position: absolute;
+
+        top: 0px;
+
+        left: 0px;
+
+        display: block;
+
+      }
+
+      
+
+      h2 {
+
+        display: block;
+
+        font-family: Verdana, Trebuchet MS, Arial, serif;
+
+        text-align: left;
+
+        text-indent: 30px;
+
+        padding: 0px;
+
+        margin: 20px 0 0 0;
+
+        border-bottom: dotted 2px #d0d0d0;
+
+        border-top: dotted 2px #d0d0d0;
+
+        background: #deded9;
+
+        font-size: 160%;
+
+      }
+
+      
+
+      h2::first-letter {
+
+        color: #781808;
+
+        background-color: transparent;
+
+      }
+
+      
+
+      #maindiv p {
+
+        font-size: 100%;
+
+        font-style: normal;
+
+        line-height: 150%;
+
+        padding: 0px;
+
+        margin: 10px auto;
+
+        width: 90%;
+
+        display: block;
+
+      }
+
+      
+
+      #maindiv address a:link,
+
+      #maindiv address a:visited {
+
+        font-weight: bold;
+
+        text-decoration: underline;
+
+        background-color: transparent;
+
+        color: #eaeaea !important;
+
+        padding-right: 5px;
+
+        padding-left: 6px;
+
+      }
+
+      
+
+      #maindiv address a:focus,
+
+      #maindiv address a:hover {
+
+        text-decoration: none;
+
+        color: #F1F1F1;
+
+        border: 0;
+
+      }
+
+      
+
+      #maindiv address a:active {
+
+        color: #fff;
+
+        text-decoration: line-through;
+
+        border: none;
+
+      }
+
+      
+
+      #maindiv address {
+
+        font-size: 95%;
+
+        font-style: normal;
+
+        font-weight: bold;
+
+        text-decoration: none;
+
+        color: #BBB;
+
+        background-color: #781808;
+
+        padding: 3px 0px 0px;
+
+        margin: 0px;
+
+        width: 100%;
+
+        position: absolute;
+
+        bottom: -1px;
+
+        left: 0px;
+
+        display: block;
+
+        text-align: right;
+
+      }
+
+      
+
+      #maindiv .important {
+
+        font-size: 95%;
+
+        font-family: Verdana;
+
+        text-align: left;
+
+        background-color: #F1F1F1;
+
+        border-top: solid 1px #aaa;
+
+        border-bottom: solid 1px #aaa;
+
+        border-left: solid 6px #aaa;
+
+        border-right: solid 6px #aaa;
+
+        padding: 10px;
+
+        margin: 20px auto;
+
+        width: 80%;
+
+        line-height: 160%;
+
+      }
+
+      
+
+      #maindiv .important::before {
+
+        display: none;
+
+      }
+
+      
+
+      #maindiv .important p {
+
+        font-size: 100%;
+
+        text-indent: 0px;
+
+        margin: 5px 0 10px 0;
+
+      }
+
+      
+
+      #maindiv ul {
+
+        margin: -10px 0 0 30px;
+
+        *margin-left: 65px;
+
+      }
+
+      
+
+      #maindiv ol {
+
+        margin: -10px 0 0 35px;
+
+        *margin-left: 70px;
+
+      }
+
+      
+
+      #maindiv .important ul {
+
+        margin: -10px 0 0 15px;
+
+      }
+
+      
+
+      #maindiv .important ol {
+
+        margin: -10px 0 0 20px;
+
+      }
+
+      
+
+      #maindiv ul li {
+
+        list-style-type: square;
+
+        line-height: 150%;
+
+      }
+
+      
+
+      #maindiv ol li {
+
+        line-height: 150%;
+
+      }
+
+      
+
+      .t1 {
+
+        font-weight: bold;
+
+        width: 26%;
+
+        text-align: right;
+
+        clear: right;
+
+        float: left;
+
+        *float: none;
+
+        *margin-left: 65px;
+
+        line-height: 22px;
+
+      }
+
+      
+
+      .t2 {
+
+        text-align: left;
+
+        width: 73%;
+
+        float: right;
+
+        *float: none;
+
+        line-height: 22px;
+
+      }
+
+      
+
+      hr {
+
+        margin: 10px 0 10px 0;
+
+        padding: 0;
+
+        height: 1px;
+
+        border: 0;
+
+        color: #aaa;
+
+        background-color: #aaa;
+
+      }
+
+      
+
+      hr.floatfix {
+
+        clear: both;
+
+        color: #e8e8e6;
+
+        background-color: #e8e8e6;
+
+        *margin: 0;
+
+        *padding: 0;
+
+      }
+
+      
+
+      h1 {
+
+        font-size: 225%;
+
+        color: #444;
+
+        padding: 5px 0 5px 0;
+
+        margin: 0;
+
+        width: 100%;
+
+      }
+
+      
+
+      h3,
+
+      h4,
+
+      h5 {
+
+        margin: 10px 40px 10px 40px;
+
+        padding: 0;
+
+      }
+
+      
+
+      h3 {
+
+        font-size: 125%;
+
+        font-style: italic;
+
+      }
+
+      
+
+      h4 {
+
+        font-size: 125%;
+
+      }
+
+      
+
+      h5 {
+
+        font-size: 100%;
+
+      }
+
+      
+
+      h6 {
+
+        width: 100%;
+
+        margin: 10px 0 15px 0;
+
+        background-color: #ECECEC;
+
+        text-align: left;
+
+        text-indent: 30px;
+
+        font-size: 100%;
+
+        font-style: italic;
+
+        padding-top: 1px;
+
+        padding-bottom: 1px;
+
+        border-bottom: solid 1px #bbb;
+
+        border-top: solid 1px #bbb;
+
+      }
+
+      
+
+      a:link,
+
+      a:visited {
+
+        color: #781808;
+
+        font-weight: bold;
+
+        text-decoration: none;
+
+      }
+
+
+
+      a:hover,
+
+      a:active {
+
+        color: #222;
+
+        border-bottom: 1px solid black;
+
+      }
+
+
+
+    -->
+
+    /*]]>*/
+
+    </style>
+
+    <title>SPELLHOLD STUDIOS - Adrian NPC</title>
+
+  </head>
+
+  <body>
+
+    <a name="top" id="top"></a>
+
+    <div id="wrap">
+
+      <div id="header">
+
+        <h1>Adrian</h1>
+
+        <strong>A Spellhold Studios mod for Baldur's Gate 2: SoA/ToB/BG2EE/EET</strong>
+
+        <hr />
+
+        <p class="about">
+
+          Author: Rhaella
+
+        </p>
+
+        <p class="about">
+
+          <a href="http://www.spellholdstudios.net/ie/adrian">Mod Website</a> &#8226;
+
+          <a href="http://www.shsforums.net/forum/627-adrian/">Mod Forum</a> &#8226;
+
+          Version: 4.2
+
+        </p>
+
+        <hr />
+
+        <p class="menu">
+
+          <a href="#intro">Introduction</a> &middot;
+
+          <a href="#installation">Installation</a> &middot;
+
+          <a href="#details">Details</a> &middot;
+          
+          <a href="#romance">Romance</a> &middot;
+
+          <a href="#credits">Credits</a> &middot;
+
+          <a href="#version">Version History</a>
+
+        </p>
+
+      </div>
+
+      <div id="maindiv">
+
+
+
+        <!-- ================== I n t r o d u c t i o n ================== -->
+
+        <a name="intro" id="intro"></a>
+
+        <div class="content">
+
+          <h2>Introduction</h2>
+
+          <p>Meet Adrian Sianodel, a 33 year old half-elven mage who, after several recent catastrophes, managed to land a brief but involuntary stint as Irenicus' pet wandmaker. Kill the duergar who guard him, and he'll be quite happy to lend his magic to your cause. To repay the debt, to exact vengeance... and perhaps because he simply has nowhere else to go anymore.</p>
+
+		  <p>Adrian has lived an interesting life, for lack of a better term, though he's hoping to finally put his past behind him. Aside from his magic, he has a background in espionage and a decadent -- some might say romantic -- streak that has gotten him into trouble in the past. He once pursued (and ultimately wrecked) a political career with one of the most notorious organizations in the Realms, and may very much enjoy the opportunities for intrigue the Shadow Thieves have to offer... if you can drag him away from fighting with the Harper and the Red Wizard long enough to notice, that is.</p>
+
+		  <p>Adrian may be somewhat difficult to get to know. He is not the most tolerant of people, and while he is intrigued by your powers and heritage (and has far more experience with the machinations of dark gods than he would like), neither his respect nor his trust is particularly easy to earn. That said, he will appreciate a leader willing to take him to task.</p>
+		  
+		  <h4>Content</h4><ul>
+
+          <li>A colorful new sorcerer NPC</li>
+          <li>Content for SoA, ToB, and BG2EE</li>
+          <li>Banters with the original Bioware NPCs</li>
+          <li>Optional Voicing</li>
+          <li>Interjections and other commentary</li>
+          <li>New encounters</li>
+          <li>A romance for an eligible female protagonist</li>
+          <li>A friendship path for a protagonist not romancing him</li>
+          <li>Player initiated dialogue and flirts</li>
+          <li>Original portrait by MiLeah</li></ul>
+
+          <address>
+
+            <span class="footer">Adrian &gt; Introduction</span> &#8226;<a href="#top">BACK TO TOP</a>
+
+          </address>
+
+        </div>
+
+
+
+        <!-- ================== I n s t a l l a t i o n ================== -->
+
+        <a name="installation" id="installation"></a>
+
+        <div class="content">
+
+          <h2>Installation</h2>
+          <h5>PC</h5>
+
+          <p>The Adrian NPC mod is a WeiDU mod, packaged in an extractable .RAR archive. Simply unrar <em>"adrian_v4.rar"</em> (<a href="http://www.rarlabs.com">WinRAR</a>) into your Baldur's Gate II directory and run <em>"setup-adrian.exe"</em>.
+          <p>To uninstall, run <em>"setup-adrian.exe"</em> again and select the uninstall option.</p>
+          <h5>Compatibility and Installation Order</h5>
+
+          <p>Adrian should be compatible with all WeiDU mods, however, we cannot test every single one. If you do encounter an error, please contact K'aeloree (kae@spellholdstudios.net) or alternatively post on the <a href="http://www.shsforums.net/forum/627-adrian/">forums</a>.</p>
+          <p>Although it is not required for the Adrian NPC to function properly, it is always a good idea install the latest version of the <a href="http://www.gibberlings3.net/bg2fixpack/">BG2 Fixpack</a>.</p>
+          <p>Throne of Bhaal must be installed to play Adrian.</p>
+          <address>
+
+            <span class="footer">Adrian &gt; Installation</span> <a href="#top">BACK TO TOP</a>
+
+          </address>
+
+        </div>
+        
+            <!-- ================== D e t a i l s ================== -->
+
+        <a name="details" id="details"></a>
+
+        <div class="content">
+
+          <h2>Details</h2>
+          
+          <p>Adrian is Lawful Evil by alignment, but your experience with him may vary. While he has been involved in some unambiguously evil dealings in the past (and is mostly unapologetic about his history), he's not particularly enamored of aimless or obvious villainy. His worldview is influenced by some very dark philosophy, but he isn't a monster. Expect conflict when adding him to a good-aligned party, but don't expect bloodshed.</p>
+          
+          <h4>Statistics</h4><p>
+          
+          <ul><li>Stength 12</li>
+          <li>Dexterity 16</li>
+          <li>Constitution 10</li>
+          <li>Intelligence 17</li>
+          <li>Wisdom 16</li>
+          <li>Charisma 14</li></ul>
+          
+           <h4>Biography</h4>
+          <p>When asked about his past, Adrian smiles slightly and says that there are enough demons to face in the present without worrying about yesterday's as well. Given his recent enslavement, it would appear that he has more than a few of his own with which to contend. Despite his slippery responses, you eventually glean that he spent some time in Sembia, working as a hirespell wizard for a rising merchant prince. You quickly learn that further prodding will win you nothing but headaches.</p> 
+          
+          <h4>NPC Relationships</h4>
+          <p>There will be conflict, occasionally on the edge of violence, but you can keep him with any Bioware NPC without fearing a lethal outcome. Jaheira in particular is recommended, as her presence can significantly affect the epilogue. This is doubly true if you are romancing him.</p>
+          
+          <h4>Classes</h4>
+          <p>Adrian was conceived of as a sorcerer, but his character and history lend themselves to the cleric/mage and mage/thief multiclasses as well. For this reason, both are included as alternative installation choices. Dialogue may vary in places to take this into account. Installing him as a sorcerer is still recommended, but both alternatives are internally consistent.</p>
+          
+         
+          
+           <address> <span class="footer">Adrian &gt; Details</span> <a href="#top">BACK TO TOP</a>
+
+          </address>
+
+        </div>
+
+
+        <!-- ================== R O M A N C E ================== -->
+
+        <a name="romance" id="romance"></a>
+
+        <div class="content">
+
+          <h2>Romance</h2>
+
+          <h4>Requirements</h4>
+                    
+          <p><ul>
+          <li><strong>Gender:</strong> Adrian will only romance a female protagonist.</li>
+          <li><strong>Race:</strong> Adrian will only romance humans or half-elves.</li>
+          <li><strong>Alignment:</strong> No restrictions.</li>
+          <li><strong>Class restrictions:</strong> No restrictions.</li>
+          <li><strong>Stat restrictions:</strong> INT 12+ and CHR 12+. Adrian admires a keen mind and a strong personality.</li></UL></p>
+
+          <h4>Notes</h4>
+          <ul><p>
+
+         <li>The romance doesn't start immediately. There are a handful of early talks, but the actual romance will not begin until after you have completed his quest.</li></p>
+         <p>
+         <li>Adrian is not particularly thin-skinned. While a PC who treats him overly harshly is unlikely to gain his trust, Adrian values a strong will and prefers a woman who can stand up for herself. Overly righteous or naive behavior will not impress, nor will he care for a stereotypically Chaotic Evil protagonist.</li></p>
+         <p>
+         <li>The first talk will trigger upon resting in an inn after escaping Irenicus's dungeon. There are several other talks that trigger upon rest as well.</li></p>
+          <p>
+         <li>If the romance has stalled, try resting in a forest.</li></p>
+          <p>
+         <li>Reaching the committed stage of the romance before arriving at Spellhold is recommended. You may miss out on some content otherwise.</li></p>
+         <p>
+         <li>Anyone can attempt to flirt with Adrian, but the actual flirtpack will not be available until after you have completed his quest and the romance has begun. Once the romance commits, you can ask him to initiate flirts as well.</li></p>
+
+          <address>
+
+            <span class="footer">Adrian &gt; Romance</span> &#8226;<a href="#top">BACK TO TOP</a>
+
+          </address>
+
+        </div>
+
+
+        <!-- ================== C r e d i t s ================== -->
+
+        <a name="credits" id="credits"></a>
+
+        <div class="content">
+
+          <h2>Credits</h2>
+
+          <p>A huge thanks to K'aeloree for always being there (and for putting up with a barrage of ridiculous questions). Additional thanks to MiLeah for her artwork and to all of my playtesters for their patience and enthusiasm. You guys are amazing.</p>
+
+          <span class="t1">Writer:</span> <span class="t2">Rhaella</span><br />
+
+          <span class="t1">Coder:</span> <span class="t2">K'aeloree</span><br />
+          
+          <span class="t1">Portrait:</span> <span class="t2">MiLeah</span><br />
+
+          <span class="t1">Optional Voicing:</span> <span class="t2">Phaelin & Tatterdemalion</span><br />
+          
+          <span class="t1">French Translation:</span> <span class="t2">Ixyon</span><br />
+
+          <span class="t1">Proofreaders:</span> <span class="t2">K'aeloree, Stnemele, berelinde, Elizavet, Allahandra</span><br />
+          
+          <span class="t1">Testers:</span> <span class="t2">K'aeloree, AmyAE, Myzandria, Seeka, Agashi, BGII-addicted, Brei, eSqr, IceDragon, Oracle, OutofSHD, ramenbito, Sappho, Silver Dawn, soledestiny, Tatyan</span><br />
+          
+          <span class="t1">EET File Conversion:</span> <span class="t2">Roxanne</span><br />
+
+		  <span class="t1">Music:</span> <span class="t2"><div xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/" about="http://freemusicarchive.org/music/Chris_Zabriskie/Preludes/19_-_Prelude_No_19"><span property="dct:title">Prelude No. 19</span> (<a rel="cc:attributionURL" property="cc:attributionName" href="http://freemusicarchive.org/music/Chris_Zabriskie/">Chris Zabriskie</a>) / <a rel="license" href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a></div></span><br />
+			      <hr class="floatfix" />
+          <h5>Programs/tools used in creation:</h5><br />
+          <ul>
+            <li><a href="http://www.weidu.org">WeiDU</a>, by Westley Weimer/Valerio Bigiani (the bigg)</li>
+            <li><a href="http://www.idi.ntnu.no/~joh/ni/">Near Infinity</a>, by Jon Olav Hauglid</li>
+            <li><a href="http://www.shsforums.net/topic/31285-infinity-explorer-v085/">Infinity Explorer</a>, by Dmitry Jemerov/bigmoshi</li>
+            <li><a href="http://www.rarlab.com/">WinRAR</a>, by Eugene Roshal/Alexander Roshal</li>
+            <li><a href="http://iesdp.gibberlings3.net">IESDP</a>, maintained by igi</li>
+          </ul>
+          <h5>Copyright Notice:</h5>
+          <div class="important">
+            <p>The Adrian NPC was developed by Rhaella, based on material from the game Baldur's Gate II and its expansion.</p>
+
+            <p>All mod content is &copy; Rhaella.</p>
+            <p>Baldur's Gate II: Shadows of Amn and Baldur's Gate II: Throne of Bhaal &copy; TSR, Inc. The BioWare Infinity Engine is &copy; BioWare Corp.</p>
+            <p>Please note that any and all redistribution and/or hosting of this mod is prohibited without permission from the author(s).</p>
+          </div>
+			
+          <address>
+
+            <span class="footer">Adrian &gt; Credits</span> &#8226;<a href="#top">BACK TO TOP</a>
+
+          </address>
+
+        </div>
+
+
+
+        <!-- ================== V e r s i o n   H i s t o r y ================== -->
+
+        <a name="version" id="version"></a>
+
+        <div class="content">
+
+          <h2>Version history</h2>
+
+          <h6>13 July 2018 - Version 4.3:</h6>
+
+          <ul>
+
+            <li>Crossmod TRAified</li></ul>
+
+          <h6>16 March 2018 - Version 4.2:</h6>
+
+          <ul>
+
+            <li>Tra file error fixed</li></ul>
+
+          <h6>14 March 2018 - Version 4.1:</h6>
+
+          <ul>
+
+            <li>EET compatibility fixed</li></ul>
+
+          <h6>8 March 2018 - Version 4:</h6>
+
+          <ul>
+
+            <li>Optional voicing added, EET compatibility implemented</li></ul>
+
+          <h6>19 January 2015 - Version 3.1:</h6>
+
+          <ul>
+
+            <li>Several fixes to the French version added</li></ul>
+
+          <h6>11 January 2015 - Version 3:</h6>
+
+          <ul>
+
+            <li>French translation added</li></ul>
+
+          <h6>15 July 2014 - Version 2.3:</h6>
+
+          <ul>
+
+            <li>Repeating quest dialogue fixed for real this time</li></ul>
+
+          <h6>19 May 2014 - Version 2.2:</h6>
+
+          <ul>
+
+            <li>Repeating quest dialogue fixed</li>
+            <li>Several BG2EE bugs fixed</li>
+            <li>PID comments added for BG2EE NPCs</li></ul>
+
+     		  <h6>17 November 2013 - Version 2.1:</h6>
+
+          <ul>
+
+            <li>Bug in quest dialogue fixed</li></ul>
+
+		  <h6>15 November 2013 - Version 2:</h6>
+
+          <ul>
+
+            <li>BG2EE compatibility and content added</li>
+            <li>crossmod content added</li></ul>
+		  
+		  <h6>9 January 2013 - Version 1.3:</h6>
+
+          <ul>
+
+            <li>Dialogue edits</li></ul>
+    
+    <h6>20 September 2012 - Version 1.2:</h6>
+
+          <ul>
+
+            <li>Class specific bug fixed</li></ul>
+
+          <h6>27 August 2012 - Version 1.1:</h6>
+
+          <ul>
+
+            <li>Several minor bug fixes</li></ul>
+          
+          <h6>19 August 2012 - Version 1.0:</h6>
+
+          <ul>
+
+            <li>Initial release</li>
+
+          </ul>
+
+          <address>
+
+            <span class="footer">Adrian &gt; Version History</span> &#8226;<a href="#top">BACK TO TOP</a>
+
+          </address>
+
+        </div>
+
+
+
+      </div>
+
+    </div>
+
+  </body>
+
+</html>

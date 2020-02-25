@@ -1,0 +1,74 @@
+IF
+    Global("rh#SoargylEncounter","GLOBAL",1)
+THEN
+  RESPONSE #100
+    MoveToObject(Player1)
+    Dialogue(Player1)
+END
+
+IF
+    Global("rh#SoargylEncounter","GLOBAL",2)
+    !Global("rh#SoargylReconsider","GLOBAL",1)
+    Global("rh#SoargylFight","GLOBAL",0)
+THEN
+  RESPONSE #100
+    CreateCreature("rh#sggrd",[978.328],2)
+    CreateCreature("rh#sggrd",[1025.350],2)
+    CreateCreature("rh#sggrd",[1077.388],2)
+    CreateCreature("rh#sggrd",[1116.414],2)
+    CreateCreature("rh#sggrd",[805.459],8)
+    CreateCreature("rh#sggrd",[922.548],8)
+    FadeFromColor([20.0],0)
+    Wait(2)
+    SetGlobal("rh#SoargylFight","GLOBAL",1)
+END
+
+IF
+    Global("rh#SoargylFight","GLOBAL",1)
+THEN
+  RESPONSE #100
+    Dialogue(Player1)
+END
+
+IF
+    Global("rh#SoargylFight","GLOBAL",3)
+    Global("rh#enemies","LOCALS",0)
+THEN
+  RESPONSE #100
+    SetGlobal("rh#enemies","LOCALS",1)
+    Enemy()
+    ApplySpell(Myself,WIZARD_STONE_SKIN)
+END
+
+IF
+	Global("rh#enemies","LOCALS",1)
+THEN
+  RESPONSE #100
+    SetGlobal("rh#enemies","LOCALS",2)
+    Spell(NearestEnemyOf(Myself),WIZARD_CONFUSION)
+END
+
+IF
+	Global("rh#enemies","LOCALS",2)
+THEN
+  RESPONSE #100
+    SetGlobal("rh#enemies","LOCALS",3)
+    Spell(Myself,WIZARD_ANIMATE_DEAD)
+END
+
+IF
+	Global("rh#enemies","LOCALS",3)
+THEN
+  RESPONSE #100
+    SetGlobal("rh#enemies","LOCALS",4)
+    Spell(NearestEnemyOf(Myself),WIZARD_SKULL_TRAP)
+END
+
+IF
+	Global("rh#SoargylBetrayed","GLOBAL",1)
+	!See("rh#Adrian")
+THEN
+RESPONSE #100
+	SetGlobal("rh#SoargylBetrayed","GLOBAL",2)
+    Dialogue(Player1)
+END

@@ -1,0 +1,22 @@
+IF
+	Range(Player1,15)
+	InParty("rh#Adrian")
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    !StateCheck("rh#Adrian",CD_STATE_NOTVALID)
+    Global("rh#DamarovQuest","GLOBAL",4)
+    Global("rh#ErciasIsAnnoying","GLOBAL",0)
+THEN
+RESPONSE #100
+	StartDialogueNoSet(Player1)
+END
+
+
+IF
+    Global("rh#ErciasIsAnnoying","GLOBAL",1)
+    Global("rh#enemies","LOCALS",0)
+THEN
+  RESPONSE #100
+    SetGlobal("rh#enemies","LOCALS",1)
+    Attack(NearestEnemyOf(Myself))
+END

@@ -1,0 +1,8 @@
+IF
+Global("rh#SalkaSpawned","AR0314",0)
+Global("rh#DamarovQuest","GLOBAL",4)
+THEN
+  RESPONSE #100
+    CreateCreature("rh#salk",[453.373],9)
+    SetGlobal("rh#SalkaSpawned","AR0314",1)
+END

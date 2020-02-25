@@ -1,0 +1,9 @@
+IF
+    Global("rh#SoargylFight","GLOBAL",3)
+    Global("rh#enemies","LOCALS",0)
+THEN
+  RESPONSE #100
+    SetGlobal("rh#enemies","LOCALS",1)
+    Enemy()
+    Attack(NearestEnemyOf(Myself))
+END

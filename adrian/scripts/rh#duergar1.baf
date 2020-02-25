@@ -1,0 +1,7 @@
+IF
+	Global("rh#ZhentsAreFriendsNotFood","LOCALS",0)
+THEN
+RESPONSE #100
+	SetGlobal("rh#ZhentsAreFriendsNotFood","LOCALS",1)
+	ChangeEnemyAlly("rh#Adrian",NEUTRAL)
+END

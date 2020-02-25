@@ -1,0 +1,217 @@
+// 1. Non-romanced, Lawful Neutral, no Jaheira.
+
+IF
+	Global("StartEndBios","AR6200",1)
+	InParty("rh#Adrian")
+	!InParty("Jaheira")
+	Global("rh#AdrianBio","GLOBAL",0)
+	!Global("rh#AdrianRomanceActive","GLOBAL",2)
+	!Alignment("rh#Adrian",MASK_EVIL)
+THEN
+RESPONSE #100
+	SetGlobal("rh#AdrianBio","GLOBAL",1)
+	TextScreen("rh#end1")
+	SmallWait(1)
+	Continue()
+END
+
+// 2. Non-romanced, Lawful Neutral, Jaheira.
+
+IF
+	Global("StartEndBios","AR6200",1)
+	InParty("rh#Adrian")
+	InParty("Jaheira")
+	Global("rh#AdrianBio","GLOBAL",0)
+	!Global("rh#AdrianRomanceActive","GLOBAL",2)
+	!Alignment("rh#Adrian",MASK_EVIL)
+THEN
+RESPONSE #100
+	SetGlobal("rh#AdrianBio","GLOBAL",1)
+	TextScreen("rh#end2")
+	SmallWait(1)
+	Continue()
+END
+
+// 3. Lawful Evil.
+
+IF
+	Global("StartEndBios","AR6200",1)
+	InParty("rh#Adrian")
+	Global("rh#AdrianBio","GLOBAL",0)
+	Alignment("rh#Adrian",MASK_EVIL)
+THEN
+RESPONSE #100
+	SetGlobal("rh#AdrianBio","GLOBAL",1)
+	TextScreen("rh#end3")
+	SmallWait(1)
+	Continue()
+END
+
+// 4. Romanced, PC ascends.
+
+IF
+	Global("StartEndBios","AR6200",1)
+	InParty("rh#Adrian")
+	Global("rh#AdrianBio","GLOBAL",0)
+	Global("rh#AdrianRomanceActive","GLOBAL",2)
+	Global("PlayerChoseEssence","GLOBAL",1)
+THEN
+RESPONSE #100
+	SetGlobal("rh#AdrianBio","GLOBAL",1)
+	TextScreen("rh#end4")
+	SmallWait(1)
+	Continue()
+END
+
+// 5. Romance ending #1. Unmarried, no children, no Jaheira.
+
+IF
+	Global("StartEndBios","AR6200",1)
+	InParty("rh#Adrian")
+	!InParty("Jaheira")
+	Global("rh#AdrianBio","GLOBAL",0)
+	Global("rh#AdrianRomanceActive","GLOBAL",2)
+	Global("PlayerChoseEssence","GLOBAL",0)
+	!Global("rh#EpilogueWedding","GLOBAL",1)
+	!Global("rh#AdrianChildren","GLOBAL",2)
+THEN
+RESPONSE #100
+	SetGlobal("rh#AdrianBio","GLOBAL",1)
+	TextScreen("rh#end5")
+	SmallWait(1)
+	Continue()
+END
+
+// 6. Romance ending #2. Unmarried, no children, Jaheira.
+
+IF
+	Global("StartEndBios","AR6200",1)
+	InParty("rh#Adrian")
+	InParty("Jaheira")
+	Global("rh#AdrianBio","GLOBAL",0)
+	Global("rh#AdrianRomanceActive","GLOBAL",2)
+	Global("PlayerChoseEssence","GLOBAL",0)
+	!Global("rh#EpilogueWedding","GLOBAL",1)
+	!Global("rh#AdrianChildren","GLOBAL",2)
+THEN
+RESPONSE #100
+	SetGlobal("rh#AdrianBio","GLOBAL",1)
+	TextScreen("rh#end6")
+	SmallWait(1)
+	Continue()
+END
+
+// 7. Romance ending #3. Married, no children, no Jaheira.
+
+IF
+	Global("StartEndBios","AR6200",1)
+	InParty("rh#Adrian")
+	!InParty("Jaheira")
+	Global("rh#AdrianBio","GLOBAL",0)
+	Global("rh#AdrianRomanceActive","GLOBAL",2)
+	Global("PlayerChoseEssence","GLOBAL",0)
+	Global("rh#EpilogueWedding","GLOBAL",1)
+	!Global("rh#AdrianChildren","GLOBAL",2)
+THEN
+RESPONSE #100
+	SetGlobal("rh#AdrianBio","GLOBAL",1)
+	TextScreen("rh#end7")
+	SmallWait(1)
+	Continue()
+END
+
+// 8. Romance ending #4. Married, no children, Jaheira.
+
+IF
+	Global("StartEndBios","AR6200",1)
+	InParty("rh#Adrian")
+	InParty("Jaheira")
+	Global("rh#AdrianBio","GLOBAL",0)
+	Global("rh#AdrianRomanceActive","GLOBAL",2)
+	Global("PlayerChoseEssence","GLOBAL",0)
+	Global("rh#EpilogueWedding","GLOBAL",1)
+	!Global("rh#AdrianChildren","GLOBAL",2)
+THEN
+RESPONSE #100
+	SetGlobal("rh#AdrianBio","GLOBAL",1)
+	TextScreen("rh#end8")
+	SmallWait(1)
+	Continue()
+END
+
+// 9. Romance ending #5. Unmarried, one child, no Jaheira.
+
+IF
+	Global("StartEndBios","AR6200",1)
+	InParty("rh#Adrian")
+	!InParty("Jaheira")
+	Global("rh#AdrianBio","GLOBAL",0)
+	Global("rh#AdrianRomanceActive","GLOBAL",2)
+	Global("PlayerChoseEssence","GLOBAL",0)
+	!Global("rh#EpilogueWedding","GLOBAL",1)
+	Global("rh#AdrianChildren","GLOBAL",2)
+THEN
+RESPONSE #100
+	SetGlobal("rh#AdrianBio","GLOBAL",1)
+	TextScreen("rh#end9")
+	SmallWait(1)
+	Continue()
+END
+
+// 10. Romance ending #6. Unmarried, one child, Jaheira.
+
+IF
+	Global("StartEndBios","AR6200",1)
+	InParty("rh#Adrian")
+	InParty("Jaheira")
+	Global("rh#AdrianBio","GLOBAL",0)
+	Global("rh#AdrianRomanceActive","GLOBAL",2)
+	Global("PlayerChoseEssence","GLOBAL",0)
+	!Global("rh#EpilogueWedding","GLOBAL",1)
+	Global("rh#AdrianChildren","GLOBAL",2)
+THEN
+RESPONSE #100
+	SetGlobal("rh#AdrianBio","GLOBAL",1)
+	TextScreen("rh#end10")
+	SmallWait(1)
+	Continue()
+END
+
+// 11. Romance ending #7. Married, one child, no Jaheira.
+
+IF
+	Global("StartEndBios","AR6200",1)
+	InParty("rh#Adrian")
+	!InParty("Jaheira")
+	Global("rh#AdrianBio","GLOBAL",0)
+	Global("rh#AdrianRomanceActive","GLOBAL",2)
+	Global("PlayerChoseEssence","GLOBAL",0)
+	Global("rh#EpilogueWedding","GLOBAL",1)
+	Global("rh#AdrianChildren","GLOBAL",2)
+	
+THEN
+RESPONSE #100
+	SetGlobal("rh#AdrianBio","GLOBAL",1)
+	TextScreen("rh#end11")
+	SmallWait(1)
+	Continue()
+END
+
+// 12. Romance ending #8. Married, one child, Jaheira.
+
+IF
+	Global("StartEndBios","AR6200",1)
+	InParty("rh#Adrian")
+	InParty("Jaheira")
+	Global("rh#AdrianBio","GLOBAL",0)
+	Global("rh#AdrianRomanceActive","GLOBAL",2)
+	Global("PlayerChoseEssence","GLOBAL",0)
+	Global("rh#EpilogueWedding","GLOBAL",1)
+	Global("rh#AdrianChildren","GLOBAL",2)
+THEN
+RESPONSE #100
+	SetGlobal("rh#AdrianBio","GLOBAL",1)
+	TextScreen("rh#end12")
+	SmallWait(1)
+	Continue()
+END

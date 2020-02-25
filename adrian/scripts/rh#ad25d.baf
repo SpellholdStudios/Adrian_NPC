@@ -1,0 +1,75 @@
+// talk 3 romance
+
+IF
+	RealGlobalTimerExpired("rh#AdrianTalksTOBTimer","GLOBAL")
+	InParty("rh#Adrian")
+	See(Player1)
+	!See([ENEMY])
+	!ActuallyInCombat()
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	Global("rh#AdrianRomanceActive","GLOBAL",2)
+	Global("rh#AdrianTalksTOB","GLOBAL",5)
+THEN
+RESPONSE #100
+	IncrementGlobal("rh#AdrianTalksTOB","GLOBAL",1)
+	PlaySong(0)
+    PlaySound("rh#adrom")
+	MoveToObject(Player1)
+	StartDialogueNoSet(Player1)
+END
+
+// talk 3 friendship
+
+IF
+	RealGlobalTimerExpired("rh#AdrianTalksTOBTimer","GLOBAL")
+	InParty("rh#Adrian")
+	See(Player1)
+	!See([ENEMY])
+	!ActuallyInCombat()
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	Global("rh#AdrianFriendshipActive","GLOBAL",1)
+	Global("rh#AdrianTalksTOB","GLOBAL",5)
+THEN
+RESPONSE #100
+	IncrementGlobal("rh#AdrianTalksTOB","GLOBAL",1)
+	MoveToObject(Player1)
+	StartDialogueNoSet(Player1)
+END
+
+// sex
+
+IF
+	InParty(Myself)
+    See(Player1)
+    !StateCheck("Myself",CD_STATE_NOTVALID)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !See([ENEMY])
+	Global("rh#AdrAskedSex","GLOBAL",3)
+	Global("rh#AdrFirstSex","GLOBAL",0)
+THEN
+  RESPONSE #100
+	SetGlobal("rh#AdrFirstSex","GLOBAL",1)
+	MoveToObject(Player1)
+    StartDialogueNoSet(Player1)
+END
+
+// Keldorn
+
+IF
+	InParty("rh#Adrian")
+	InParty("Keldorn")
+	See("Keldorn")
+	!See([ENEMY])
+	!ActuallyInCombat()
+	Alignment("rh#Adrian",LAWFUL_NEUTRAL)
+	!StateCheck("Keldorn",CD_STATE_NOTVALID)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	Global("rh#AdrianKeldornTOB","GLOBAL",0)
+THEN
+RESPONSE #100
+	IncrementGlobal("rh#AdrianKeldornTOB","GLOBAL",1)
+	StartDialogueNoSet("Keldorn")
+END

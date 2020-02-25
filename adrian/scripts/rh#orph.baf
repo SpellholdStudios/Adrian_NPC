@@ -1,0 +1,25 @@
+IF
+	Global("rh#AdrianTalks","GLOBAL",9)
+	Global("rh#OrphanSpawn","GLOBAL",1)
+	InParty("rh#Adrian")
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck("rh#Adrian",CD_STATE_NOTVALID)
+	!See("rh#Adrian")
+THEN
+RESPONSE #100
+	MoveToObject("rh#Adrian")
+END
+
+IF
+	Global("rh#AdrianTalks","GLOBAL",9)
+	Global("rh#OrphanSpawn","GLOBAL",1)
+	InParty("rh#Adrian")
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck("rh#Adrian",CD_STATE_NOTVALID)
+	See("rh#Adrian")
+THEN
+RESPONSE #100
+	StartDialogueNoSet("rh#Adrian")
+END

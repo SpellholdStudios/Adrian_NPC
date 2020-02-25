@@ -1,0 +1,9 @@
+IF
+    True()
+THEN
+  RESPONSE #100
+    CutSceneId("rh#mikai")
+    CreateVisualEffectObject("SPFLESHS",Myself)
+    Wait(1)
+    ChangeAnimation("HGWRA02")
+END

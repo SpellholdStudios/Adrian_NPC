@@ -1,0 +1,14 @@
+//Spawning Mikail
+
+IF
+	True()
+THEN
+RESPONSE #100
+	CutSceneId(Player1)
+	CreateVisualEffect("SPFLESHS",[1454.1398])
+	Wait(1)
+	CreateCreature("rh#mikai",[1454.1398],14)
+	Wait(1)
+	ActionOverride("rh#mikai",StartDialogueNoSet(Player1))
+END
+

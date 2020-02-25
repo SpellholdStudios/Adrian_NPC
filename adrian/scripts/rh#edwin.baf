@@ -1,0 +1,65 @@
+IF
+	InParty("rh#Adrian")
+	InParty("Edwin")
+	Global("rh#AdrianZhent","GLOBAL",1)
+	Global("rh#AdrianEdwin3","GLOBAL",0)
+THEN
+RESPONSE #100
+	SetGlobal("rh#AdrianEdwin3","GLOBAL",1)
+	RealSetGlobalTimer("rh#AdrianEdwinTalkTimer","GLOBAL",600)
+END
+
+IF
+	RealGlobalTimerExpired("rh#AdrianEdwinTalkTimer","GLOBAL")
+	InParty("rh#Adrian")
+	InParty("Edwin")
+	See("rh#Adrian")
+	!ActuallyInCombat()
+	!StateCheck("rh#Adrian",CD_STATE_NOTVALID)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	Global("rh#AdrianEdwin3","GLOBAL",1)
+THEN
+RESPONSE #100
+	SetGlobal("rh#AdrianEdwin3","GLOBAL",2)
+END
+
+IF
+	RealGlobalTimerExpired("rh#AdrianEdwinTalkTimer","GLOBAL")
+	InParty("rh#Adrian")
+	InParty("Edwin")
+	See("rh#Adrian")
+	!StateCheck("rh#Adrian",CD_STATE_NOTVALID)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	Global("rh#AdrianEdwin3","GLOBAL",2)
+ THEN
+RESPONSE #100
+	StartDialogueNoSet("rh#Adrian")
+END
+
+IF
+	InParty("rh#Adrian")
+	!InParty("Edwin")
+	Global("rh#AdrianZhent","GLOBAL",1)
+	Global("rh#AdrianEdwin3","GLOBAL",0)
+THEN
+RESPONSE #100
+	SetGlobal("rh#AdrianEdwin3","GLOBAL",3)
+END
+
+// conflict
+
+IF
+    InParty("rh#Adrian")
+    InParty("Edwin")
+    See(Player1)
+    GlobalGT("EdwinLoveTalk","LOCALS",27) // after LT 14
+	Global("EdwinRomanceActive","GLOBAL",1)
+    Global("rh#EdwinChallenge","GLOBAL",0)
+    OR(2)
+	Global("rh#AdrianRomanceActive","GLOBAL",1)
+	Global("rh#AdrianRomanceActive","GLOBAL",2)
+THEN
+  RESPONSE #100
+    SetGlobal("rh#EdwinChallenge","GLOBAL",1)
+    RealSetGlobalTimer("rh#EdwinChallengeTimer","GLOBAL",600)
+END

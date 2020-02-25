@@ -1,0 +1,10 @@
+// Appended to Bodhi's lair to spawn Vamp!Adrian
+
+IF
+  Global("rh#AdrianVampire","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("rh#AdrianVampire","GLOBAL",2)
+    CreateCreature("rh#advmp",[1473.332],2)
+    Continue()
+END

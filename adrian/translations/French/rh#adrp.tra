@@ -1,0 +1,74 @@
+@0    = ~Tu souhaites que nous nous séparions ?~
+@1    = ~En fait, non. Je ne le souhaite pas.~
+@2    = ~À titre temporaire.~
+@3    = ~Oui. Bonne chance et bon débarras.~
+@4    = ~Je suis heureux de l'entendre.~
+@5    = ~Très bien. Si tu recouvres tes esprits, tu me trouveras à la Promenade de Waukyne.~
+@6    = ~Il y a intérêt que cela ne soit que temporaire, Veldrin. Je vais aller à la taverne en ce cas.~
+@7    = ~Tu m'abandonnes en Ombreterre ? Formidable.~
+@8    = ~Dans ce cas, "mon ami", je suppose que je vais simplement devoir poursuivre d'autres intérêts.~ ~Dans ce cas, "mon amie", je suppose que je vais simplement devoir poursuivre d'autres intérêts.~
+@9    = ~Ahh, à l'instant même où les choses devenaient incroyablement ennuyeuses, <CHARNAME> passe me voir. Souhaites-tu quelque chose ?~
+@10   = ~Pas spécialement. Mais de tous les endroits d'Athkatla, pourquoi rester ici ?~
+@11   = ~Je voudrais que tu me rejoignes à nouveau.~
+@12   = ~Seulement pour te tuer.~
+@13   = ~Parce que personne ne veut me tuer dans ce petit coin tranquille d'Athkatla. Et comme si ce n'était pas assez, je profite aussi des rumeurs locales. Enfin, je les tolère.~
+@14   = ~Ah oui ? Au vu de ton groupe, je ne peux pas dire que cela me surprend. Très bien dans ce cas.~
+@15   = ~Je vois. Excuse-moi de ne pas m'attarder pour voir le déroulement de la bataille.~
+@16   = ~Ahh, un... visage presque familier. Veux-tu quelque chose, Veldrin ?~
+@17   = ~Pas spécialement. Tu apprécies le paysage ?~
+@18   = ~Autant que faire se peut.~
+@19   = ~Tu progresses dans l'espoir de retrouver quelqu'un de cher à ton coeur. Je pense que plus tu attendras, plus tu auras à perdre.~
+@20   = ~Comme ce mage. Une jolie chose, n'est-ce pas ? Audacieux quand il le faut, mais timide dans les mouvements du coeur. Peut-être que le lui arracher serait un service à lui rendre.~
+@21   = ~Vos menaces ne valent rien, vampire.~
+@22   = ~Elles valent pourtant plus que toutes celles que tu as prononcées au cours de l'ensemble de ta vie. Poursuis-moi plus avant, <CHARNAME>, et tu perdras plus que tu ne peux l'imaginer ! À commencer par maintenant !~
+@23   = ~La bataille finale contre Bodhi.
+
+Bodhi nous a tendu une embuscade juste avant que je n'atteigne son refuge. Elle m'a prévenue qu'elle connaissait tout de ma poursuite et elle m'a privée de la personne la plus chère à mon coeur : Adrian. Avant de disparaître et de m'envoyer davantage de ses créations mort-vivantes, Bodhi m'a avertie que si je continuais, j'allais perdre plus que je ne pouvais l'imaginer. Je ne peux abandonner le Rhynn Lanthorn... mais maintenant la vie et l'âme immortelle de celui que j'aime sont elles aussi en danger !~
+@24   = ~Un ami est frappé de vampirisme. Un vieil ouvrage prétend que les serviteurs d'Oghma savent peut-être quelque chose à ce sujet.~
+@25   = ~J'ai perdu un être cher dans une bataille contre sa soeur, Bodhi. Je cherche un moyen de le guérir.~
+@26   = ~Êtes-vous venus chercher la sagesse du Lieur de ce qui est su ? Le Seigneur du Savoir attend.~
+@27   = ~Non, merci, je n'ai pas besoin d'aide pour le moment.~
+@28   = ~Elhan ! J'ai ici avec moi le corps à moitié vampirique d'Adrian et c'est de votre fait ! Vous en répondrez !~
+@29   = ~Un être aimé a été pris par un vampire. À quoi dois-je m'attendre quand je l'aurai retrouvé ?~
+@30   = ~Quelqu'un à qui je tiens a succombé à un vampire. Y a-t-il un moyen de le sauver ?~
+@31   = ~Mais... non, je me suis déjà beaucoup trop préparée pour cette rencontre, <CHARNAME>. Je vous ai averti que vous perdriez beaucoup si vous persistiez à vous approcher de moi. Je n'ai pas menti.~
+@32   = ~Vous en avez déjà trop pris ! Vous me rendrez les âmes d'Imoen et d'Adrian !~
+@33   = ~Et vous avez tenu cette promesse. Rendez-moi Adrian et peut-être me montrerai-je miséricordieux.~ ~Et vous avez tenu cette promesse. Rendez-moi Adrian et peut-être me montrerai-je miséricordieuse.~
+@34   = ~Je vous aurais traquée pour Adrian et Adrian seulement. Il m'est très précieux.~
+@35   = ~Vous avez trop foi en l'émotion. Le vol d'Adrian ne vous sauvera pas.~
+@36   = ~Un stratagème intéressant, même si je suis sûre que son destin servira d'exemple. Que vous souhaitiez le récupérer ou non.~
+@37   = ~Lui ? Je doute que vos tâtonnements aient pu lui inspirer la loyauté dont je l'ai privé d'une morsure et d'un regard. Il lui faut une main ferme pour éviter qu'il ne s'éparpille. Il n'est pas habitué à autre chose.~
+@38   = ~La bataille finale contre Bodhi.
+
+Bodhi a transformé Adrian en vampire ! Ou... ou en quelque chose qui y ressemble fortement. Le processus n'a certainement pas eu le temps d'être complété durant le bref intervalle où Bodhi l'a eu en son pouvoir. Il est perdu si rien ne peut être fait. Peut-être le mage de guerre elfe connait-il un moyen de le guérir... ou Elhan...~
+@39   = ~Docile, n'est-ce pas ? Il faudra que je pense à envoyer mes respects à ses anciens maîtres. Mais pour l'heure... le processus n'est pas tout à fait achevé, mais il vous écrasera néanmoins à mon ordre.~
+@40   = ~De... de quoi avez-vous besoin, maîtresse ?~
+@41   = ~Tu... tu m'as sauvé. <CHARNAME>...~
+@42   = ~Bien sûr que je t'ai sauvé ! N'aie pas l'air si surpris.~
+@43   = ~Que voulais-tu que je fasse ? Que je te laisse dans cet état pour l'éternité ?~
+@44   = ~Ce n'est rien.~
+@45   = ~Tu as une chance incroyable, oui.~
+@46   = ~Pardon ? Non, non, c'est juste que...~
+@47   = ~Je ne pensais pas que c'était réversible. Le vampirisme, je veux dire. Je ne suis pas autant versé dans les arts nécromantiques que je le devrais sans doute, mais...~
+@48   = ~Comment t'y es-tu pris au juste ?~
+@49   = ~En utilisant l'icône de l'ancien dieu du soleil, Amaunator. Nous avons trouvé la preuve qu'à son toucher, l'état de non-vie avait déjà été guéri par le passé.~
+@50   = ~Dès sa première seconde de retour parmi les vivants, il réfléchit déjà aux théories arcaniques ! Est-ce vraiment important ?~
+@51   = ~Mmh, au moins tu n'as pas l'air traumatisé.~
+@52   = ~Au prix d'énormes difficultés. À quoi est-ce que cela ressemblait ?~
+@53   = ~Je vois. Cela aurait été impossible sans la bénédiction d'un dieu de la lumière... mmh. Je ne sais pas trop quoi en penser, mais... ma foi, c'est toujours mieux que l'alternative.~
+@54   = ~Non, tu as raison... tu as raison, bien sûr. Je crois que c'est plus simple que de me... souvenir pour de vrai. J'étais... mort. J'étais... par-delà la mort. Je...~
+@55   = ~Vraiment ? Bien. Je crois que j'essaie de ne pas me... souvenir pour de vrai. J'étais... par-delà la mort. Je...~
+@56   = ~C'était... ma foi, c'était. Je ne suis pas certain de vouloir me rappeler. J'étais dominé dans la mort, je crois. Il est délicat d'en être sûr. Ce n'était pas une domination normale... je n'étais même plus moi-même. Plus vraiment.~
+@57   = ~Et j'avais faim. Tellement faim. Et je haïssais... tout. Enfin, cela ne me changeait pas énormément, mais...~
+@58   = ~(Il soupire) Rappelle-moi de ne jamais devenir une liche, <CHARNAME>.~
+@59   = ~Bon, cette conversation commence à me donner la chair de poule.~
+@60   = ~Héhé. Je n'y manquerai pas.~
+@61   = ~On peut dire adieu à ce rêve, je suppose.~
+@62   = ~Au moins es-tu à nouveau toi-même...~
+@63   = ~(Il sourit) Je fais de mon mieux pour.~
+@64   = ~(Il sourit) Tu devras te trouver un autre sorcier maléfique pour cela, mon cher.~ ~(Il sourit) Tu devras te trouver un autre sorcier maléfique pour cela, ma chère.~
+@65   = ~N'aie pas l'air aussi déçu, mon cher.~ ~N'aie pas l'air aussi déçue, ma chère.~
+@66   = ~Je commence à être fatigué de le dire mais... merci, <CHARNAME>. Vraiment. Et je te remercierai une fois de plus dès que nous serons sortis de cette crypte abandonnée des dieux.~
+@67   = ~La bataille finale contre Bodhi.
+
+Si j'ai un temps craint que l'ultime vengeance de Bodhi me prive définitivement d'Adrian, il semblerait que l'information du livre disait vrai... l'autel d'Amaunator a non seulement ramené Adrian à la vie, mais il l'a également guéri de la malédiction vampirique qui pesait sur lui.~

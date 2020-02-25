@@ -1,0 +1,14 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+                CutSceneId(Player1)
+		Wait(1)
+		SetGlobal("rh#DamarovBetrayed","GLOBAL",1)
+		ActionOverride("rh#Adrian",FaceObject("rh#Tanya"))
+		ActionOverride("rh#Tanya",FaceObject("rh#Adrian"))
+		ActionOverride("rh#Tanya",ForceSpell("rh#Adrian",WIZARD_FINGER_OF_DEATH_IGNORE_RESISTANCE)
+		Wait(5)
+		EndCutSceneMode()
+		ActionOverride("rh#Tanya",StartDialogueNoSet(Player1))
+END

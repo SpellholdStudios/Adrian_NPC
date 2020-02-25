@@ -1,0 +1,101 @@
+// Hexxat
+
+IF
+	InParty("rh#Adrian")
+	InParty("Hexxat")
+	Global("rh#AdrianHexxatChallenge","GLOBAL",0)
+	Global("HexxatRomanceActive","GLOBAL",1)
+	Global("rh#AdrianRomanceActive","GLOBAL",1)
+	GlobalGT("HexxatLovetalks","GLOBAL",9)
+	GlobalGT("rh#AdrianTalks","GLOBAL",18)
+THEN
+RESPONSE #100
+	RealSetGlobalTimer("rh#AdrianHexxatRomanceTimer","GLOBAL",1200)
+	SetGlobal("rh#AdrianHexxatChallenge","GLOBAL",1)
+END
+
+IF
+	InParty("rh#Adrian")
+	InParty("Hexxat")
+	See(Player1)
+	!StateCheck("Hexxat",CD_STATE_NOTVALID)
+	!StateCheck("rh#Adrian",CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+	CombatCounter(0)
+	!See([ENEMY])
+	Global("rh#AdrianHexxatChallenge","GLOBAL",1)
+	Global("HexxatRomanceActive","GLOBAL",1)
+	Global("rh#AdrianRomanceActive","GLOBAL",1)
+	RealGlobalTimerExpired("rh#AdrianHexxatRomanceTimer","GLOBAL")
+THEN
+RESPONSE #100
+	SetGlobal("rh#AdrianHexxatChallenge","GLOBAL",2)
+END
+
+IF
+	InParty("rh#Adrian")
+	InParty("Hexxat")
+	See(Player1)
+	!StateCheck("Hexxat",CD_STATE_NOTVALID)
+	!StateCheck("rh#Adrian",CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+	CombatCounter(0)
+	!See([ENEMY])
+	Global("rh#AdrianHexxatChallenge","GLOBAL",2)
+	Global("HexxatRomanceActive","GLOBAL",1)
+	Global("rh#AdrianRomanceActive","GLOBAL",1)
+THEN
+RESPONSE #100
+	Dialogue(Player1)
+END
+
+// Rasaad
+
+IF
+	InParty("rh#Adrian")
+	InParty("Rasaad")
+	Global("rh#AdrianRasaadChallenge","GLOBAL",0)
+	Global("RasaadRomanceActive","GLOBAL",1)
+	Global("rh#AdrianRomanceActive","GLOBAL",1)
+	GlobalGT("RasaadLovetalks","GLOBAL",9)
+	GlobalGT("rh#AdrianTalks","GLOBAL",20)
+THEN
+RESPONSE #100
+	RealSetGlobalTimer("rh#AdrianRasaadRomanceTimer","GLOBAL",1200)
+	SetGlobal("rh#AdrianRasaadChallenge","GLOBAL",1)
+END
+
+IF
+	InParty("rh#Adrian")
+	InParty("Rasaad")
+	See(Player1)
+	!StateCheck("Rasaad",CD_STATE_NOTVALID)
+	!StateCheck("rh#Adrian",CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+	CombatCounter(0)
+	!See([ENEMY])
+	Global("rh#AdrianRasaadChallenge","GLOBAL",1)
+	Global("RasaadRomanceActive","GLOBAL",1)
+	Global("rh#AdrianRomanceActive","GLOBAL",1)
+	RealGlobalTimerExpired("rh#AdrianRasaadRomanceTimer","GLOBAL")
+THEN
+RESPONSE #100
+	SetGlobal("rh#AdrianRasaadChallenge","GLOBAL",2)
+END
+
+IF
+	InParty("rh#Adrian")
+	InParty("Rasaad")
+	See(Player1)
+	!StateCheck("Rasaad",CD_STATE_NOTVALID)
+	!StateCheck("rh#Adrian",CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+	CombatCounter(0)
+	!See([ENEMY])
+	Global("rh#AdrianRasaadChallenge","GLOBAL",2)
+	Global("RasaadRomanceActive","GLOBAL",1)
+	Global("rh#AdrianRomanceActive","GLOBAL",1)
+THEN
+RESPONSE #100
+	Dialogue(Player1)
+END

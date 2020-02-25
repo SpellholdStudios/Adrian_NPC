@@ -1,0 +1,28 @@
+IF
+	InParty("rh#Adrian") 
+	InParty("Jaheira")
+	See("rh#Adrian")
+	!StateCheck("rh#Adrian",CD_STATE_NOTVALID)
+	!StateCheck("Jaheira",CD_STATE_NOTVALID)
+	CombatCounter(0)
+	!See([ENEMY])
+	RealGlobalTimerExpired("rh#AdrianJaheiraTOBTalkTimer","GLOBAL")
+	Global("rh#AdrianJaheiraTOB","GLOBAL",5)
+THEN
+RESPONSE #100
+	IncrementGlobal("rh#AdrianJaheiraTOB","GLOBAL",1)
+END
+
+IF
+	InParty("rh#Adrian") 
+	InParty("Jaheira")
+	See("rh#Adrian")
+	!StateCheck("rh#Adrian",CD_STATE_NOTVALID)
+	!StateCheck("Jaheira",CD_STATE_NOTVALID)
+	CombatCounter(0)
+	!See([ENEMY])
+	RealGlobalTimerExpired("rh#AdrianJaheiraTOBTalkTimer","GLOBAL")		Global("rh#AdrianJaheiraTOB","GLOBAL",6)
+THEN
+RESPONSE #100
+	StartDialogueNoSet("rh#Adrian")
+END
