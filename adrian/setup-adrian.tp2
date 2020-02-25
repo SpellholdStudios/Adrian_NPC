@@ -4,7 +4,15 @@ VERSION ~v4.3~
 README ~adrian/translations/%LANGUAGE%/Adrian_Readme.html~
 
 ALWAYS
-// eet compatibility
+
+	// Determines which game is installed and if the game is an Enhanced Edition.
+	OUTER_SET is_ee = (GAME_IS ~bg2ee eet~) ? 1 : 0					// EE game
+	OUTER_SET is_tob = (GAME_IS ~bgt tob tutu tutu_totsc~) ? 1 : 0	// based on vanilla ToB engine
+	OUTER_SET is_bg2ee = (GAME_IS "bg2ee") ? 1 : 0					// b2gee
+	OUTER_SET is_eet = (GAME_IS "eet") ? 1 : 0						// eet
+
+
+	// eet compatibility
 ACTION_IF (GAME_IS ~eet~) BEGIN
   OUTER_SET bg2_chapter = 12
 END ELSE BEGIN
@@ -16,32 +24,40 @@ OUTER_FOR (i=1; i<=10; i=i+1) BEGIN
   OUTER_SET EVAL ~%name_source%~ = bg2_chapter
 END
 
-  // Borrowed from Edwin Romance: convert strings to UTF-8 for BGEE/BG2EE
 
-  // setup.tra contains in game texts as well as installation texts
-  // and need to be converted
-  ACTION_DEFINE_ARRAY rh#noconvert BEGIN END
-  ACTION_DEFINE_ARRAY rh#reload BEGIN setup END
+	// Borrowed from Edwin Romance: convert strings to UTF-8 for BGEE/BG2EE
+	// No exception, everything needs to be converted
+	// setup.tra contains in game texts as well as installation texts and need to be converted
+	ACTION_DEFINE_ARRAY rh#noconvert BEGIN END
+	// any tra files used in LANGUAGE need to be reloaded after UTF-8 conversion
+	ACTION_DEFINE_ARRAY rh#reload BEGIN setup END
 
-  LAF HANDLE_CHARSETS
-    INT_VAR
-      infer_charset = 1
-    STR_VAR
-      tra_path = EVAL ~%MOD_FOLDER%/translations~
-      // charset_table = rh#charsets // Use HANDLE_CHARSETS built-in rule for charset choice
-      noconvert_array = rh#noconvert
-      reload_array = rh#reload
-  END
+	LAF HANDLE_CHARSETS
+		INT_VAR
+			infer_charsets = 1
+		STR_VAR
+			tra_path = EVAL ~%MOD_FOLDER%/translations~
+			noconvert_array = rh#noconvert
+			reload_array = rh#reload
+	END
+
 END
 
+
 AUTO_TRA ~adrian/translations/%s~
+
 LANGUAGE ~English~
-         ~English~
+         ~english~
          ~adrian/translations/english/setup.tra~
-LANGUAGE ~French (Translated by Ixyon)~ 
-         ~French~ 
+
+LANGUAGE ~Francais (Traduction : Ixyon)~ 
+         ~french~ 
          ~adrian/translations/french/setup.tra~
 
+
+/* ===================================== *
+ *  Adrian for BGII  *
+ * ===================================== */
 BEGIN @0 /* Adrian for BGII */
 REQUIRE_PREDICATE GAME_INCLUDES ~tob~ @1 /* You must have Throne of Bhaal installed. */
 
@@ -130,7 +146,7 @@ EXTEND_BOTTOM ~jahe25.bcs~ ~adrian/scripts/rh#jah25.baf~
 EXTEND_TOP ~ar6200.bcs~ ~adrian/scripts/ar6200.baf~
 EXTEND_BOTTOM ~cut218g.bcs~ ~adrian/scripts/rh#218.baf~
 
-ACTION_IF GAME_IS ~eet~ BEGIN
+ACTION_IF is_eet BEGIN
   INCLUDE ~EET/other/EET_functions.tph~ // functions from EET mod
   LAF ~EET_NPC_TRANSITION~
     INT_VAR
@@ -150,7 +166,7 @@ END
 
 // BG2EE
 
-ACTION_IF GAME_IS ~BG2EE EET~ THEN BEGIN
+ACTION_IF is_ee THEN BEGIN
 
 ADD_JOURNAL @12 @61 @69 @77 USING ~adrian/translations/%LANGUAGE%/rh#adr.tra~
 ADD_JOURNAL @32 @38 @82 @84 @89 @127 @129 @143 @147 @149 @151 @153 @155 @196 @197 @215 @226 @227 @249 @262 @264 USING ~adrian/translations/%LANGUAGE%/rh#quest.tra~
@@ -164,7 +180,7 @@ END
 
 // Area stuff
 
-ACTION_IF GAME_IS ~EET~ THEN BEGIN
+ACTION_IF is_eet THEN BEGIN
   COPY ~adrian/eet/areas~ ~override~
 END ELSE BEGIN
 COPY ~adrian/areas~ ~override~
@@ -175,7 +191,7 @@ UNLESS ~RH#AD1~
 
 // Copying images and creatures
 
-ACTION_IF (GAME_IS ~bg2ee eet~) BEGIN
+ACTION_IF is_ee BEGIN
   COPY ~adrian/images/rh#adrl.bmp~ ~override~
   COPY ~adrian/images/rh#adrl.bmp~ ~override/rh#adrm.bmp~
   COPY ~adrian/images/rh#adrl.bmp~ ~override/rh#adrs.bmp~
