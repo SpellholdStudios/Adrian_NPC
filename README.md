@@ -1,5 +1,5 @@
 
-![Latest Release](https://img.shields.io/github/v/release//Adrian_NPC?include_prereleases&color=darkred)<a name="top" id="top"> </a>
+![Latest Release](https://img.shields.io/github/v/release/GwendolyneFreddy/Adrian_NPC?include_prereleases&color=darkred)<a name="top" id="top"> </a>
 ![Platform](https://img.shields.io/static/v1?label=platform&message=windows%20%7C%20Mac%20%7C%20linux&color=informational)
 ![Language](https://img.shields.io/static/v1?label=language&message=English%20%7C%20French&color=limegreen)
 
@@ -218,6 +218,7 @@ Adrian was conceived of as a sorcerer, but his character and history lend themse
 
 - Replaced `GAME_IS` conditions with variables checks to speed up install time.
 - Fixed a typo in `HANDLE_CHARSETS` function (replaced *infer_charset* with *infer_charsets*).
+- Externalized tp2 code into *main_component.tpa* and *adrian_crossmod.tpa* libraries for more comfortable readability and maintenance.
 - Removed useless files and backup folder.
 - Lower cased files.
 
