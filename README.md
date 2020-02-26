@@ -128,11 +128,13 @@ In addition to the methods above for removing individual components, you can com
 <hr>
 
 
-## <a name="detailss" id="details"></a>Details
+## <a name="details" id="details"></a>Details
 
+<img style="float: left;" src="adrian/readme/rhadrl.png">
 Adrian is Lawful Evil by alignment, but your experience with him may vary. While he has been involved in some unambiguously evil dealings in the past (and is mostly unapologetic about his history), he's not particularly enamored of aimless or obvious villainy. His worldview is influenced by some very dark philosophy, but he isn't a monster. Expect conflict when adding him to a good-aligned party, but don't expect bloodshed.
 
 ## 
+
 
 #### Statistics
 
@@ -215,6 +217,9 @@ Adrian was conceived of as a sorcerer, but his character and history lend themse
 ## <a name="versions" id="versions"></a>Version History
 
 #### Version 4.4 (2 February 2020)
+
+- Added `DESIGNATED` numbers and "*adrian_sorcerer*"; "*adrian_cleric_mage*", "*adrian_mage_thief*", "*adrian_phaelin_soundset*", "*adrian_tatterdemalion_soundset*" and "*adrian_crossmod_content*" component `LABELS`.
+- Grouped class and soundsets optional components into `SUBCOMPONENTS` to support AL|EN's "Project Infinity".
 
 - Replaced `GAME_IS` conditions with variables checks to speed up install time.
 - Fixed a typo in `HANDLE_CHARSETS` function (replaced *infer_charset* with *infer_charsets*).
