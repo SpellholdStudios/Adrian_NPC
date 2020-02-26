@@ -1,5 +1,34 @@
 @0    = ~Adrian pour BGII~
-@1    = ~Vous devez avoir Throne of Bhaal installe.~
+@1    = ~Vous devez avoir installe ToB ou BG2:EE avant d'installer Adrian NPC.~
+
+/* ------------ *
+ *  Components  *
+ * ------------ */
+@100  = ~Adrian est un Sorcier~
+@101  = ~Changer la classe d'Adrian en Clerc/Mage~
+@102  = ~Changer la classe d'Adrian en Mage/Voleur~
+
+@110  = ~Installer un pack de voix optionnel pour Adrian (seulement en anglais)~
+@111  = ~Pack de voix de Phaelin~
+@112  = ~Pack de voix de Tatterdemalion~
+
+@120  = ~Crossmod content~
+
+@130  = ~Veuillez installer le composant principal d'Adrian pour BGII avant le contenu additionnel~
+
+/* DEPRECATED as of v5.0
+@85   = ~Changer la classe d'Adrian en Clerc/Mage~
+@86   = ~Installer classe alternative pour Adrian ?~
+@87   = ~Changer la classe d'Adrian en Mage/Voleur~
+@88   = ~Pack de voix de Phaelin~
+@89   = ~Merci d'installer Adrian avant le contenu additionel~
+@90   = ~Installer pack de voix optionel pour Adrian ? (Seulement en anglais)~
+@91   = ~Pack de voix de Tatterdemalion~
+*/
+
+/* ------------ *
+ *  Adrian NPC  *
+ * ------------ */
 @2    = ~Adrian~
 @3    = ~Interrogé sur son passé, ADRIAN sourit imperceptiblement et déclare qu'il y a assez de démons auxquels faire face dans le présent pour ne pas en plus s'inquiéter de ceux d'hier. Au vu de son récent asservissement, il semblerait qu'il en ait en effet plus d'un à affronter. En dépit de ses réponses évasives, vous finissez par glaner qu'il a passé du temps en Sembie en tant que magicien mercenaire pour un prince marchand en pleine ascension. Vous vous rendez compte que l'encourager à aller plus avant ne vous vaudra rien d'autre qu'un bon mal de tête.~
 @4    = ~Oh, je ne crois pas, non.~ [rh#ad1]
@@ -45,8 +74,12 @@
 @44   = ~Tu peux faire mieux que cela.~ [rh#ad41]
 @45   = ~Pointe cette chose sur quelqu'un d'autre.~ [rh#ad42]
 @46   = ~Ma foi, tu sais y faire avec les mots, mmh ?~ [rh#ad43]
-@47   = ~Ce n'est pas tout à fait Cormanthor, mmh ?~ [rh#ad11]
-@48   = ~Mmh, le soleil se couche et la journée commence véritablement.~ [rh#ad15]
+//@47   = ~Ce n'est pas tout à fait Cormanthor, mmh ?~ [rh#ad11]
+//@48   = ~Mmh, le soleil se couche et la journée commence véritablement.~ [rh#ad15]
+
+/* ----------- *
+ *  Creatures  *
+ * ----------- */
 @49   = ~Fille~
 @50   = ~Tanya~
 @51   = ~Tanya Damarov~
@@ -59,12 +92,19 @@
 @58   = ~Garde de Soargyl~
 @59   = ~Mikail~
 @60   = ~Mikail Vasiliev~
+
+/* ------- *
+ *  Items  *
+ * ------- */
 @61   = ~Chevalière de Vasiliev~
 @62   = ~C'était autrefois la chevalière du grand-père d'Adrian, un seigneur mineur de Château-Zhentil. Bien que l'anneau ne dispose d'aucune propriété magique, son importance pour Adrian est évidente.~
+
 @63   = ~Documents de Tanya~
 @64   = ~Ces documents, découverts dans la chambre de Tanya à l'auberge des Cinq Chopes, sont visiblement ce qu'Adrian espérait trouver.~
+
 @65   = ~Corps d'Adrian~
 @66   = ~Adrian a été capturé par Bodhi et vampirisé, vous condamnant à le tuer. Il existe peut-être un moyen de le ressusciter, mais vous l'ignorez.~
+
 @67   = ~Bandeau~
 @68   = ~Bandeau d'Intelligence~
 @69   = ~Ce bandeau consiste en une corde légère et en une petite gemme insérée de façon à reposer sur le front du porteur. Son usage est incertain.~
@@ -73,8 +113,13 @@
 PARAMETRES :
 
 Intelligence : bonus de +1~
+
 @71   = ~Clef~
 @72   = ~Cette clef paraît bien rouillée. On dirait qu'elle pourrait ouvrir les fers d'Adrian.~
+
+/* ----------- *
+ *  Epilogues  *
+ * ----------- */
 @73   = ~Les années qui suivirent les voyages d'Adrian auprès de <CHARNAME> s'avérèrent étonnamment calmes. Se retrouvant avec trop de questions et dépourvu de véritables réponses, il ne tarda pas à abandonner l'aventure pour s'installer non loin d'un temple d'Azuth à Cimbar. Une vie contemplative finit cependant par se révéler inappropriée. Il fut poussé à quitter la ville après un violent incident qui l'opposa à un noble Chessentien. Peu après la résurrection de Baine et la résurgence de son clergé, Adrian s'implanta à Eauprofonde. Il prétendit les deux événements déconnectés l'un de l'autre, mais beaucoup pensèrent que l'arrangement qu'il conclut avec Bâton-Noir servait sa propre protection. Bien que la vérité derrière cela soit incertaine, Adrian se comporta convenablement et on dit qu'il garda ses interactions avec la pègre d'Eauprofonde raisonnablement limitées. Il ne s'est jamais marié et n'eut jamais d'enfant, mais il finit par se décider à prendre des apprentis. Comment il parvint à trouver le temps de les former tout en étant plongé dans les intrigues d'Eauprofonde est vu comme l'un des plus grands mystères de Féérune.~
 @74   = ~Les années qui suivirent les voyages d'Adrian auprès de <CHARNAME> s'avérèrent étonnamment calmes. Comme promis, Jaheira l'accompagna à Valombre, où il essaya de se réconcilier avec son père. Le chemin s'avéra aussi difficile qu'on aurait pu s'y attendre et après un incident avec un Ménestrel local, Adrian fut gentiment prié de partir. Il resta en bons termes avec Jaheira au cours des années suivantes, et finit par établir une relation réelle avec son père, mais son opinion des Vaux demeura aussi mauvaise qu'auparavant. Peu après la résurrection de Baine et la résurgence de son clergé, Adrian s'implanta à Eauprofonde. Il prétendit les deux événements déconnectés l'un de l'autre, mais beaucoup pensèrent que l'arrangement qu'il conclut avec Bâton-Noir servait sa propre protection. Bien que la vérité derrière cela soit incertaine, Adrian se comporta convenablement et on dit qu'il garda ses interactions avec la pègre d'Eauprofonde raisonnablement limitées. Il ne s'est jamais marié et n'eut jamais d'enfant, mais il finit par se décider à prendre des apprentis. Comment il parvint à trouver le temps de les former tout en étant plongé dans les intrigues d'Eauprofonde est vu comme l'un des plus grands mystères de Féérune.~
 @75   = ~Les expériences d'Adrian auprès de <CHARNAME> ne firent qu'accentuer son amertume. Bien que n'ayant jamais grandement apprécié les elfes, sa fureur pour Irenicus se retourna de plus en plus contre le peuple de Suldanessalar qui, dans son esprit, avait créé ce monstre. Après ses voyages avec <CHARNAME>, Adrian erra un temps dans les terres du nord, tentant sans succès de soulager son amertume. Il retourna chez lui en Mer de Lune sur cet échec, où il arriva véritablement au pouvoir. Prenant avantage de la récente agitation dans les rangs des Zhentarim, il appâta un certain nombre de membres en leur promettant plutôt les richesses de Suldanessalar. Ce fut sa perte, car il rencontra la mort des mains du célèbre rôdeur Drizzt Do'Urden, sur les marches même de la cité qu'il avait un jour contribué à sauver.~
@@ -87,13 +132,7 @@ Intelligence : bonus de +1~
 @82   = ~Quelques jours à peine après l'ultime défaite d'Amélyssane, <CHARNAME> et Adrian laissèrent Téthyr derrière eux. Soucieux des capacités d'une communauté à tolérer un enfant de Bhaal, sans même parler des propres difficultés d'Adrian, le couple fut réticent à l'idée de s'installer définitivement dans un endroit précis. Pendant un temps, leurs jours ensemble ressemblèrent à une longue (et quelque peu orageuse) lune de miel. Accompagnés de Jaheira, ils voyagèrent quelques temps à Valombre où Adrian essaya de se réconcilier avec son père. Le chemin s'avéra aussi difficile qu'on aurait pu s'y attendre et après un incident avec un Ménestrel local, ils furent gentiment priés de partir. Ce n'est qu'après la résurrection de Baine et la résurgence de son clergé que le couple décida de s'installer à Eauprofonde. Adrian prétendit les deux événements déconnectés l'un de l'autre, mais beaucoup pensèrent que l'arrangement qu'il conclut avec Bâton-Noir servait sa propre protection. Bien que la vérité derrière cela soit incertaine, Adrian se comporta convenablement et on dit qu'il garda ses interactions avec la pègre d'Eauprofonde raisonnablement limitées. Les histoires qui impliquaient <CHARNAME> se révélèrent en revanche considérablement plus fantasques. La moitié de la ville était convaincue qu'elle était devenue l'un des Seigneurs Masqués d'Eauprofonde. D'autres spéculaient tout aussi joyeusement sur le fait qu'elle avait trompé son monde et pris le contrôle de l'ensemble du monde criminel. Plus d'un assurait que les deux affirmations étaient vraies. En dépit des rumeurs de plus en plus folles, <CHARNAME> et Adrian apprécièrent la vie au sein de la Cité des Splendeurs, même si la naissance de leur petite fille mit à l'épreuve leur relation. Malgré son tiède assentiment au concept d'enfant, Adrian constata que la réalité était beaucoup plus difficile à gérer et il commença à boire plus que jamais. Ébranlé par cette attitude, son propre père vint contre toute attente à Eauprofonde pour lui parler. Personne en dehors de la famille ne sait au juste ce qui se passa entre eux, mais Adrian n'a plus touché à une goutte de vin depuis ce jour. En dépit d'un début délicat, il se révéla finalement être un parent attentif. Peut-être trop attentif, car leur fille devint tout ce qu'on est en droit d'attendre d'une jeune noble choyée, avec trop d'argent et trop de temps libre...~
 @83   = ~Quelques jours à peine après l'ultime défaite d'Amélyssane, <CHARNAME> et Adrian laissèrent Téthyr derrière eux. Ils retournèrent brièvement à Athkatla, où ils se marièrent au cours d'une tranquille cérémonie privée. Ils furent toutefois réticents à l'idée de s'installer définitivement dans un endroit précis, et pendant un temps, leurs jours ensemble ressemblèrent à une longue (et quelque peu orageuse) lune de miel. Ce n'est qu'après la résurrection de Baine et la résurgence de son clergé que le couple se décida pour Eauprofonde. Adrian prétendit les deux événements déconnectés l'un de l'autre, mais beaucoup pensèrent que l'arrangement qu'il conclut avec Bâton-Noir servait sa propre protection. Bien que la vérité derrière cela soit incertaine, Adrian se comporta convenablement et on dit qu'il garda ses interactions avec la pègre d'Eauprofonde raisonnablement limitées. Les histoires qui impliquaient <CHARNAME> se révélèrent en revanche considérablement plus fantasques. La moitié de la ville était convaincue qu'elle était devenue l'un des Seigneurs Masqués d'Eauprofonde. D'autres spéculaient tout aussi joyeusement sur le fait qu'elle avait trompé son monde et pris le contrôle de l'ensemble du monde criminel. Plus d'un assurait que les deux affirmations étaient vraies. En dépit des rumeurs de plus en plus folles, <CHARNAME> et Adrian apprécièrent la vie au sein de la Cité des Splendeurs... du moins jusqu'à la naissance de leur petite fille. Malgré son tiède assentiment au concept d'enfant, Adrian constata que la réalité était beaucoup plus difficile à gérer. Il commença à boire plus que jamais, et il éluda les responsabilités de la paternité autant que possible sans s'enfuir complètement. Sa relation avec <CHARNAME> ne tarda pas à se détériorer, mais personne ne sait ce qu'il advint finalement d'eux et de leur fille.~
 @84   = ~Quelques jours à peine après l'ultime défaite d'Amélyssane, <CHARNAME> et Adrian laissèrent Téthyr derrière eux. Ils retournèrent brièvement à Athkatla, où ils se marièrent au cours d'une tranquille cérémonie privée. Ils furent toutefois réticents à l'idée de s'installer définitivement dans un endroit précis, et pendant un temps, leurs jours ensemble ressemblèrent à une longue (et quelque peu orageuse) lune de miel. Accompagnés de Jaheira, ils voyagèrent quelques temps à Valombre où Adrian essaya de se réconcilier avec son père. Le chemin s'avéra aussi difficile qu'on aurait pu s'y attendre et après un incident avec un Ménestrel local, ils furent gentiment priés de partir. Ce n'est qu'après la résurrection de Baine et la résurgence de son clergé que le couple se décida pour Eauprofonde. Adrian prétendit les deux événements déconnectés l'un de l'autre, mais beaucoup pensèrent que l'arrangement qu'il conclut avec Bâton-Noir servait sa propre protection. Bien que la vérité derrière cela soit incertaine, Adrian se comporta convenablement et on dit qu'il garda ses interactions avec la pègre d'Eauprofonde raisonnablement limitées. Les histoires qui impliquaient <CHARNAME> se révélèrent en revanche considérablement plus fantasques. La moitié de la ville était convaincue qu'elle était devenue l'un des Seigneurs Masqués d'Eauprofonde. D'autres spéculaient tout aussi joyeusement sur le fait qu'elle avait trompé son monde et pris le contrôle de l'ensemble du monde criminel. Plus d'un assurait que les deux affirmations étaient vraies. En dépit des rumeurs de plus en plus folles, <CHARNAME> et Adrian apprécièrent la vie au sein de la Cité des Splendeurs, même si la naissance de leur petite fille mit à l'épreuve leur relation. Malgré son tiède assentiment au concept d'enfant, Adrian constata que la réalité était beaucoup plus difficile à gérer et il commença à boire plus que jamais. Ébranlé par cette attitude, son propre père vint contre toute attente à Eauprofonde pour lui parler. Personne en dehors de la famille ne sait au juste ce qui se passa entre eux, mais Adrian n'a plus touché à une goutte de vin depuis ce jour. En dépit d'un début délicat, il se révéla finalement être un parent attentif. Peut-être trop attentif, car leur fille devint tout ce qu'on est en droit d'attendre d'une jeune noble choyée, avec trop d'argent et trop de temps libre...~
-@85   = ~Changer la classe d'Adrian en Clerc/Mage~
-@86   = ~Installer classe alternative pour Adrian ?~
-@87   = ~Changer la classe d'Adrian en Mage/Voleur~
-@88   = ~Pack de voix de Phaelin~
-@89   = ~Merci d'installer Adrian avant le contenu additionel~
-@90   = ~Installer pack de voix optionel pour Adrian ? (Seulement en anglais)~
-@91   = ~Pack de voix de Tatterdemalion~
+
 
 //WeiDU prompts
 @-1000= "Le mod %TP2_FILE_NAME% contient"

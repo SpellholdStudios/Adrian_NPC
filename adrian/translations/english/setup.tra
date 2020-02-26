@@ -1,5 +1,34 @@
 @0    = ~Adrian for BGII~
-@1    = ~You must have Throne of Bhaal installed.~
+@1    = ~You must have Throne of Bhaal or BG2:EE installed to install Adrian NPC mod.~
+
+/* ------------ *
+ *  Components  *
+ * ------------ */
+@100  = ~Adrian is a Sorcerer~
+@101  = ~Change Adrian's class to Cleric/Mage~
+@102  = ~Change Adrian's class to Mage/Thief~
+
+@110  = ~Install optional soundset for Adrian (only in English)~
+@111  = ~Phaelin's soundset~
+@112  = ~Tatterdemalion's soundset~
+
+@120  = ~Crossmod content~
+
+@130  = ~Please install Adrian NPC for BGII main component before additional content~
+
+/* DEPRECATED as of v5.0
+@85   = ~Change Adrian's class to Cleric/Mage~
+@86   = ~Install alternate class for Adrian?~
+@87   = ~Change Adrian's class to Mage/Thief~
+@88   = ~Phaelin's soundset~
+@89   = ~Please install Adrian before additional content~
+@90   = ~Install optional soundset for Adrian?~
+@91   = ~Tatterdemalion's soundset~
+*/
+
+/* ------------ *
+ *  Adrian NPC  *
+ * ------------ */
 @2    = ~Adrian~
 @3    = ~When asked about his past, ADRIAN smiles slightly and says that there are enough demons to face in the present without worrying about yesterday's as well. Given his recent enslavement, it would appear that he has more than a few of his own with which to contend. Despite his slippery responses, you eventually glean that he spent some time in Sembia, working as a hirespell wizard for a rising merchant prince. You quickly learn that further prodding will win you nothing but headaches.~
 @4    = ~Oh, I don't think so.~ [rh#ad1]
@@ -45,8 +74,12 @@
 @44   = ~You can do better than that.~ [rh#ad41]
 @45   = ~Go point that thing at someone else.~ [rh#ad42]
 @46   = ~Well, you do have a way with words, don't you?~ [rh#ad43]
-@47   = ~It isn't exactly Cormanthor, is it?~ [rh#ad11]
-@48   = ~Mmm, the sun sets, and the day truly begins.~ [rh#ad15]
+//@47   = ~It isn't exactly Cormanthor, is it?~ [rh#ad11]
+//@48   = ~Mmm, the sun sets, and the day truly begins.~ [rh#ad15]
+
+/* ----------- *
+ *  Creatures  *
+ * ----------- */
 @49   = ~Girl~
 @50   = ~Tanya~
 @51   = ~Tanya Damarov~
@@ -59,12 +92,19 @@
 @58   = ~Soargyl Guard~
 @59   = ~Mikail~
 @60   = ~Mikail Vasiliev~
+
+/* ------- *
+ *  Items  *
+ * ------- */
 @61   = ~Vasiliev Signet Ring~
 @62   = ~This was once the signet ring of Adrian's grandfather, a minor lord of Zhentil Keep. While the ring has no magical properties, its significance to Adrian is obvious.~
+
 @63   = ~Tanya's Documents~
 @64   = ~These documents, discovered in Tanya's room in the Five Flagons, are apparently what Adrian was hoping to find.~
+
 @65   = ~Adrian's Body~
 @66   = ~Adrian was captured by Bodhi and infected with vampirism, forcing you to slay him. There may be some way to revive him, though you don't know what it would be.~
+
 @67   = ~Headband~
 @68   = ~Headband of Intellect~
 @69   = ~This device is a light cord with a small gem set so that it rests upon the forehead of the wearer. Its purpose is uncertain.~
@@ -73,8 +113,13 @@
 STATISTICS:
 
 +1 to Intelligence~
+
 @71   = ~Key~
 @72   = ~This is a fairly rusty looking key. It looks like it might fit Adrian's manacles.~
+
+/* ----------- *
+ *  Epilogues  *
+ * ----------- */
 @73   = ~The years following Adrian's travels with <CHARNAME> were surprisingly quiet. Finding himself with too many questions and no true answers, he soon gave up adventuring and took up residence near a temple of Azuth in Cimbar. A life of contemplation, however, ultimately proved unsuitable, and he was encouraged to leave the city after a violent clash with a Chessentan nobleman. Shortly after Bane's resurrection and the resurgence of his church, Adrian relocated to Waterdeep. He would claim the two incidents unrelated, but most believed that for his own protection, he had entered into an arrangement with the Blackstaff. While the truth of this is uncertain, Adrian remained well behaved and is believed to have kept his dealings with the Waterdhavian underworld reasonably limited. He never married nor had children of his own, though he eventually chose to take on apprentices. How he found time to teach them whilst embroiled in Waterdhavian intrigue is considered one of Faerun's greatest mysteries.~
 @74   = ~The years following Adrian's travels with <CHARNAME> were surprisingly quiet. As she had promised, Jaheira accompanied him to Shadowdale, where he attempted to reconcile with his father. The road was as rocky as could be expected, and after a clash with a local Harper, Adrian was kindly invited to leave. He would remain on good terms with Jaheira in the following years and eventually established a functional relationship with his father, but his opinion of the Dale remained as low as it had ever been. Shortly after Bane's resurrection and the resurgence of his church, Adrian relocated to Waterdeep. He would claim the two incidents unrelated, but most believed that for his own protection, he had entered into an arrangement with the Blackstaff. While the truth of this is uncertain, Adrian remained well behaved and is believed to have kept his dealings with the Waterdhavian underworld reasonably limited. He never married nor had children of his own, though he eventually chose to take on apprentices. How he found time to teach them whilst embroiled in Waterdhavian intrigue is considered one of Faerun's greatest mysteries.~
 @75   = ~Adrian's experiences with <CHARNAME> further embittered him. Never a great admirer of elves, he found his fury towards the late Irenicus turning more and more upon the people of Suldanessellar who, in his mind, had created the monster. Adrian wandered the northern lands for a time after his travels with <CHARNAME>, trying without success to alleviate his bitterness. In failure, he finally returned home to the Moonsea, where he truly came into his power. Taking advantage of the recent turmoil within the ranks of the Zhentarim, he lured away a number of members, promising them the wealth of Suldanessellar instead. This ultimately proved to be his undoing, as he would meet his end at the hands of the famous ranger Drizzt Do'Urden, on the very steps of the city he had once helped to save.~
@@ -87,10 +132,4 @@ STATISTICS:
 @82   = ~Mere days after the final defeat of Melissan, <CHARNAME> and Adrian put Tethyr behind them. Concerned about a community's ability to tolerate a child of Bhaal, Adrian's own difficulties notwithstanding, the couple was reluctant to finally settle down in any one place. For a short time, their days together resembled a long (if somewhat tempestuous) honeymoon. Accompanied by Jaheira, they briefly traveled to Shadowdale, where Adrian attempted to reconcile with his father. The road was as rocky as could be expected, and after a clash with a local Harper, they were kindly invited to leave. It was shortly after Bane's resurrection and the resurgence of his church that the pair finally established themselves in Waterdeep. Adrian would claim the two incidents unrelated, but most believed that for his own protection, he had entered into an arrangement with the Blackstaff. While the truth of this is uncertain, he remained well behaved while in the city and is said to have kept his dealings with the Waterdhavian underworld reasonably limited. The stories concerning <CHARNAME> herself were considerably more fanciful, however. Half the populace was convinced that she had become one of the Masked Lords of Waterdeep. Others just as happily speculated that she had played everyone for a fool and taken over the criminal underworld. No few insisted that both claims were true. Despite the increasingly wild rumors, <CHARNAME> and Adrian enjoyed life in the City of Splendors, though the birth of their daughter sorely tested their relationship. Despite his lukewarm assent to the concept of children, Adrian found the reality much more difficult to handle, and he began to drink more heavily than he ever had before. Disturbed by this behavior, his own father unexpectedly came to Waterdeep to speak with him. Nobody outside of the family knows exactly what passed between them, but Adrian has not had a drop of wine to drink since. Despite the rocky beginning, he ultimately proved to be an attentive parent. Too attentive, perhaps, as their daughter grew up to be everything one might expect of a pampered young noblewoman with too much money and too much time...~
 @83   = ~Mere days after the final defeat of Melissan, <CHARNAME> and Adrian put Tethyr behind them. They briefly returned to Athkatla, where they were married in a quiet, private ceremony. They were reluctant to settle down immediately, however, and for a short time, their days together resembled a long (if somewhat tempestuous) honeymoon. It was shortly after Bane's resurrection and the resurgence of his church that the pair finally established themselves in Waterdeep. Adrian would claim the two incidents unrelated, but most believed that for his own protection, he had entered into an arrangement with the Blackstaff. While the truth of this is uncertain, he remained well behaved while in the city and is said to have kept his dealings with the Waterdhavian underworld reasonably limited. The stories concerning <CHARNAME> herself were considerably more fanciful, however. Half the populace was convinced that she had become one of the Masked Lords of Waterdeep. Others just as happily speculated that she had played everyone for a fool and taken over the criminal underworld. No few insisted that both claims were true. Despite the increasingly wild rumors, <CHARNAME> and Adrian enjoyed life in the City of Splendors... at least until the birth of their daughter. Despite his lukewarm assent to the concept of children, Adrian found the reality much more difficult to handle. He began drinking far more heavily than he ever had before, and he avoided the responsibilities of fatherhood as much as possible without running away entirely. His relationship with <CHARNAME> quickly deteriorated, though what ultimately became of them and their daughter, no tale tells.~
 @84   = ~Mere days after the final defeat of Melissan, <CHARNAME> and Adrian put Tethyr behind them. They briefly returned to Athkatla, where they were married in a quiet, private ceremony. They were reluctant to settle down immediately, however, and for a short time, their days together resembled a long (if somewhat tempestuous) honeymoon. Accompanied by Jaheira, they briefly traveled to Shadowdale, where Adrian attempted to reconcile with his father. The road was as rocky as could be expected, and after a clash with a local Harper, they were kindly invited to leave. It was shortly after Bane's resurrection and the resurgence of his church that the pair finally established themselves in Waterdeep. Adrian would claim the two incidents unrelated, but most believed that for his own protection, he had entered into an arrangement with the Blackstaff. While the truth of this is uncertain, he remained well behaved while in the city and is said to have kept his dealings with the Waterdhavian underworld reasonably limited. The stories concerning <CHARNAME> herself were considerably more fanciful, however. Half the populace was convinced that she had become one of the Masked Lords of Waterdeep. Others just as happily speculated that she had played everyone for a fool and taken over the criminal underworld. No few insisted that both claims were true. Despite the increasingly wild rumors, <CHARNAME> and Adrian enjoyed life in the City of Splendors, though the birth of their daughter sorely tested their relationship. Despite his lukewarm assent to the concept of children, Adrian found the reality much more difficult to handle, and he began to drink more heavily than he ever had before. Disturbed by this behavior, his own father unexpectedly came to Waterdeep to speak with him. Nobody outside of the family knows exactly what passed between them, but Adrian has not had a drop of wine to drink since. Despite the rocky beginning, he ultimately proved to be an attentive parent. Too attentive, perhaps, as their daughter grew up to be everything one might expect of a pampered young noblewoman with too much money and too much time...~
-@85   = ~Change Adrian's class to Cleric/Mage~
-@86   = ~Install alternate class for Adrian?~
-@87   = ~Change Adrian's class to Mage/Thief~
-@88   = ~Phaelin's soundset~
-@89   = ~Please install Adrian before additional content~
-@90   = ~Install optional soundset for Adrian?~
-@91   = ~Tatterdemalion's soundset~
+
