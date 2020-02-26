@@ -1,0 +1,110 @@
+/* ========================================= *
+ *         ADRIAN CROSSMOD COMPONENT         *
+ * ========================================= */
+
+/* ------------------------ *
+ *  Adrian-Angelo Material  *
+ * ------------------------ */
+ACTION_IF FILE_EXISTS_IN_GAME ~rh#adr.dlg~ AND FILE_EXISTS_IN_GAME ~adangel.dlg~ BEGIN
+	PRINT ~Adding banters between Adrian and Sister Vigilante's Angelo...~
+	COMPILE ~adrian/crossmod/angelo.d~ USING ~adrian/translations/%LANGUAGE%/crossmod.tra~
+END
+
+/* ----------------------- *
+ *  Adrian-Arath Material  *
+ * ----------------------- */
+ACTION_IF FILE_EXISTS_IN_GAME ~rh#adr.dlg~ AND FILE_EXISTS_IN_GAME ~lk#arath.dlg~ BEGIN
+	PRINT ~Adding banters between Adrian and Arath...~
+	COMPILE EVALUATE_BUFFER ~adrian/crossmod/arath.d~ USING ~adrian/translations/%LANGUAGE%/crossmod.tra~
+END
+
+/* ------------------------ *
+ *  Adrian-Darian Material  *
+ * ------------------------ */
+ACTION_IF FILE_EXISTS_IN_GAME ~rh#adr.dlg~ AND FILE_EXISTS_IN_GAME ~t1dar.dlg~ BEGIN
+	PRINT ~Adding banters between Adrian and Darian...~
+	COMPILE ~adrian/crossmod/darian.d~ USING ~adrian/translations/%LANGUAGE%/crossmod.tra~
+END
+
+/* ----------------------- *
+ *  Adrian-Faren Material  *
+ * ----------------------- */
+ACTION_IF FILE_EXISTS_IN_GAME ~rh#adr.dlg~ AND FILE_EXISTS_IN_GAME ~fhfrn.dlg~ BEGIN
+	PRINT ~Adding banters between Adrian and Faren...~
+	COMPILE ~adrian/crossmod/faren.d~ USING ~adrian/translations/%LANGUAGE%/crossmod.tra~
+	EXTEND_BOTTOM ~fhfrn.bcs~ ~adrian/crossmod/faren_fhfrn.baf~
+END
+
+/* ----------------------- *
+ *  Adrian-Gavin Material  *
+ * ----------------------- */
+ACTION_IF FILE_EXISTS_IN_GAME ~rh#adr.dlg~ AND FILE_EXISTS_IN_GAME ~b!gav25j.dlg~ BEGIN
+	PRINT ~Adding banters between Adrian and Gavin...~
+	COMPILE ~adrian/crossmod/gavin.d~ USING ~adrian/translations/%LANGUAGE%/crossmod.tra~
+	EXTEND_BOTTOM ~rh#adr.bcs~ ~adrian/crossmod/gavin_rh#adr.baf~
+END
+
+/* ------------------------------------ *
+ *  Adrian-Kivan of Shilmista Material  *
+ * ------------------------------------ */
+ACTION_IF FILE_EXISTS_IN_GAME ~rh#adr.dlg~ AND FILE_EXISTS_IN_GAME ~p#kiv25.dlg~ BEGIN
+	PRINT ~Adding banters between Adrian and Kivan of Shilmista...~
+	COMPILE EVALUATE_BUFFER ~adrian/crossmod/kivan.d~ USING ~adrian/translations/%LANGUAGE%/crossmod.tra~
+	EXTEND_BOTTOM ~rh#adrd.bcs~ ~adrian/crossmod/kivan_rh#adrd.baf~
+END
+
+/* -------------------------------- *
+ *  Adrian-Kulyok's Coran Material  *
+ * -------------------------------- */
+ACTION_IF FILE_EXISTS_IN_GAME ~rh#adr.dlg~ AND FILE_EXISTS_IN_GAME ~o#cor25.dlg~ BEGIN
+	PRINT ~Adding banters between Adrian and Kulyok's Coran...~
+	COMPILE ~adrian/crossmod/coran.d~ USING ~adrian/translations/%LANGUAGE%/crossmod.tra~
+END
+
+/* ------------------------------- *
+ *  Adrian-Kulyok's Tiax Material  *
+ * ------------------------------- */
+ACTION_IF FILE_EXISTS_IN_GAME ~rh#adr.dlg~ AND FILE_EXISTS_IN_GAME ~o#tiax.dlg~ BEGIN
+	PRINT ~Adding banters between Adrian and Kulyok's Tiax...~
+	COMPILE ~adrian/crossmod/tiax.d~ USING ~adrian/translations/%LANGUAGE%/crossmod.tra~
+END
+
+/* ------------------------------ *
+ *  Adrian-Kulyok's Xan Material  *
+ * ------------------------------ */
+ACTION_IF FILE_EXISTS_IN_GAME ~rh#adr.dlg~ AND FILE_EXISTS_IN_GAME ~o#xan25.dlg~ BEGIN
+	PRINT ~Adding banters between Adrian and Kulyok's Xan...~
+	COMPILE ~adrian/crossmod/xan.d~ USING ~adrian/translations/%LANGUAGE%/crossmod.tra~
+END
+
+/* ------------------------- *
+ *  Adrian-Nephele Material  *
+ * ------------------------- */
+ACTION_IF FILE_EXISTS_IN_GAME ~rh#adr.dlg~ AND FILE_EXISTS_IN_GAME ~lk#neph.dlg~ BEGIN
+	PRINT ~Adding banters between Adrian and Nephele...~
+	COMPILE ~adrian/crossmod/nephele.d~ USING ~adrian/translations/%LANGUAGE%/crossmod.tra~
+END
+
+/* ----------------------- *
+ *  Adrian-Ninde Material  *
+ * ----------------------- */
+ACTION_IF FILE_EXISTS_IN_GAME ~rh#adr.dlg~ AND FILE_EXISTS_IN_GAME ~lk#ni25.dlg~ BEGIN
+	PRINT ~Adding banters between Adrian and Ninde...~
+	COMPILE ~adrian/crossmod/ninde.d~ USING ~adrian/translations/%LANGUAGE%/crossmod.tra~
+END
+
+/* ------------------------ *
+ *  Adrian-Xulaye Material  *
+ * ------------------------ */
+ACTION_IF FILE_EXISTS_IN_GAME ~rh#adr.dlg~ AND FILE_EXISTS_IN_GAME ~lk#xula.dlg~ BEGIN
+	PRINT ~Adding banters between Adrian and Xulaye...~
+  COMPILE ~adrian/crossmod/xulaye.d~ USING ~adrian/translations/%LANGUAGE%/crossmod.tra~
+END
+
+/* ----------------------- *
+ *  Adrian-Iylos Material  *
+ * ----------------------- */
+ACTION_IF FILE_EXISTS_IN_GAME ~rh#ad25.dlg~ AND FILE_EXISTS_IN_GAME ~lk#iylo.dlg~ BEGIN
+	PRINT ~Adding banters between Adrian and Iylos...~
+	COMPILE ~adrian/crossmod/iylos.d~ USING ~adrian/translations/%LANGUAGE%/crossmod.tra~
+END
