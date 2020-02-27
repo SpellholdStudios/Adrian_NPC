@@ -16,7 +16,7 @@
 **Mod Forum:** <a href="http://www.shsforums.net/forum/627-adrian/">Adrian NPC</a>  
 
 
-[Read the mod's readme](http://spellholdstudios.github.io/readmes/adrian-readme-english.html).
+[Read the mod's readme](http://spellholdstudios.github.io/readmes/adrian-readme-english.html) (<a href="http://spellholdstudios.github.io/readmes/adrian-readme-french.html">French</a>).
 
 [Download the mod at Spellhold Studios](http://www.shsforums.net/files/file/1007-adrian/).<br>
 
@@ -61,7 +61,7 @@ This mod is designed to work on the following Infinity Engine games: the origina
 
 Andrian NPC is a WeiDU mod, and therefore should be compatible with all WeiDU mods. However, we cannot test every single one. If you encounter any bugs, please <a href="http://www.shsforums.net/forum/627-adrian/">report them on the forum</a>!
 
->Classical game players are strongly recommended to download and install the latest version of the <a href="http://www.gibberlings3.net/bg2fixpack/">BG2 Fixpack</a> before proceeding with the installation of this mod.<br>
+>Although it is not required for the Adrian NPC to function properly, classical game players are strongly recommended to download and install the latest version of the <a href="http://www.gibberlings3.net/bg2fixpack/">BG2 Fixpack</a> before proceeding with the installation of this mod.<br>
 <div align="right"><a href="#top">Back to top</a></div>
 
 
@@ -197,6 +197,26 @@ Adrian was conceived of as a sorcerer, but his character and history lend themse
 
 ## <a name="components" id="components"></a>Components
 
+As of v5.0, the installer groups optional classes and soundsets components into two components, letting the player decide which one he/she wants to install.  
+The number of each is the component DESIGNATED number which gives it a fixed install position and allows automated installers to specify component choices.<br /><br />
+
+
+**[0-2] Adrian NPC for BGII** (Main component)  
+**0. Adrian is a Sorcerer**  
+**1. Change Adrian's class to Cleric/Mage**  
+**2. Change Adrian's class to Mage/Thief**
+
+## 
+
+**[10-11] Install optional soundset for Adrian** (only in English)  
+**10. Phaelin's soundset**  
+**11. Tatterdemalion's soundset**
+
+## 
+
+**{20] Crossmod content** (only in English)
+
+This component installs banters between Adrian and Angelo, Arath, Coran (Kulyok's mod), Darian, Faren, Gavin, Iylos, Kivan of Shilmista, Nephele, Ninde, Tiax (Kulyok's mod), Xan (Kulyok's mod) and Xulaye, if those mods are detected.
 
 <div align="right"><a href="#top">Back to top</a></div>
 
@@ -206,7 +226,46 @@ Adrian was conceived of as a sorcerer, but his character and history lend themse
 
 ## <a name="credits" id="credits"></a>Credits and Acknowledgements
 
+**Author:** <a href="http://www.shsforums.net/user/7955-rhaella/">Rhaella</a>  
+**WeiDU coding:** <a href="http://www.shsforums.net/user/3481-kaeloree/">K'aeloree</a>  
 
+
+#### Special Acknowledgements to:
+
+- A huge thanks to K'aeloree for always being there (and for putting up with a barrage of ridiculous questions). Additional thanks to MiLeah for her artwork and to all of my play-testers for their patience and enthusiasm. You guys are amazing.
+- <a href="http://www.spellholdstudios.net/">Spellhold Studios</a> team for hosting the mod (<a href="http://www.shsforums.net">Forums</a>)
+- Portrait: MiLeah.
+- Optional Voicing: Phaelin & Tatterdemalion.
+- French translation: Ixyon.
+- Proofreaders: K'aeloree, Stnemele, berelinde, Elizavet, Allahandra.
+- Testers: K'aeloree, AmyAE, Myzandria, Seeka, Agashi, BGII-addicted, Brei, eSqr, IceDragon, Oracle, OutofSHD, ramenbito, Sappho, Silver Dawn, soledestiny, Tatyan.
+- EET file conversion: Roxanne.
+- Music: <a href="http://freemusicarchive.org/music/Chris_Zabriskie/Preludes/19_-_Prelude_No_19">Prelude No. 19</a> (<a href="http://freemusicarchive.org/music/Chris_Zabriskie/">Chris Zabriskie</a>) / <a rel="license" href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.
+- Everyone else from <a href="https://www.gibberlings3.net/forums/">The Gibberlings Three</a>, <a href="http://www.shsforums.net/">Spellhold Studios</a> forums, and the other Infinity Engine gaming and modding communities who offered their help and support.
+
+#### Programs/tools used in creation:
+
+- <a href="https://github.com/WeiDUorg/weidu/releases"><acronym title="Weimer Dialogue Utility">WeiDU</acronym></a>, by Wes Weimer, the bigg and Wisp.
+- <a href="https://github.com/Argent77/NearInfinity/releases">Near Infinity</a>, by Jon Olav Hauglid, FredSRichardson, and Argent77.
+- <a href="http://www.shsforums.net/topic/31285-infinity-explorer-v085/">Infinity Explorer</a>, by Dmitry Jemerov / bigmoshi.
+- <a href="https://gibberlings3.github.io/iesdp/"><acronym title="Infinity Engine Structures Description Project">IESDP</acronym></a>, maintained by igi and lynx.
+- <a href="http://notepad-plus-plus.org/">Notepad++</a>, by the Notepad++ team, Don Ho, and the spellcheck plug-in.
+- <a href="http://www.shsforums.net/files/file/1048-weidu-highlighter-for-notepad/">WeiDU Notepad++ Highlighters </a>, by Argent77.
+
+## 
+
+#### Copyrights Information
+
+###### Adrian NPC is not developed, supported, or endorsed by BioWare&trade; or Interplay/BlackIsle, Overhaul, Beamdog or the Wizards of the Coast. It was developed by Rhaella, based on material from the game Baldur's Gate II and its expansion.
+###### All mod content is &copy;Rhaella.
+###### Baldur's Gate II: Shadows of Amn and Baldur's Gate II: Throne of Bhaal &copy; TSR, Inc. The BioWare Infinity Engine is &copy; BioWare Corp. All other trademarks and copyrights are property of their respective owners.
+
+###### This mod was created to be freely enjoyed by all Baldur's Gate II players, and its content is free of rights. However, it should not be sold, published, compiled or redistributed in any form without the consent of the author.
+###### Please note that any and all redistribution and/or hosting of this mod is prohibited without permission from the author.
+
+###### The modding community for the Infinity Engine has been going strong for more than 10 years now, and is the culmination of thousands of unpaid modding hours by fellow fans of the game. Modders produce their best work and players get the best, well-supported mods when we all work together.
+###### There are two big ways to upset this harmony. One is to claim someone else's work as your own. The second is to host and redistribute a mod without permission from the author(s).
+###### Be kind to your fellow players and modders. Don't do either.</br></br>
 <div align="right"><a href="#top">Back to top</a></div>
 
 
