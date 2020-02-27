@@ -7,7 +7,7 @@
 @6    = ~Garde tes paroles empoisonnées pour toi, imbécile. Je sers <CHARNAME> à présent, et j'ai bien plus à lui offrir que tes provocations supposément habiles, qui représentent ton unique contribution.~
 @7    = ~En effet... tu es à son service. J'ose espérer que tu t'en souviendras.~
 @8    = ~Ah. Jouerais-tu désormais le rôle de l'amant soucieux, mage ? Tenteras-tu de me mettre à bas au premier geste importun ? Ne me fais pas rire.~
-@9    = ~(Il sourit) Fais un pas de travers et je pense qu! 'elle te mettra à bas toute seule.~
+@9    = ~(Il sourit) Fais un pas de travers et je pense qu'elle te mettra à bas toute seule.~
 @10   = ~Cela ne regarde que <CHARNAME> et moi.~
 @11   = ~Alors prends cela pour un avertissement amical.~
 @12   = ~Ah, oui... tu es un homme si grand et si fort, n'est-ce pas ? Dommage que cela ne t'ait servi à rien la dernière fois.~
@@ -105,7 +105,7 @@
 @104  = ~Tu... oh, je vois.~
 @105  = ~Je me fiche éperdument de ta philosophie, tieffelin, mais si tu veux la voir se refléter dans la vie, tu n'as pas vraiment besoin de me regarder.~
 @106  = ~Se refléter, mon passereau ? Non, je ne parle pas de réflexion. Cherche en toi-même et j'ose affirmer que tu verras éclore la vérité de mon propos.~
-@107  = ~J'ai suffisamment de choses à penser sans avoir à me soucier en plus de tes superstitions Sigiliennes bizarres, Haer'dalis. Laisse-moi tranquille.~
+@107  = ~J'ai suffisamment de choses à penser sans avoir à me soucier en plus de tes superstitions sigiliennes bizarres, Haer'dalis. Laisse-moi tranquille.~
 @108  = ~À la façon que tu as de cracher et de grimacer, mon dogue, je crois que je ne souhaiterais rien d'autre.~
 @109  = ~Alors Adrian, que comptes-tu faire une fois que tout ceci sera fini ? J'imagine que rentrer chez toi n'est pas trop une option.~
 @110  = ~Je ne te le fais pas dire.~
@@ -161,7 +161,7 @@
 @160  = ~J'en doute. Malgré tout, les mâles de la surface semblent moins goûter aux plaisirs les plus... aigus.~
 @161  = ~Alors que les drows mâles sont tous sans exception avides, je n'en doute pas. Va voir ailleurs, Viconia. Je ne nie pas apprécier quelques-uns des plaisirs de Loviatar, je doute qu'ils aient quoi que ce soit à voir avec les tiens.~
 @162  = ~Pff. J'aurais dû m'y attendre.~
-@163  = ~J'ai remarqué que tu passais plus de temps dans tes livres que tu ne le faisais à Amn, jaluk. Je ne peux pas croire que l'étude des arcanes a fait un tel bond en un si court intervalle.~
+@163  = ~J'ai remarqué que tu passais plus de temps dans tes livres que tu ne le faisais en Amn, jaluk. Je ne peux pas croire que l'étude des arcanes a fait un tel bond en un si court intervalle.~
 @164  = ~En effet, ce n'est pas le cas.~
 @165  = ~Alors pourquoi persister ?~
 @166  = ~Sans doute pour les mêmes raisons qui te poussent à faire des avances au premier mâle venu.~
@@ -182,7 +182,7 @@
 @181  = ~Voilà qui explique la frustration sur ton visage.~
 @182  = ~Alors cet idiot ne sait pas distinguer la frustration de l'illumination. Quelle surprise. Va-t’en, insolent...~
 @183  = ~Attends. C'est bien l'un de *mes* tomes que tu souilles de tes pattes graisseuses ?~
-@184  = ~Si on t'écoute, tous les livres de Féérune t’appartiennent.~
+@184  = ~Si on t'écoute, tous les livres de Féérûne t’appartiennent.~
 @185  = ~Tout à fait ! Maintenant rends-le moi !~
 @186  = ~Sinon quoi ? Tu passeras l’heure à venir à préparer une boule de feu afin de me l’envoyer ?~
 @187  = ~Bah ! (Tu verras... tu verras...)~
