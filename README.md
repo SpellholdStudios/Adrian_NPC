@@ -42,7 +42,6 @@ Adrian may be somewhat difficult to get to know. He is not the most tolerant of 
 - Content for SoA, ToB, and BG2EE.
 - Banters with the original Bioware NPCs.
 - Optional Voicing.
-- 10 new NPCs.
 - Interjections and other commentary.
 - New encounters.
 - A romance for an eligible female protagonist.
@@ -130,7 +129,7 @@ In addition to the methods above for removing individual components, you can com
 
 ## <a name="details" id="details"></a>Details
 
-<img style="float: left;" src="adrian/readme/rhadrl.png">
+<img style="float: left;" src="adrian/readme/images/rhadrl.png">
 Adrian is Lawful Evil by alignment, but your experience with him may vary. While he has been involved in some unambiguously evil dealings in the past (and is mostly unapologetic about his history), he's not particularly enamored of aimless or obvious villainy. His worldview is influenced by some very dark philosophy, but he isn't a monster. Expect conflict when adding him to a good-aligned party, but don't expect bloodshed.
 
 ## 
@@ -224,6 +223,7 @@ Adrian was conceived of as a sorcerer, but his character and history lend themse
 - Replaced `GAME_IS` conditions with variables checks to speed up install time.
 - Fixed a typo in `HANDLE_CHARSETS` function (replaced *infer_charset* with *infer_charsets*).
 - Externalized tp2 code into *main_component.tpa* and *adrian_crossmod.tpa* libraries for more comfortable readability and maintenance.
+- Re-formated, updated and renamed readme files to *adrian-readme-%LANGUAGE%.html* and moved them into new readme folder.
 - Removed useless files and backup folder.
 - Lower cased files.
 

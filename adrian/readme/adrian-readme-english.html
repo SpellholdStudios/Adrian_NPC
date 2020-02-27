@@ -1,0 +1,936 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+	<meta charset="UTF-8">
+	<style type="text/css">
+
+/*<![CDATA[*/
+<!-- 
+	body {
+		margin: 0;
+		padding: 0;
+		cursor: default;
+		text-align: center;
+		color: #000;
+		background: #e3e3db url('http://spellholdstudios.net/images/sh_bg_main.jpg');
+	}
+
+	#wrap {
+		text-align: left;
+		margin: 0 auto;
+		margin-top: 20px;
+		width: 88%;
+		font-family: Verdana, Tahoma, Arial, sans-serif;
+		font-size: 12px;
+		color: #333;
+	}
+
+	#header {
+		text-align: center;
+		background: #e5e5e5;
+		border: 1px solid #781808;
+		border-top: 5px solid #781808;
+		border-bottom: 5px solid #781808;
+		padding: 5px 0 13px 0;
+	}
+	#header .about {
+		margin: 7px 0 0 0;
+		padding: 0;
+		font-style: italic;
+		color: #555;
+	}
+	#header .menu {
+		font-weight: bold;
+		margin: 0;
+		color: #999;
+	}
+	#header .menu a:link,
+	#header .menu a:visited {
+		color: #333;
+	}
+
+	#footer {
+		text-align: center;
+		background: #e5e5e5;
+		border: 1px solid #781808;
+		border-top: 5px solid #781808;
+		border-bottom: 5px solid #781808;
+		font-size: 75%;
+		padding: 5px 0 13px 0;
+	}
+
+	#maindiv {
+		margin: 0 auto;
+		margin-top: -20px;
+		width: 80%;
+	}
+
+	#maindiv .content {
+		counter-increment: kman;
+		counter-reset: h2;
+		background-color: #e8e8e6;
+		padding: 0 0 25px 0;
+		margin: 50px auto;
+		border-width: 1px 1px 4px 10px;
+		border-style: solid;
+		border-color: #781808;
+		position: relative;
+		display: block;
+	}
+	#maindiv .content::before {
+		content: counter(kman, lower-roman);
+		font-size: 100%;
+		font-weight: bold;
+		text-align: center;
+		color: #eee;
+		background-color: #781808;
+		width: 35px;
+		top: 0px;
+		left: 0px;
+		display: block;
+	}
+
+	#maindiv .important {
+		font-size: 95%;
+		font-family: Verdana;
+		text-align: left;
+		background-color: #F1F1F1;
+		border-top: solid 1px #aaa;
+		border-bottom: solid 1px #aaa;
+		border-left: solid 1px #aaa;
+		border-right: solid 1px #aaa;
+		padding: 10px;
+		margin: 20px auto;
+		width: 80%;
+		line-height: 160%;
+	}
+	#maindiv .important::before {
+		display: none;
+	}
+	#maindiv .important p {
+		width: 100%;
+		font-size: 100%;
+		text-indent: 0px;
+		margin: 5px 0 10px 0;
+	}
+	#maindiv .important ol {
+		margin: -10px 0 0 20px;
+	}
+	#maindiv .important ul {
+		margin: -10px 0 0 15px;
+	}
+
+	#maindiv p {
+		font-size: 100%;
+		font-style: normal;
+		line-height: 150%;
+		padding: 0px;
+		margin: 10px auto;
+		width: 90%;
+		display: block;
+	}
+
+	#maindiv address {
+		font-size: 95%;
+		font-style: normal;
+		font-weight: bold;
+		text-decoration: none;
+		color: #BBB;
+		background-color: #781808;
+		padding: 3px 0px 0px;
+		margin: 0px;
+		width: 100%;
+		position: absolute;
+		bottom: -1px;
+		left: 0px;
+		display: block;
+		text-align: right;
+	}
+	#maindiv address a:active {
+		color: #fff;
+		text-decoration: line-through;
+		border: none;
+	}
+	#maindiv address a:focus,
+	#maindiv address a:hover {
+		text-decoration: none;
+		color: #F1F1F1;
+		border: 0;
+	}
+	#maindiv address a:link,
+	#maindiv address a:visited {
+		font-weight: bold;
+		text-decoration: underline;
+		background-color: transparent;
+		color: #eaeaea !important;
+		padding-right: 5px;
+		padding-left: 6px;
+	}
+
+
+	/*	Lists  */
+	#maindiv ol {
+		line-height: 170%;
+		width: 87%;
+		margin-left: 4%;
+*		margin: -10px 0 0 35px;
+		*margin-left: 70px;
+	}
+	#maindiv ol li {
+		line-height: 150%;
+	}
+	#maindiv ul {
+		line-height: 170%;
+		margin-left: 4%;
+		width: 87%;
+	}
+	#maindiv ul li {
+		line-height: 150%;
+	}
+	#maindiv ul li ul {
+		margin: 0px;
+		width: 96%;
+	}
+	#maindiv ul li ul li {
+	}
+	#maindiv ul li a:link,
+	#maindiv ul li a:visited,
+	#maindiv ul li ul li a:link,
+	#maindiv ul li ul li a:visited {
+		color: #781808;
+		text-decoration: none;
+		font-weight: normal;
+	}
+
+	.t1 {
+		font-weight: bold;
+		width: 26%;
+		text-align: right;
+		clear: right;
+		float: left;
+		*float: none;
+		*margin-left: 65px;
+		line-height: 22px;
+	}
+	.t2 {
+		text-align: left;
+		width: 73%;
+		float: right;
+		*float: none;
+		line-height: 22px;
+	}
+
+
+	/*	Liens internet  */
+	a:hover,
+	a:active {
+		color: #222;
+		border-bottom: 1px solid black;
+	}
+	a:link,
+	a:visited {
+		color: #781808;
+		font-weight: bold;
+		text-decoration: none;
+	}
+
+	h1 {
+		font-size: 250%; /* 225 */
+		color: #444;
+		padding: 10px 0 15px 0; /* 5 0 5 0 */
+		margin: 0;
+		width: 100%;
+	}
+	h2 {
+		display: block;
+		font-family: Verdana, Trebuchet MS, Arial, serif;
+		text-align: left;
+		text-indent: 30px;
+		padding: 0px;
+		margin: 20px 0 0 0;
+		border-bottom: dotted 2px #d0d0d0;
+		border-top: dotted 2px #d0d0d0;
+		background: #deded9;
+		font-size: 160%;
+	}
+	h2::first-letter {
+		color: #781808;
+		background-color: transparent;
+	}
+
+	h3,
+	h4,
+	h5 {
+		margin: 10px 40px 10px 40px;
+		padding: 0;
+	}
+
+	h3 {
+		font-size: 125%;
+		font-style: italic;
+	}
+	h4 {
+		font-size: 125%;
+	}
+	h5 {
+		font-size: 100%;
+	}
+	h6 {
+		width: 100%;
+		margin: 10px 0 15px 0;
+		background-color: #ECECEC;
+		text-align: left;
+		text-indent: 30px;
+		font-size: 100%;
+		font-style: italic;
+		padding-top: 1px;
+		padding-bottom: 1px;
+		border-bottom: solid 1px #bbb;
+		border-top: solid 1px #bbb;
+	}
+
+	.screen {background-size:contain;background-repeat:no-repeat}
+	.screen img{max-width:100%; opacity:1;transition: opacity 1.25s ease-in-out;
+		-moz-transition: opacity 1.25s ease-in-out;
+		-webkit-transition: opacity 1.25s ease-in-out;
+	}
+	.screen img:hover{max-width:100%; opacity:0}
+
+-->
+/*]]>*/
+	</style>
+	<title>
+		Spellhold Studios - Adrian NPC
+	</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link href="images/shsweb.ico" rel="icon" type="image/bmp" />
+
+  </head>
+
+
+  <body>
+	<div id="wrap">
+	  <a name="top" id="top"></a>
+	  <div id="header">
+
+		<h1 style="color: #781808;text-shadow: 0.1rem 0.1rem 0.25rem #807559;">Adrian NPC</h1>
+
+		<span style="font-style: italic;"><strong>A Spellhold Studios mod for Baldur's Gate II:<acronym title="Throne of Bhaal">ToB</acronym>, Baldur's Gate Trilogy, Baldur's Gate II: Enhanced Edition and EET.</strong></span>
+		<hr style="margin: 10px 0 10px 0; padding: 0; height: 1px; border: 0; color: #aaa; background-color: #aaa;" />
+
+		<p class="about">
+			Author: Rhaella
+		</p>
+		<p class="about">
+			<a href="http://www.spellholdstudios.net/ie/adrian">Mod Website</a> &#8226; <a href="http://www.shsforums.net/forum/627-adrian/">Mod Forum</a> &#8226; <a href="http://www.shsforums.net/files/file/1007-adrian/">Download</a> &#8226; <a href="https://github.com/SpellholdStudios/Adrian_NPC/releases/latest">GitHub</a> &#8226; Version 5.0
+		</p>
+		<hr style="margin: 10px 0 10px 0; padding: 0; height: 1px; border: 0; color: #aaa; background-color: #aaa;" />
+
+		<p class="menu">
+			<a href="#intro">Introduction</a> &#x2B25; <a href="#compat">Compatibility</a> &#x2B25; <a href="#installation">Installation</a> &#x2B25; <a href="#details">Details</a> &#x2B25; <a href="#romance">Romance</a> &#x2B25; <a href="#compon">Components</a> &#x2B25; <a href="#trouble">Troubleshooting</a> &#x2B25; <a href="#credits">Credits</a> &#x2B25; <a href="#version">Version History</a>
+		</p>
+	  </div>
+
+	<div id="maindiv">
+<!-- ================== I n t r o d u c t i o n ================== -->
+	  <a name="intro" id="intro"></a>
+	  <div class="content">
+
+		<h2>Introduction</h2><br>
+
+		  <p>
+			Meet Adrian Sianodel, a 33 year old half-elven mage who, after several recent catastrophes, managed to land a brief but involuntary stint as Irenicus' pet wandmaker. Kill the duergar who guard him, and he'll be quite happy to lend his magic to your cause. To repay the debt, to exact vengeance... and perhaps because he simply has nowhere else to go anymore.
+		  </p>
+
+		  <p>
+			Adrian has lived an interesting life, for lack of a better term, though he's hoping to finally put his past behind him. Aside from his magic, he has a background in espionage and a decadent -- some might say romantic -- streak that has gotten him into trouble in the past. He once pursued (and ultimately wrecked) a political career with one of the most notorious organizations in the Realms, and may very much enjoy the opportunities for intrigue the Shadow Thieves have to offer... if you can drag him away from fighting with the Harper and the Red Wizard long enough to notice, that is.
+		  </p>
+
+		  <p>
+			Adrian may be somewhat difficult to get to know. He is not the most tolerant of people, and while he is intrigued by your powers and heritage (and has far more experience with the machinations of dark gods than he would like), neither his respect nor his trust is particularly easy to earn. That said, he will appreciate a leader willing to take him to task.
+		  </p><br>
+		  
+		  <p>
+			<strong>Content</strong>
+		  </p>
+		  <ul style="margin-left: 4%;">
+			<li>A colorful new sorcerer NPC.</li>
+			<li>Content for SoA, ToB, and BG2EE.</li>
+			<li>Banters with the original Bioware NPCs.</li>
+			<li>Optional Voicing.</li>
+			<li>Interjections and other commentary.</li>
+			<li>New encounters.</li>
+			<li>A romance for an eligible female protagonist.</li>
+ 			<li>A friendship path for a protagonist not romancing him.</li>
+			<li>Player initiated dialogue and flirts.</li>
+ 			<li>Original portrait by MiLeah</li>
+          </ul><br>
+
+
+		<address>
+			<span class="footer">Adrian NPC &gt; Introduction</span> &#8226;<a href="#top">BACK TO TOP</a>
+		</address>
+	  </div>
+
+<!-- ================= C o m p a t i b i l i t y ================= -->
+	  <a name="compat" id="compat"></a>
+	  <div class="content">
+
+		<h2>Compatibility</h2><br>
+
+		<p>
+			Adrian NPC is designed to work on the following Infinity Engine games:
+		</p>
+		<ul>
+			<li>Baldur's Gate II: Enhanced Edition (BG2EE).</li>
+			<li>The original Baldur's Gate II (BG2, or just SoA) with the Throne of Bhaal (ToB) expansion. <strong>Make sure you have Throne of Bhaal patched to version 26498.</strong> Check the ReadMe files related to your patch in your game folder and the <a href="http://www.bioware.com/games/throne_bhaal/support/patches/">BioWare</a> website if necessary.</li>
+			<li>The conversion projects based on <acronym title="Throne of Bhaal">ToB</acronym>, <a href="http://www.shsforums.net/forum/261-bgt-weidu/"><strong>Baldur's Gate Trilogy (BGT)</strong></a> and <a href="https://github.com/K4thos/EET/releases"><strong>Enhanced Edition Trilogy (EET)</strong></a>.</li>
+		</ul></br>
+
+
+		<hr style="width: 90%; color: #781808; background-color: #781808; " /><br>
+
+
+		<p>
+			The Adrian NPC mod is a <acronym title="Weimer Dialogue Utility">WeiDU</acronym> mod, and therefore should be compatible with all WeiDU mods. It is only compatible with BGII: ToB. However, we cannot test every single one. If you encounter any bugs, please <a href="http://www.shsforums.net/forum/627-adrian/">report them on the forum</a>!
+		</p>
+		<p>
+			Although it is not required for the Adrian NPC to function properly, classical game players are strongly recommended to download and install the latest version of the <a href="http://www.gibberlings3.net/bg2fixpack/">BG2 Fixpack</a> before proceeding with the installation of this mod.
+		</p><br>
+
+
+		<address>
+			<span class="footer">Adrian NPC &gt; Compatibility</span> &#8226;<a href="#top">BACK TO TOP</a>
+		</address>
+	  </div>
+
+<!-- ================== I n s t a l l a t i o n ================== -->
+	  <a name="installation" id="installation"></a>
+	  <div class="content">
+
+		<h2>Installation</h2><br>
+
+		<h3>Notes</h3>
+
+		<p style="margin-top:2%;">
+			<em>If you've previously installed the mod, remove it before extracting the new version. To do this, run <strong><span style="font-family: Courier New;font-size: 100%;border: 1px solid black;background-color: black;color: #deded9;">&nbsp;setup-adrian.exe&nbsp;</span></strong>, un-install all previously installed components and delete the adrian folder.</em>
+		</p>
+		<p>
+			<em>When installing or un-installing, <strong>do not close the <acronym title="Disk Operating System">DOS</acronym> window</strong> by clicking on the <strong>X</strong> button! Instead, press the <strong>Enter</strong> key whenever instructed to do so.</em>
+		</p>
+		<p>
+			<strong>Disable any antivirus</strong> or other memory-resident software before installing this or any other mod. Some (particularly avast and Norton!) have a tendency to report false positives with mod activity, resulting in failed installs.
+		</p>
+		<p>
+			You can extract files from the archive using <a href="http://www.rarlab.com/download.htm">WinRAR</a>, <a href="http://www.zipgenius.it/ita/?page_id=12">ZipGenius</a> or another file compression utility that handles .zip files.
+		</p><br>
+
+
+		<hr style="width: 90%; color: #781808; background-color: #781808; " /><br>
+
+
+		<h3>Enhanced Editions Note</h3>
+
+		<p style="margin-top:2%;">
+			The Enhanced Editions are actively supported games. Please note that every patch update will wipe your current mod setup! If in the middle of a modded game you might want to delay the patch update (if possible) as even after reinstalling the mods, you might not be able to continue with your old savegames. Alternatively, copy the whole game's folder into a new one that can be modded and will stay untouched by game patches. It is important that you install the mod to the language version you are playing the game in. Otherwise, the dialogues of the mod will not show but give error messages.
+		</p><br>
+
+
+		<hr style="width: 90%; color: #781808; background-color: #781808; " /><br>
+
+
+		<h3>Windows</h3>
+
+		<p style="margin-top:2%;">
+			Extract the contents of the mod to the folder of the game you wish to modify (<em>the folder which contains the "CHITIN.KEY" file</em>). On successful extraction, there should be an adrian folder and a setup-adrian.exe file in your game folder. To install, simply double-click <strong><span style="font-family: Courier New;font-size: 100%;border: 1px solid black;background-color: black;color: #deded9;">&nbsp;setup-adrian.exe&nbsp;</span></strong> and follow the instructions on screen.
+		</p>
+		<p>
+			Run <strong><span style="font-family: Courier New;font-size: 100%;border: 1px solid black;background-color: black;color: #deded9;">&nbsp;setup-adrian.exe&nbsp;</span></strong> in your game folder to reinstall, un-install or otherwise change components.
+		</p></br>
+
+
+		<hr style="width: 90%; color: #781808; background-color: #781808; " /><br>
+
+
+		<h3>Mac OS X</h3>
+
+		<p style="margin-top:2%;">
+			Adrian NPC for Mac OS X distributed in the same compressed archive and includes a <acronym title="Weimer Dialogue Utility">WeiDU</acronym> installer.
+		</p>
+		<p>
+			First, extract the files from the archive into your game directory. On successful extraction, there should be an adrian folder, setup-adrian and setup-adrian.command files in your game folder. To install, double-click <strong><span style="font-family: Courier New;font-size: 100%;border: 1px solid black;background-color: black;color: #deded9;">&nbsp;setup-adrian.command&nbsp;</span></strong> and follow the instructions on screen.
+		</p>
+		<p>
+			You can run <strong><span style="font-family: Courier New;font-size: 100%;border: 1px solid black;background-color: black;color: #deded9;">&nbsp;setup-adrian.command&nbsp;</span></strong> in your game folder to reinstall, un-install or otherwise the components settings.
+		</p></br>
+
+
+		<hr style="width: 90%; color: #781808; background-color: #781808; " /><br>
+
+
+		<h3>Linux</h3>
+
+		<p style="margin-top:2%;">
+			Extract the contents of the mod to the folder of the game you wish to modify.
+		</p>
+		<p>
+			Download the latest Linux version of <a href="https://github.com/WeiDUorg/weidu/releases"><acronym title="Weimer Dialogue Utility">WeiDU</acronym></a> and copy WeiDU and WeInstall to /usr/bin. Then open a terminal and <strong>cd</strong> to your game installation directory.
+		</p>
+		<p>
+			<em>Optional: run 'tolower' and answer 'Y' to both queries. You can avoid running the second option (linux.ini) if you've already ran it once in the same directory. To save time, the archive is already tolowered, so there's no need to run the first option (lowercasing file names) either, if you've extracted only this mod since the last time you lowercased file names. If unsure, running tolower and choosing both options is the safe bet.</em>
+		</p>
+		<p>
+			Run <strong><span style="font-family: Courier New;font-size: 100%;border: 1px solid black;background-color: black;color: #deded9;">&nbsp;WeInstall setup-adrian&nbsp;</span></strong> in your game folder to install the mod. Then run <strong><span style="font-family: Courier New;font-size: 100%;border: 1px solid black;background-color: black;color: #deded9;">&nbsp;wine BGMain.exe&nbsp;</span></strong> and start playing.
+		</p><br>
+
+
+		<hr style="width: 90%; color: #781808; background-color: #781808; " /><br>
+
+
+		<h3>Note for Complete Un-installation</h3>
+
+		<p style="margin-top:2%;">
+			In addition to the methods above for removing individual components, you can completely un-install the mod using <strong><span style="font-family: Courier New;font-size: 100%;border: 1px solid black;background-color: black;color: #deded9;">&nbsp;setup-adrian --uninstall&nbsp;</span></strong> at the command line to remove all components without wading through prompts.
+		</p><br>
+
+
+		<address>
+			<span class="footer">Adrian NPC &gt; Installation</span> &#8226;<a href="#top">BACK TO TOP</a>
+		</address>
+	  </div>
+
+<!-- ================== D e t a i l s ================== -->
+	  <a name="details" id="details"></a>
+	  <div class="content">
+
+		<h2>Details</h2><br>
+
+		<p style="margin-top:2%;">
+		  <table cellpadding=0 cellspacing=0 style="margin-left: 80px; margin-right: 80px">
+			<tr>
+			  <td><img src="images/rhadrl.png" title="Adrian Sianodel Portrait"></td>
+			  <td width=20 style="border:none"></td>
+			  <td style="border:none;width: 90%;line-height: 150%;">
+				Adrian is Lawful Evil by alignment, but your experience with him may vary.<br/>
+				While he has been involved in some unambiguously evil dealings in the past (and is mostly unapologetic about his history), he's not particularly enamored of aimless or obvious villainy. His worldview is influenced by some very dark philosophy, but he isn't a monster.<br/>
+				Expect conflict when adding him to a good-aligned party, but don't expect bloodshed.</td>
+			</tr>
+		  </table>
+		</p><br>
+
+
+		<hr style="width: 90%; color: #781808; background-color: #781808; " /><br>
+
+
+		<h3>Statistics</h3>
+
+		<p style="margin-top:2%;">
+		  <ul>
+			<li>Strength 12</li>
+			<li>Dexterity 16</li>
+			<li>Constitution 10</li>
+			<li>Intelligence 17</li>
+			<li>Wisdom 16</li>
+			<li>Charisma 14</li>
+		  </ul>
+		</p><br>
+
+
+		<hr style="width: 90%; color: #781808; background-color: #781808; " /><br>
+
+
+		<h3>Biography</h3>
+
+		<p style="margin-top:2%;">
+			When asked about his past, Adrian smiles slightly and says that there are enough demons to face in the present without worrying about yesterday's as well. Given his recent enslavement, it would appear that he has more than a few of his own with which to contend. Despite his slippery responses, you eventually glean that he spent some time in Sembia, working as a hirespell wizard for a rising merchant prince. You quickly learn that further prodding will win you nothing but headaches.
+		</p><br>
+
+
+		<hr style="width: 90%; color: #781808; background-color: #781808; " /><br>
+
+
+		<h3>NPC Relationships</h3>
+
+		<p style="margin-top:2%;">
+			There will be conflict, occasionally on the edge of violence, but you can keep him with any Bioware NPC without fearing a lethal outcome. Jaheira in particular is recommended, as her presence can significantly affect the epilogue. This is doubly true if you are romancing him.
+		</p><br>
+
+
+		<hr style="width: 90%; color: #781808; background-color: #781808; " /><br>
+
+
+		<h3>Classes</h3>
+
+		<p style="margin-top:2%;">
+			Adrian was conceived of as a sorcerer, but his character and history lend themselves to the cleric/mage and mage/thief multiclasses as well. For this reason, both are included as alternative installation choices. Dialogue may vary in places to take this into account. Installing him as a sorcerer is still recommended, but both alternatives are internally consistent.
+		</p><br>
+
+
+		<address>
+			<span class="footer">Adrian NPC &gt; Details</span> &#8226;<a href="#top">BACK TO TOP</a>
+		</address>
+	  </div>
+
+<!-- ================== R o m a n c e ================== -->
+	  <a name="romance" id="romance"></a>
+	  <div class="content">
+
+		<h2>Romance</h2><br>
+
+		<h3>Requirements</h3>
+
+		<p style="margin-top:2%;">
+		  <ul>
+			<li><strong>Gender:</strong> Adrian will only romance a female protagonist.</li>
+			<li><strong>Race:</strong> Adrian will only romance humans or half-elves.</li>
+			<li><strong>Alignment:</strong> No restrictions.</li>
+			<li><strong>Class restrictions:</strong> No restrictions.</li>
+			<li><strong>Stat restrictions:</strong> INT 12+ and CHR 12+. Adrian admires a keen mind and a strong personality.</li>
+		  </ul>
+		</p><br>
+
+
+		<hr style="width: 90%; color: #781808; background-color: #781808; " /><br>
+
+
+		<h3>Notes</h3>
+
+		<p style="margin-top:2%;">
+		  <ul>
+			<li>The romance doesn't start immediately. There are a handful of early talks, but the actual romance will not begin until after you have completed his quest.</li>
+			<li>Adrian is not particularly thin-skinned. While a PC who treats him overly harshly is unlikely to gain his trust, Adrian values a strong will and prefers a woman who can stand up for herself. Overly righteous or naive behavior will not impress, nor will he care for a stereotypically Chaotic Evil protagonist.</li>
+			<li>The first talk will trigger upon resting in an inn after escaping Irenicus's dungeon. There are several other talks that trigger upon rest as well.</li>
+			<li>If the romance has stalled, try resting in a forest.</li>
+			<li>Reaching the committed stage of the romance before arriving at Spellhold is recommended. You may miss out on some content otherwise.</li>
+			<li>Anyone can attempt to flirt with Adrian, but the actual flirtpack will not be available until after you have completed his quest and the romance has begun. Once the romance commits, you can ask him to initiate flirts as well.</li>
+		  </ul>
+		</p><br>
+
+
+		<address>
+			<span class="footer">Adrian NPC &gt; Romance</span> &#8226;<a href="#top">BACK TO TOP</a>
+		</address>
+	  </div>
+
+<!-- =================== C o m p o n e n t s ==================== -->
+	  <a name="compon" id="compon"></a>
+		<div class="content">
+
+		<h2>Components</h2><br>
+
+		<p>
+			As of v5.0, the installer groups optional classes and soundsets components into two components, letting the player decide which one he/she wants to install.
+		</p>
+		<p>
+			The number of each is the component <em>DESIGNATED</em> number which gives it a fixed install position, lets other components and mods detect it and allows automated installers to specify component choices.
+		</p><br>
+
+		<hr style="width: 90%; color: #781808; background-color: #781808; " /><br>
+
+		<p><strong>[0-2] Adrian NPC for BGII</strong> (Main component)
+		</p>
+		  <ul style="margin-left: 4%;"><strong>
+			0. Adrian is a Sorcerer<br />
+			1. Change Adrian's class to Cleric/Mage<br />
+			2. Change Adrian's class to Mage/Thief</strong><br />
+		  </ul><br>
+
+		<hr style="width: 90%; color: #781808; background-color: #781808; " /><br>
+
+		<p><strong>[10-11] Install optional soundset for Adrian</strong> (only in English)
+		</p>
+		  <ul style="margin-left: 4%;"><strong>
+			10. Phaelin's soundset<br />
+			11. Tatterdemalion's soundset</strong><br />
+		  </ul><br>
+
+		<hr style="width: 90%; color: #781808; background-color: #781808; " /><br>
+
+		<p><strong>{20] Crossmod content</strong> (only in English)
+		</p>
+		<p>
+			This component installs banters between Adrian and Angelo, Arath, Coran (Kulyok's mod), Darian, Faren, Gavin, Iylos, Kivan of Shilmista, Nephele, Ninde, Tiax (Kulyok's mod), Xan (Kulyok's mod) and Xulaye, if those mods are detected.
+		</p><br>
+
+
+		<address>
+			<span class="footer">Adrian NPC &gt; Components</span> &#8226;<a href="#top">BACK TO TOP</a>
+		</address>
+	  </div>
+
+<!-- ============== T r o u b l e s h o o t i n g =============== -->
+	  <a name="trouble" id="trouble"></a>
+	  <div class="content">
+
+          <h2>Troubleshooting</h2><br>
+
+		<p>
+			These are some general tips if you have problems getting the game working, with or without this or other mods. Many times, errors have to do with the game engine itself or the manner of installation or gameplay. The game recommends deleting all files out of the /cache, /temp and /tempsave sub-folders in your game folder to see if that resolves the problem before any further troubleshooting.
+		</p><br>
+
+		<hr style="width: 90%; color: #781808; background-color: #781808; " /><br>
+
+		<p>
+			<strong>Symptom: Game freezes or crashes to desktop (CTDs)</strong>
+		</p>
+		<p>
+			Sometimes the game displays an "assertion error" in a pop-up window when this happens, but often times it doesn't. To enable the full error message, open the file <strong>baldur.ini</strong> in your me folder with a text editor (such as Notepad). If you find you can't edit it or save changes in Windows Vista or 7, see <a href="http://forums.bioware.com/viewtopic.html?topic=662080&forum=10"> this topic</a> for assistance.
+		</p>
+		<p>
+			Under the [Program Options] section in the file, type <strong> Logging On=1</strong> (unless it's already there). While you're there, you may also want to make sure <strong>Debug Mode=1</strong> is there to enable the <a href="https://gibberlings3.github.io/iesdp/appendices/clua/bg2.htm">CLUA Console</a> for debugging and testing. Save the file and exit. Now go back into the game and try to reproduce the crash. Then look in your game folder again for the <strong>Baldur.err</strong> file and open it with a text editor to analyse its contents.
+		</p><br>
+
+		<hr style="width: 90%; color: #781808; background-color: #781808; " /><br>
+
+		<p>
+			<strong>Symptom: Game crashes with no Baldur.err log and shows either a black screen or a pop-up window indicating an error at offset 005ca8a8</strong>
+		</p>
+		<p>
+			This usually indicates an animation-related issue. Make sure you have the latest version of the mod. If you've installed other mods after it and have this issue, install the fix available <a href="http://www.shsforums.net/index.php?app=downloads&showfile=884">here</a>.
+		</p><br>
+
+		<hr style="width: 90%; color: #781808; background-color: #781808; " /><br>
+
+		<p>
+			<strong>Symptom:</strong>
+		</p>
+		<div class="important" style="background-color: black;color: #deded9;">
+			<p style="font-family: Courier New;font-size: 100%;">
+				<strong>ERROR: error copying [infinityanimations/content/somefile.bam]<br />
+				ERROR: [SOMEFILE.CRE] -> [override/SOMEFILE.CRE] Patching failed (COPY)<br />
+				Stopping installation because of error.</strong> (with no other error message)<br />
+			</p>
+		</div>
+		<p>
+			Less-than-informative messages like these may indicate you're installing to a hard drive with a low data transfer rate or an antivirus program is active during installation (which can also affect data transfer). Try installing to an internal drive with antivirus protection disabled during the install. If unsure, disconnect from the Internet (either unplug your network cable or disable your wireless adaptor) and turn off <strong>all</strong> memory-resident programs during the install. To get a list of these, go to Start > Run and type <strong>msconfig</strong> where it says "Open:" then click OK. When the System Configuration Utility appears, click on the Startup tab. The only really necessary programs that need to be loaded in memory at startup are those related to your graphics chip (typically ATI or NVIDIA). Uncheck everything else, reboot and try installing the mod again. There are well-documented issues with installing mods while Avast antivirus is running, so make absolutely sure all components of Avast are completely disabled.
+		</p><br>
+
+		<hr style="width: 90%; color: #781808; background-color: #781808; " /><br>
+
+		<p>
+			<strong>Other issues</strong>
+		</p>
+		<p>
+			If you have more than one large mod installed, please refer to the <a href="http://www.shsforums.net/index.php?showtopic=41036">Megamod FAQ</a> for more troubleshooting tips.
+		</p><br>
+		<p>
+			If none of this resolves your issue, or you have mod-specific issues, please report the problem in the mod's <a href="http://www.shsforums.net/forum/627-adrian/">forum</a>. Include the contents of your <acronym title="Weimer Dialogue Utility">WeiDU</acronym>.log file in the post, or attach it if it's large.
+		</p><br>
+
+		<address>
+			<span class="footer">Adrian NPC &gt; Troubleshooting</span> &#8226;<a href="#top">BACK TO TOP</a>
+		</address>
+	  </div>
+
+<!-- ======================= C r e d i t s ====================== -->
+	  <a name="credits" id="credits"></a>
+	  <div class="content">
+
+		<h2>Credits</h2><br>
+
+			<span class="t1">Writer:</span> <span class="t2"><a href="http://www.shsforums.net/user/7955-rhaella/">Rhaella</a></span><br />
+			<span class="t1"><acronym title="Weimer Dialogue Utility">WeiDU</acronym> coding:</span> <span class="t2"><a href="http://www.shsforums.net/user/3481-kaeloree/">K'aeloree</a></span><br />
+
+		<hr style="clear: both; width: 90%; color: transparent; background-color: transparent; " /><br>
+
+		<hr style="width: 90%; color: #781808; background-color: #781808; " /><br>
+
+		<h5>Special Acknowledgements to:</h5>
+
+		<p>
+			A huge thanks to K'aeloree for always being there (and for putting up with a barrage of ridiculous questions). Additional thanks to MiLeah for her artwork and to all of my play-testers for their patience and enthusiasm. You guys are amazing.
+		</p>
+
+ 		  <ul class="version-list c1">
+			<li><a href="http://www.spellholdstudios.net/">Spellhold Studios</a> team for hosting the mod (<a href="http://www.shsforums.net">Forums</a>).</li>
+			<li>Portrait: MiLeah.</li>
+			<li>Optional Voicing: Phaelin & Tatterdemalion.</li>
+			<li>French translation: Ixyon.</li>
+			<li>Proofreaders: K'aeloree, Stnemele, berelinde, Elizavet, Allahandra.</li>
+			<li>Testers: K'aeloree, AmyAE, Myzandria, Seeka, Agashi, BGII-addicted, Brei, eSqr, IceDragon, Oracle, OutofSHD, ramenbito, Sappho, Silver Dawn, soledestiny, Tatyan.</li>
+			<li>EET file conversion: Roxanne.</li>
+
+			<li>Music: <a href="http://freemusicarchive.org/music/Chris_Zabriskie/Preludes/19_-_Prelude_No_19">Prelude No. 19</a> (<a href="http://freemusicarchive.org/music/Chris_Zabriskie/">Chris Zabriskie</a>) / <a rel="license" href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</li>
+
+			<li>Everyone else from <a href="https://www.gibberlings3.net/forums/">The Gibberlings Three</a>, <a href="http://www.shsforums.net/">Spellhold Studios</a> forums, and the other Infinity Engine gaming and modding communities who offered their help and support.</li>
+		  </ul><br>
+
+		<hr style="width: 90%; color: #781808; background-color: #781808; " /><br>
+
+		<h5>Programs/tools used in creation:</h5>
+
+		  <ul class="version-list c1">
+			<li>
+			  <a href="https://github.com/WeiDUorg/weidu/releases"><acronym title="Weimer Dialogue Utility">WeiDU</acronym></a>, by Wes Weimer, the bigg and Wisp.
+			</li>
+			<li>
+			  <a href="https://github.com/Argent77/NearInfinity/releases">Near Infinity</a>, by Jon Olav Hauglid, FredSRichardson, and Argent77.
+			</li>
+			<li>
+			  <a href="http://www.shsforums.net/topic/31285-infinity-explorer-v085/">Infinity Explorer</a>, by Dmitry Jemerov / bigmoshi.
+			</li>
+			<li>
+			  <a href="https://gibberlings3.github.io/iesdp/"><acronym title="Infinity Engine Structures Description Project">IESDP</acronym></a>, maintained by igi and lynx.
+ 			</li>
+			<li>
+			  <a href="http://notepad-plus-plus.org/">Notepad++</a>, by the Notepad++ team, Don Ho, and the spellcheck plug-in.
+ 			</li>
+			<li>
+			  <a href="http://www.shsforums.net/files/file/1048-weidu-highlighter-for-notepad/">WeiDU Notepad++ Highlighters </a>, by Argent77.
+			</li>
+		  </ul><br>
+
+		<hr style="width: 90%; color: #781808; background-color: #781808; " /><br>
+
+		<h5>Copyrights</h5>
+
+		  <div class="important" style="border-color: #781808;">
+			<p>Adrian NPC is not developed, supported, or endorsed by BioWare&trade; or Interplay/BlackIsle, Overhaul, Beamdog or the Wizards of the Coast. It was developed by Rhaella, based on material from the game Baldur's Gate II and its expansion.</p>
+			<p>All mod content is &copy;Rhaella.</p>
+			<p>Baldur's Gate II: Shadows of Amn and Baldur's Gate II: Throne of Bhaal &copy; TSR, Inc. The BioWare Infinity Engine is &copy; BioWare Corp. All other trademarks and copyrights are property of their respective owners.</p>
+<br>
+			<p>This mod was created to be freely enjoyed by all Baldur's Gate II players, and its content is free of rights. However, it should not be sold, published, compiled or redistributed in any form without the consent of the author.</p>
+			<p>Please note that any and all redistribution and/or hosting of this mod is prohibited without permission from the author.</p>
+		  </div><br>
+
+		<p>
+			The modding community for the Infinity Engine has been going strong for more than 10 years now, and is the culmination of thousands of unpaid modding hours by fellow fans of the game. Modders produce their best work and players get the best, well-supported mods when we all work together.
+		</p>
+		<p>
+			There are two big ways to upset this harmony. One is to claim someone else's work as your own. The second is to host and redistribute a mod without permission from the author(s).
+		</p>
+		<p>
+			Be kind to your fellow players and modders. Don't do either.
+		</p><br>
+
+
+		<address>
+			<span class="footer">Adrian NPC &gt; Credits</span> &#8226;<a href="#top">BACK TO TOP</a>
+		</address>
+	  </div>
+
+<!-- ============== V e r s i o n   H i s t o r y =============== -->
+	  <a name="version" id="version"></a>
+	  <div class="content">
+
+		<h2>Version History</h2><br>
+
+		<h6>Version 5.0 (2 February 2020)</h6>
+
+		  <ul>
+			<li>Added <em>adrian.ini</em> metadata file to support AL|EN's "Project Infinity"</li>
+			<li>Components: added <em>DESIGNATED</em> numbers and "<em>adrian_sorcerer</em>", "<em>adrian_cleric_mage</em>", "<em>adrian_mage_thief</em>", "<em>adrian_phaelin_soundset</em>", "<em>adrian_tatterdemalion_soundset</em>" and "<em>adrian_crossmod_content</em>" LABELS.</li>
+
+			<li>Externalized tp2 code into <em>main_component.tpa</em> and <em>adrian_crossmod.tpa</em> libraries for more comfortable readability and maintenance.</li>
+
+			<li>Replaced <em>GAME_IS</em> conditions with variables checks to speed up install time.</li>
+			<li>Fixed a typo in <em>HANDLE_CHARSETS</em> function (replaced "<em>infer_charset</em>" with "<em>infer_charsets</em>").</li>
+
+			<li>Re-formated, updated and renamed readme files to <em>adrian-readme-%LANGUAGE%.html</em> and moved them into new readme folder.</li>
+			<li>Removed useless files and backup folder.</li>
+			<li>Lower cased files.</li>
+
+			<li>Added archive libiconv-1.9.2-1-src.7z with iconv licence info.</li>
+
+			<li>Included Linux and Mac Os X versions in the same package (thanks AL|EN!).</li>
+			<li>Uploaded mod to official SpellHold Studios GitHub mirror account.</li>
+		  </ul><br>
+
+		<h6>Version 4.3 (13 July 2018)</h6>
+
+		  <ul>
+			<li>Crossmod TRAified.</li>
+		  </ul><br>
+
+		<h6>Version 4.2 (16 March 2018)</h6>
+
+		  <ul>
+			<li>Tra file error fixed.</li>
+		  </ul><br>
+
+		<h6>Version 4.1 (14 March 2018)</h6>
+
+		  <ul>
+			<li>EET compatibility fixed.</li>
+		  </ul><br>
+
+		<h6>Version 4 (8 March 2018)</h6>
+
+		  <ul>
+			<li>Optional voicing added, EET compatibility implemented.</li>
+		  </ul><br>
+
+		<h6>Version 3.1 (19 January 2015)</h6>
+
+		  <ul>
+			<li>Several fixes to the French version added.</li>
+		  </ul><br>
+
+		<h6>Version 3 (11 January 2015)</h6>
+
+		  <ul>
+			<li>French translation added.</li>
+		  </ul><br>
+
+		<h6>Version 2.3 (15 July 2014)</h6>
+
+		  <ul>
+			<li>Repeating quest dialogue fixed for real this time.</li>
+		  </ul><br>
+
+		<h6>Version 2.2 (19 May 2014)</h6>
+
+		  <ul>
+			<li>Repeating quest dialogue fixed.</li>
+			<li>Several BG2EE bugs fixed.</li>
+			<li>PID comments added for BG2EE NPCs.</li>
+		  </ul><br>
+
+		<h6>Version 2.1 (17 November 2013)</h6>
+
+		  <ul>
+			<li>Bug in quest dialogue fixed.</li>
+		  </ul><br>
+
+		<h6>Version 2 (15 November 2013)</h6>
+
+		  <ul>
+			<li>BG2EE compatibility and content added.</li>
+			<li>Crossmod content added.</li>
+		  </ul><br>
+
+		<h6>Version 1.3 (9 January 2013)</h6>
+
+		  <ul>
+			<li>Dialogue edits.</li>
+		  </ul><br>
+
+		<h6>Version 1.2 (20 September 2012)</h6>
+
+		  <ul>
+			<li>Class specific bug fixed.</li>
+		  </ul><br>
+
+		<h6>Version 1.1 (27 August 2012)</h6>
+
+		  <ul>
+			<li>Several minor bug fixes.</li>
+		  </ul><br>
+
+		<h6>Version 1.0 (19 August 2012)</h6>
+
+		  <ul>
+			<li>Initial release.</li>
+		  </ul><br>
+
+
+		<address>
+			<span class="footer">Adrian NPC &gt; Version History</span> &#8226;<a href="#top">BACK TO TOP</a>
+		</address>
+	  </div>
+
+	</div>
+	</div>
+  </body>
+</html>
