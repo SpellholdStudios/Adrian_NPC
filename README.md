@@ -39,7 +39,7 @@ Adrian may be somewhat difficult to get to know. He is not the most tolerant of 
 
 **Content:**
 - A colorful new sorcerer NPC.
-- Content for SoA, ToB, and BG2EE.
+- Content for SoA, ToB, and BG2:EE.
 - Banters with the original Bioware NPCs.
 - Optional Voicing.
 - Interjections and other commentary.
@@ -57,7 +57,7 @@ Adrian may be somewhat difficult to get to know. He is not the most tolerant of 
 
 ## <a name="compat" id="compat"></a>Compatibility
 
-This mod is designed to work on the following Infinity Engine games: the original Baldur's Gate II (BG2 or just SoA) with or without the Throne of Bhaal (ToB) expansion, Baldur's Gate II: Enhanced Edition (BG2EE), the conversion projects Baldur's Gate Trilogy (BGT) and Enhanced Edition Trilogy (EET).
+This mod is designed to work on the following Infinity Engine games: the original Baldur's Gate II (BG2 or just SoA) with or without the Throne of Bhaal (ToB) expansion, Baldur's Gate II: Enhanced Edition (BG2:EE), the conversion projects Baldur's Gate Trilogy (BGT) and Enhanced Edition Trilogy (EET).
 
 Andrian NPC is a WeiDU mod, and therefore should be compatible with all WeiDU mods. However, we cannot test every single one. If you encounter any bugs, please <a href="http://www.shsforums.net/forum/627-adrian/">report them on the forum</a>!
 
@@ -88,7 +88,7 @@ The Enhanced Editions are actively supported games. Please note that every patch
 
 #### Windows
 
-Region of Terror for Windows is distributed as an extractable compressed archive and includes a WeiDU installer.
+Adrian NPC for BGII for Windows is distributed as an extractable compressed archive and includes a WeiDU installer.
 
 Extract the contents of the mod archive into the folder of the game you wish to modify (*the folder which contains the "CHITIN.KEY" file*), using <a href="http://www.7-zip.org/download.html">7zip</a>, <a href="http://www.rarlab.com/download.htm">WinRAR</a>, or another file compression utility that handles .zip files. On successful extraction, there should be a :file_folder: adrian folder and a setup-adrian.exe file in your game folder. To install, simply double-click **`setup-adrian.exe`** and follow the instructions on screen.
 
@@ -98,7 +98,7 @@ Run **`setup-adrian.exe`** in your game folder to reinstall, un-install or other
 
 #### Mac OS X
 
-Region of Terror for Mac OS X is distributed is distributed in the same compressed archive and includes a WeiDU installer.
+Adrian NPC for BGII for Mac OS X is distributed is distributed in the same compressed archive and includes a WeiDU installer.
 
 First, extract the files from the archive into your game directory. On successful extraction, there should be a :file_folder: adrian folder, setup-adrian and setup-adrian.command files in your game folder. To install, simply double-click **`setup-adrian.command`** and follow the instructions on screen.
 
@@ -108,7 +108,7 @@ Run **`setup-adrian.command`** in your game folder to reinstall, un-install or o
 
 #### Linux
 
-Region of Terror for Linux is distributed as a compressed tarball and does not include a WeiDU installer.
+Adrian NPC for BGII for Linux is distributed as a compressed tarball and does not include a WeiDU installer.
 
 Extract the contents of the mod to the folder of the game you wish to modify.
 
@@ -215,19 +215,25 @@ Adrian was conceived of as a sorcerer, but his character and history lend themse
 
 ## <a name="versions" id="versions"></a>Version History
 
-#### Version 4.4 (2 February 2020)
+#### Version 4.4 (27 February 2020)
 
-- Added `DESIGNATED` numbers and "*adrian_sorcerer*"; "*adrian_cleric_mage*", "*adrian_mage_thief*", "*adrian_phaelin_soundset*", "*adrian_tatterdemalion_soundset*" and "*adrian_crossmod_content*" component `LABELS`.
-- Grouped class and soundsets optional components into `SUBCOMPONENTS` to support AL|EN's "Project Infinity".
+- Added *adrian.ini* metadata file to support AL|EN's "Project Infinity".
+- Added `DESIGNATED` numbers and "*adrian_sorcerer*", "*adrian_cleric_mage*", "*adrian_mage_thief*", "*adrian_phaelin_soundset*", "*adrian_tatterdemalion_soundset*" and "*adrian_crossmod_content*" component `LABELS`.
+- Grouped classes and soundsets optional components into `SUBCOMPONENTS` to support AL|EN's "Project Infinity".
 
 - Replaced `GAME_IS` conditions with variables checks to speed up install time.
 - Fixed a typo in `HANDLE_CHARSETS` function (replaced *infer_charset* with *infer_charsets*).
 - Externalized tp2 code into *main_component.tpa* and *adrian_crossmod.tpa* libraries for more comfortable readability and maintenance.
+- Replaced `AUTHOR` keyword with `SUPPORT`.
+- Updated deprecated modding tools links.
 - Re-formated, updated and renamed readme files to *adrian-readme-%LANGUAGE%.html* and moved them into new readme folder.
 - Removed useless files and backup folder.
 - Lower cased files.
 
 - Uploaded mod to official SpellHold Studios GitHub mirror account.
+
+- Removed redundant soundsets entries (@47 and @48) in setup.tra file.
+- Fixed Adrian portraits in EE games.
 
 ## 
 
@@ -276,8 +282,8 @@ Adrian was conceived of as a sorcerer, but his character and history lend themse
 #### Version 2.2 (19 May 2014)
 
 - Repeating quest dialogue fixed.
-- Several BG2EE bugs fixed.
-- PID comments added for BG2EE NPCs.
+- Several BG2:EE bugs fixed.
+- PID comments added for BG2:EE NPCs.
 
 ## 
 
@@ -289,7 +295,7 @@ Adrian was conceived of as a sorcerer, but his character and history lend themse
 
 #### Version 2 (15 November 2013)
 
-- BG2EE compatibility and content added.
+- BG2:EE compatibility and content added.
 - Crossmod content added.
 
 ## 
