@@ -4,7 +4,7 @@
 ![Language](https://img.shields.io/static/v1?label=language&message=English%20%7C%20French&color=limegreen)
 
 
-<div align="center"><h1>Adrian_NPC</h1>
+<div align="center"><h1>Adrian NPC for BGII</h1>
 
 <h3>A Spellhold Studios mod for Baldur's Gate II:ToB, Baldur's Gate Trilogy, BG2:EE and EET<h3>
 
@@ -57,7 +57,7 @@ Adrian may be somewhat difficult to get to know. He is not the most tolerant of 
 
 ## <a name="compat" id="compat"></a>Compatibility
 
-This mod is designed to work on the following Infinity Engine games: the original Baldur's Gate II (BG2 or just SoA) with or without the Throne of Bhaal (ToB) expansion, Baldur's Gate II: Enhanced Edition (BG2:EE), the conversion projects Baldur's Gate Trilogy (BGT) and Enhanced Edition Trilogy (EET).
+This mod is designed to work on the following Infinity Engine games: the original Baldur's Gate II (BG2 or just SoA) with or without the Throne of Bhaal (ToB) expansion, Baldur's Gate II: Enhanced Edition (BG2:EE), the conversion projects <a href="http://www.shsforums.net/forum/261-bgt-weidu/">Baldur's Gate Trilogy (BGT)</a> and <a href="https://github.com/K4thos/EET/releases">Enhanced Edition Trilogy (EET)</a>.
 
 Andrian NPC is a WeiDU mod, and therefore should be compatible with all WeiDU mods. However, we cannot test every single one. If you encounter any bugs, please <a href="http://www.shsforums.net/forum/627-adrian/">report them on the forum</a>!
 
@@ -214,7 +214,7 @@ The number of each is the component DESIGNATED number which gives it a fixed ins
 
 ## 
 
-**{20] Crossmod content** (only in English)
+**[20] Crossmod content** (only in English)
 
 This component installs banters between Adrian and Angelo, Arath, Coran (Kulyok's mod), Darian, Faren, Gavin, Iylos, Kivan of Shilmista, Nephele, Ninde, Tiax (Kulyok's mod), Xan (Kulyok's mod) and Xulaye, if those mods are detected.
 
@@ -229,6 +229,7 @@ This component installs banters between Adrian and Angelo, Arath, Coran (Kulyok'
 **Author:** <a href="http://www.shsforums.net/user/7955-rhaella/">Rhaella</a>  
 **WeiDU coding:** <a href="http://www.shsforums.net/user/3481-kaeloree/">K'aeloree</a>  
 
+## 
 
 #### Special Acknowledgements to:
 
@@ -239,9 +240,12 @@ This component installs banters between Adrian and Angelo, Arath, Coran (Kulyok'
 - French translation: Ixyon.
 - Proofreaders: K'aeloree, Stnemele, berelinde, Elizavet, Allahandra.
 - Testers: K'aeloree, AmyAE, Myzandria, Seeka, Agashi, BGII-addicted, Brei, eSqr, IceDragon, Oracle, OutofSHD, ramenbito, Sappho, Silver Dawn, soledestiny, Tatyan.
-- EET file conversion: Roxanne.
 - Music: <a href="http://freemusicarchive.org/music/Chris_Zabriskie/Preludes/19_-_Prelude_No_19">Prelude No. 19</a> (<a href="http://freemusicarchive.org/music/Chris_Zabriskie/">Chris Zabriskie</a>) / <a rel="license" href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.
+- EET file conversion: Roxanne.
 - Everyone else from <a href="https://www.gibberlings3.net/forums/">The Gibberlings Three</a>, <a href="http://www.shsforums.net/">Spellhold Studios</a> forums, and the other Infinity Engine gaming and modding communities who offered their help and support.
+
+
+## 
 
 #### Programs/tools used in creation:
 
@@ -250,7 +254,8 @@ This component installs banters between Adrian and Angelo, Arath, Coran (Kulyok'
 - <a href="http://www.shsforums.net/topic/31285-infinity-explorer-v085/">Infinity Explorer</a>, by Dmitry Jemerov / bigmoshi.
 - <a href="https://gibberlings3.github.io/iesdp/"><acronym title="Infinity Engine Structures Description Project">IESDP</acronym></a>, maintained by igi and lynx.
 - <a href="http://notepad-plus-plus.org/">Notepad++</a>, by the Notepad++ team, Don Ho, and the spellcheck plug-in.
-- <a href="http://www.shsforums.net/files/file/1048-weidu-highlighter-for-notepad/">WeiDU Notepad++ Highlighters </a>, by Argent77.
+- <a href="http://www.shsforums.net/files/file/1048-weidu-highlighter-for-notepad/">WeiDU Notepad++ Highlighters</a>, by Argent77.
+- <a href="https://forums.beamdog.com/discussion/78364/infinity-auto-packager-automatically-generate-and-adds-mod-packages-to-release-when-you-publish-it">Infinity Auto Packager</a>, by AL|EN.
 
 ## 
 
@@ -274,25 +279,26 @@ This component installs banters between Adrian and Angelo, Arath, Coran (Kulyok'
 
 ## <a name="versions" id="versions"></a>Version History
 
-#### Version 4.4 (27 February 2020)
+#### Version 4.4 (28 February 2020)
 
 - Added *adrian.ini* metadata file to support AL|EN's "Project Infinity".
+- Renamed *setup-adrian.tp2* -> *adrian.tp2* to support AL|EN's "Project Infinity".
 - Added `DESIGNATED` numbers and "*adrian_sorcerer*", "*adrian_cleric_mage*", "*adrian_mage_thief*", "*adrian_phaelin_soundset*", "*adrian_tatterdemalion_soundset*" and "*adrian_crossmod_content*" component `LABELS`.
 - Grouped classes and soundsets optional components into `SUBCOMPONENTS` to support AL|EN's "Project Infinity".
-
+- Fixed Adrian portraits in EE games.
 - Replaced `GAME_IS` conditions with variables checks to speed up install time.
 - Fixed a typo in `HANDLE_CHARSETS` function (replaced *infer_charset* with *infer_charsets*).
 - Externalized tp2 code into *main_component.tpa* and *adrian_crossmod.tpa* libraries for more comfortable readability and maintenance.
 - Replaced `AUTHOR` keyword with `SUPPORT`.
+- Added untranslated crossmod.tra file in french folder to avoid installation failure.
+- Proofread French translation.
+- Removed redundant soundsets entries (@47 and @48) in setup.tra file.
 - Updated deprecated modding tools links.
 - Re-formated, updated and renamed readme files to *adrian-readme-%LANGUAGE%.html* and moved them into new readme folder.
 - Removed useless files and backup folder.
 - Lower cased files.
-
+- Included Linux and Mac Os X versions in the same package (thanks AL|EN's Infinity Auto Packager tool!).
 - Uploaded mod to official SpellHold Studios GitHub mirror account.
-
-- Removed redundant soundsets entries (@47 and @48) in setup.tra file.
-- Fixed Adrian portraits in EE games.
 
 ## 
 

@@ -356,7 +356,7 @@
 		  </p>
 		  <ul style="margin-left: 4%;">
 			<li>A colorful new sorcerer NPC.</li>
-			<li>Content for SoA, ToB, and BG2EE.</li>
+			<li>Content for SoA, ToB, and BG2:EE.</li>
 			<li>Banters with the original Bioware NPCs.</li>
 			<li>Optional Voicing.</li>
 			<li>Interjections and other commentary.</li>
@@ -383,7 +383,7 @@
 			Adrian NPC is designed to work on the following Infinity Engine games:
 		</p>
 		<ul>
-			<li>Baldur's Gate II: Enhanced Edition (BG2EE).</li>
+			<li>Baldur's Gate II: Enhanced Edition (BG2:EE).</li>
 			<li>The original Baldur's Gate II (BG2, or just SoA) with the Throne of Bhaal (ToB) expansion. <strong>Make sure you have Throne of Bhaal patched to version 26498.</strong> Check the ReadMe files related to your patch in your game folder and the <a href="http://www.bioware.com/games/throne_bhaal/support/patches/">BioWare</a> website if necessary.</li>
 			<li>The conversion projects based on <acronym title="Throne of Bhaal">ToB</acronym>, <a href="http://www.shsforums.net/forum/261-bgt-weidu/"><strong>Baldur's Gate Trilogy (BGT)</strong></a> and <a href="https://github.com/K4thos/EET/releases"><strong>Enhanced Edition Trilogy (EET)</strong></a>.</li>
 		</ul></br>
@@ -393,7 +393,7 @@
 
 
 		<p>
-			The Adrian NPC mod is a <acronym title="Weimer Dialogue Utility">WeiDU</acronym> mod, and therefore should be compatible with all WeiDU mods. It is only compatible with BGII: ToB. However, we cannot test every single one. If you encounter any bugs, please <a href="http://www.shsforums.net/forum/627-adrian/">report them on the forum</a>!
+			The Adrian NPC mod is only compatible with BGII: ToB. This is a <acronym title="Weimer Dialogue Utility">WeiDU</acronym> mod, and therefore should be compatible with all WeiDU mods. However, we cannot test every single one. If you encounter any bugs, please <a href="http://www.shsforums.net/forum/627-adrian/">report them on the forum</a>!
 		</p>
 		<p>
 			Although it is not required for the Adrian NPC to function properly, classical game players are strongly recommended to download and install the latest version of the <a href="http://www.gibberlings3.net/bg2fixpack/">BG2 Fixpack</a> before proceeding with the installation of this mod.
@@ -647,7 +647,7 @@
 
 		<hr style="width: 90%; color: #781808; background-color: #781808; " /><br>
 
-		<p><strong>{20] Crossmod content</strong> (only in English)
+		<p><strong>[20] Crossmod content</strong> (only in English)
 		</p>
 		<p>
 			This component installs banters between Adrian and Angelo, Arath, Coran (Kulyok's mod), Darian, Faren, Gavin, Iylos, Kivan of Shilmista, Nephele, Ninde, Tiax (Kulyok's mod), Xan (Kulyok's mod) and Xulaye, if those mods are detected.
@@ -749,10 +749,8 @@
 			<li>French translation: Ixyon.</li>
 			<li>Proofreaders: K'aeloree, Stnemele, berelinde, Elizavet, Allahandra.</li>
 			<li>Testers: K'aeloree, AmyAE, Myzandria, Seeka, Agashi, BGII-addicted, Brei, eSqr, IceDragon, Oracle, OutofSHD, ramenbito, Sappho, Silver Dawn, soledestiny, Tatyan.</li>
-			<li>EET file conversion: Roxanne.</li>
-
 			<li>Music: <a href="http://freemusicarchive.org/music/Chris_Zabriskie/Preludes/19_-_Prelude_No_19">Prelude No. 19</a> (<a href="http://freemusicarchive.org/music/Chris_Zabriskie/">Chris Zabriskie</a>) / <a rel="license" href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</li>
-
+			<li>EET file conversion: Roxanne.</li>
 			<li>Everyone else from <a href="https://www.gibberlings3.net/forums/">The Gibberlings Three</a>, <a href="http://www.shsforums.net/">Spellhold Studios</a> forums, and the other Infinity Engine gaming and modding communities who offered their help and support.</li>
 		  </ul><br>
 
@@ -778,6 +776,9 @@
  			</li>
 			<li>
 			  <a href="http://www.shsforums.net/files/file/1048-weidu-highlighter-for-notepad/">WeiDU Notepad++ Highlighters </a>, by Argent77.
+			</li>
+			<li>
+			  <a href="https://forums.beamdog.com/discussion/78364/infinity-auto-packager-automatically-generate-and-adds-mod-packages-to-release-when-you-publish-it">Infinity Auto Packager</a>, by AL|EN.
 			</li>
 		  </ul><br>
 
@@ -816,24 +817,26 @@
 
 		<h2>Version History</h2><br>
 
-		<h6>Version 5.0 (2 February 2020)</h6>
+		<h6>Version 5.0 (28 February 2020)</h6>
 
 		  <ul>
 			<li>Added <em>adrian.ini</em> metadata file to support AL|EN's "Project Infinity"</li>
+			<li>Renamed <em>setup-adrian.tp2</em> -> <em>adrian.tp2</em> to support AL|EN's "Project Infinity".</li>
 			<li>Components: added <em>DESIGNATED</em> numbers and "<em>adrian_sorcerer</em>", "<em>adrian_cleric_mage</em>", "<em>adrian_mage_thief</em>", "<em>adrian_phaelin_soundset</em>", "<em>adrian_tatterdemalion_soundset</em>" and "<em>adrian_crossmod_content</em>" LABELS.</li>
-
-			<li>Externalized tp2 code into <em>main_component.tpa</em> and <em>adrian_crossmod.tpa</em> libraries for more comfortable readability and maintenance.</li>
-
+			<li>Grouped classes and soundsets optional components into `SUBCOMPONENTS` to support AL|EN's "Project Infinity".</li>
+			<li>Fixed Adrian portraits in EE games.</li>
 			<li>Replaced <em>GAME_IS</em> conditions with variables checks to speed up install time.</li>
 			<li>Fixed a typo in <em>HANDLE_CHARSETS</em> function (replaced "<em>infer_charset</em>" with "<em>infer_charsets</em>").</li>
-
+			<li>Externalized tp2 code into <em>main_component.tpa</em> and <em>adrian_crossmod.tpa</em> libraries for more comfortable readability and maintenance.</li>
+			<li>Replaced AUTHOR keyword with SUPPORT.</li>
+			<li>Added untranslated crossmod.tra file in french folder to avoid installation failure.</li>
+			<li>Proofread French translation.</li>
+			<li>Removed redundant soundsets entries (@47 and @48) in setup.tra file.</li>
+			<li>Updated deprecated modding tools links.</li>
 			<li>Re-formated, updated and renamed readme files to <em>adrian-readme-%LANGUAGE%.html</em> and moved them into new readme folder.</li>
 			<li>Removed useless files and backup folder.</li>
 			<li>Lower cased files.</li>
-
-			<li>Added archive libiconv-1.9.2-1-src.7z with iconv licence info.</li>
-
-			<li>Included Linux and Mac Os X versions in the same package (thanks AL|EN!).</li>
+			<li>Included Linux and Mac Os X versions in the same package (thanks AL|EN's Infinity Auto Packager tool!).</li>
 			<li>Uploaded mod to official SpellHold Studios GitHub mirror account.</li>
 		  </ul><br>
 
@@ -883,8 +886,8 @@
 
 		  <ul>
 			<li>Repeating quest dialogue fixed.</li>
-			<li>Several BG2EE bugs fixed.</li>
-			<li>PID comments added for BG2EE NPCs.</li>
+			<li>Several BG2:EE bugs fixed.</li>
+			<li>PID comments added for BG2:EE NPCs.</li>
 		  </ul><br>
 
 		<h6>Version 2.1 (17 November 2013)</h6>
@@ -896,7 +899,7 @@
 		<h6>Version 2 (15 November 2013)</h6>
 
 		  <ul>
-			<li>BG2EE compatibility and content added.</li>
+			<li>BG2:EE compatibility and content added.</li>
 			<li>Crossmod content added.</li>
 		  </ul><br>
 
