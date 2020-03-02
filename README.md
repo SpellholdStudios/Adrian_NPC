@@ -277,7 +277,7 @@ This component installs banters between Adrian and Angelo, Arath, Coran (Kulyok'
 
 ## <a name="versions" id="versions"></a>Version History
 
-#### Version 4.4 (3rf March 2020)
+#### Version 5.0 (3rd March 2020)
 
 - Added *adrian.ini* metadata file to support AL|EN's "Project Infinity".
 - Renamed *setup-adrian.tp2* -> *adrian.tp2* to support AL|EN's "Project Infinity".
