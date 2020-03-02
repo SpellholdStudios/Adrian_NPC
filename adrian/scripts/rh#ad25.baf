@@ -1,21 +1,22 @@
 // Initial goto
+// ------------
 IF
-    NumTimesTalkedTo(0)
+	NumTimesTalkedTo(0)
 THEN
-  RESPONSE #100
-    Dialogue(Player1)
+	RESPONSE #100
+		Dialogue(Player1)
 END
 
-// begin talks
-
+// Begin talks
+// -----------
 IF
 	InParty("rh#Adrian")
 	Global("rh#AdrianRomanceActive","GLOBAL",2)
 	Global("rh#AdrianTalksTOB","GLOBAL",0)
 THEN
-RESPONSE #100
-	RealSetGlobalTimer("rh#AdrianTalksTOBTimer","GLOBAL",1800)
-	SetGlobal("rh#AdrianTalksTOB","GLOBAL",1)
+	RESPONSE #100
+		RealSetGlobalTimer("rh#AdrianTalksTOBTimer","GLOBAL",1800)
+		SetGlobal("rh#AdrianTalksTOB","GLOBAL",1)
 END
 
 IF
@@ -23,13 +24,13 @@ IF
 	Global("rh#AdrianFriendshipActive","GLOBAL",1)
 	Global("rh#AdrianTalksTOB","GLOBAL",0)
 THEN
-RESPONSE #100
-	RealSetGlobalTimer("rh#AdrianTalksTOBTimer","GLOBAL",2700)
-	SetGlobal("rh#AdrianTalksTOB","GLOBAL",3)
+	RESPONSE #100
+		RealSetGlobalTimer("rh#AdrianTalksTOBTimer","GLOBAL",2700)
+		SetGlobal("rh#AdrianTalksTOB","GLOBAL",3)
 END
 
-// talks 1, 2, saradush, 5, 6
-
+// Talks 1, 2, Saradush, 5, 6
+// --------------------------
 IF
 	RealGlobalTimerExpired("rh#AdrianTalksTOBTimer","GLOBAL")
 	InParty("rh#Adrian")
@@ -45,12 +46,12 @@ IF
 		Global("rh#AdrianTalksTOB","GLOBAL",11)
 		Global("rh#AdrianTalksTOB","GLOBAL",13)
 THEN
-RESPONSE #100
-	IncrementGlobal("rh#AdrianTalksTOB","GLOBAL",1)
+	RESPONSE #100
+		IncrementGlobal("rh#AdrianTalksTOB","GLOBAL",1)
 END
 
-// talk 1 (2) friendship
-
+// Talk 1 (2) Friendship
+// ---------------------
 IF
 	RealGlobalTimerExpired("rh#AdrianTalksTOBTimer","GLOBAL")
 	InParty("rh#Adrian")
@@ -61,12 +62,12 @@ IF
 	Global("rh#AdrianFriendshipActive","GLOBAL",1)
 	Global("rh#AdrianTalksTOB","GLOBAL",3)
 THEN
-RESPONSE #100
-	IncrementGlobal("rh#AdrianTalksTOB","GLOBAL",1)
+	RESPONSE #100
+		IncrementGlobal("rh#AdrianTalksTOB","GLOBAL",1)
 END
 
-// talk 4
-
+// Talk 4
+// ------
 IF
 	RealGlobalTimerExpired("rh#AdrianTalksTOBTimer","GLOBAL")
 	InParty("rh#Adrian")
@@ -81,12 +82,12 @@ IF
 		Global("rh#AdrianRomanceActive","GLOBAL",2)
 	Global("rh#AdrianTalksTOB","GLOBAL",7)
 THEN
-RESPONSE #100
-	IncrementGlobal("rh#AdrianTalksTOB","GLOBAL",1)
+	RESPONSE #100
+		IncrementGlobal("rh#AdrianTalksTOB","GLOBAL",1)
 END
 
-// initiate talk, romance
-
+// Initiate talk, romance
+// ----------------------
 IF
 	RealGlobalTimerExpired("rh#AdrianTalksTOBTimer","GLOBAL")
 	InParty("rh#Adrian")
@@ -102,16 +103,16 @@ IF
 		Global("rh#AdrianTalksTOB","GLOBAL",10)
 		Global("rh#AdrianTalksTOB","GLOBAL",12)
 		Global("rh#AdrianTalksTOB","GLOBAL",14)
- THEN
-RESPONSE #100
-	PlaySong(0)
-    PlaySound("rh#adrom")
-	MoveToObject(Player1)
-	StartDialogueNoSet(Player1)
+THEN
+	RESPONSE #100
+		PlaySong(0)
+		PlaySound("rh#adrom")
+		MoveToObject(Player1)
+		StartDialogueNoSet(Player1)
 END
 
-// initiate talk, friendship
-
+// Initiate talk, friendship
+// -------------------------
 IF
 	RealGlobalTimerExpired("rh#AdrianTalksTOBTimer","GLOBAL")
 	InParty("rh#Adrian")
@@ -123,14 +124,14 @@ IF
 	OR(2)
 		Global("rh#AdrianTalksTOB","GLOBAL",4)
 		Global("rh#AdrianTalksTOB","GLOBAL",8)
- THEN
-RESPONSE #100	
-	MoveToObject(Player1)
-	StartDialogueNoSet(Player1)
+THEN
+	RESPONSE #100	
+		MoveToObject(Player1)
+		StartDialogueNoSet(Player1)
 END
 
-// wraith
-
+// Wraith
+// ------
 IF
     InParty(Myself)
     See(Player1)
@@ -141,8 +142,8 @@ IF
     !ActuallyInCombat()
     Global("rh#AdrianWraithTalk","GLOBAL",0)
 THEN
-  RESPONSE #100
-    SetGlobal("rh#AdrianWraithTalk","GLOBAL",1)
+	RESPONSE #100
+		SetGlobal("rh#AdrianWraithTalk","GLOBAL",1)
 END
 
 IF
@@ -154,12 +155,12 @@ IF
     Global("rh#AdrianRomanceActive","GLOBAL",2)
     Global("rh#AdrianWraithTalk","GLOBAL",1)
 THEN
-  RESPONSE #100
-    StartDialogueNoSet(Player1)
+	RESPONSE #100
+		StartDialogueNoSet(Player1)
 END
 
-// oasis
-
+// Oasis
+// -----
 IF
 	InParty(Myself)
 	See(Player1)
@@ -170,9 +171,9 @@ IF
 	GlobalGT("TethyrBattleStart","GLOBAL",0)
 	Global("rh#AdrianOasisTalk","GLOBAL",0)
 THEN
-RESPONSE #100
-	SetGlobal("rh#AdrianOasisTalk","GLOBAL",1)
-	RealSetGlobalTimer("rh#AdrianTalksOasisTimer","GLOBAL",60)
+	RESPONSE #100
+		SetGlobal("rh#AdrianOasisTalk","GLOBAL",1)
+		RealSetGlobalTimer("rh#AdrianTalksOasisTimer","GLOBAL",60)
 END
 
 IF
@@ -187,8 +188,8 @@ IF
 	Global("rh#AdrianOasisTalk","GLOBAL",1)
 	RealGlobalTimerExpired("rh#AdrianTalksOasisTimer","GLOBAL")
 THEN
-RESPONSE #100
-	SetGlobal("rh#AdrianOasisTalk","GLOBAL",2)
+	RESPONSE #100
+			SetGlobal("rh#AdrianOasisTalk","GLOBAL",2)
 END
 
 IF
@@ -202,14 +203,14 @@ IF
 		Global("rh#AdrianFriendshipActive","GLOBAL",1)
 	CombatCounter(0)
 	Global("rh#AdrianOasisTalk","GLOBAL",2)
- THEN
-RESPONSE #100	
-	MoveToObject(Player1)
-	StartDialogueNoSet(Player1)
+THEN
+	RESPONSE #100	
+		MoveToObject(Player1)
+		StartDialogueNoSet(Player1)
 END
 
-// amkethran
-
+// Amkethran
+// ---------
 IF
 	InParty(Myself)
 	See(Player1)
@@ -219,8 +220,8 @@ IF
 	GlobalGT("METBAL","GLOBAL",0)
 	Global("rh#AdrianAmkethranTalk","GLOBAL",0)
 THEN
-RESPONSE #100
-	SetGlobal("rh#AdrianAmkethranTalk","GLOBAL",1)
+	RESPONSE #100
+		SetGlobal("rh#AdrianAmkethranTalk","GLOBAL",1)
 END
 
 IF
@@ -234,13 +235,13 @@ IF
 	CombatCounter(0)
 	Global("rh#AdrianAmkethranTalk","GLOBAL",1)
 THEN
-RESPONSE #100
-	MoveToObject(Player1)
-	StartDialogueNoSet(Player1)
+	RESPONSE #100
+		MoveToObject(Player1)
+		StartDialogueNoSet(Player1)
 END
 
 // 4th Challenge
-
+// -------------
 IF
 	InParty(Myself)
 	See(Player1)
@@ -254,9 +255,9 @@ IF
 	Global("rh#CyricChallengeTalk","GLOBAL",0)
 	!See([ENEMY])
 THEN
-RESPONSE #100
-	SetGlobal("rh#CyricChallengeTalk","GLOBAL",1)
-	RealSetGlobalTimer("rh#CyricChallengeTalkTimer","GLOBAL",10)
+	RESPONSE #100
+		SetGlobal("rh#CyricChallengeTalk","GLOBAL",1)
+		RealSetGlobalTimer("rh#CyricChallengeTalkTimer","GLOBAL",10)
 END
 
 IF
@@ -273,8 +274,8 @@ IF
 	!See([ENEMY])
 	RealGlobalTimerExpired("rh#CyricChallengeTalkTimer","GLOBAL")
 THEN
-RESPONSE #100
-SetGlobal("rh#CyricChallengeTalk","GLOBAL",2)
+	RESPONSE #100
+		SetGlobal("rh#CyricChallengeTalk","GLOBAL",2)
 END
 
 IF
@@ -291,13 +292,13 @@ IF
 	!See([ENEMY])
 	RealGlobalTimerExpired("rh#CyricChallengeTalkTimer","GLOBAL")
 THEN
-RESPONSE #100
-	MoveToObject(Player1)
-	StartDialogueNoSet(Player1)
+	RESPONSE #100
+		MoveToObject(Player1)
+		StartDialogueNoSet(Player1)
 END
 
-// final talk
-
+// Final talk
+// ----------
 IF
 	InParty(Myself)
 	See(Player1)
@@ -309,9 +310,9 @@ IF
 	Global("rh#AdrianFinalTalk","GLOBAL",0)
 	!See([ENEMY])
 THEN
-RESPONSE #100
-	SetGlobal("rh#AdrianFinalTalk","GLOBAL",1)
-	RealSetGlobalTimer("rh#FinalTalkTimer","GLOBAL",30)
+	RESPONSE #100
+		SetGlobal("rh#AdrianFinalTalk","GLOBAL",1)
+		RealSetGlobalTimer("rh#FinalTalkTimer","GLOBAL",30)
 END
 
 IF
@@ -326,8 +327,8 @@ IF
 	!See([ENEMY])
 	RealGlobalTimerExpired("rh#FinalTalkTimer","GLOBAL")
 THEN
-RESPONSE #100
-	SetGlobal("rh#AdrianFinalTalk","GLOBAL",2)
+	RESPONSE #100
+		SetGlobal("rh#AdrianFinalTalk","GLOBAL",2)
 END
 
 IF
@@ -342,23 +343,23 @@ IF
 	!See([ENEMY])
 	RealGlobalTimerExpired("rh#FinalTalkTimer","GLOBAL")
 THEN
-RESPONSE #100
-	PlaySong(0)
-    PlaySound("rh#adrom")	
-	MoveToObject(Player1)
-	StartDialogueNoSet(Player1)
+	RESPONSE #100
+		PlaySong(0)
+		PlaySound("rh#adrom")	
+		MoveToObject(Player1)
+		StartDialogueNoSet(Player1)
 END
 
-// flirts
-
+// Flirts
+// ------
 IF 
 	Global("rh#AdrStartFlirtsTOB","GLOBAL",0)
 	Global("rh#AdrianFlirtsEnabled","GLOBAL",1)
 	Global("rh#AdrianRomanceActive","GLOBAL",2)
- THEN
-RESPONSE #100
-	SetGlobal("rh#AdrStartFlirtsTOB","GLOBAL",1)
-	RealSetGlobalTimer("rh#AdrianFlirtTimer","GLOBAL",1800)
+THEN
+	RESPONSE #100
+		SetGlobal("rh#AdrStartFlirtsTOB","GLOBAL",1)
+		RealSetGlobalTimer("rh#AdrianFlirtTimer","GLOBAL",1800)
 END
 
 IF
@@ -371,9 +372,9 @@ IF
 	Global("rh#AdrianFlirtsEnabled","GLOBAL",1)
 	Global("rh#AdrTimeForFlirt","GLOBAL",0)
 	Global("rh#AdrianRomanceActive","GLOBAL",2)
- THEN
-RESPONSE #100	
-	SetGlobal("rh#AdrTimeForFlirt","GLOBAL",1)
+THEN
+	RESPONSE #100	
+		SetGlobal("rh#AdrTimeForFlirt","GLOBAL",1)
 END
 
 IF
@@ -385,22 +386,22 @@ IF
 	RealGlobalTimerExpired("rh#AdrianFlirtTimer","GLOBAL")
 	Global("rh#AdrianFlirtsEnabled","GLOBAL",1)
 	Global("rh#AdrTimeForFlirt","GLOBAL",1)
- THEN
-RESPONSE #100
-	StartDialogueNoSet(Player1)
+THEN
+	RESPONSE #100
+		StartDialogueNoSet(Player1)
 END
 
 // Jaheira: 1, 2, 4
-
+// ----------------
 IF
 	InParty("rh#Adrian") 
 	InParty("Jaheira")
 	Global("rh#AdrianJaheiraTOB","GLOBAL",0)
 	!Alignment("rh#Adrian",MASK_EVIL)
 THEN
-RESPONSE #100
-	RealSetGlobalTimer("rh#AdrianJaheiraTOBTalkTimer","GLOBAL",3600)
-	SetGlobal("rh#AdrianJaheiraTOB","GLOBAL",1)
+	RESPONSE #100
+		RealSetGlobalTimer("rh#AdrianJaheiraTOBTalkTimer","GLOBAL",3600)
+		SetGlobal("rh#AdrianJaheiraTOB","GLOBAL",1)
 END
 
 IF
@@ -417,7 +418,7 @@ IF
 		Global("rh#AdrianJaheiraTOB","GLOBAL",3)
 		Global("rh#AdrianJaheiraTOB","GLOBAL",7)
 THEN
-RESPONSE #100
+	RESPONSE #100
 	IncrementGlobal("rh#AdrianJaheiraTOB","GLOBAL",1)
 END
 
@@ -435,12 +436,12 @@ IF
 		Global("rh#AdrianJaheiraTOB","GLOBAL",4)
 		Global("rh#AdrianJaheiraTOB","GLOBAL",8)
 THEN
-RESPONSE #100
+	RESPONSE #100
 	StartDialogueNoSet("Jaheira")
 END
 
-// sarevok
-
+// Sarevok
+// -------
 IF
 	InParty("rh#Adrian") 
 	InParty("Sarevok")
@@ -448,9 +449,9 @@ IF
 	Global("rh#AdrianSarevokConflict","GLOBAL",0)
 	Global("rh#AdrianRomanceActive","GLOBAL",2)
 THEN
-RESPONSE #100
-	RealSetGlobalTimer("rh#AdrianSarevokConflictTimer","GLOBAL",600)
-	SetGlobal("rh#AdrianSarevokConflict","GLOBAL",1)
+	RESPONSE #100
+		RealSetGlobalTimer("rh#AdrianSarevokConflictTimer","GLOBAL",600)
+		SetGlobal("rh#AdrianSarevokConflict","GLOBAL",1)
 END
 
 IF
@@ -464,8 +465,8 @@ IF
 	Global("rh#AdrianSarevokConflict","GLOBAL",1)
 	RealGlobalTimerExpired("rh#AdrianSarevokConflictTimer","GLOBAL")
 THEN
-RESPONSE #100
-	SetGlobal("rh#AdrianSarevokConflict","GLOBAL",2)
+	RESPONSE #100
+		SetGlobal("rh#AdrianSarevokConflict","GLOBAL",2)
 END
 
 IF
@@ -478,22 +479,21 @@ IF
 	Global("rh#AdrianRomanceActive","GLOBAL",2)
 	Global("rh#AdrianSarevokConflict","GLOBAL",2)
 	RealGlobalTimerExpired("rh#AdrianSarevokConflictTimer","GLOBAL")
- THEN
-RESPONSE #100	
-	MoveToObject(Player1)
-	StartDialogueNoSet(Player1)
+THEN
+	RESPONSE #100	
+		MoveToObject(Player1)
+		StartDialogueNoSet(Player1)
 END
 
-
-// irenicus
-
+// Irenicus
+// --------
 IF
     InParty(Myself)
     InParty("lrirenic")
     Global("rh#AdrianIrenicusTOBTalk","GLOBAL",0)
 THEN
-  RESPONSE #100
-    SetGlobal("rh#AdrianIrenicusTOBTalk","GLOBAL",1)
+	RESPONSE #100
+		SetGlobal("rh#AdrianIrenicusTOBTalk","GLOBAL",1)
 END
 
 IF
@@ -505,59 +505,59 @@ IF
     !Detect([ENEMY])
     Global("rh#AdrianIrenicusTOBTalk","GLOBAL",1)
 THEN
-  RESPONSE #100
-    MoveToObject(Player1)
-    StartDialogueNoSet(Player1)
+	RESPONSE #100
+		MoveToObject(Player1)
+		StartDialogueNoSet(Player1)
 END
 
-// string fixer
-
+// String fixer
+// ------------
 IF 
-    HotKey(K)  
+	HotKey(K)  
 THEN 
-    RESPONSE #100       
-        SetName(~Adrian~) 
-        SetPlayerSound(Myself,~Oh, I don't think so.~ [rh#ad1],MORALE) 
-        SetPlayerSound(Myself,~I must admit, this is rather effective.~ [rh#ad2],HAPPY) 
-        SetPlayerSound(Myself,~Well, we certainly know how to waste our time.~ [rh#ad3],UNHAPPY_ANNOYED)
-        SetPlayerSound(Myself,~Is this sort of nonsense really necessary?~ [rh#ad4],UNHAPPY_SERIOUS)
-        SetPlayerSound(Myself,~Oh, I don't mind this at all.~ [rh#ad5],LEADER)
-        SetPlayerSound(Myself,~What is this, a Thayvian plantation? Couldn't we find an inn?~[rh#ad6],TIRED)
-        SetPlayerSound(Myself,~If I'm drunk again by the time you decide to do something, you've only yourself to blame.~ [rh#ad7],BORED)
-        SetPlayerSound(Myself,~Damn!~ [rh#ad8],DAMAGE)
-        SetPlayerSound(Myself,~No... not like this...~ [rh#ad9],DYING)
-        SetPlayerSound(Myself,~Where's a damn cleric when I need one?~ [rh#ad10],HURT)
-        SetPlayerSound(Myself,~It's not exactly Cormanthor, is it?~ [rh#ad11],AREA_FOREST)
-        SetPlayerSound(Myself,~Ah, the sights and smells of the city... I could do without the latter.~ [rh#ad12],AREA_CITY)
-        SetPlayerSound(Myself,~Quite the setting... I'm beginning to wish we'd simply paid someone to do this for us.~ [rh#ad13],AREA_DUNGEON)
-        SetPlayerSound(Myself,~A lovely day, isn't it? Shame about the locale.~ [rh#ad14],AREA_DAY)
-        SetPlayerSound(Myself,~Mmm... the sun sets, and the day truly begins.~ [rh#ad15],AREA_NIGHT)
-        SetPlayerSound(Myself,~That should just about finish this.~ [rh#ad16],CRITICAL_HIT)
-        SetPlayerSound(Myself,~Dammit!~ [rh#ad17],CRITICAL_MISS)
-        SetPlayerSound(Myself,~Oh, this is working wonderfully. If you don't find me a better weapon soon, I might as well just sit in a corner and watch.~ [rh#ad18],TARGET_IMMUNE)
-        SetPlayerSound(Myself,~I'm a mage, not a pack mule.~ [rh#ad19],INVENTORY_FULL)
-        SetPlayerSound(Myself,~Some cover over here, if you don't mind...~ [rh#ad20],SPELL_DISRUPTED)
-        SetPlayerSound(Myself,~This is sure to be entertaining.~ [rh#ad21],SET_A_TRAP)
-        SetPlayerSound(Myself,~It's not quite invisibility, but I suppose it'll do.~ [rh#ad22],HIDDEN_IN_SHADOWS)
-        SetPlayerSound(Myself,~Well, what have we here?~ [rh#ad23],PICKED_POCKET)
-        SetPlayerSound(Myself,~To the Abyss with you!~ [rh#ad24],BATTLE_CRY1) 
-        SetPlayerSound(Myself,~No mercy for scum like this!~ [rh#ad25],BATTLE_CRY2) 
-        SetPlayerSound(Myself,~Die, already!~ [rh#ad26],BATTLE_CRY3) 
-        SetPlayerSound(Myself,~I can already count the gold.~ [rh#ad27],BATTLE_CRY4) 
-        SetPlayerSound(Myself,~Don't even bother to run.~ [rh#ad28],BATTLE_CRY5)   
-        SetPlayerSound(Myself,~Yes?~ [rh#ad29],SELECT_COMMON1)
-        SetPlayerSound(Myself,~What is it?~ [rh#ad30],SELECT_COMMON2)
-        SetPlayerSound(Myself,~Speak up.~ [rh#ad31],SELECT_COMMON3)
-        SetPlayerSound(Myself,~What now?~ [rh#ad32],SELECT_COMMON4)
-        SetPlayerSound(Myself,~Spit it out already.~ [rh#ad33],SELECT_COMMON5)
-        SetPlayerSound(Myself,~Hmm?~ [rh#ad34],SELECT_COMMON6)
-        SetPlayerSound(Myself,~Certainly.~ [rh#ad35],SELECT_ACTION1)
-        SetPlayerSound(Myself,~Of course.~ [rh#ad36],SELECT_ACTION2)
-        SetPlayerSound(Myself,~If you insist. And you always do, don't you?~ [rh#ad37],SELECT_ACTION3)
-        SetPlayerSound(Myself,~A waste of a mage's talents, if you ask me.~ [rh#ad38],SELECT_ACTION4)
-        SetPlayerSound(Myself,~Yes, yes, yes. I'm working on it.~ [rh#ad39],SELECT_ACTION5)
-        SetPlayerSound(Myself,~Oh, not this again.~ [rh#ad40],SELECT_ACTION6) 
-        SetPlayerSound(Myself,~You can do better than that.~ [rh#ad41],SELECT_ACTION7) 
-        SetPlayerSound(Myself,~Go point that thing at someone else.~ [rh#ad42],SELECT_RARE1) 
-        SetPlayerSound(Myself,~Well, you do have a way with words, don't you?~ [rh#ad43],SELECT_RARE2)
+	RESPONSE #100       
+		SetName(~Adrian~) 
+        SetPlayerSound(Myself,@4,MORALE)				// ~Oh, I don't think so.~ [rh#ad1]
+        SetPlayerSound(Myself,@5,HAPPY)					// ~I must admit, this is rather effective.~ [rh#ad2]
+        SetPlayerSound(Myself,@6,UNHAPPY_ANNOYED)		// ~Well, we certainly know how to waste our time.~ [rh#ad3]
+        SetPlayerSound(Myself,@7,UNHAPPY_SERIOUS)		// ~Is this sort of nonsense really necessary?~ [rh#ad4]
+        SetPlayerSound(Myself,@8,LEADER)				// ~Oh, I don't mind this at all.~ [rh#ad5]
+        SetPlayerSound(Myself,@9,TIRED)					// ~What is this, a Thayvian plantation? Couldn't we find an inn?~[rh#ad6]
+        SetPlayerSound(Myself,@10,BORED)				// ~If I'm drunk again by the time you decide to do something, you've only yourself to blame.~ [rh#ad7]
+        SetPlayerSound(Myself,@11,DAMAGE)				// ~Damn!~ [rh#ad8]
+        SetPlayerSound(Myself,@12,DYING)				// ~No... not like this...~ [rh#ad9]
+        SetPlayerSound(Myself,@13,HURT)					// ~Where's a damn cleric when I need one?~ [rh#ad10]
+        SetPlayerSound(Myself,@14,AREA_FOREST)			// ~It's not exactly Cormanthor, is it?~ [rh#ad11]
+        SetPlayerSound(Myself,@15,AREA_CITY)			// ~Ah, the sights and smells of the city... I could do without the latter.~ [rh#ad12]
+        SetPlayerSound(Myself,@16,AREA_DUNGEON)			// ~Quite the setting... I'm beginning to wish we'd simply paid someone to do this for us.~ [rh#ad13]
+        SetPlayerSound(Myself,@17,AREA_DAY)				// ~A lovely day, isn't it? Shame about the locale.~ [rh#ad14]
+        SetPlayerSound(Myself,@18,AREA_NIGHT)			// ~Mmm... the sun sets, and the day truly begins.~ [rh#ad15]
+        SetPlayerSound(Myself,@19,CRITICAL_HIT)			// ~That should just about finish this.~ [rh#ad16]
+        SetPlayerSound(Myself,@20,CRITICAL_MISS)		// ~Dammit!~ [rh#ad17]
+        SetPlayerSound(Myself,@21,TARGET_IMMUNE)		// ~Oh, this is working wonderfully. If you don't find me a better weapon soon, I might as well just sit in a corner and watch.~ [rh#ad18]
+        SetPlayerSound(Myself,@22,INVENTORY_FULL)		// ~I'm a mage, not a pack mule.~ [rh#ad19]
+        SetPlayerSound(Myself,@23,SPELL_DISRUPTED)		// ~Some cover over here, if you don't mind...~ [rh#ad20]
+        SetPlayerSound(Myself,@24,SET_A_TRAP)			// ~This is sure to be entertaining.~ [rh#ad21]
+        SetPlayerSound(Myself,@25,HIDDEN_IN_SHADOWS)	// ~It's not quite invisibility, but I suppose it'll do.~ [rh#ad22]
+        SetPlayerSound(Myself,@26,PICKED_POCKET)		// ~Well, what have we here?~ [rh#ad23]
+        SetPlayerSound(Myself,@27,BATTLE_CRY1)			// ~To the Abyss with you!~ [rh#ad24]
+        SetPlayerSound(Myself,@28,BATTLE_CRY2)			// ~No mercy for scum like this!~ [rh#ad25]
+        SetPlayerSound(Myself,@29,BATTLE_CRY3)			// ~Die, already!~ [rh#ad26]
+        SetPlayerSound(Myself,@30,BATTLE_CRY4)			// ~I can already count the gold.~ [rh#ad27]
+        SetPlayerSound(Myself,@31,BATTLE_CRY5)			// ~Don't even bother to run.~ [rh#ad28]
+        SetPlayerSound(Myself,@32,SELECT_COMMON1)		// ~Yes?~ [rh#ad29]
+        SetPlayerSound(Myself,@33,SELECT_COMMON2)		// ~What is it?~ [rh#ad30]
+        SetPlayerSound(Myself,@34,SELECT_COMMON3)		// ~Speak up.~ [rh#ad31]
+        SetPlayerSound(Myself,@35,SELECT_COMMON4)		// ~What now?~ [rh#ad32]
+        SetPlayerSound(Myself,@36,SELECT_COMMON5)		// ~Spit it out already.~ [rh#ad33]
+        SetPlayerSound(Myself,@37,SELECT_COMMON6)		// ~Hmm?~ [rh#ad34]
+        SetPlayerSound(Myself,@39,SELECT_ACTION1)		// ~Certainly.~ [rh#ad35]
+        SetPlayerSound(Myself,@39,SELECT_ACTION2)		// ~Of course.~ [rh#ad36]
+        SetPlayerSound(Myself,@40,SELECT_ACTION3)		// ~If you insist. And you always do, don't you?~ [rh#ad37]
+        SetPlayerSound(Myself,@41,SELECT_ACTION4)		// ~A waste of a mage's talents, if you ask me.~ [rh#ad38]
+        SetPlayerSound(Myself,@42,SELECT_ACTION5)		// ~Yes, yes, yes. I'm working on it.~ [rh#ad39]
+        SetPlayerSound(Myself,@43,SELECT_ACTION6)		// ~Oh, not this again.~ [rh#ad40]
+        SetPlayerSound(Myself,@44,SELECT_ACTION7)		// ~You can do better than that.~ [rh#ad41]
+        SetPlayerSound(Myself,@45,SELECT_RARE1)			// ~Go point that thing at someone else.~ [rh#ad42]
+        SetPlayerSound(Myself,@46,SELECT_RARE2)			// ~Well, you do have a way with words, don't you?~ [rh#ad43]
 END

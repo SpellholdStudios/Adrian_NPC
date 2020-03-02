@@ -8,15 +8,15 @@ IF
 	Allegiance(Myself,NEUTRAL)
 	!Dead("rh#Adrian")
 THEN
-RESPONSE #100
-	SetGlobal("rh#AdrianInitiate","GLOBAL",1)
+	RESPONSE #100
+		SetGlobal("rh#AdrianInitiate","GLOBAL",1)
 END
 
 IF
-    Global("rh#AdrianInitiate","GLOBAL",1)
+	Global("rh#AdrianInitiate","GLOBAL",1)
 THEN
-RESPONSE #100
-	StartDialogueNoSet(Player1)
+	RESPONSE #100
+		StartDialogueNoSet(Player1)
 END
 
 IF
@@ -29,11 +29,12 @@ IF
 	!Global("rh#FirstTalk","GLOBAL",1)
 	!Global("rh#AdrianRefused","GLOBAL",1)
 THEN
-RESPONSE #100
+	RESPONSE #100
 	StartDialogueNoSet(Player1)
 END
 
 // Romance checks
+// --------------
 IF
 	Global("rh#AdrianRomanceCheck","GLOBAL",0)
 	Gender(Player1,FEMALE)
@@ -43,15 +44,15 @@ IF
 		Race(Player1,HALF_ELF)
 		Race(Player1,HUMAN)
 THEN
-RESPONSE #100
+	RESPONSE #100
 	SetGlobal("rh#AdrianRomanceCheck","GLOBAL",1)
 END
 
 IF
 	Global("rh#AdrianRomanceCheck","GLOBAL",0)
 THEN
-RESPONSE #100
-	SetGlobal("rh#AdrianRomanceCheck","GLOBAL",2)
+	RESPONSE #100
+		SetGlobal("rh#AdrianRomanceCheck","GLOBAL",2)
 END
 
 IF
@@ -62,8 +63,8 @@ IF
 	Gender(Player1,FEMALE)
 	GlobalGT("rh#AdrianLikesPC","GLOBAL",3)
 THEN
-RESPONSE #100
-	SetGlobal("rh#AdrianRomanceActive","GLOBAL",1)
+	RESPONSE #100
+		SetGlobal("rh#AdrianRomanceActive","GLOBAL",1)
 END
 
 IF
@@ -71,19 +72,19 @@ IF
 	Global("rh#AdrianFriendshipActive","GLOBAL",0)
 	Global("rh#AdrianRomanceActive","GLOBAL",0)
 	OR(3)
-        	Global("rh#AdrianRomanceCheck","GLOBAL",2)
-        	!GlobalGT("rh#AdrianLikesPC","GLOBAL",3)
-        	!Gender(Player1,FEMALE)
+		Global("rh#AdrianRomanceCheck","GLOBAL",2)
+		!GlobalGT("rh#AdrianLikesPC","GLOBAL",3)
+		!Gender(Player1,FEMALE)
 THEN
-RESPONSE #100
-	SetGlobal("rh#AdrianFriendshipActive","GLOBAL",1)
+	RESPONSE #100
+		SetGlobal("rh#AdrianFriendshipActive","GLOBAL",1)
 END
 
 
 // First talk in dream script
-
+// ==========================
 // Talks 2-4
-
+// ---------
 IF
 	RealGlobalTimerExpired("rh#AdrianTalksTimer","GLOBAL")
 	InParty("rh#Adrian")
@@ -97,8 +98,8 @@ IF
 		Global("rh#AdrianTalks","GLOBAL",5)
 		Global("rh#AdrianTalks","GLOBAL",7)
 THEN
-RESPONSE #100
-	IncrementGlobal("rh#AdrianTalks","GLOBAL",1)
+	RESPONSE #100
+		IncrementGlobal("rh#AdrianTalks","GLOBAL",1)
 END
 
 IF
@@ -113,13 +114,14 @@ IF
 		Global("rh#AdrianTalks","GLOBAL",4)
 		Global("rh#AdrianTalks","GLOBAL",6)
 		Global("rh#AdrianTalks","GLOBAL",8)
- THEN
-RESPONSE #100
-	MoveToObject(Player1)
-	StartDialogueNoSet(Player1)
+THEN
+	RESPONSE #100
+		MoveToObject(Player1)
+		StartDialogueNoSet(Player1)
 END
 
 // Orphan: talk 5
+// --------------
 IF
 	RealGlobalTimerExpired("rh#AdrianSpawnTimer","GLOBAL")
 	InParty("rh#Adrian")
@@ -137,10 +139,10 @@ IF
 		AreaCheck("AR0900")
 	Global("rh#AdrianTalks","GLOBAL",9)
 	Global("rh#OrphanSpawn","GLOBAL",0)
- THEN
-RESPONSE #100
-	SetGlobal("rh#OrphanSpawn","GLOBAL",1)
-	CreateCreatureObjectOffset("rh#orph",Myself,[-15.-15])
+THEN
+	RESPONSE #100
+		SetGlobal("rh#OrphanSpawn","GLOBAL",1)
+		CreateCreatureObjectOffset("rh#orph",Myself,[-15.-15])
 END
 
 IF
@@ -154,9 +156,9 @@ IF
 	!StateCheck(Myself,CD_STATE_NOTVALID)
 	InParty("b!gavin2")
 THEN
-RESPONSE #100
-	IncrementGlobal("rh#AdrianTalks","GLOBAL",1)
-	SetGlobal("rh#AdrianGavinWasThere","GLOBAL",1)
+	RESPONSE #100
+		IncrementGlobal("rh#AdrianTalks","GLOBAL",1)
+		SetGlobal("rh#AdrianGavinWasThere","GLOBAL",1)
 END
 
 IF
@@ -170,8 +172,8 @@ IF
 	!StateCheck(Myself,CD_STATE_NOTVALID)
 	!InParty("b!gavin2")
 THEN
-RESPONSE #100
-	IncrementGlobal("rh#AdrianTalks","GLOBAL",1)
+	RESPONSE #100
+		IncrementGlobal("rh#AdrianTalks","GLOBAL",1)
 END
 
 IF
@@ -182,14 +184,14 @@ IF
 	!StateCheck(Player1,CD_STATE_NOTVALID)
 	!StateCheck(Myself,CD_STATE_NOTVALID)
 	Global("rh#AdrianTalks","GLOBAL",10)
- THEN
-RESPONSE #100
-	MoveToObject(Player1)
-	StartDialogueNoSet(Player1)
+THEN
+	RESPONSE #100
+		MoveToObject(Player1)
+		StartDialogueNoSet(Player1)
 END
 
-// talk 6 (encounter)
-
+// Talk 6 (encounter)
+// ------------------
 IF
 	RealGlobalTimerExpired("rh#AdrianDamarovTimer","GLOBAL")
 	InParty("rh#Adrian")
@@ -201,19 +203,19 @@ IF
 	AreaType(CITY)
 	AreaType(OUTDOOR)
 	OR(3)
-	     Global("chapter","GLOBAL",%bg2_chapter_2%)
-	     Global("chapter","GLOBAL",%bg2_chapter_3%)
-	     Global("chapter","GLOBAL",%bg2_chapter_6%)
+		Global("chapter","GLOBAL",%bg2_chapter_2%)
+		Global("chapter","GLOBAL",%bg2_chapter_3%)
+		Global("chapter","GLOBAL",%bg2_chapter_6%)
 	Global("rh#AdrianTalks","GLOBAL",11)
 	Global("rh#DamarovQuest","GLOBAL",0)
- THEN
-RESPONSE #100
-    SetGlobal("rh#DamarovQuest","GLOBAL",1)
-	CreateCreatureObjectOffScreen("rh#tanya",Myself,0,0,0) // Tanya Damarov
+THEN
+	RESPONSE #100
+		SetGlobal("rh#DamarovQuest","GLOBAL",1)
+		CreateCreatureObjectOffScreen("rh#tanya",Myself,0,0,0) // Tanya Damarov
 END
 
-// this is where quest stuff goes
-
+// This is where quest stuff goes
+// ------------------------------
 IF
  	RealGlobalTimerExpired("rh#AdrianTalksTimer","GLOBAL")
  	Global("rh#AdrianTalks","GLOBAL",11)
@@ -224,8 +226,8 @@ IF
 	!StateCheck(Player1,CD_STATE_NOTVALID)
 	!StateCheck(Myself,CD_STATE_NOTVALID)
 THEN
-RESPONSE #100
- 	IncrementGlobal("rh#AdrianTalks","GLOBAL",1)
+	RESPONSE #100
+		IncrementGlobal("rh#AdrianTalks","GLOBAL",1)
 END
 
 IF
@@ -237,9 +239,9 @@ IF
 	!StateCheck(Myself,CD_STATE_NOTVALID)
 	Global("rh#AdrianTalks","GLOBAL",12)
 THEN
-RESPONSE #100
-	MoveToObject(Player1)
-	StartDialogueNoSet(Player1)
+	RESPONSE #100
+		MoveToObject(Player1)
+		StartDialogueNoSet(Player1)
 END
 
 IF
@@ -247,8 +249,8 @@ IF
 	PartyHasItem("rh#note")
     InParty(Myself)
 THEN
-RESPONSE #100
-	SetGlobal("rh#DamarovQuest","GLOBAL",3)
+	RESPONSE #100
+		SetGlobal("rh#DamarovQuest","GLOBAL",3)
 END
 
 IF
@@ -259,21 +261,24 @@ IF
 	!ActuallyInCombat()
 	!StateCheck(Player1,CD_STATE_NOTVALID)
 	!StateCheck(Myself,CD_STATE_NOTVALID)
- THEN
- RESPONSE #100
-	StartDialogueNoSet(Player1)
+THEN
+	RESPONSE #100
+		StartDialogueNoSet(Player1)
 END
 
 IF
-Global("rh#DamarovQuest","GLOBAL",4)
-InParty(Myself)
-Dead("rh#Salka")
-Dead("rh#Orlanna")
-Dead("rh#Deryn")
-OR(3) Global("rh#ErciasDead","GLOBAL",1) Dead("ercias") Global("rh#Adrian_spydies","GLOBAL",2)
+	Global("rh#DamarovQuest","GLOBAL",4)
+	InParty(Myself)
+	Dead("rh#Salka")
+	Dead("rh#Orlanna")
+	Dead("rh#Deryn")
+	OR(3)
+		Global("rh#ErciasDead","GLOBAL",1)
+		Dead("ercias")
+		Global("rh#Adrian_spydies","GLOBAL",2)
 THEN
-RESPONSE #100
-	SetGlobal("rh#DamarovQuest","GLOBAL",5)
+	RESPONSE #100
+		SetGlobal("rh#DamarovQuest","GLOBAL",5)
 END
 
 IF
@@ -283,18 +288,18 @@ IF
 	!ActuallyInCombat()
 	!StateCheck(Player1,CD_STATE_NOTVALID)
 	!StateCheck(Myself,CD_STATE_NOTVALID)
- THEN
- RESPONSE #100
-	StartDialogueNoSet(Player1)
+THEN
+	RESPONSE #100
+		StartDialogueNoSet(Player1)
 END
 
 IF
-InParty(Myself)
-Global("rh#DamarovQuest","GLOBAL",7)
-Dead("rh#Tanya")
+	InParty(Myself)
+	Global("rh#DamarovQuest","GLOBAL",7)
+	Dead("rh#Tanya")
 THEN
-RESPONSE #100
-	SetGlobal("rh#DamarovQuest","GLOBAL",8)
+	RESPONSE #100
+		SetGlobal("rh#DamarovQuest","GLOBAL",8)
 END
 
 IF
@@ -304,20 +309,20 @@ IF
 	!ActuallyInCombat()
 	!StateCheck(Player1,CD_STATE_NOTVALID)
 	!StateCheck(Myself,CD_STATE_NOTVALID)
- THEN
- RESPONSE #100
-	StartDialogueNoSet(Player1)
+THEN
+	RESPONSE #100
+		StartDialogueNoSet(Player1)
 END
 
-// broken quest
-
+// Broken quest
+// ------------
 IF
 	InParty(Myself)
 	Global("rh#DamarovQuest","GLOBAL",20)
 	Dead("rh#Tanya")
 THEN
-RESPONSE #100
-	SetGlobal("rh#DamarovQuest","GLOBAL",21)
+	RESPONSE #100
+		SetGlobal("rh#DamarovQuest","GLOBAL",21)
 END
 
 IF
@@ -327,21 +332,21 @@ IF
 	!ActuallyInCombat()
 	!StateCheck(Player1,CD_STATE_NOTVALID)
 	!StateCheck(Myself,CD_STATE_NOTVALID)
- THEN
- RESPONSE #100
-	StartDialogueNoSet(Player1)
+THEN
+	RESPONSE #100
+		StartDialogueNoSet(Player1)
 END
 
-// tanya potentially returning
-
+// Tanya potentially returning
+// ---------------------------
 IF
 	InParty(Myself)
 	Global("rh#DamarovReturns","GLOBAL",1)
 	Global("rh#DamarovQuest","GLOBAL",2)
 	GlobalTimerExpired("rh#DamarovReturnsTimer","GLOBAL")
 THEN
-  RESPONSE #100
-	SetGlobal("rh#DamarovReturns","GLOBAL",2)
+	RESPONSE #100
+		SetGlobal("rh#DamarovReturns","GLOBAL",2)
 END
 
 IF
@@ -353,29 +358,29 @@ IF
 	AreaType(CITY)
 	AreaType(OUTDOOR)
 	OR(3)
-	     Global("chapter","GLOBAL",%bg2_chapter_2%)
-	     Global("chapter","GLOBAL",%bg2_chapter_3%)
-	     Global("chapter","GLOBAL",%bg2_chapter_6%)
+		Global("chapter","GLOBAL",%bg2_chapter_2%)
+		Global("chapter","GLOBAL",%bg2_chapter_3%)
+		Global("chapter","GLOBAL",%bg2_chapter_6%)
 	Global("rh#DamarovQuest","GLOBAL",2)
     Global("rh#DamarovReturns","GLOBAL",2)
     GlobalTimerExpired("rh#DamarovReturnsTimer","GLOBAL")
- THEN
-RESPONSE #100
-    SetGlobal("rh#DamarovReturns","GLOBAL",3)
-	CreateCreatureObjectOffset("rh#tanya",Myself,[-15.-15])
+THEN
+	RESPONSE #100
+		SetGlobal("rh#DamarovReturns","GLOBAL",3)
+		CreateCreatureObjectOffset("rh#tanya",Myself,[-15.-15])
 END
 
-// running the timer after you kill the first spy
-
+// Running the timer after you kill the first spy
+// ----------------------------------------------
 IF
 	Global("rh#DamarovQuest","GLOBAL",4)
 	InParty(Myself)
 	OR(3) Dead("rh#Salka") Dead("rh#Orlanna") Dead("rh#Deryn")
 	Global("rh#DamarovTimerRuns","GLOBAL",0)
 THEN
-RESPONSE #100
-	SetGlobal("rh#DamarovTimerRuns","GLOBAL",1)
-	SetGlobalTimer("rh#AdrianDamarovSpyTimer","GLOBAL",ONE_DAY)
+	RESPONSE #100
+		SetGlobal("rh#DamarovTimerRuns","GLOBAL",1)
+		SetGlobalTimer("rh#AdrianDamarovSpyTimer","GLOBAL",ONE_DAY)
 END
 
 IF
@@ -389,9 +394,9 @@ IF
 	!StateCheck(Player1,CD_STATE_NOTVALID)
 	!StateCheck(Myself,CD_STATE_NOTVALID)
 	GlobalTimerExpired("rh#AdrianDamarovSpyTimer","GLOBAL")
- THEN
- RESPONSE #100
-	IncrementGlobal("rh#DamarovTimerRuns","GLOBAL",1)
+THEN
+	RESPONSE #100
+		IncrementGlobal("rh#DamarovTimerRuns","GLOBAL",1)
 END	
 	
 IF
@@ -405,13 +410,13 @@ IF
 	!ActuallyInCombat()
 	!StateCheck(Player1,CD_STATE_NOTVALID)
 	!StateCheck(Myself,CD_STATE_NOTVALID)
- THEN
- RESPONSE #100
-	StartDialogueNoSet(Player1)
+THEN
+	RESPONSE #100
+		StartDialogueNoSet(Player1)
 END
 
-// talk 7 (once quest is finished; set variables)
-
+// Talk 7 (once quest is finished; set variables)
+// ----------------------------------------------
 IF
 	Global("rh#DamarovQuest","GLOBAL",9)
 	OR(2)
@@ -422,9 +427,9 @@ IF
 	!StateCheck(Player1,CD_STATE_NOTVALID)
 	!StateCheck(Myself,CD_STATE_NOTVALID)
 THEN
-RESPONSE #100
-	SetGlobal("rh#DamarovQuest","GLOBAL",10)
-	RealSetGlobalTimer("rh#AdrianTalksTimer","GLOBAL",2700)
+	RESPONSE #100
+		SetGlobal("rh#DamarovQuest","GLOBAL",10)
+		RealSetGlobalTimer("rh#AdrianTalksTimer","GLOBAL",2700)
 END
 
 IF
@@ -437,8 +442,8 @@ IF
 	Global("rh#DamarovQuest","GLOBAL",10)
 	Global("rh#AdrianTalks","GLOBAL",13)
 THEN
-RESPONSE #100
-	IncrementGlobal("rh#AdrianTalks","GLOBAL",1)
+	RESPONSE #100
+		IncrementGlobal("rh#AdrianTalks","GLOBAL",1)
 END
 
 IF
@@ -449,12 +454,12 @@ IF
 	!StateCheck(Myself,CD_STATE_NOTVALID)
 	Global("rh#AdrianRomanceActive","GLOBAL",1)
 	Global("rh#AdrianTalks","GLOBAL",14)
- THEN
-RESPONSE #100
-	PlaySong(0)
-    PlaySound("rh#adrom")
-    MoveToObject(Player1)
-	StartDialogueNoSet(Player1)
+THEN
+	RESPONSE #100
+		PlaySong(0)
+		PlaySound("rh#adrom")
+		MoveToObject(Player1)
+		StartDialogueNoSet(Player1)
 END
 
 IF
@@ -465,13 +470,14 @@ IF
 	!StateCheck(Myself,CD_STATE_NOTVALID)
 	Global("rh#AdrianFriendshipActive","GLOBAL",1)
 	Global("rh#AdrianTalks","GLOBAL",14)
- THEN
-RESPONSE #100
-    MoveToObject(Player1)
-	StartDialogueNoSet(Player1)
+THEN
+	RESPONSE #100
+		MoveToObject(Player1)
+		StartDialogueNoSet(Player1)
 END
 
 // Talks 8-11
+// ----------
 IF
 	RealGlobalTimerExpired("rh#AdrianTalksTimer","GLOBAL")
 	InParty("rh#Adrian")
@@ -485,8 +491,8 @@ IF
 		Global("rh#AdrianTalks","GLOBAL",19)
 		Global("rh#AdrianTalks","GLOBAL",21)
 THEN
-RESPONSE #100
-	IncrementGlobal("rh#AdrianTalks","GLOBAL",1)
+	RESPONSE #100
+		IncrementGlobal("rh#AdrianTalks","GLOBAL",1)
 END
 
 IF
@@ -502,12 +508,12 @@ IF
 		Global("rh#AdrianTalks","GLOBAL",18)
 		Global("rh#AdrianTalks","GLOBAL",20)
 		Global("rh#AdrianTalks","GLOBAL",22)
- THEN
-RESPONSE #100
-	PlaySong(0)
-    PlaySound("rh#adrom")
-	MoveToObject(Player1)
-	StartDialogueNoSet(Player1)
+THEN
+	RESPONSE #100
+		PlaySong(0)
+		PlaySound("rh#adrom")
+		MoveToObject(Player1)
+		StartDialogueNoSet(Player1)
 END
 
 IF
@@ -524,13 +530,14 @@ IF
 		Global("rh#AdrianTalks","GLOBAL",20)
 		Global("rh#AdrianTalks","GLOBAL",22)
 		Global("rh#AdrianTalks","GLOBAL",44)
- THEN
-RESPONSE #100
-	MoveToObject(Player1)
-	StartDialogueNoSet(Player1)
+THEN
+	RESPONSE #100
+		MoveToObject(Player1)
+		StartDialogueNoSet(Player1)
 END
 
 // Friendship talk #13 (22)
+// ------------------------
 IF
 	RealGlobalTimerExpired("rh#AdrianTalksTimer","GLOBAL")
 	InParty("rh#Adrian")
@@ -541,11 +548,12 @@ IF
 	Global("rh#AdrianFriendshipActive","GLOBAL",1)
 	Global("rh#AdrianTalks","GLOBAL",43)
 THEN
-RESPONSE #100
-	IncrementGlobal("rh#AdrianTalks","GLOBAL",1)
+	RESPONSE #100
+		IncrementGlobal("rh#AdrianTalks","GLOBAL",1)
 END
 
 // Romance talks - (12-28)
+// -----------------------
 IF
 	RealGlobalTimerExpired("rh#AdrianTalksTimer","GLOBAL")
 	InParty("rh#Adrian")
@@ -570,8 +578,8 @@ IF
 		Global("rh#AdrianTalks","GLOBAL",51)
 		Global("rh#AdrianTalks","GLOBAL",55)
 THEN
-RESPONSE #100
-	IncrementGlobal("rh#AdrianTalks","GLOBAL",1)
+	RESPONSE #100
+		IncrementGlobal("rh#AdrianTalks","GLOBAL",1)
 END
 
 IF
@@ -599,15 +607,16 @@ IF
 		Global("rh#AdrianTalks","GLOBAL",50)
 		Global("rh#AdrianTalks","GLOBAL",52)
 		Global("rh#AdrianTalks","GLOBAL",56)
- THEN
-RESPONSE #100
-	PlaySong(0)
-    PlaySound("rh#adrom")
-	MoveToObject(Player1)
-	StartDialogueNoSet(Player1)
+THEN
+	RESPONSE #100
+		PlaySong(0)
+		PlaySound("rh#adrom")
+		MoveToObject(Player1)
+		StartDialogueNoSet(Player1)
 END
 
-// talk 13 (outdoors in athkatla, trademeet, or wilderness)
+// Talk 13 (outdoors in athkatla, trademeet, or wilderness)
+// --------------------------------------------------------
 IF
 	RealGlobalTimerExpired("rh#AdrianTalksTimer","GLOBAL")
 	InParty("rh#Adrian")
@@ -616,9 +625,9 @@ IF
 	!StateCheck(Player1,CD_STATE_NOTVALID)
 	!StateCheck(Myself,CD_STATE_NOTVALID)
 	OR(3)
-          AreaType(OUTDOOR)
-          AreaType(CITY) 
-          AreaType(FOREST)
+		AreaType(OUTDOOR)
+		AreaType(CITY) 
+		AreaType(FOREST)
 	Global("rh#AdrianTalks","GLOBAL",25)
 	Global("rh#AdrianRomanceActive","GLOBAL",1)
 	OR(9)
@@ -632,12 +641,12 @@ IF
 		AreaCheck("AR2000")
 		AreaType(FOREST)
 THEN
-RESPONSE #100
-	IncrementGlobal("rh#AdrianTalks","GLOBAL",1)
+	RESPONSE #100
+		IncrementGlobal("rh#AdrianTalks","GLOBAL",1)
 END
 
-// talk 17 (morning)
-
+// Talk 17 (morning)
+// -----------------
 IF
 	InParty("rh#Adrian")
 	See(Player1)
@@ -647,13 +656,13 @@ IF
 	Global("rh#AdrianTalks","GLOBAL",33)
 	Global("rh#AdrianRomanceActive","GLOBAL",1)
 THEN
-RESPONSE #100
-	IncrementGlobal("rh#AdrianTalks","GLOBAL",1)
+	RESPONSE #100
+		IncrementGlobal("rh#AdrianTalks","GLOBAL",1)
 END
 
 
 // Brynnlaw
-
+// --------
 IF
     InParty(Myself)
     AreaCheck("AR1600")
@@ -663,9 +672,9 @@ IF
 	Global("rh#AdrianRomanceActive","GLOBAL",2)
 	Global("rh#AdrianFriendshipActive","GLOBAL",1)
 THEN
-  RESPONSE #100
-    SetGlobal("rh#AdrianTalkBrynnlaw","GLOBAL",1)
-    RealSetGlobalTimer("rh#AdrianTalkBrynnlawTimer","GLOBAL",900)
+	RESPONSE #100
+		SetGlobal("rh#AdrianTalkBrynnlaw","GLOBAL",1)
+		RealSetGlobalTimer("rh#AdrianTalkBrynnlawTimer","GLOBAL",900)
 END
 
 IF
@@ -679,8 +688,8 @@ IF
     AreaCheck("AR1600")
     RealGlobalTimerExpired("rh#AdrianTalkBrynnlawTimer","GLOBAL")
 THEN
-  RESPONSE #100
-    SetGlobal("rh#AdrianTalkBrynnlaw","GLOBAL",2)
+	RESPONSE #100
+		SetGlobal("rh#AdrianTalkBrynnlaw","GLOBAL",2)
 END
 
 IF
@@ -693,22 +702,22 @@ IF
     AreaCheck("AR1600")
     Global("rh#AdrianTalkBrynnlaw","GLOBAL",2)
 THEN
-  RESPONSE #100
-    MoveToObject(Player1)
-    StartDialogueNoSet(Player1)
+	RESPONSE #100
+		MoveToObject(Player1)
+		StartDialogueNoSet(Player1)
 END
 
 // Spellhold
-
+// ---------
 IF
     InParty(Myself)
     AreaCheck("AR1512")
     Global("rh#AdrianTalkSpellhold","GLOBAL",0)
 	Global("rh#AdrianRomanceActive","GLOBAL",2)
 THEN
-  RESPONSE #100
-    SetGlobal("rh#AdrianTalkSpellhold","GLOBAL",1)
-    RealSetGlobalTimer("rh#AdrianTalkSpellholdTimer","GLOBAL",300)
+	RESPONSE #100
+		SetGlobal("rh#AdrianTalkSpellhold","GLOBAL",1)
+		RealSetGlobalTimer("rh#AdrianTalkSpellholdTimer","GLOBAL",300)
 END
 
 IF
@@ -721,8 +730,8 @@ IF
     Global("rh#AdrianTalkSpellhold","GLOBAL",1)
     RealGlobalTimerExpired("rh#AdrianTalkSpellholdTimer","GLOBAL")
 THEN
-  RESPONSE #100
-    SetGlobal("rh#AdrianTalkSpellhold","GLOBAL",2)
+	RESPONSE #100
+		SetGlobal("rh#AdrianTalkSpellhold","GLOBAL",2)
 END
 
 IF
@@ -734,25 +743,25 @@ IF
     !Detect([ENEMY])
     Global("rh#AdrianTalkSpellhold","GLOBAL",2)
 THEN
-  RESPONSE #100
-    MoveToObject(Player1)
-    StartDialogueNoSet(Player1)
+	RESPONSE #100
+		MoveToObject(Player1)
+		StartDialogueNoSet(Player1)
 END
 
 // Underdark
-
+// ---------
 IF
     InParty(Myself)
     AreaCheck("AR2100")
     Global("rh#AdrianTalkUnderdark","GLOBAL",0)
     OR(3)
-	Global("rh#AdrianRomanceActive","GLOBAL",1)
-	Global("rh#AdrianRomanceActive","GLOBAL",2)
-	Global("rh#AdrianFriendshipActive","GLOBAL",1)
+		Global("rh#AdrianRomanceActive","GLOBAL",1)
+		Global("rh#AdrianRomanceActive","GLOBAL",2)
+		Global("rh#AdrianFriendshipActive","GLOBAL",1)
 THEN
-  RESPONSE #100
-    SetGlobal("rh#AdrianTalkUnderdark","GLOBAL",1)
-    RealSetGlobalTimer("rh#AdrianTalkUnderdarkTimer","GLOBAL",600)
+	RESPONSE #100
+		SetGlobal("rh#AdrianTalkUnderdark","GLOBAL",1)
+		RealSetGlobalTimer("rh#AdrianTalkUnderdarkTimer","GLOBAL",600)
 END
 
 IF
@@ -765,8 +774,8 @@ IF
     Global("rh#AdrianTalkUnderdark","GLOBAL",1)
     RealGlobalTimerExpired("rh#AdrianTalkUnderdarkTimer","GLOBAL")
 THEN
-  RESPONSE #100
-    SetGlobal("rh#AdrianTalkUnderdark","GLOBAL",2)
+	RESPONSE #100
+		SetGlobal("rh#AdrianTalkUnderdark","GLOBAL",2)
 END
 
 IF
@@ -778,26 +787,26 @@ IF
     !Detect([ENEMY])
     Global("rh#AdrianTalkUnderdark","GLOBAL",2)
 THEN
-  RESPONSE #100
-    MoveToObject(Player1)
-    StartDialogueNoSet(Player1)
+	RESPONSE #100
+		MoveToObject(Player1)
+		StartDialogueNoSet(Player1)
 END
 
 // Suldanessellar
-
+// --------------
 IF
     InParty(Myself)
     Global("ElvenAvatar","GLOBAL",1)
     GlobalGT("rh#Adfyfyriad","GLOBAL",0)
     Global("rh#AdrianTalkElf","GLOBAL",0)
     OR(3)
-	Global("rh#AdrianRomanceActive","GLOBAL",1)
-	Global("rh#AdrianRomanceActive","GLOBAL",2)
-	Global("rh#AdrianFriendshipActive","GLOBAL",1)
+		Global("rh#AdrianRomanceActive","GLOBAL",1)
+		Global("rh#AdrianRomanceActive","GLOBAL",2)
+		Global("rh#AdrianFriendshipActive","GLOBAL",1)
 THEN
-  RESPONSE #100
-    SetGlobal("rh#AdrianTalkElf","GLOBAL",1)
-    RealSetGlobalTimer("rh#AdrianTalkElfTimer","GLOBAL",5)
+	RESPONSE #100
+		SetGlobal("rh#AdrianTalkElf","GLOBAL",1)
+		RealSetGlobalTimer("rh#AdrianTalkElfTimer","GLOBAL",5)
 END
 
 IF
@@ -810,8 +819,8 @@ IF
     Global("rh#AdrianTalkElf","GLOBAL",1)
     RealGlobalTimerExpired("rh#AdrianTalkElfTimer","GLOBAL")
 THEN
-  RESPONSE #100
-    SetGlobal("rh#AdrianTalkElf","GLOBAL",2)
+	RESPONSE #100
+		SetGlobal("rh#AdrianTalkElf","GLOBAL",2)
 END
 
 IF
@@ -823,22 +832,22 @@ IF
     !Detect([ENEMY])
     Global("rh#AdrianTalkElf","GLOBAL",2)
 THEN
-  RESPONSE #100
-    MoveToObject(Player1)
-    StartDialogueNoSet(Player1)
+	RESPONSE #100
+		MoveToObject(Player1)
+		StartDialogueNoSet(Player1)
 END
 
 // Slavers
-
+// -------
 IF
     InParty(Myself)
     Global("FreeSlaves","GLOBAL",1)
     Dead("Haegan")
     Global("rh#AdrianTalkSlavers","GLOBAL",0)
 THEN
-  RESPONSE #100
-    SetGlobal("rh#AdrianTalkSlavers","GLOBAL",1)
-    RealSetGlobalTimer("rh#AdrianTalkSlaversTimer","GLOBAL",300)
+	RESPONSE #100
+		SetGlobal("rh#AdrianTalkSlavers","GLOBAL",1)
+		RealSetGlobalTimer("rh#AdrianTalkSlaversTimer","GLOBAL",300)
 END
 
 IF
@@ -851,8 +860,8 @@ IF
     Global("rh#AdrianTalkSlavers","GLOBAL",1)
     RealGlobalTimerExpired("rh#AdrianTalkSlaversTimer","GLOBAL")
 THEN
-  RESPONSE #100
-    SetGlobal("rh#AdrianTalkSlavers","GLOBAL",2)
+	RESPONSE #100
+		SetGlobal("rh#AdrianTalkSlavers","GLOBAL",2)
 END
 
 IF
@@ -864,25 +873,25 @@ IF
     !Detect([ENEMY])
     Global("rh#AdrianTalkSlavers","GLOBAL",2)
 THEN
-  RESPONSE #100
-    MoveToObject(Player1)
-    StartDialogueNoSet(Player1)
+	RESPONSE #100
+		MoveToObject(Player1)
+		StartDialogueNoSet(Player1)
 END
 
 // Lavok
-
+// -----
 IF
     InParty(Myself)
     Dead("lavok02")
     Global("rh#AdrianTalkLavok","GLOBAL",0)
     OR(3)
-	Global("rh#AdrianRomanceActive","GLOBAL",1)
-	Global("rh#AdrianRomanceActive","GLOBAL",2)
-	Global("rh#AdrianFriendshipActive","GLOBAL",1)
+		Global("rh#AdrianRomanceActive","GLOBAL",1)
+		Global("rh#AdrianRomanceActive","GLOBAL",2)
+		Global("rh#AdrianFriendshipActive","GLOBAL",1)
 THEN
-  RESPONSE #100
-    SetGlobal("rh#AdrianTalkLavok","GLOBAL",1)
-    RealSetGlobalTimer("rh#AdrianTalkLavokTimer","GLOBAL",300)
+	RESPONSE #100
+		SetGlobal("rh#AdrianTalkLavok","GLOBAL",1)
+		RealSetGlobalTimer("rh#AdrianTalkLavokTimer","GLOBAL",300)
 END
 
 IF
@@ -895,8 +904,8 @@ IF
     Global("rh#AdrianTalkLavok","GLOBAL",1)
     RealGlobalTimerExpired("rh#AdrianTalkLavokTimer","GLOBAL")
 THEN
-  RESPONSE #100
-    SetGlobal("rh#AdrianTalkLavok","GLOBAL",2)
+	RESPONSE #100
+		SetGlobal("rh#AdrianTalkLavok","GLOBAL",2)
 END
 
 IF
@@ -908,21 +917,21 @@ IF
     !Detect([ENEMY])
     Global("rh#AdrianTalkLavok","GLOBAL",2)
 THEN
-  RESPONSE #100
-    MoveToObject(Player1)
-    StartDialogueNoSet(Player1)
+	RESPONSE #100
+		MoveToObject(Player1)
+		StartDialogueNoSet(Player1)
 END
 
 // Linvail
-
+// -------
 IF
     InParty(Myself)
     Global("WorkingForAran","GLOBAL",1)
     Global("rh#AdrianLinvailTalk","GLOBAL",0)
 THEN
-  RESPONSE #100
-    SetGlobal("rh#AdrianLinvailTalk","GLOBAL",1)
-    RealSetGlobalTimer("rh#AdrianLinvailTalkTimer","GLOBAL",300)
+	RESPONSE #100
+		SetGlobal("rh#AdrianLinvailTalk","GLOBAL",1)
+		RealSetGlobalTimer("rh#AdrianLinvailTalkTimer","GLOBAL",300)
 END
 
 IF
@@ -935,8 +944,8 @@ IF
     Global("rh#AdrianLinvailTalk","GLOBAL",1)
     RealGlobalTimerExpired("rh#AdrianLinvailTalkTimer","GLOBAL")
 THEN
-  RESPONSE #100
-    SetGlobal("rh#AdrianLinvailTalk","GLOBAL",2)
+	RESPONSE #100
+		SetGlobal("rh#AdrianLinvailTalk","GLOBAL",2)
 END
 
 IF
@@ -948,21 +957,21 @@ IF
     !Detect([ENEMY])
     Global("rh#AdrianLinvailTalk","GLOBAL",2)
 THEN
-  RESPONSE #100
-    MoveToObject(Player1)
-    StartDialogueNoSet(Player1)
+	RESPONSE #100
+		MoveToObject(Player1)
+		StartDialogueNoSet(Player1)
 END
 
 // Bodhi
-
+// -----
 IF
     InParty(Myself)
     Global("WorkingForBodhi","GLOBAL",1)
     Global("rh#AdrianBodhiTalk","GLOBAL",0)
 THEN
-  RESPONSE #100
-    SetGlobal("rh#AdrianBodhiTalk","GLOBAL",1)
-    RealSetGlobalTimer("rh#AdrianBodhiTalkTimer","GLOBAL",300)
+	RESPONSE #100
+		SetGlobal("rh#AdrianBodhiTalk","GLOBAL",1)
+		RealSetGlobalTimer("rh#AdrianBodhiTalkTimer","GLOBAL",300)
 END
 
 IF
@@ -975,8 +984,8 @@ IF
     Global("rh#AdrianBodhiTalk","GLOBAL",1)
     RealGlobalTimerExpired("rh#AdrianBodhiTalkTimer","GLOBAL")
 THEN
-  RESPONSE #100
-    SetGlobal("rh#AdrianBodhiTalk","GLOBAL",2)
+	RESPONSE #100
+		SetGlobal("rh#AdrianBodhiTalk","GLOBAL",2)
 END
 
 IF
@@ -988,13 +997,13 @@ IF
     !Detect([ENEMY])
     Global("rh#AdrianBodhiTalk","GLOBAL",2)
 THEN
-  RESPONSE #100
-    MoveToObject(Player1)
-    StartDialogueNoSet(Player1)
+	RESPONSE #100
+		MoveToObject(Player1)
+		StartDialogueNoSet(Player1)
 END
 
 // Firkraaaaaaag
-
+// -------------
 IF
     InParty(Myself)
     See(Player1)
@@ -1003,9 +1012,9 @@ IF
     Dead("firkra02")
     Global("rh#AdrianFirkraagTalk","GLOBAL",0)
 THEN
-  RESPONSE #50
-    SetGlobal("rh#AdrianFirkraagTalk","GLOBAL",1)
-    RealSetGlobalTimer("rh#AdrianFirkraagTalkTimer","GLOBAL",5)
+	RESPONSE #50
+		SetGlobal("rh#AdrianFirkraagTalk","GLOBAL",1)
+		RealSetGlobalTimer("rh#AdrianFirkraagTalkTimer","GLOBAL",5)
 END
 
 IF
@@ -1014,8 +1023,8 @@ IF
     Global("rh#AdrianFirkraagTalk","GLOBAL",1)
     RealGlobalTimerExpired("rh#AdrianFirkraagTalkTimer","GLOBAL")
 THEN
-  RESPONSE #100
-    SetGlobal("rh#AdrianFirkraagTalk","GLOBAL",2)
+	RESPONSE #100
+		SetGlobal("rh#AdrianFirkraagTalk","GLOBAL",2)
 END
 
 IF
@@ -1027,12 +1036,13 @@ IF
     !Detect([ENEMY])
     Global("rh#AdrianFirkraagTalk","GLOBAL",2)
 THEN
-  RESPONSE #100
-    MoveToObject(Player1)
-    StartDialogueNoSet(Player1)
+	RESPONSE #100
+		MoveToObject(Player1)
+		StartDialogueNoSet(Player1)
 END
 
 // Post-Elhan
+// ----------
 IF
     InParty(Myself)
     See(Player1)
@@ -1042,9 +1052,9 @@ IF
     Global("rh#AdrianTalkElhan","GLOBAL",0)
     Global("ElhanFinishedSpeaking","GLOBAL",1)
 THEN
-  RESPONSE #50
-    SetGlobal("rh#AdrianTalkElhan","GLOBAL",1)
-    RealSetGlobalTimer("rh#AdrianTalkElhanTimer","GLOBAL",15)
+	RESPONSE #50
+		SetGlobal("rh#AdrianTalkElhan","GLOBAL",1)
+		RealSetGlobalTimer("rh#AdrianTalkElhanTimer","GLOBAL",15)
 END
 
 IF
@@ -1053,8 +1063,8 @@ IF
     Global("rh#AdrianTalkElhan","GLOBAL",1)
     RealGlobalTimerExpired("rh#AdrianTalkElhanTimer","GLOBAL")
 THEN
-  RESPONSE #100
-    SetGlobal("rh#AdrianTalkElhan","GLOBAL",2)
+	RESPONSE #100
+		SetGlobal("rh#AdrianTalkElhan","GLOBAL",2)
 END
 
 IF
@@ -1066,14 +1076,14 @@ IF
     !Detect([ENEMY])
     Global("rh#AdrianTalkElhan","GLOBAL",2)
 THEN
-  RESPONSE #100
-    MoveToObject(Player1)
-    StartDialogueNoSet(Player1)
+	RESPONSE #100
+		MoveToObject(Player1)
+		StartDialogueNoSet(Player1)
 END
 
 
 // SCENERY TALK: EMBARL
-
+// --------------------
 IF
 	InParty("rh#Adrian")
 	See(Player1)
@@ -1083,9 +1093,9 @@ IF
 	Global("MaeVarWork","GLOBAL",5)
 	AreaCheck("AR0300")
 	Global("rh#AdrianEmbarlJob","GLOBAL",0)
- THEN
-RESPONSE #100
-	SetGlobal("rh#AdrianEmbarlJob","GLOBAL",1)	
+THEN
+	RESPONSE #100
+		SetGlobal("rh#AdrianEmbarlJob","GLOBAL",1)	
 END
 
 IF
@@ -1097,12 +1107,13 @@ IF
 	Global("MaeVarWork","GLOBAL",5)
 	AreaCheck("AR0300")
 	Global("rh#AdrianEmbarlJob","GLOBAL",1)
- THEN
-RESPONSE #100
-	StartDialogueNoSet(Player1)	
+THEN
+	RESPONSE #100
+		StartDialogueNoSet(Player1)	
 END
 
 // Encounter
+// ---------
 IF
     Dead("cefald01")
     InParty("rh#Adrian")
@@ -1112,10 +1123,10 @@ IF
     GlobalGT("loganjob2","GLOBAL",1)
     Global("rh#SoargylEncounter","GLOBAL",0)
 THEN
-  RESPONSE #100
-    SetGlobal("rh#SoargylEncounter","GLOBAL",1)
-    CreateCreature("rh#sgyl",[1092.2343],2)
-    ActionOverride("rh#sgyl",MakeGlobal())
+	RESPONSE #100
+		SetGlobal("rh#SoargylEncounter","GLOBAL",1)
+		CreateCreature("rh#sgyl",[1092.2343],2)
+		ActionOverride("rh#sgyl",MakeGlobal())
 END
 
 IF
@@ -1127,9 +1138,9 @@ IF
 	Dead("rh#sgyl")
 	AreaCheck("rh#ad1")
 	Global("rh#SoargylAftermath","GLOBAL",0)
- THEN
-RESPONSE #100
-	SetGlobal("rh#SoargylAftermath","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("rh#SoargylAftermath","GLOBAL",1)
 END
 
 IF
@@ -1139,27 +1150,27 @@ IF
 	!StateCheck(Player1,CD_STATE_NOTVALID)
 	!StateCheck(Myself,CD_STATE_NOTVALID)
 	Global("rh#SoargylAftermath","GLOBAL",1)
- THEN
-RESPONSE #100
-	StartDialogueNoSet(Player1)	
+THEN
+	RESPONSE #100
+		StartDialogueNoSet(Player1)	
 END
 
 
 
 // Romance Kills
-
+// -------------
 IF
  OR(5)
-    	Global("AnomenRomanceActive","GLOBAL",2)
-	Global("EdwinRomanceActive","GLOBAL",2)
-	Global("RasaadRomanceActive","GLOBAL",2)
-	Global("HexxatRomanceActive","GLOBAL",2)
-	Global("DornRomanceActive","GLOBAL",2)
+		Global("AnomenRomanceActive","GLOBAL",2)
+		Global("EdwinRomanceActive","GLOBAL",2)
+		Global("RasaadRomanceActive","GLOBAL",2)
+		Global("HexxatRomanceActive","GLOBAL",2)
+		Global("DornRomanceActive","GLOBAL",2)
 	!Global("rh#AdrianRomanceActive","GLOBAL",0)
 	!Global("rh#AdrianRomanceActive","GLOBAL",3)
 THEN
-  RESPONSE #100
-	SetGlobal("rh#AdrianRomanceActive","GLOBAL",3)
+	RESPONSE #100
+		SetGlobal("rh#AdrianRomanceActive","GLOBAL",3)
 END
 
 IF
@@ -1167,9 +1178,9 @@ IF
 	!Global("AnomenRomanceActive","GLOBAL",0)
 	!Global("AnomenRomanceActive","GLOBAL",3)
 THEN
-  RESPONSE #100
-	SetGlobal("AnomenRomanceActive","GLOBAL",3)
-	SetGlobal("AnomenMatch","GLOBAL",3)
+	RESPONSE #100
+		SetGlobal("AnomenRomanceActive","GLOBAL",3)
+		SetGlobal("AnomenMatch","GLOBAL",3)
 END
 
 IF
@@ -1178,8 +1189,8 @@ IF
 		Global("RasaadRomanceActive","GLOBAL",1)
 		Global("RasaadRomanceActive","GLOBAL",2)
 THEN
-  RESPONSE #100
-  	SetGlobal("RasaadRomanceActive","GLOBAL",3)
+	RESPONSE #100
+		SetGlobal("RasaadRomanceActive","GLOBAL",3)
 END
 
 IF
@@ -1188,8 +1199,8 @@ IF
 		Global("HexxatRomanceActive","GLOBAL",1)
 		Global("HexxatRomanceActive","GLOBAL",2)
 THEN
-  RESPONSE #100
-  	SetGlobal("HexxatRomanceActive","GLOBAL",3)
+	RESPONSE #100
+		SetGlobal("HexxatRomanceActive","GLOBAL",3)
 END
 
 IF
@@ -1198,8 +1209,8 @@ IF
 		Global("DornRomanceActive","GLOBAL",1)
 		Global("DornRomanceActive","GLOBAL",2)
 THEN
-  RESPONSE #100
-  	SetGlobal("DornRomanceActive","GLOBAL",3)
+	RESPONSE #100
+		SetGlobal("DornRomanceActive","GLOBAL",3)
 END
 
 IF
@@ -1207,8 +1218,8 @@ IF
 	Global("rh#AdrianFriendshipActive","GLOBAL",0)
 	GlobalLT("rh#AdrianTalks","GLOBAL",23)
 THEN
-  RESPONSE #100
-	SetGlobal("rh#AdrianFriendshipActive","GLOBAL",1)
+	RESPONSE #100
+		SetGlobal("rh#AdrianFriendshipActive","GLOBAL",1)
 END
 
 IF
@@ -1217,10 +1228,10 @@ IF
 	GlobalGT("rh#AdrianTalks","GLOBAL",22)
 	GlobalLT("rh#AdrianTalks","GLOBAL",37)
 THEN
-  RESPONSE #100
-	SetGlobal("rh#AdrianFriendshipActive","GLOBAL",1)
-	SetGlobal("rh#AdrianTalks","GLOBAL",39)
-	RealSetGlobalTimer("rh#AdrianTalksTimer","GLOBAL",2700)
+	RESPONSE #100
+		SetGlobal("rh#AdrianFriendshipActive","GLOBAL",1)
+		SetGlobal("rh#AdrianTalks","GLOBAL",39)
+		RealSetGlobalTimer("rh#AdrianTalksTimer","GLOBAL",2700)
 END
 
 IF
@@ -1228,12 +1239,12 @@ IF
 	Global("rh#AdrianFriendshipActive","GLOBAL",0)
 	GlobalGT("rh#AdrianTalks","GLOBAL",36)
 THEN
-  RESPONSE #100
-	SetGlobal("rh#AdrianFriendshipActive","GLOBAL",3)
+	RESPONSE #100
+		SetGlobal("rh#AdrianFriendshipActive","GLOBAL",3)
 END
 
 // Anomen Challenge
-
+// ----------------
 IF
     InParty(Myself)
     InParty("Anomen")
@@ -1249,8 +1260,8 @@ IF
 	Global("AnomenRomanceActive","GLOBAL",1)
     RealGlobalTimerExpired("rh#AnomenChallenges2Timer","GLOBAL")
 THEN
-  RESPONSE #100
-    SetGlobal("rh#AnomenChallenges2","GLOBAL",2)
+	RESPONSE #100
+		SetGlobal("rh#AnomenChallenges2","GLOBAL",2)
 END
 
 IF
@@ -1268,13 +1279,13 @@ IF
 	Global("AnomenRomanceActive","GLOBAL",1)
     RealGlobalTimerExpired("rh#AnomenChallenges2Timer","GLOBAL")
 THEN
-  RESPONSE #100
-    MoveToObject(Player1)
-    StartDialogueNoSet(Player1)
+	RESPONSE #100
+		MoveToObject(Player1)
+		StartDialogueNoSet(Player1)
 END
 
 // Edwin Challenge
-
+// ---------------
 IF
     InParty(Myself)
     InParty("Edwin")
@@ -1290,8 +1301,8 @@ IF
 	Global("EdwinRomanceActive","GLOBAL",1)
     RealGlobalTimerExpired("rh#EdwinChallengeTimer","GLOBAL")
 THEN
-  RESPONSE #100
-    SetGlobal("rh#EdwinChallenge","GLOBAL",2)
+	RESPONSE #100
+		SetGlobal("rh#EdwinChallenge","GLOBAL",2)
 END
 
 IF
@@ -1308,13 +1319,13 @@ IF
 		Global("rh#AdrianRomanceActive","GLOBAL",2)
 	Global("EdwinRomanceActive","GLOBAL",1)
 THEN
-  RESPONSE #100
-    MoveToObject(Player1)
-    StartDialogueNoSet(Player1)
+	RESPONSE #100
+		MoveToObject(Player1)
+		StartDialogueNoSet(Player1)
 END
 
-// if you've been sleeping with Haer'dalis before committing to this relationship, you'll need to break up with him
-
+// If you've been sleeping with Haer'dalis before committing to this relationship, you'll need to break up with him
+// -----------------------------------------------------------------------------------------------------------------
 IF
 	InParty(Myself)
     InParty("Haerdalis")
@@ -1323,9 +1334,9 @@ IF
 	Global("LS_HaerDalisSex","GLOBAL",2)
 	Global("rh#HaerDalisChallenge1","GLOBAL",0)
 THEN
-RESPONSE #100
-	RealSetGlobalTimer("rh#HaerDalisChallenge1Timer","GLOBAL",600)
-	SetGlobal("rh#HaerDalisChallenge1","GLOBAL",1)
+	RESPONSE #100
+		RealSetGlobalTimer("rh#HaerDalisChallenge1Timer","GLOBAL",600)
+		SetGlobal("rh#HaerDalisChallenge1","GLOBAL",1)
 END
 
 IF
@@ -1340,8 +1351,8 @@ IF
 	Global("rh#AdrianRomanceActive","GLOBAL",2)
 	Global("LS_HaerDalisRomanceActive","GLOBAL",1)
 THEN
-RESPONSE #100
-	SetGlobal("rh#HaerDalisChallenge1","GLOBAL",2)
+	RESPONSE #100
+		SetGlobal("rh#HaerDalisChallenge1","GLOBAL",2)
 END
 
 IF
@@ -1356,13 +1367,13 @@ IF
     Global("rh#AdrianRomanceActive","GLOBAL",2)
 	Global("LS_HaerDalisRomanceActive","GLOBAL",1)
 THEN
-RESPONSE #100
-    MoveToObject(Player1)
-    Dialogue(Player1)
+	RESPONSE #100
+		MoveToObject(Player1)
+		Dialogue(Player1)
 END
 
-// if you haven't slept with Haer'dalis but keep on talking to him, Adrian won't care for a while but will eventually ask you to break it off
-
+// If you haven't slept with Haer'dalis but keep on talking to him, Adrian won't care for a while but will eventually ask you to break it off
+// ------------------------------------------------------------------------------------------------------------------------------------------
 IF
 	Global("LS_HaerDalisRomanceActive","GLOBAL",1)
 	Global("rh#AdrianRomanceActive","GLOBAL",2)
@@ -1370,10 +1381,10 @@ IF
 	Global("rh#HaerDalisChallenge1","GLOBAL",0)
 	Global("rh#HaerDalisChallenge2","GLOBAL",0)
 THEN
-RESPONSE #100
-	SetGlobal("rh#HaerDalisChallenge1","GLOBAL",10)
-	SetGlobal("rh#HaerDalisChallenge2","GLOBAL",1)
-	RealSetGlobalTimer("rh#HaerDalisChallenge2Timer","GLOBAL",7200)
+	RESPONSE #100
+		SetGlobal("rh#HaerDalisChallenge1","GLOBAL",10)
+		SetGlobal("rh#HaerDalisChallenge2","GLOBAL",1)
+		RealSetGlobalTimer("rh#HaerDalisChallenge2Timer","GLOBAL",7200)
 END
 
 IF
@@ -1389,8 +1400,8 @@ IF
 	RealGlobalTimerExpired("rh#HaerDalisChallenge2Timer","GLOBAL")
 	Global("rh#HaerDalisChallenge2","GLOBAL",1)
 THEN
-RESPONSE #100
-    SetGlobal("rh#HaerDalisChallenge2","GLOBAL",2)
+	RESPONSE #100
+		SetGlobal("rh#HaerDalisChallenge2","GLOBAL",2)
 END
 
 IF
@@ -1405,13 +1416,13 @@ IF
     Global("rh#AdrianRomanceActive","GLOBAL",2)
 	Global("LS_HaerDalisRomanceActive","GLOBAL",1)
 THEN
-RESPONSE #100
-    MoveToObject(Player1)
-    Dialogue(Player1)
+	RESPONSE #100
+		MoveToObject(Player1)
+		Dialogue(Player1)
 END
 
-// if you start sleeping with HD afterwards, Adrian will be verrrrry unhappy
-
+// If you start sleeping with HD afterwards, Adrian will be verrrrry unhappy
+// -------------------------------------------------------------------------
 IF
 	InParty(Myself)
     InParty("Haerdalis")
@@ -1421,9 +1432,9 @@ IF
 	Global("rh#HaerDalisChallenge1","GLOBAL",10)
 	Global("rh#HaerDalisChallenge3","GLOBAL",0)
 THEN
-RESPONSE #100
-	RealSetGlobalTimer("rh#HaerDalisChallenge3Timer","GLOBAL",600)
-	SetGlobal("rh#HaerDalisChallenge3","GLOBAL",1)
+	RESPONSE #100
+		RealSetGlobalTimer("rh#HaerDalisChallenge3Timer","GLOBAL",600)
+		SetGlobal("rh#HaerDalisChallenge3","GLOBAL",1)
 END
 
 IF
@@ -1439,8 +1450,8 @@ IF
 	Global("rh#AdrianRomanceActive","GLOBAL",2)
 	Global("LS_HaerDalisRomanceActive","GLOBAL",1)
 THEN
-RESPONSE #100
-	SetGlobal("rh#HaerDalisChallenge3","GLOBAL",2)
+	RESPONSE #100
+		SetGlobal("rh#HaerDalisChallenge3","GLOBAL",2)
 END
 
 IF
@@ -1455,13 +1466,13 @@ IF
     Global("rh#AdrianRomanceActive","GLOBAL",2)
 	Global("LS_HaerDalisRomanceActive","GLOBAL",1)
 THEN
-RESPONSE #100
-    MoveToObject(Player1)
-    Dialogue(Player1)
+	RESPONSE #100
+		MoveToObject(Player1)
+		Dialogue(Player1)
 END
 
-// reputation
-
+// Reputation
+// ----------
 IF
     InParty(Myself)
     See(Player1)
@@ -1474,8 +1485,8 @@ IF
         ReputationGT(Player1,18)
     Global("rh#AdrianReputation","GLOBAL",0)
 THEN
-  RESPONSE #100
-    SetGlobal("rh#AdrianReputation","GLOBAL",1)
+	RESPONSE #100
+		SetGlobal("rh#AdrianReputation","GLOBAL",1)
 END
 
 IF
@@ -1490,20 +1501,20 @@ IF
         ReputationGT(Player1,18)
     Global("rh#AdrianReputation","GLOBAL",1)
 THEN
-  RESPONSE #100
-    StartDialogueNoSet(Player1)
+	RESPONSE #100
+		StartDialogueNoSet(Player1)
 END
 
 // FLIRTS
-
+// ------
 IF 
 	Global("rh#AdrStartFlirts","GLOBAL",0)
 	Global("rh#AdrianFlirtsEnabled","GLOBAL",1)
 	Global("rh#AdrianRomanceActive","GLOBAL",2)
- THEN
-RESPONSE #100
-	SetGlobal("rh#AdrStartFlirts","GLOBAL",1)
-	RealSetGlobalTimer("rh#AdrianFlirtTimer","GLOBAL",1800)
+THEN
+	RESPONSE #100
+		SetGlobal("rh#AdrStartFlirts","GLOBAL",1)
+		RealSetGlobalTimer("rh#AdrianFlirtTimer","GLOBAL",1800)
 END
 
 IF
@@ -1516,9 +1527,9 @@ IF
 	Global("rh#AdrianFlirtsEnabled","GLOBAL",1)
 	Global("rh#AdrTimeForFlirt","GLOBAL",0)
 	Global("rh#AdrianRomanceActive","GLOBAL",2)
- THEN
-RESPONSE #100	
-	SetGlobal("rh#AdrTimeForFlirt","GLOBAL",1)
+THEN
+	RESPONSE #100	
+		SetGlobal("rh#AdrTimeForFlirt","GLOBAL",1)
 END
 
 IF
@@ -1530,25 +1541,25 @@ IF
 	RealGlobalTimerExpired("rh#AdrianFlirtTimer","GLOBAL")
 	Global("rh#AdrianFlirtsEnabled","GLOBAL",1)
 	Global("rh#AdrTimeForFlirt","GLOBAL",1)
- THEN
-RESPONSE #100
-	StartDialogueNoSet(Player1)
+THEN
+	RESPONSE #100
+		StartDialogueNoSet(Player1)
 END
 
 
 // Jaheira
-
+// =======
 // 5.
-
+// --
 IF
 	InParty("rh#Adrian")
 	InParty("Jaheira")
 	Global("JaheiraTraitor","GLOBAL",1)
 	Global("rh#AdrianJaheira3","GLOBAL",5)
 THEN
-RESPONSE #100
-	SetGlobal("rh#AdrianJaheira3","GLOBAL",6)
-	RealSetGlobalTimer("rh#AdrianJaheiraTalkTimer","GLOBAL",3600)
+	RESPONSE #100
+		SetGlobal("rh#AdrianJaheira3","GLOBAL",6)
+		RealSetGlobalTimer("rh#AdrianJaheiraTalkTimer","GLOBAL",3600)
 END
 
 IF
@@ -1562,8 +1573,8 @@ IF
 	!See([ENEMY])
 	Global("rh#AdrianJaheira3","GLOBAL",6)
 THEN
-RESPONSE #100
-	SetGlobal("rh#AdrianJaheira3","GLOBAL",7)
+	RESPONSE #100
+		SetGlobal("rh#AdrianJaheira3","GLOBAL",7)
 END
 
 IF
@@ -1575,21 +1586,21 @@ IF
 	!StateCheck(Myself,CD_STATE_NOTVALID)
 	!See([ENEMY])
 	Global("rh#AdrianJaheira3","GLOBAL",7)
- THEN
-RESPONSE #100
-	StartDialogueNoSet("Jaheira")
+THEN
+	RESPONSE #100
+		StartDialogueNoSet("Jaheira")
 END
 
 // 7.
-
+// --
 IF
 	Global("ElminsterForgives","GLOBAL",1)
 	Global("rh#AdrianJaheira3","GLOBAL",10)
 	Global("rh#AdrianJaheira7","GLOBAL",0)
 THEN
-RESPONSE #100
-	SetGlobal("rh#AdrianJaheira7","GLOBAL",1)
-	RealSetGlobalTimer("rh#AdrianJaheiraTalkTimer","GLOBAL",15)
+	RESPONSE #100
+		SetGlobal("rh#AdrianJaheira7","GLOBAL",1)
+		RealSetGlobalTimer("rh#AdrianJaheiraTalkTimer","GLOBAL",15)
 END
 
 IF
@@ -1603,8 +1614,8 @@ IF
 	!StateCheck(Myself,CD_STATE_NOTVALID)
 	Global("rh#AdrianJaheira7","GLOBAL",1)	
 THEN
-RESPONSE #100
-	SetGlobal("rh#AdrianJaheira7","GLOBAL",2)
+	RESPONSE #100
+		SetGlobal("rh#AdrianJaheira7","GLOBAL",2)
 END
 
 IF
@@ -1617,20 +1628,21 @@ IF
 	!StateCheck(Myself,CD_STATE_NOTVALID)
 	Global("rh#AdrianJaheira7","GLOBAL",2)
 THEN
-RESPONSE #100
-	StartDialogueNoSet("Jaheira")
+	RESPONSE #100
+		StartDialogueNoSet("Jaheira")
 END
 
 // 9.
+// --
 IF
 	Global("chapter","GLOBAL",%bg2_chapter_7%)
 	GlobalGT("rh#AdrianTalks","GLOBAL",22)
 	Global("rh#AdrianJaheira3","GLOBAL",10)
 	Global("rh#AdrianJaheira9","GLOBAL",0)
 THEN
-RESPONSE #100
-	SetGlobal("rh#AdrianJaheira9","GLOBAL",1)
-	RealSetGlobalTimer("rh#AdrianJaheiraTalkTimer","GLOBAL",300)
+	RESPONSE #100
+		SetGlobal("rh#AdrianJaheira9","GLOBAL",1)
+		RealSetGlobalTimer("rh#AdrianJaheiraTalkTimer","GLOBAL",300)
 END
 
 IF
@@ -1644,8 +1656,8 @@ IF
 	!StateCheck(Myself,CD_STATE_NOTVALID)
 	Global("rh#AdrianJaheira9","GLOBAL",1)	
 THEN
-RESPONSE #100
-	SetGlobal("rh#AdrianJaheira9","GLOBAL",2)
+	RESPONSE #100
+		SetGlobal("rh#AdrianJaheira9","GLOBAL",2)
 END
 
 IF
@@ -1658,12 +1670,12 @@ IF
 	!StateCheck(Myself,CD_STATE_NOTVALID)
 	Global("rh#AdrianJaheira9","GLOBAL",2)
 THEN
-RESPONSE #100
-	StartDialogueNoSet("Jaheira")
+	RESPONSE #100
+		StartDialogueNoSet("Jaheira")
 END
 
 // Nalia
-
+// -----
 IF
 	InParty("Nalia")
 	InParty("rh#Adrian")
@@ -1672,9 +1684,9 @@ IF
 		Global("PCKeepOwner","GLOBAL",1)
 	Global("RH#AdrianNalia5","GLOBAL",0)
 THEN
-RESPONSE #100
-	SetGlobal("RH#AdrianNalia5","GLOBAL",1)
-	RealSetGlobalTimer("rh#AdrianNaliaTalkTimer","GLOBAL",600)
+	RESPONSE #100
+		SetGlobal("RH#AdrianNalia5","GLOBAL",1)
+		RealSetGlobalTimer("rh#AdrianNaliaTalkTimer","GLOBAL",600)
 END
 
 IF
@@ -1688,8 +1700,8 @@ IF
 	!See([ENEMY])
 	Global("RH#AdrianNalia5","GLOBAL",1)
 THEN
-RESPONSE #100
-	IncrementGlobal("RH#AdrianNalia5","GLOBAL",1)
+	RESPONSE #100
+		IncrementGlobal("RH#AdrianNalia5","GLOBAL",1)
 END
 
 IF
@@ -1703,58 +1715,58 @@ IF
 	!See([ENEMY])
 	Global("RH#AdrianNalia5","GLOBAL",2)
 THEN
-RESPONSE #100
-	StartDialogueNoSet("Nalia")
+	RESPONSE #100
+		StartDialogueNoSet("Nalia")
 END
 
-// string fixer
-
+// String fixer
+// ------------
 IF 
-    HotKey(K)  
+	HotKey(K)  
 THEN 
-    RESPONSE #100       
-        SetName(~Adrian~) 
-        SetPlayerSound(Myself,~Oh, I don't think so.~ [rh#ad1],MORALE) 
-        SetPlayerSound(Myself,~I must admit, this is rather effective.~ [rh#ad2],HAPPY) 
-        SetPlayerSound(Myself,~Well, we certainly know how to waste our time.~ [rh#ad3],UNHAPPY_ANNOYED)
-        SetPlayerSound(Myself,~Is this sort of nonsense really necessary?~ [rh#ad4],UNHAPPY_SERIOUS)
-        SetPlayerSound(Myself,~Oh, I don't mind this at all.~ [rh#ad5],LEADER)
-        SetPlayerSound(Myself,~What is this, a Thayvian plantation? Couldn't we find an inn?~[rh#ad6],TIRED)
-        SetPlayerSound(Myself,~If I'm drunk again by the time you decide to do something, you've only yourself to blame.~ [rh#ad7],BORED)
-        SetPlayerSound(Myself,~Damn!~ [rh#ad8],DAMAGE)
-        SetPlayerSound(Myself,~No... not like this...~ [rh#ad9],DYING)
-        SetPlayerSound(Myself,~Where's a damn cleric when I need one?~ [rh#ad10],HURT)
-        SetPlayerSound(Myself,~It's not exactly Cormanthor, is it?~ [rh#ad11],AREA_FOREST)
-        SetPlayerSound(Myself,~Ah, the sights and smells of the city... I could do without the latter.~ [rh#ad12],AREA_CITY)
-        SetPlayerSound(Myself,~Quite the setting... I'm beginning to wish we'd simply paid someone to do this for us.~ [rh#ad13],AREA_DUNGEON)
-        SetPlayerSound(Myself,~A lovely day, isn't it? Shame about the locale.~ [rh#ad14],AREA_DAY)
-        SetPlayerSound(Myself,~Mmm... the sun sets, and the day truly begins.~ [rh#ad15],AREA_NIGHT)
-        SetPlayerSound(Myself,~That should just about finish this.~ [rh#ad16],CRITICAL_HIT)
-        SetPlayerSound(Myself,~Dammit!~ [rh#ad17],CRITICAL_MISS)
-        SetPlayerSound(Myself,~Oh, this is working wonderfully. If you don't find me a better weapon soon, I might as well just sit in a corner and watch.~ [rh#ad18],TARGET_IMMUNE)
-        SetPlayerSound(Myself,~I'm a mage, not a pack mule.~ [rh#ad19],INVENTORY_FULL)
-        SetPlayerSound(Myself,~Some cover over here, if you don't mind...~ [rh#ad20],SPELL_DISRUPTED)
-        SetPlayerSound(Myself,~This is sure to be entertaining.~ [rh#ad21],SET_A_TRAP)
-        SetPlayerSound(Myself,~It's not quite invisibility, but I suppose it'll do.~ [rh#ad22],HIDDEN_IN_SHADOWS)
-        SetPlayerSound(Myself,~Well, what have we here?~ [rh#ad23],PICKED_POCKET)
-        SetPlayerSound(Myself,~To the Abyss with you!~ [rh#ad24],BATTLE_CRY1) 
-        SetPlayerSound(Myself,~No mercy for scum like this!~ [rh#ad25],BATTLE_CRY2) 
-        SetPlayerSound(Myself,~Die, already!~ [rh#ad26],BATTLE_CRY3) 
-        SetPlayerSound(Myself,~I can already count the gold.~ [rh#ad27],BATTLE_CRY4) 
-        SetPlayerSound(Myself,~Don't even bother to run.~ [rh#ad28],BATTLE_CRY5)   
-        SetPlayerSound(Myself,~Yes?~ [rh#ad29],SELECT_COMMON1)
-        SetPlayerSound(Myself,~What is it?~ [rh#ad30],SELECT_COMMON2)
-        SetPlayerSound(Myself,~Speak up.~ [rh#ad31],SELECT_COMMON3)
-        SetPlayerSound(Myself,~What now?~ [rh#ad32],SELECT_COMMON4)
-        SetPlayerSound(Myself,~Spit it out already.~ [rh#ad33],SELECT_COMMON5)
-        SetPlayerSound(Myself,~Hmm?~ [rh#ad34],SELECT_COMMON6)
-        SetPlayerSound(Myself,~Certainly.~ [rh#ad35],SELECT_ACTION1)
-        SetPlayerSound(Myself,~Of course.~ [rh#ad36],SELECT_ACTION2)
-        SetPlayerSound(Myself,~If you insist. And you always do, don't you?~ [rh#ad37],SELECT_ACTION3)
-        SetPlayerSound(Myself,~A waste of a mage's talents, if you ask me.~ [rh#ad38],SELECT_ACTION4)
-        SetPlayerSound(Myself,~Yes, yes, yes. I'm working on it.~ [rh#ad39],SELECT_ACTION5)
-        SetPlayerSound(Myself,~Oh, not this again.~ [rh#ad40],SELECT_ACTION6) 
-        SetPlayerSound(Myself,~You can do better than that.~ [rh#ad41],SELECT_ACTION7) 
-        SetPlayerSound(Myself,~Go point that thing at someone else.~ [rh#ad42],SELECT_RARE1) 
-        SetPlayerSound(Myself,~Well, you do have a way with words, don't you?~ [rh#ad43],SELECT_RARE2)
+	RESPONSE #100       
+		SetName(~Adrian~) 
+        SetPlayerSound(Myself,@4,MORALE)				// ~Oh, I don't think so.~ [rh#ad1]
+        SetPlayerSound(Myself,@5,HAPPY)					// ~I must admit, this is rather effective.~ [rh#ad2]
+        SetPlayerSound(Myself,@6,UNHAPPY_ANNOYED)		// ~Well, we certainly know how to waste our time.~ [rh#ad3]
+        SetPlayerSound(Myself,@7,UNHAPPY_SERIOUS)		// ~Is this sort of nonsense really necessary?~ [rh#ad4]
+        SetPlayerSound(Myself,@8,LEADER)				// ~Oh, I don't mind this at all.~ [rh#ad5]
+        SetPlayerSound(Myself,@9,TIRED)					// ~What is this, a Thayvian plantation? Couldn't we find an inn?~[rh#ad6]
+        SetPlayerSound(Myself,@10,BORED)				// ~If I'm drunk again by the time you decide to do something, you've only yourself to blame.~ [rh#ad7]
+        SetPlayerSound(Myself,@11,DAMAGE)				// ~Damn!~ [rh#ad8]
+        SetPlayerSound(Myself,@12,DYING)				// ~No... not like this...~ [rh#ad9]
+        SetPlayerSound(Myself,@13,HURT)					// ~Where's a damn cleric when I need one?~ [rh#ad10]
+        SetPlayerSound(Myself,@14,AREA_FOREST)			// ~It's not exactly Cormanthor, is it?~ [rh#ad11]
+        SetPlayerSound(Myself,@15,AREA_CITY)			// ~Ah, the sights and smells of the city... I could do without the latter.~ [rh#ad12]
+        SetPlayerSound(Myself,@16,AREA_DUNGEON)			// ~Quite the setting... I'm beginning to wish we'd simply paid someone to do this for us.~ [rh#ad13]
+        SetPlayerSound(Myself,@17,AREA_DAY)				// ~A lovely day, isn't it? Shame about the locale.~ [rh#ad14]
+        SetPlayerSound(Myself,@18,AREA_NIGHT)			// ~Mmm... the sun sets, and the day truly begins.~ [rh#ad15]
+        SetPlayerSound(Myself,@19,CRITICAL_HIT)			// ~That should just about finish this.~ [rh#ad16]
+        SetPlayerSound(Myself,@20,CRITICAL_MISS)		// ~Dammit!~ [rh#ad17]
+        SetPlayerSound(Myself,@21,TARGET_IMMUNE)		// ~Oh, this is working wonderfully. If you don't find me a better weapon soon, I might as well just sit in a corner and watch.~ [rh#ad18]
+        SetPlayerSound(Myself,@22,INVENTORY_FULL)		// ~I'm a mage, not a pack mule.~ [rh#ad19]
+        SetPlayerSound(Myself,@23,SPELL_DISRUPTED)		// ~Some cover over here, if you don't mind...~ [rh#ad20]
+        SetPlayerSound(Myself,@24,SET_A_TRAP)			// ~This is sure to be entertaining.~ [rh#ad21]
+        SetPlayerSound(Myself,@25,HIDDEN_IN_SHADOWS)	// ~It's not quite invisibility, but I suppose it'll do.~ [rh#ad22]
+        SetPlayerSound(Myself,@26,PICKED_POCKET)		// ~Well, what have we here?~ [rh#ad23]
+        SetPlayerSound(Myself,@27,BATTLE_CRY1)			// ~To the Abyss with you!~ [rh#ad24]
+        SetPlayerSound(Myself,@28,BATTLE_CRY2)			// ~No mercy for scum like this!~ [rh#ad25]
+        SetPlayerSound(Myself,@29,BATTLE_CRY3)			// ~Die, already!~ [rh#ad26]
+        SetPlayerSound(Myself,@30,BATTLE_CRY4)			// ~I can already count the gold.~ [rh#ad27]
+        SetPlayerSound(Myself,@31,BATTLE_CRY5)			// ~Don't even bother to run.~ [rh#ad28]
+        SetPlayerSound(Myself,@32,SELECT_COMMON1)		// ~Yes?~ [rh#ad29]
+        SetPlayerSound(Myself,@33,SELECT_COMMON2)		// ~What is it?~ [rh#ad30]
+        SetPlayerSound(Myself,@34,SELECT_COMMON3)		// ~Speak up.~ [rh#ad31]
+        SetPlayerSound(Myself,@35,SELECT_COMMON4)		// ~What now?~ [rh#ad32]
+        SetPlayerSound(Myself,@36,SELECT_COMMON5)		// ~Spit it out already.~ [rh#ad33]
+        SetPlayerSound(Myself,@37,SELECT_COMMON6)		// ~Hmm?~ [rh#ad34]
+        SetPlayerSound(Myself,@39,SELECT_ACTION1)		// ~Certainly.~ [rh#ad35]
+        SetPlayerSound(Myself,@39,SELECT_ACTION2)		// ~Of course.~ [rh#ad36]
+        SetPlayerSound(Myself,@40,SELECT_ACTION3)		// ~If you insist. And you always do, don't you?~ [rh#ad37]
+        SetPlayerSound(Myself,@41,SELECT_ACTION4)		// ~A waste of a mage's talents, if you ask me.~ [rh#ad38]
+        SetPlayerSound(Myself,@42,SELECT_ACTION5)		// ~Yes, yes, yes. I'm working on it.~ [rh#ad39]
+        SetPlayerSound(Myself,@43,SELECT_ACTION6)		// ~Oh, not this again.~ [rh#ad40]
+        SetPlayerSound(Myself,@44,SELECT_ACTION7)		// ~You can do better than that.~ [rh#ad41]
+        SetPlayerSound(Myself,@45,SELECT_RARE1)			// ~Go point that thing at someone else.~ [rh#ad42]
+        SetPlayerSound(Myself,@46,SELECT_RARE2)			// ~Well, you do have a way with words, don't you?~ [rh#ad43]
 END
