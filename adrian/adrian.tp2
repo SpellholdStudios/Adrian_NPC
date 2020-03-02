@@ -8,40 +8,44 @@ README ~adrian/readme/adrian-readme-%LANGUAGE%.html~ ~adrian/readme/adrian-readm
 
 ALWAYS
 
-	// Determines which game is installed and if the game is an Enhanced Edition.
-	OUTER_SET is_ee = (GAME_IS ~bg2ee eet~) ? 1 : 0					// EE game
-	OUTER_SET is_tob = (GAME_IS ~bgt tob tutu tutu_totsc~) ? 1 : 0	// based on vanilla ToB engine
-	OUTER_SET is_bg2ee = (GAME_IS "bg2ee") ? 1 : 0					// b2gee
-	OUTER_SET is_eet = (GAME_IS "eet") ? 1 : 0						// eet
+	ACTION_IF NOT VARIABLE_IS_SET bg2_chapter BEGIN // Always block must run only once per install!
+
+		// Determines which game is installed and if the game is an Enhanced Edition.
+		OUTER_SET is_ee = (GAME_IS ~bg2ee eet~) ? 1 : 0					// EE game
+		OUTER_SET is_tob = (GAME_IS ~bgt tob tutu tutu_totsc~) ? 1 : 0	// based on vanilla ToB engine
+		OUTER_SET is_bg2ee = (GAME_IS "bg2ee") ? 1 : 0					// b2gee
+		OUTER_SET is_eet = (GAME_IS "eet") ? 1 : 0						// eet
 
 
-	/* eet compatibility */
-	ACTION_IF (is_eet) BEGIN
-		OUTER_SET bg2_chapter = 12
-	END ELSE BEGIN
-		OUTER_SET bg2_chapter = 0
-	END
-	OUTER_FOR (i = 1 ; i <= 10 ; ++i) BEGIN
-		OUTER_SET bg2_chapter = bg2_chapter + 1
-		OUTER_SPRINT name_source ~bg2_chapter_%i%~
-		OUTER_SET EVAL ~%name_source%~ = bg2_chapter
-	END
+		/* eet compatibility */
+		ACTION_IF (is_eet) BEGIN
+			OUTER_SET bg2_chapter = 12
+		END ELSE BEGIN
+			OUTER_SET bg2_chapter = 0
+		END
+		OUTER_FOR (i = 1 ; i <= 10 ; ++i) BEGIN
+			OUTER_SET bg2_chapter = bg2_chapter + 1
+			OUTER_SPRINT name_source ~bg2_chapter_%i%~
+			OUTER_SET EVAL ~%name_source%~ = bg2_chapter
+		END
 
 
-	// Borrowed from Edwin Romance: convert strings to UTF-8 for BGEE/BG2EE
-	// No exception, everything needs to be converted
-	// setup.tra contains in game texts as well as installation texts and need to be converted
-	ACTION_DEFINE_ARRAY rh#noconvert BEGIN END
-	// any tra files used in LANGUAGE need to be reloaded after UTF-8 conversion
-	ACTION_DEFINE_ARRAY rh#reload BEGIN setup END
+		// Borrowed from Edwin Romance: convert strings to UTF-8 for BGEE/BG2EE
+		// No exception, everything needs to be converted
+		// setup.tra contains in game texts as well as installation texts and need to be converted
+		ACTION_DEFINE_ARRAY rh#noconvert BEGIN END
+		// any tra files used in LANGUAGE need to be reloaded after UTF-8 conversion
+		ACTION_DEFINE_ARRAY rh#reload BEGIN setup END
 
-	LAF HANDLE_CHARSETS
-		INT_VAR
-			infer_charsets = 1
-		STR_VAR
-			tra_path = EVAL ~%MOD_FOLDER%/translations~
-			noconvert_array = rh#noconvert
-			reload_array = rh#reload
+		LAF HANDLE_CHARSETS
+			INT_VAR
+				infer_charsets = 1
+			STR_VAR
+				tra_path = EVAL ~%MOD_FOLDER%/translations~
+				noconvert_array = rh#noconvert
+				reload_array = rh#reload
+		END
+
 	END
 
 END
