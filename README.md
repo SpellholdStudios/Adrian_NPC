@@ -1,5 +1,5 @@
 
-![Latest Release](https://img.shields.io/github/v/release/GwendolyneFreddy/Adrian_NPC?include_prereleases&color=darkred)<a name="top" id="top"> </a>
+![Latest Release](https://img.shields.io/github/v/release/SpellholdStudios/Adrian_NPC?include_prereleases&color=darkred)<a name="top" id="top"> </a>
 ![Platform](https://img.shields.io/static/v1?label=platform&message=windows%20%7C%20Mac%20%7C%20linux&color=informational)
 ![Language](https://img.shields.io/static/v1?label=language&message=English%20%7C%20French&color=limegreen)
 
@@ -129,8 +129,7 @@ In addition to the methods above for removing individual components, you can com
 
 ## <a name="details" id="details"></a>Details
 
-<img style="float: left;" src="adrian/readme/images/rhadrl.png">
-Adrian is Lawful Evil by alignment, but your experience with him may vary. While he has been involved in some unambiguously evil dealings in the past (and is mostly unapologetic about his history), he's not particularly enamored of aimless or obvious villainy. His worldview is influenced by some very dark philosophy, but he isn't a monster. Expect conflict when adding him to a good-aligned party, but don't expect bloodshed.
+<img style="float: left;" src="adrian/readme/images/rhadrl.png"> Adrian is Lawful Evil by alignment, but your experience with him may vary. While he has been involved in some unambiguously evil dealings in the past (and is mostly unapologetic about his history), he's not particularly enamored of aimless or obvious villainy. His worldview is influenced by some very dark philosophy, but he isn't a monster. Expect conflict when adding him to a good-aligned party, but don't expect bloodshed.
 
 ## 
 
@@ -266,7 +265,6 @@ This component installs banters between Adrian and Angelo, Arath, Coran (Kulyok'
 ###### Baldur's Gate II: Shadows of Amn and Baldur's Gate II: Throne of Bhaal &copy; TSR, Inc. The BioWare Infinity Engine is &copy; BioWare Corp. All other trademarks and copyrights are property of their respective owners.
 
 ###### This mod was created to be freely enjoyed by all Baldur's Gate II players, and its content is free of rights. However, it should not be sold, published, compiled or redistributed in any form without the consent of the author.
-###### Please note that any and all redistribution and/or hosting of this mod is prohibited without permission from the author.
 
 ###### The modding community for the Infinity Engine has been going strong for more than 10 years now, and is the culmination of thousands of unpaid modding hours by fellow fans of the game. Modders produce their best work and players get the best, well-supported mods when we all work together.
 ###### There are two big ways to upset this harmony. One is to claim someone else's work as your own. The second is to host and redistribute a mod without permission from the author(s).
@@ -279,20 +277,23 @@ This component installs banters between Adrian and Angelo, Arath, Coran (Kulyok'
 
 ## <a name="versions" id="versions"></a>Version History
 
-#### Version 4.4 (28 February 2020)
+#### Version 4.4 (3rf March 2020)
 
 - Added *adrian.ini* metadata file to support AL|EN's "Project Infinity".
 - Renamed *setup-adrian.tp2* -> *adrian.tp2* to support AL|EN's "Project Infinity".
-- Added `DESIGNATED` numbers and "*adrian_sorcerer*", "*adrian_cleric_mage*", "*adrian_mage_thief*", "*adrian_phaelin_soundset*", "*adrian_tatterdemalion_soundset*" and "*adrian_crossmod_content*" component `LABELS`.
-- Grouped classes and soundsets optional components into `SUBCOMPONENTS` to support AL|EN's "Project Infinity".
-- Fixed Adrian portraits in EE games.
-- Replaced `GAME_IS` conditions with variables checks to speed up install time.
-- Fixed a typo in `HANDLE_CHARSETS` function (replaced *infer_charset* with *infer_charsets*).
-- Externalized tp2 code into *main_component.tpa* and *adrian_crossmod.tpa* libraries for more comfortable readability and maintenance.
 - Replaced `AUTHOR` keyword with `SUPPORT`.
+- Added components `DESIGNATED` numbers and "*adrian_sorcerer*", "*adrian_cleric_mage*", "*adrian_mage_thief*", "*adrian_phaelin_soundset*", "*adrian_tatterdemalion_soundset*" and "*adrian_crossmod_content*"`LABELS`.
+- Grouped classes and soundsets optional components into `SUBCOMPONENTS` to support AL|EN's "Project Infinity".
+- Externalized tp2 code into *main_component.tpa* and *adrian_crossmod.tpa* libraries for more comfortable readability and maintenance.
+- Commented code as much as possible.
+- Replaced `GAME_IS` conditions with variables checks to speed up install time.
+- Fixed a typo in `HANDLE_CHARSETS` function (replaced *infer_charset* with *infer_charset<ins>s</ins>*).
+- Fixed typos in rh#ad25d.baf and rh#adrd.baf: Replaced !StateCheck(*<ins>"Myself"*</ins>,CD_STATE_NOTVALID) with !StateCheck(*<ins>Myself</ins>*,CD_STATE_NOTVALID).
+- Fixed Adrian portraits in EE games.
 - Added untranslated crossmod.tra file in french folder to avoid installation failure.
-- Proofread French translation.
 - Removed redundant soundsets entries (@47 and @48) in setup.tra file.
+- Traified rh#adr.baf and rh#ad25.baf.
+- Proofread French translation.
 - Updated deprecated modding tools links.
 - Re-formated, updated and renamed readme files to *adrian-readme-%LANGUAGE%.html* and moved them into new readme folder.
 - Removed useless files and backup folder.

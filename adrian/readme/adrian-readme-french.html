@@ -423,7 +423,7 @@
 			Par précaution, <strong>désactivez les antivirus</strong> ou tout logiciel résidant en mémoire avant d'installer ce mod, ou tout autre mod. Certains (en particulier avast et Norton !) ont une fâcheuse tendance à déclarer les exécutables des mods comme des faux positifs, provoquant ainsi l'échec de la procédure d'installation.
 		</p>
 		<p>
-			Vous pouvez extraire les fichiers de l'archive à l'aide de <a href="http://www.7-zip.org/download.html">7zip</a> ou de <a href="http://www.rarlab.com/download.htm">WinRAR</a>, ou de tout autre utilitaire de compression gérant les fichiers .zip.
+			Vous pouvez extraire les fichiers de l'archive à l'aide de <a href="http://www.7-zip.org/download.html">7zip</a>, <a href="http://www.rarlab.com/download.htm">WinRAR</a>,  <a href="http://www.zipgenius.it/ita/?page_id=12">ZipGenius</a> ou de tout autre utilitaire de compression gérant les fichiers .zip.
 		</p><br>
 
 
@@ -542,7 +542,7 @@
 		<h3>Biographie</h3>
 
 		<p style="margin-top:2%;">
-			nterrogé sur son passé, ADRIAN sourit imperceptiblement et déclare qu'il y a assez de démons auxquels faire face dans le présent pour ne pas en plus s'inquiéter de ceux d'hier. Au vu de son récent asservissement, il semblerait qu'il en ait en effet plus d'un à affronter. En dépit de ses réponses évasives, vous finissez par glaner qu'il a passé du temps en Sembie en tant que magicien mercenaire pour un prince marchand en pleine ascension. Vous vous rendez compte que l'encourager à aller plus avant ne vous vaudra rien d'autre qu'un bon mal de tête.
+			Interrogé sur son passé, ADRIAN sourit imperceptiblement et déclare qu'il y a assez de démons auxquels faire face dans le présent pour ne pas en plus s'inquiéter de ceux d'hier. Au vu de son récent asservissement, il semblerait qu'il en ait en effet plus d'un à affronter. En dépit de ses réponses évasives, vous finissez par glaner qu'il a passé du temps en Sembie en tant que magicien mercenaire pour un prince marchand en pleine ascension. Vous vous rendez compte que l'encourager à aller plus avant ne vous vaudra rien d'autre qu'un bon mal de tête.
 		</p><br>
 
 
@@ -782,9 +782,7 @@
 			<p>Adrian NPC n'est pas développé, supporté ni approuvé par BioWare&trade; or Interplay/BlackIsle, Overhaul, Beamdog or the Wizards of the Coast. Il a été développé par Rhaella, et est basé sur le jeu Baldur's Gate II et son extension.</p>
 			<p>Tout le contenu du mod appartient à &copy;Rhaella.</p>
 			<p>Baldur's Gate II : Les Ombres d'Amn et Baldur's Gate II : Trône de Bhaal appartiennent à &copy; TSR, Inc. Le moteur Infinity Engine appartient à &copy; BioWare Corp. Toutes les autres marques et droits d'auteur appartiennent à leurs propriétaires respectifs.</p>
-<br>
 			<p>Ce mod a été créé pour être librement apprécié par tous les joueurs de Baldur's Gate II. Cependant, il ne doit pas être vendu, publié, compilé ou redistribué sous une forme quelconque sans le consentement de son auteure.</p>
-			<p>Veuillez noter que tout partage ou hébergement de ce mod est interdit sans la permission de l'auteure.</p>
 		  </div><br>
 
 		<p>
@@ -813,27 +811,30 @@
 			Note du traducteur : l'historique n'est volontairement pas traduit afin de faciliter la mise à jour continue du mod.
 		</p><br>
 
-		<h6>Version 5.0 (28 February 2020)</h6>
+		<h6>Version 5.0 (3rd March 2020)</h6>
 
 		  <ul>
 			<li>Added <em>adrian.ini</em> metadata file to support AL|EN's "Project Infinity"</li>
 			<li>Renamed <em>setup-adrian.tp2</em> -> <em>adrian.tp2</em> to support AL|EN's "Project Infinity".</li>
-			<li>Components: added <em>DESIGNATED</em> numbers and "<em>adrian_sorcerer</em>", "<em>adrian_cleric_mage</em>", "<em>adrian_mage_thief</em>", "<em>adrian_phaelin_soundset</em>", "<em>adrian_tatterdemalion_soundset</em>" and "<em>adrian_crossmod_content</em>" LABELS.</li>
+			<li>Replaced AUTHOR keyword with SUPPORT.</li>
+			<li>Added components <em>DESIGNATED</em> numbers and "<em>adrian_sorcerer</em>", "<em>adrian_cleric_mage</em>", "<em>adrian_mage_thief</em>", "<em>adrian_phaelin_soundset</em>", "<em>adrian_tatterdemalion_soundset</em>" and "<em>adrian_crossmod_content</em>" LABELS.</li>
 			<li>Grouped classes and soundsets optional components into `SUBCOMPONENTS` to support AL|EN's "Project Infinity".</li>
-			<li>Fixed Adrian portraits in EE games.</li>
+			<li>Externalized tp2 code into <em>main_component.tpa</em> and <em>adrian_crossmod.tpa</em> libraries for more comfortable readability and maintenance.</li>
+			<li>Commented code as much as possible.</li>
 			<li>Replaced <em>GAME_IS</em> conditions with variables checks to speed up install time.</li>
 			<li>Fixed a typo in <em>HANDLE_CHARSETS</em> function (replaced "<em>infer_charset</em>" with "<em>infer_charsets</em>").</li>
-			<li>Externalized tp2 code into <em>main_component.tpa</em> and <em>adrian_crossmod.tpa</em> libraries for more comfortable readability and maintenance.</li>
-			<li>Replaced AUTHOR keyword with SUPPORT.</li>
+			<li>Fixed rh#ad25d.baf and rh#adrd.baf: Replaced <em>!StateCheck(<span style="color: #781808;">"Myself"</span>,CD_STATE_NOTVALID)</em> with <em>!StateCheck(<span style="color: #781808;">Myself</span>,CD_STATE_NOTVALID)</em>.</li>
+			<li>Fixed Adrian portraits in EE games.</li>
 			<li>Added untranslated crossmod.tra file in french folder to avoid installation failure.</li>
+			<li>Removed redundant soundsets entries (@47 and @48) in setup.tra file.
+			<li>Traified rh#adr.baf and rh#ad25.baf.</li>
 			<li>Proofread French translation.</li>
-			<li>Removed redundant soundsets entries (@47 and @48) in setup.tra file.</li>
 			<li>Updated deprecated modding tools links.</li>
 			<li>Re-formated, updated and renamed readme files to <em>adrian-readme-%LANGUAGE%.html</em> and moved them into new readme folder.</li>
 			<li>Removed useless files and backup folder.</li>
 			<li>Lower cased files.</li>
 			<li>Included Linux and Mac Os X versions in the same package (thanks AL|EN's Infinity Auto Packager tool!).</li>
-			<li>Uploaded mod to official Spellhold Studios GitHub mirror account.</li>
+			<li>Uploaded mod to official SpellHold Studios GitHub mirror account.</li>
 		  </ul><br>
 
 		<h6>Version 4.3 (13 July 2018)</h6>

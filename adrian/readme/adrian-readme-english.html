@@ -423,7 +423,7 @@
 			<strong>Disable any antivirus</strong> or other memory-resident software before installing this or any other mod. Some (particularly avast and Norton!) have a tendency to report false positives with mod activity, resulting in failed installs.
 		</p>
 		<p>
-			You can extract files from the archive using <a href="http://www.rarlab.com/download.htm">WinRAR</a>, <a href="http://www.zipgenius.it/ita/?page_id=12">ZipGenius</a> or another file compression utility that handles .zip files.
+			You can extract files from the archive using <a href="http://www.7-zip.org/download.html">7zip</a>, <a href="http://www.rarlab.com/download.htm">WinRAR</a>, <a href="http://www.zipgenius.it/ita/?page_id=12">ZipGenius</a> or another file compression utility that handles .zip files.
 		</p><br>
 
 
@@ -790,9 +790,7 @@
 			<p>Adrian NPC is not developed, supported, or endorsed by BioWare&trade; or Interplay/BlackIsle, Overhaul, Beamdog or the Wizards of the Coast. It was developed by Rhaella, based on material from the game Baldur's Gate II and its expansion.</p>
 			<p>All mod content is &copy;Rhaella.</p>
 			<p>Baldur's Gate II: Shadows of Amn and Baldur's Gate II: Throne of Bhaal &copy; TSR, Inc. The BioWare Infinity Engine is &copy; BioWare Corp. All other trademarks and copyrights are property of their respective owners.</p>
-<br>
 			<p>This mod was created to be freely enjoyed by all Baldur's Gate II players, and its content is free of rights. However, it should not be sold, published, compiled or redistributed in any form without the consent of the author.</p>
-			<p>Please note that any and all redistribution and/or hosting of this mod is prohibited without permission from the author.</p>
 		  </div><br>
 
 		<p>
@@ -817,21 +815,24 @@
 
 		<h2>Version History</h2><br>
 
-		<h6>Version 5.0 (28 February 2020)</h6>
+		<h6>Version 5.0 (3rd March 2020)</h6>
 
 		  <ul>
 			<li>Added <em>adrian.ini</em> metadata file to support AL|EN's "Project Infinity"</li>
 			<li>Renamed <em>setup-adrian.tp2</em> -> <em>adrian.tp2</em> to support AL|EN's "Project Infinity".</li>
-			<li>Externalized tp2 code into <em>main_component.tpa</em> and <em>adrian_crossmod.tpa</em> libraries for more comfortable readability and maintenance.</li>
-			<li>Components: added <em>DESIGNATED</em> numbers and "<em>adrian_sorcerer</em>", "<em>adrian_cleric_mage</em>", "<em>adrian_mage_thief</em>", "<em>adrian_phaelin_soundset</em>", "<em>adrian_tatterdemalion_soundset</em>" and "<em>adrian_crossmod_content</em>" LABELS.</li>
+			<li>Replaced AUTHOR keyword with SUPPORT.</li>
+			<li>Added components <em>DESIGNATED</em> numbers and "<em>adrian_sorcerer</em>", "<em>adrian_cleric_mage</em>", "<em>adrian_mage_thief</em>", "<em>adrian_phaelin_soundset</em>", "<em>adrian_tatterdemalion_soundset</em>" and "<em>adrian_crossmod_content</em>" LABELS.</li>
 			<li>Grouped classes and soundsets optional components into `SUBCOMPONENTS` to support AL|EN's "Project Infinity".</li>
+			<li>Externalized tp2 code into <em>main_component.tpa</em> and <em>adrian_crossmod.tpa</em> libraries for more comfortable readability and maintenance.</li>
+			<li>Commented code as much as possible.</li>
 			<li>Replaced <em>GAME_IS</em> conditions with variables checks to speed up install time.</li>
 			<li>Fixed a typo in <em>HANDLE_CHARSETS</em> function (replaced "<em>infer_charset</em>" with "<em>infer_charsets</em>").</li>
-			<li>Replaced AUTHOR keyword with SUPPORT.</li>
+			<li>Fixed rh#ad25d.baf and rh#adrd.baf: Replaced <em>!StateCheck(<span style="color: #781808;">"Myself"</span>,CD_STATE_NOTVALID)</em> with <em>!StateCheck(<span style="color: #781808;">Myself</span>,CD_STATE_NOTVALID)</em>.</li>
 			<li>Fixed Adrian portraits in EE games.</li>
 			<li>Added untranslated crossmod.tra file in french folder to avoid installation failure.</li>
+			<li>Removed redundant soundsets entries (@47 and @48) in setup.tra file.
+			<li>Traified rh#adr.baf and rh#ad25.baf.</li>
 			<li>Proofread French translation.</li>
-			<li>Removed redundant soundsets entries (@47 and @48) in setup.tra file.</li>
 			<li>Updated deprecated modding tools links.</li>
 			<li>Re-formated, updated and renamed readme files to <em>adrian-readme-%LANGUAGE%.html</em> and moved them into new readme folder.</li>
 			<li>Removed useless files and backup folder.</li>
