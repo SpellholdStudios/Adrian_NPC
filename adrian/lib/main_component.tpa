@@ -65,7 +65,7 @@ COMPILE EVALUATE_BUFFER ~adrian/dialogue/rh#adrp.d~
 COMPILE ~adrian/dialogue/brh#adr.d~
 COMPILE EVALUATE_BUFFER ~adrian/dialogue/rh#quest.d~
 
-COMPILE EVALUATE_BUFFER ~adrian/scripts/rh#adr.baf~
+COMPILE EVALUATE_BUFFER ~adrian/scripts/rh#adr.baf~ USING ~adrian/translations/%s\setup.tra~
 COMPILE ~adrian/scripts/rh#adrd.baf~
 COMPILE ~adrian/scripts/rh#tanya.baf~
 COMPILE ~adrian/scripts/rh#orph.baf~
@@ -110,7 +110,7 @@ COMPILE EVALUATE_BUFFER ~adrian/dialogue/rh#ad25j.d~
 COMPILE EVALUATE_BUFFER ~adrian/dialogue/rh#ad25p.d~
 COMPILE ~adrian/dialogue/brh#ad25.d~
 
-COMPILE EVALUATE_BUFFER ~adrian/scripts/rh#ad25.baf~
+COMPILE EVALUATE_BUFFER ~adrian/scripts/rh#ad25.baf~ USING ~adrian/translations/%s\setup.tra~
 COMPILE ~adrian/scripts/rh#ad25d.baf~
 COMPILE ~adrian/scripts/rh#cut4.baf~
 EXTEND_BOTTOM ~edwi25.bcs~	~adrian/scripts/rh#edw25.baf~
@@ -174,11 +174,11 @@ APPEND ~mastarea.2da~ ~RH#AD1  value~ UNLESS ~RH#AD1~
  *  Installing portraits  *
  * ---------------------- */
 ACTION_IF is_ee BEGIN
-	COPY ~adrian/images/rh#adrl.bmp~ ~override~
-	COPY ~adrian/images/rh#adrl.bmp~ ~override/rh#adrm.bmp~
-//	COPY ~adrian/images/rh#adrl.bmp~ ~override/rh#adrs.bmp~
+	COPY ~adrian/portraits/rh#adrl.bmp~ ~override~
+	COPY ~adrian/portraits/rh#adrl.bmp~ ~override/rh#adrm.bmp~
+//	COPY ~adrian/portraits/rh#adrl.bmp~ ~override/rh#adrs.bmp~
 END ELSE BEGIN
-	COPY ~adrian/images~ ~override~
+	COPY ~adrian/portraits~ ~override~
 END
 
 
@@ -248,20 +248,20 @@ BUT_ONLY
 COPY_EXISTING ~burch2.cre~ ~override/rh#orph.cre~
 	SAY NAME1 @49 /* Girl */
 	SAY NAME2 @49 /* Girl */
-	WRITE_EVALUATED_ASCII DIALOG          ~%DEST_RES%~ #8
-	WRITE_EVALUATED_ASCII DEATHVAR        ~%DEST_RES%~ #32
-	WRITE_EVALUATED_ASCII SCRIPT_OVERRIDE ~%DEST_RES%~ #8
-	WRITE_EVALUATED_ASCII SCRIPT_DEFAULT  ~~ #8
+	WRITE_ASCIIE DIALOG          ~%DEST_RES%~ #8
+	WRITE_ASCIIE DEATHVAR        ~%DEST_RES%~ #32
+	WRITE_ASCIIE SCRIPT_OVERRIDE ~%DEST_RES%~ #8
+	WRITE_ASCII  SCRIPT_DEFAULT  ~~ #8
 BUT_ONLY
 
 // Tanya
 COPY ~adrian/creatures/rh#tanya.cre~ ~override~
 	SAY NAME1 @50 /* Tanya */
 	SAY NAME2 @51 /* Tanya Damarov */
-	WRITE_EVALUATED_ASCII DIALOG          ~rh#tanya~ #8
-	WRITE_EVALUATED_ASCII DEATHVAR        ~rh#Tanya~ #32
-	WRITE_EVALUATED_ASCII SCRIPT_OVERRIDE ~rh#tanya~ #8
-	WRITE_EVALUATED_ASCII SCRIPT_DEFAULT  ~~ #8
+	WRITE_ASCII DIALOG          ~rh#tanya~ #8
+	WRITE_ASCII DEATHVAR        ~rh#Tanya~ #32
+	WRITE_ASCII SCRIPT_OVERRIDE ~rh#tanya~ #8
+	WRITE_ASCII SCRIPT_DEFAULT   ~~ #8
 	ADD_CRE_ITEM ~chan08~ #0 #0 #0 ~NONE~ ~armor~
 	ADD_CRE_ITEM ~blun15~ #0 #0 #0 ~NONE~ ~weapon1~ EQUIP
 	ADD_CRE_ITEM ~potn52~ #0 #0 #0 ~IDENTIFIED~ ~inv1~ 
@@ -271,48 +271,49 @@ COPY ~adrian/creatures/rh#tanya.cre~ ~override~
 COPY_EXISTING ~ffcust01.cre~ ~override/rh#zhgrd.cre~
 	SAY NAME1 @52 /* Zhentarim Guard */
 	SAY NAME2 @52 /* Zhentarim Guard */
-	WRITE_EVALUATED_ASCII DIALOG          ~%DEST_RES%~ #8
-	WRITE_EVALUATED_ASCII DEATHVAR        ~%DEST_RES%~ #32
-	WRITE_EVALUATED_ASCII SCRIPT_OVERRIDE ~%DEST_RES%~ #8
-	WRITE_EVALUATED_ASCII SCRIPT_DEFAULT  ~~ #8
+	WRITE_ASCIIE DIALOG          ~%DEST_RES%~ #8
+	WRITE_ASCIIE DEATHVAR        ~%DEST_RES%~ #32
+	WRITE_ASCIIE SCRIPT_OVERRIDE ~%DEST_RES%~ #8
+	WRITE_ASCII  SCRIPT_DEFAULT  ~~ #8
+BUT_ONLY
 
 // Spies
 COPY_EXISTING ~ffcust01.cre~ ~override/rh#deryn.cre~
 	SAY NAME1 @53 /* Deryn */
 	SAY NAME2 @53 /* Deryn */
-	WRITE_EVALUATED_ASCII DIALOG          ~rh#dery~ #8
-	WRITE_EVALUATED_ASCII DEATHVAR        ~rh#Deryn~ #32
-	WRITE_EVALUATED_ASCII SCRIPT_OVERRIDE ~%DEST_RES%~ #8
-	WRITE_EVALUATED_ASCII SCRIPT_DEFAULT  ~~ #8
+	WRITE_ASCII  DIALOG          ~rh#dery~ #8
+	WRITE_ASCII  DEATHVAR        ~rh#Deryn~ #32
+	WRITE_ASCIIE SCRIPT_OVERRIDE ~%DEST_RES%~ #8
+	WRITE_ASCII  SCRIPT_DEFAULT  ~~ #8
 	ADD_CRE_ITEM ~potn10~ #0 #0 #0 ~NONE~ ~inv1~
 BUT_ONLY
 
 COPY_EXISTING ~thief3.cre~ ~override/rh#orla.cre~
 	SAY NAME1 @54 /* Orlanna */
 	SAY NAME2 @54 /* Orlanna */
-	WRITE_EVALUATED_ASCII DIALOG          ~%DEST_RES%~ #8
-	WRITE_EVALUATED_ASCII DEATHVAR        ~rh#Orlanna~ #32
-	WRITE_EVALUATED_ASCII SCRIPT_OVERRIDE ~%DEST_RES%~ #8
-	WRITE_EVALUATED_ASCII SCRIPT_DEFAULT  ~~ #8
+	WRITE_ASCIIE DIALOG          ~%DEST_RES%~ #8
+	WRITE_ASCII  DEATHVAR        ~rh#Orlanna~ #32
+	WRITE_ASCIIE SCRIPT_OVERRIDE ~%DEST_RES%~ #8
+	WRITE_ASCII  SCRIPT_DEFAULT  ~~ #8
 BUT_ONLY
 
 COPY_EXISTING ~thief3.cre~ ~override/rh#salk.cre~
 	SAY NAME1 @55 /* Salka */
 	SAY NAME2 @55 /* Salka */
-	WRITE_EVALUATED_ASCII DIALOG          ~%DEST_RES%~ #8
-	WRITE_EVALUATED_ASCII DEATHVAR        ~rh#Salka~ #32
-	WRITE_EVALUATED_ASCII SCRIPT_OVERRIDE ~%DEST_RES%~ #8
-	WRITE_EVALUATED_ASCII SCRIPT_DEFAULT  ~~ #8
+	WRITE_ASCIIE DIALOG          ~%DEST_RES%~ #8
+	WRITE_ASCII  DEATHVAR        ~rh#Salka~ #32
+	WRITE_ASCIIE SCRIPT_OVERRIDE ~%DEST_RES%~ #8
+	WRITE_ASCII SCRIPT_DEFAULT   ~~ #8
 BUT_ONLY
 
 // Soargyl
 COPY ~adrian/creatures/rh#sgyl.cre~ ~override~
 	SAY NAME1 @56 /* Soargyl */
 	SAY NAME2 @57 /* Talsar Soargyl */
-	WRITE_EVALUATED_ASCII DIALOG          ~rh#sgyl~ #8
-	WRITE_EVALUATED_ASCII DEATHVAR        ~rh#sgyl~ #32
-	WRITE_EVALUATED_ASCII SCRIPT_OVERRIDE ~rh#sgyl~ #8
-	WRITE_EVALUATED_ASCII SCRIPT_DEFAULT  ~~ #8
+	WRITE_ASCII DIALOG          ~rh#sgyl~ #8
+	WRITE_ASCII DEATHVAR        ~rh#sgyl~ #32
+	WRITE_ASCII SCRIPT_OVERRIDE ~rh#sgyl~ #8
+	WRITE_ASCII SCRIPT_DEFAULT   ~~ #8
 	ADD_CRE_ITEM ~rh#hdbd~ #0 #0 #0 ~NONE~ ~helmet~
 	ADD_CRE_ITEM ~dagg24~ #0 #0 #0 ~NONE~ ~weapon1~ EQUIP
 	ADD_CRE_ITEM ~potn52~ #0 #0 #0 ~IDENTIFIED~ ~inv1~ 
@@ -323,23 +324,23 @@ BUT_ONLY
 COPY_EXISTING ~trfued03.cre~ ~override/rh#sggrd.cre~
 	SAY NAME1 @58 /* Soargyl Guard */
 	SAY NAME2 @58 /* Soargyl Guard */
-	WRITE_EVALUATED_ASCII DIALOG          ~%DEST_RES%~ #8
-	WRITE_EVALUATED_ASCII DEATHVAR        ~%DEST_RES%~ #32
-	WRITE_EVALUATED_ASCII SCRIPT_OVERRIDE ~%DEST_RES%~ #8
-	WRITE_EVALUATED_ASCII SCRIPT_DEFAULT  ~~ #8
+	WRITE_ASCIIE DIALOG          ~%DEST_RES%~ #8
+	WRITE_ASCIIE DEATHVAR        ~%DEST_RES%~ #32
+	WRITE_ASCIIE SCRIPT_OVERRIDE ~%DEST_RES%~ #8
+	WRITE_ASCII  SCRIPT_DEFAULT  ~~ #8
 BUT_ONLY
 
 // Vampire Adrian
 COPY_EXISTING ~vampano.cre~ ~override/rh#advmp.cre~
 	SAY NAME1 @2 /* Adrian */
 	SAY NAME2 @2 /* Adrian */
-	WRITE_EVALUATED_ASCII DIALOG          ~rh#vadr~ #8
-	WRITE_EVALUATED_ASCII DEATHVAR        ~%DEST_RES%~ #32
-	WRITE_EVALUATED_ASCII SCRIPT_OVERRIDE ~%DEST_RES%~ #8
-	WRITE_BYTE            0x0237          2
-	WRITE_BYTE            0x0275          2
-	WRITE_ASCII           0x0034          ~rh#adrs~ #8
-	WRITE_ASCII           0x003c          ~rh#adrm~ #8
+	WRITE_ASCII  DIALOG          ~rh#vadr~ #8
+	WRITE_ASCIIE DEATHVAR        ~%DEST_RES%~ #32
+	WRITE_ASCIIE SCRIPT_OVERRIDE ~%DEST_RES%~ #8
+	WRITE_BYTE   0x0237          2
+	WRITE_BYTE   0x0275          2
+	WRITE_ASCII  0x0034          ~rh#adrs~ #8
+	WRITE_ASCII  0x003c          ~rh#adrm~ #8
 	REPLACE_CRE_ITEM ~RH#ADBDY~ #0 #0 #0 ~IDENTIFIED~ ~QITEM1~
 BUT_ONLY
 
@@ -347,9 +348,9 @@ BUT_ONLY
 COPY_EXISTING ~degard.cre~ ~override/rh#mikai.cre~
 	SAY NAME1 @59 /* Mikail */
 	SAY NAME2 @60 /* Mikail Vasiliev */
-	WRITE_EVALUATED_ASCII DIALOG          ~rh#mikai~ #8
-	WRITE_EVALUATED_ASCII DEATHVAR        ~rh#mikai~ #32
-	WRITE_EVALUATED_ASCII SCRIPT_OVERRIDE ~%DEST_RES%~ #8
+	WRITE_ASCII  DIALOG          ~rh#mikai~ #8
+	WRITE_ASCII  DEATHVAR        ~rh#mikai~ #32
+	WRITE_ASCIIE SCRIPT_OVERRIDE ~%DEST_RES%~ #8
 BUT_ONLY
 
 COPY_EXISTING ~duergar1.cre~ ~override~
@@ -357,7 +358,7 @@ COPY_EXISTING ~duergar1.cre~ ~override~
 
 
 COPY_EXISTING ~ffcust01.cre~ ~override~
-	WRITE_EVALUATED_ASCII SCRIPT_OVERRIDE ~rh#ercia~ #8
+	WRITE_ASCII SCRIPT_OVERRIDE ~rh#ercia~ #8
 
 
 /* ------------------ *
@@ -365,17 +366,17 @@ COPY_EXISTING ~ffcust01.cre~ ~override~
  * ------------------ */
 COPY ~adrian/items/rh#adrng.itm~ ~override~
 	SAY NAME1 @61	/* Vasiliev Signet Ring */
-	SAY NAME2 @61	/* Vasiliev Signet Ring */
+	SAY NAME2 @61
 	SAY DESC @62	/* This was once the signet ring of Adrian's grandfather, a minor lord of Zhentil Keep. While the ring has no magical properties, its significance to Adrian is obvious. */
 
 COPY ~adrian/items/rh#note.itm~ ~override~
 	SAY NAME1 @63	/* Tanya's Documents */
-	SAY NAME2 @63	/* Tanya's Documents */
+	SAY NAME2 @63
 	SAY DESC @64	/* These documents, discovered in Tanya's room in the Five Flagons, are apparently what Adrian was hoping to find. */
 
 COPY ~adrian/items/rh#adbdy.itm~ ~override~
 	SAY NAME1 @65	/* Adrian's Body */
-	SAY NAME2 @65	/* Adrian's Body */
+	SAY NAME2 @65
 	SAY DESC @66	/* Adrian was captured by Bodhi and infected with vampirism, forcing you to slay him. There may be some way to revive him, though you don't know what it would be. */
 
 COPY ~adrian/items/rh#hdbd.itm~ ~override~
@@ -390,7 +391,7 @@ STATISTICS:
 
 COPY_EXISTING ~key09.itm~ ~override/rh#key.itm~
 	SAY NAME1 @71 /* Key */
-	SAY NAME2 @71 /* Key */
+	SAY NAME2 @71
 	SAY DESC @72 /* This is a fairly rusty looking key. It looks like it might fit Adrian's manacles. */
 BUT_ONLY
 
