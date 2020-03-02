@@ -31,10 +31,10 @@ END
 // Gives Imoen a banter file if there isn't one already
 // ----------------------------------------------------
 ACTION_IF NOT FILE_EXISTS_IN_GAME ~bimoen2.dlg~ BEGIN
-	<<<<<<<< iepbanters/dialogue/bimoen2.d
+	<<<<<<<< adrian/dialogue/bimoen2.d
   BEGIN BIMOEN2
   >>>>>>>>
-	COMPILE ~iepbanters/dialogue/bimoen2.d~
+	COMPILE ~adrian/dialogue/bimoen2.d~
 END
 
 
