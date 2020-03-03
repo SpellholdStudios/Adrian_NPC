@@ -125,7 +125,7 @@ IF
 		Global("rh#AdrianTalksTOB","GLOBAL",4)
 		Global("rh#AdrianTalksTOB","GLOBAL",8)
 THEN
-	RESPONSE #100	
+	RESPONSE #100
 		MoveToObject(Player1)
 		StartDialogueNoSet(Player1)
 END
@@ -204,7 +204,7 @@ IF
 	CombatCounter(0)
 	Global("rh#AdrianOasisTalk","GLOBAL",2)
 THEN
-	RESPONSE #100	
+	RESPONSE #100
 		MoveToObject(Player1)
 		StartDialogueNoSet(Player1)
 END
@@ -345,14 +345,14 @@ IF
 THEN
 	RESPONSE #100
 		PlaySong(0)
-		PlaySound("rh#adrom")	
+		PlaySound("rh#adrom")
 		MoveToObject(Player1)
 		StartDialogueNoSet(Player1)
 END
 
 // Flirts
 // ------
-IF 
+IF
 	Global("rh#AdrStartFlirtsTOB","GLOBAL",0)
 	Global("rh#AdrianFlirtsEnabled","GLOBAL",1)
 	Global("rh#AdrianRomanceActive","GLOBAL",2)
@@ -373,7 +373,7 @@ IF
 	Global("rh#AdrTimeForFlirt","GLOBAL",0)
 	Global("rh#AdrianRomanceActive","GLOBAL",2)
 THEN
-	RESPONSE #100	
+	RESPONSE #100
 		SetGlobal("rh#AdrTimeForFlirt","GLOBAL",1)
 END
 
@@ -394,7 +394,7 @@ END
 // Jaheira: 1, 2, 4
 // ----------------
 IF
-	InParty("rh#Adrian") 
+	InParty("rh#Adrian")
 	InParty("Jaheira")
 	Global("rh#AdrianJaheiraTOB","GLOBAL",0)
 	!Alignment("rh#Adrian",MASK_EVIL)
@@ -405,7 +405,7 @@ THEN
 END
 
 IF
-	InParty("rh#Adrian") 
+	InParty("rh#Adrian")
 	InParty("Jaheira")
 	See("Jaheira")
 	!StateCheck("rh#Adrian",CD_STATE_NOTVALID)
@@ -423,7 +423,7 @@ THEN
 END
 
 IF
-	InParty("rh#Adrian") 
+	InParty("rh#Adrian")
 	InParty("Jaheira")
 	See("Jaheira")
 	!StateCheck("rh#Adrian",CD_STATE_NOTVALID)
@@ -443,9 +443,9 @@ END
 // Sarevok
 // -------
 IF
-	InParty("rh#Adrian") 
+	InParty("rh#Adrian")
 	InParty("Sarevok")
-	GlobalGT("LS#SarevokSex","GLOBAL",2) 
+	GlobalGT("LS#SarevokSex","GLOBAL",2)
 	Global("rh#AdrianSarevokConflict","GLOBAL",0)
 	Global("rh#AdrianRomanceActive","GLOBAL",2)
 THEN
@@ -480,7 +480,7 @@ IF
 	Global("rh#AdrianSarevokConflict","GLOBAL",2)
 	RealGlobalTimerExpired("rh#AdrianSarevokConflictTimer","GLOBAL")
 THEN
-	RESPONSE #100	
+	RESPONSE #100
 		MoveToObject(Player1)
 		StartDialogueNoSet(Player1)
 END
@@ -512,52 +512,52 @@ END
 
 // String fixer
 // ------------
-IF 
-	HotKey(K)  
-THEN 
-	RESPONSE #100       
-		SetName(~Adrian~) 
-        SetPlayerSound(Myself,@4,MORALE)				// ~Oh, I don't think so.~ [rh#ad1]
-        SetPlayerSound(Myself,@5,HAPPY)					// ~I must admit, this is rather effective.~ [rh#ad2]
-        SetPlayerSound(Myself,@6,UNHAPPY_ANNOYED)		// ~Well, we certainly know how to waste our time.~ [rh#ad3]
-        SetPlayerSound(Myself,@7,UNHAPPY_SERIOUS)		// ~Is this sort of nonsense really necessary?~ [rh#ad4]
-        SetPlayerSound(Myself,@8,LEADER)				// ~Oh, I don't mind this at all.~ [rh#ad5]
-        SetPlayerSound(Myself,@9,TIRED)					// ~What is this, a Thayvian plantation? Couldn't we find an inn?~[rh#ad6]
-        SetPlayerSound(Myself,@10,BORED)				// ~If I'm drunk again by the time you decide to do something, you've only yourself to blame.~ [rh#ad7]
-        SetPlayerSound(Myself,@11,DAMAGE)				// ~Damn!~ [rh#ad8]
-        SetPlayerSound(Myself,@12,DYING)				// ~No... not like this...~ [rh#ad9]
-        SetPlayerSound(Myself,@13,HURT)					// ~Where's a damn cleric when I need one?~ [rh#ad10]
-        SetPlayerSound(Myself,@14,AREA_FOREST)			// ~It's not exactly Cormanthor, is it?~ [rh#ad11]
-        SetPlayerSound(Myself,@15,AREA_CITY)			// ~Ah, the sights and smells of the city... I could do without the latter.~ [rh#ad12]
-        SetPlayerSound(Myself,@16,AREA_DUNGEON)			// ~Quite the setting... I'm beginning to wish we'd simply paid someone to do this for us.~ [rh#ad13]
-        SetPlayerSound(Myself,@17,AREA_DAY)				// ~A lovely day, isn't it? Shame about the locale.~ [rh#ad14]
-        SetPlayerSound(Myself,@18,AREA_NIGHT)			// ~Mmm... the sun sets, and the day truly begins.~ [rh#ad15]
-        SetPlayerSound(Myself,@19,CRITICAL_HIT)			// ~That should just about finish this.~ [rh#ad16]
-        SetPlayerSound(Myself,@20,CRITICAL_MISS)		// ~Dammit!~ [rh#ad17]
-        SetPlayerSound(Myself,@21,TARGET_IMMUNE)		// ~Oh, this is working wonderfully. If you don't find me a better weapon soon, I might as well just sit in a corner and watch.~ [rh#ad18]
-        SetPlayerSound(Myself,@22,INVENTORY_FULL)		// ~I'm a mage, not a pack mule.~ [rh#ad19]
-        SetPlayerSound(Myself,@23,SPELL_DISRUPTED)		// ~Some cover over here, if you don't mind...~ [rh#ad20]
-        SetPlayerSound(Myself,@24,SET_A_TRAP)			// ~This is sure to be entertaining.~ [rh#ad21]
-        SetPlayerSound(Myself,@25,HIDDEN_IN_SHADOWS)	// ~It's not quite invisibility, but I suppose it'll do.~ [rh#ad22]
-        SetPlayerSound(Myself,@26,PICKED_POCKET)		// ~Well, what have we here?~ [rh#ad23]
-        SetPlayerSound(Myself,@27,BATTLE_CRY1)			// ~To the Abyss with you!~ [rh#ad24]
-        SetPlayerSound(Myself,@28,BATTLE_CRY2)			// ~No mercy for scum like this!~ [rh#ad25]
-        SetPlayerSound(Myself,@29,BATTLE_CRY3)			// ~Die, already!~ [rh#ad26]
-        SetPlayerSound(Myself,@30,BATTLE_CRY4)			// ~I can already count the gold.~ [rh#ad27]
-        SetPlayerSound(Myself,@31,BATTLE_CRY5)			// ~Don't even bother to run.~ [rh#ad28]
-        SetPlayerSound(Myself,@32,SELECT_COMMON1)		// ~Yes?~ [rh#ad29]
-        SetPlayerSound(Myself,@33,SELECT_COMMON2)		// ~What is it?~ [rh#ad30]
-        SetPlayerSound(Myself,@34,SELECT_COMMON3)		// ~Speak up.~ [rh#ad31]
-        SetPlayerSound(Myself,@35,SELECT_COMMON4)		// ~What now?~ [rh#ad32]
-        SetPlayerSound(Myself,@36,SELECT_COMMON5)		// ~Spit it out already.~ [rh#ad33]
-        SetPlayerSound(Myself,@37,SELECT_COMMON6)		// ~Hmm?~ [rh#ad34]
-        SetPlayerSound(Myself,@39,SELECT_ACTION1)		// ~Certainly.~ [rh#ad35]
-        SetPlayerSound(Myself,@39,SELECT_ACTION2)		// ~Of course.~ [rh#ad36]
-        SetPlayerSound(Myself,@40,SELECT_ACTION3)		// ~If you insist. And you always do, don't you?~ [rh#ad37]
-        SetPlayerSound(Myself,@41,SELECT_ACTION4)		// ~A waste of a mage's talents, if you ask me.~ [rh#ad38]
-        SetPlayerSound(Myself,@42,SELECT_ACTION5)		// ~Yes, yes, yes. I'm working on it.~ [rh#ad39]
-        SetPlayerSound(Myself,@43,SELECT_ACTION6)		// ~Oh, not this again.~ [rh#ad40]
-        SetPlayerSound(Myself,@44,SELECT_ACTION7)		// ~You can do better than that.~ [rh#ad41]
-        SetPlayerSound(Myself,@45,SELECT_RARE1)			// ~Go point that thing at someone else.~ [rh#ad42]
-        SetPlayerSound(Myself,@46,SELECT_RARE2)			// ~Well, you do have a way with words, don't you?~ [rh#ad43]
+IF
+	HotKey(K)
+THEN
+	RESPONSE #100
+		SetName(~Adrian~)
+        SetPlayerSound(Myself,@1004,MORALE)				// ~Oh, I don't think so.~ [rh#ad1]
+        SetPlayerSound(Myself,@1005,HAPPY)				// ~I must admit, this is rather effective.~ [rh#ad2]
+        SetPlayerSound(Myself,@1006,UNHAPPY_ANNOYED)	// ~Well, we certainly know how to waste our time.~ [rh#ad3]
+        SetPlayerSound(Myself,@1007,UNHAPPY_SERIOUS)	// ~Is this sort of nonsense really necessary?~ [rh#ad4]
+        SetPlayerSound(Myself,@1008,LEADER)				// ~Oh, I don't mind this at all.~ [rh#ad5]
+        SetPlayerSound(Myself,@1009,TIRED)				// ~What is this, a Thayvian plantation? Couldn't we find an inn?~[rh#ad6]
+        SetPlayerSound(Myself,@1010,BORED)				// ~If I'm drunk again by the time you decide to do something, you've only yourself to blame.~ [rh#ad7]
+        SetPlayerSound(Myself,@1011,DAMAGE)				// ~Damn!~ [rh#ad8]
+        SetPlayerSound(Myself,@1012,DYING)				// ~No... not like this...~ [rh#ad9]
+        SetPlayerSound(Myself,@1013,HURT)				// ~Where's a damn cleric when I need one?~ [rh#ad10]
+        SetPlayerSound(Myself,@1014,AREA_FOREST)		// ~It's not exactly Cormanthor, is it?~ [rh#ad11]
+        SetPlayerSound(Myself,@1015,AREA_CITY)			// ~Ah, the sights and smells of the city... I could do without the latter.~ [rh#ad12]
+        SetPlayerSound(Myself,@1016,AREA_DUNGEON)		// ~Quite the setting... I'm beginning to wish we'd simply paid someone to do this for us.~ [rh#ad13]
+        SetPlayerSound(Myself,@1017,AREA_DAY)			// ~A lovely day, isn't it? Shame about the locale.~ [rh#ad14]
+        SetPlayerSound(Myself,@1018,AREA_NIGHT)			// ~Mmm... the sun sets, and the day truly begins.~ [rh#ad15]
+        SetPlayerSound(Myself,@1019,CRITICAL_HIT)		// ~That should just about finish this.~ [rh#ad16]
+        SetPlayerSound(Myself,@1020,CRITICAL_MISS)		// ~Dammit!~ [rh#ad17]
+        SetPlayerSound(Myself,@1021,TARGET_IMMUNE)		// ~Oh, this is working wonderfully. If you don't find me a better weapon soon, I might as well just sit in a corner and watch.~ [rh#ad18]
+        SetPlayerSound(Myself,@1022,INVENTORY_FULL)		// ~I'm a mage, not a pack mule.~ [rh#ad19]
+        SetPlayerSound(Myself,@1023,SPELL_DISRUPTED)	// ~Some cover over here, if you don't mind...~ [rh#ad20]
+        SetPlayerSound(Myself,@1024,SET_A_TRAP)			// ~This is sure to be entertaining.~ [rh#ad21]
+        SetPlayerSound(Myself,@1025,HIDDEN_IN_SHADOWS)	// ~It's not quite invisibility, but I suppose it'll do.~ [rh#ad22]
+        SetPlayerSound(Myself,@1026,PICKED_POCKET)		// ~Well, what have we here?~ [rh#ad23]
+        SetPlayerSound(Myself,@1027,BATTLE_CRY1)		// ~To the Abyss with you!~ [rh#ad24]
+        SetPlayerSound(Myself,@1028,BATTLE_CRY2)		// ~No mercy for scum like this!~ [rh#ad25]
+        SetPlayerSound(Myself,@1029,BATTLE_CRY3)		// ~Die, already!~ [rh#ad26]
+        SetPlayerSound(Myself,@1030,BATTLE_CRY4)		// ~I can already count the gold.~ [rh#ad27]
+        SetPlayerSound(Myself,@1031,BATTLE_CRY5)		// ~Don't even bother to run.~ [rh#ad28]
+        SetPlayerSound(Myself,@1032,SELECT_COMMON1)		// ~Yes?~ [rh#ad29]
+        SetPlayerSound(Myself,@1033,SELECT_COMMON2)		// ~What is it?~ [rh#ad30]
+        SetPlayerSound(Myself,@1034,SELECT_COMMON3)		// ~Speak up.~ [rh#ad31]
+        SetPlayerSound(Myself,@1035,SELECT_COMMON4)		// ~What now?~ [rh#ad32]
+        SetPlayerSound(Myself,@1036,SELECT_COMMON5)		// ~Spit it out already.~ [rh#ad33]
+        SetPlayerSound(Myself,@1037,SELECT_COMMON6)		// ~Hmm?~ [rh#ad34]
+        SetPlayerSound(Myself,@1039,SELECT_ACTION1)		// ~Certainly.~ [rh#ad35]
+        SetPlayerSound(Myself,@1039,SELECT_ACTION2)		// ~Of course.~ [rh#ad36]
+        SetPlayerSound(Myself,@1040,SELECT_ACTION3)		// ~If you insist. And you always do, don't you?~ [rh#ad37]
+        SetPlayerSound(Myself,@1041,SELECT_ACTION4)		// ~A waste of a mage's talents, if you ask me.~ [rh#ad38]
+        SetPlayerSound(Myself,@1042,SELECT_ACTION5)		// ~Yes, yes, yes. I'm working on it.~ [rh#ad39]
+        SetPlayerSound(Myself,@1043,SELECT_ACTION6)		// ~Oh, not this again.~ [rh#ad40]
+        SetPlayerSound(Myself,@1044,SELECT_ACTION7)		// ~You can do better than that.~ [rh#ad41]
+        SetPlayerSound(Myself,@1045,SELECT_RARE1)		// ~Go point that thing at someone else.~ [rh#ad42]
+        SetPlayerSound(Myself,@1046,SELECT_RARE2)		// ~Well, you do have a way with words, don't you?~ [rh#ad43]
 END
