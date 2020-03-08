@@ -301,7 +301,7 @@ This component installs banters between Adrian and Angelo, Arath, Coran (Kulyok'
 - Lower cased files.
 - Updated OggDec to v1.9.7.
 - Included Linux and Mac Os X versions in the same package (thanks AL|EN's Infinity Auto Packager tool!).
-- Uploaded mod to official SpellHold Studios GitHub mirror account.
+- Uploaded mod to official Spellhold Studios GitHub mirror account.
 
 ## 
 
