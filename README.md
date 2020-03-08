@@ -199,6 +199,7 @@ Adrian was conceived of as a sorcerer, but his character and history lend themse
 As of v5.0, the installer groups optional classes and soundsets components into two components, letting the player decide which one he/she wants to install.  
 The number of each is the component DESIGNATED number which gives it a fixed install position and allows automated installers to specify component choices.<br /><br />
 
+## 
 
 **[0-2] Adrian NPC for BGII** (Main component)  
 **0. Adrian is a Sorcerer**  
@@ -277,7 +278,7 @@ This component installs banters between Adrian and Angelo, Arath, Coran (Kulyok'
 
 ## <a name="versions" id="versions"></a>Version History
 
-#### Version 5.0 (3rd March 2020)
+#### Version 5.0 (8 March 2020)
 
 - Added *adrian.ini* metadata file to support AL|EN's "Project Infinity".
 - Renamed *setup-adrian.tp2* -> *adrian.tp2* to support AL|EN's "Project Infinity".
@@ -298,6 +299,7 @@ This component installs banters between Adrian and Angelo, Arath, Coran (Kulyok'
 - Re-formated, updated and renamed readme files to *adrian-readme-%LANGUAGE%.html* and moved them into new readme folder.
 - Removed useless files and backup folder.
 - Lower cased files.
+- Updated OggDec to v1.9.7.
 - Included Linux and Mac Os X versions in the same package (thanks AL|EN's Infinity Auto Packager tool!).
 - Uploaded mod to official SpellHold Studios GitHub mirror account.
 
