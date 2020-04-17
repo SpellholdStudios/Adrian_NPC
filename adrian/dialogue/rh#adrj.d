@@ -7973,10 +7973,10 @@ I_C_T NALIA 9 rh#AdrNalia3 // *You are very cruel. My family will be papers...th
 END
 
 I_C_T DELCIA 1 rh#AdrDelcia1 // *I dare say I have tried to wean Nalia off such charities, but I have failed. Why else would such as you be here? You sound like a noble, but you are obviously more adept at arms than societal graces.*
-== RH#ADRJ @2562 /* In some parts of the world, the two are indistinguishable, though I'd hardly expect such sense from an inbred southern dilettante. Show the proper respect when addressing your betters, woman, or you may yet find yourself decorating the slave quarters of a Calishite pasha. */
-== DELCIA @2563 /* Must I ever be subjected to such coarse manners? Your threats do not interest me in the slightest, peasant. */
-== RH#ADRJ @2564 /* ...hells, sometimes I wish I still worshiped a god who condoned the spectacular misuse of magic. */
-== DELCIA @2565 /* Your petty concerns are of little enough value to one of my station. I believe I was speaking with your employer. */
+== RH#ADRJ IF ~InParty("rh#Adrian") InMyArea("rh#Adrian") !StateCheck("rh#Adrian",CD_STATE_NOTVALID)~ THEN @2562 /* In some parts of the world, the two are indistinguishable, though I'd hardly expect such sense from an inbred southern dilettante. Show the proper respect when addressing your betters, woman, or you may yet find yourself decorating the slave quarters of a Calishite pasha. */
+== DELCIA IF ~InParty("rh#Adrian") InMyArea("rh#Adrian") !StateCheck("rh#Adrian",CD_STATE_NOTVALID)~ THEN @2563 /* Must I ever be subjected to such coarse manners? Your threats do not interest me in the slightest, peasant. */
+== RH#ADRJ IF ~InParty("rh#Adrian") InMyArea("rh#Adrian") !StateCheck("rh#Adrian",CD_STATE_NOTVALID)~ THEN @2564 /* ...hells, sometimes I wish I still worshiped a god who condoned the spectacular misuse of magic. */
+== DELCIA @IF ~InParty("rh#Adrian") InMyArea("rh#Adrian") !StateCheck("rh#Adrian",CD_STATE_NOTVALID)~ THEN 2565 /* Your petty concerns are of little enough value to one of my station. I believe I was speaking with your employer. */
 END
 
 I_C_T DELCIA 7 rh#AdrDelcia2 // *Nalia sent you, didn't she? Only she would know where to get such ruffians. Consorting with servants will leave her dead like her softhearted mother, earning a virulent fever for her charitable excesses.*
