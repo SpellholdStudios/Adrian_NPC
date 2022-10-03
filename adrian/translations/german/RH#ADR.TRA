@@ -1,0 +1,91 @@
+@0  = ~Was macht Ihr hier!? Kümmert Euch um diese verdammten Zwerge, ehe Ihr uns noch beide umbringt!~ 
+@1  = ~Oh, Dank sei allen Göttern. Oder zumindest den meisten von ihnen. Ich hätte nie gedacht...~
+@2  = ~Egal. Der Zwerg dort drüben hat einen Schlüssel ... bitte, wenn Ihr mir den bringen würdet?~ 
+@3  = ~Es erscheint mir unwahrscheinlich, dass wir einen von Irenicus Verbündeten in Ketten antreffen sollten... wenn auch nicht unmöglich. Wie auch immer, es widerstrebt mir, einen weiteren Mitgefangenen der Gnade dieses Magiers auszuliefern.~
+@4  = ~Ich bin keine Gefahr für Euch, meine Dame. Und... gewiss nicht in diesem Zustand. Bitte... der Schlüssel.~ 
+@5  = ~Natürlich. Einen Moment.~
+@6  = ~Ich glaube, ich habe ihn schon gefunden.~
+@7  = ~Als würde ich irgendetwas in diesem Kerker über den Weg trauen.~ 
+@8  = ~Nicht so schnell. Sagt mir erst, wer Ihr eigentlich seid.~
+@9  = ~Nein. Einen Mann in Ketten zu sehen, gefällt mir nämlich.~ 
+@10 = ~Darauf falle ich nicht rein! Sterbt wie der Rest Eurer Freunde.~
+@11 = ~Ich danke Euch! Rasch. Bitte.~
+@12 = ~Findet den Schlüssel.
+
+Ich bin einem weiteren Gefangenen in Irenicus Kerker begegnet, einem halbelfischen Zauberer. Er sagte, dass sich der Schlüssel zu seinen Ketten bei einem der Duergar befände, die ich soeben besiegt habe. Sobald ich ihn gefunden habe, sollte ich den Schlüssel zu Adrian bringen.~ 
+@13 = ~Das habt ihr? Bitte. Gebt ihn mir, ehe noch mehr Kreaturen dieses verdammten Magiers hier eintreffen!~
+@14 = ~Aber natürlich. Hier, bitte.~ 
+@15 = ~Weshalb sollte ich Euch trauen?~
+@16 = ~Ich bin nicht aus freien Stücken hier, <PRO_LADYLORD>. So viel kann ich Euch versichern. Ich heiße...~
+@17 = ~Adrian. Adrian Sianodel. Ich bin einer der... besonderen Untergebenen des Meisters. Vor einer oder zwei Wochen kaufte er mich Sklavenhändlern aus Atkatla ab. Dass mein Blut alles andere als rein ist, schien ihm zu missfallen, doch abgesehen davon... ich weiß nicht.~
+@18 = ~Meine Zauberkunst hatte sein Interesse geweckt, doch er... wurde meiner rasch überdrüssig. Wahrscheinlich hätte ich wie eines seiner verderbten Experimente geendet, wenn mein Geschick im Fertigen von Zauberstäben mich nicht... nützlich gemacht hätte.~ 
+@19 = ~Ich kann mir nicht vorstellen, dass meine Zauberkunst von großem Interesse für einen Mann wie ihn war. Er... wurde meiner rasch überdrüssig. Wahrscheinlich hätte ich wie eines seiner verderbten Experimente geendet, wenn mein Geschick im Fertigen von Zauberstäben mich nicht... nützlich gemacht hätte.~
+@20 = ~Eine jämmerliches Schicksal. Aber besser als die Alternativen.~ 
+@21 = ~Das erklärt wohl all die Stäbe im Raum nebenan.~ 
+@22 = ~Nicht gerade meine besten Arbeiten. Aber unter diesen Umständen...~
+@23 = ~Ich verstehe. Gebt mir einen Augenblick und ich hole Euch den Schlüssel.~ 
+@24 = ~Ich verstehe. Ich werde Euch umgehend befreien.~
+@25 = ~Ein Sklave seid Ihr also? Vielleicht gehört Ihr ja in diese Ketten.~
+@26 = ~Was könnt Ihr mir über Irenicus erzählen?~
+@27 = ~Ihr habt genug meiner Zeit verschwendet. Macht's gut.~
+@28 = ~Ich werde nicht den Fehler begehen, irgendetwas in diesem Verlies zu vertrauen. Verzeiht.~
+@29 = ~Ich bin... war sein Sklave, nicht sein Komplize. Er ist wahrscheinlich der mächtigste Zauberer, dem ich je begegnet bin, und ich... Nun, es genügt zu sagen, dass ich mich in sehr mächtigen Kreisen bewegt habe.~
+@30 = ~Ich verstehe. Ich hole Euch diesen Schlüssel.~
+@31 = ~Als ein Sklave gehört Ihr vielleicht auch in diese Ketten.~
+@32 = ~Ich bin jedoch nicht der Einzige hier, der in einer prekären Lage feststeckt, <PRO_LADYLORD>. Wenn Ihr mich befreit, könnte ich Euch von Nutzen sein.~
+@33 = ~Dieser Magier... Irenicus...wenn Ihr sein Interesse geweckt habt, müsst Ihr all Euer magisches Talent für ihn aufbieten. Und ich habe mehr als nur ein bisschen davon. Das ist ein Vorteil, den Ihr nicht so leichtfertig verspielen solltet.~
+@34 = ~Nein, wahrscheinlich nicht. Ich werde nach Eurem Schlüssel suchen.~
+@35 = ~Nein, wahrscheinlich nicht. Ich werde Euch umgehend befreien.~
+@36 = ~Vielleicht nicht. Wer seid Ihr?~
+@37 = ~Wenn ich mir Eure Misere so ansehe, überzeugt mich das nicht im Geringsten. Macht's gut.~
+@38 = ~Ich bin nicht sicher, ob es Eure Verzweiflung ist oder eher Eure Arroganz, die mehr nervt. Ich denke, ich werde Euch einfach töten.~
+@39 = ~Was!? Ihr... seid verdammt! Mögt auch ihr eurer Grab in dieser Hölle finden!~
+@40 = ~Ihr... dann lasst Ihr mich einfach hier zurück? Seid verflucht! Mögt auch ihr euer Grab in dieser Hölle finden!~
+@41 = ~Habt meinen Dank.~
+@42 = ~Schön. Dann bleibt eben hier und verspottet mich. Vielleicht kehrt Irenicus zurück, und ich komme in den Genuss, ihn Euch abschlachten zu sehen.~
+@43 = ~Rasch! Ihr solltet ihn beim Duergar dort drüben finden.~
+@44 = ~Ihr habt ihn gefunden! Bitte, gebt ihn mir, ehe noch mehr Kreaturen dieses Magiers hier auftauchen!~
+@45 = ~Natürlich. Hier, bitte.~
+@46 = ~Beruhigt Euch. Wartet einen Augenblick und ich befreie Euch.~
+@47 = ~Nun gut. Aber das sollte es besser auch wert sein.~
+@48 = ~Sagt mir zuerst, wer Ihr seid.~
+@49 = ~Wenn ich es mir recht überlege, lasse ich Euch vielleicht doch besser hier.~
+@50 = ~Ihr könnt meine Dienste so lange in Anspruch nehmen, wie Ihr sie benötigt.~
+@51 = ~Natürlich. Adrian. Adrian Sianodel. Ich bin einer der... besonderen Untergebenen des Meisters. Vor einer oder zwei Wochen kaufte er mich den Sklavenhändlern aus Atkatla ab. Dass mein Blut alles andere als rein ist, schien ihm zu missfallen, doch abgesehen davon... ich weiß nicht.~
+@52 = ~Bitte, würdet Ihr mich nun befreien?~
+@53 = ~Übrigens, ich heiße Adrian. Adrian Sianodel. Vor einer oder zwei Wochen kaufte mich dieser verdammte Magier den Sklavenhändlern aus Atkatla ab. Dass mein Blut alles andere als rein ist, schien ihm zu missfallen, doch abgesehen davon... ich weiß nicht.~
+@54 = ~Ihr seid... <CHARNAME>, nicht wahr? Aus Baldurs Tor? Die Duergar haben sich ab und zu über Euch unterhalten, wenn sie nicht... anderweitig beschäftigt waren.~
+@55 = ~In der Tat. Sehr erfreut, Eure Bekanntschaft zu machen~
+@56 = ~Können wir die Formalitäten auf später verschieben? Wir müssen irgendwie aus diesem Kerker entkommen.~
+@57 = ~Was wisst Ihr über mich?~
+@58 = ~Entzückt, ganz bestimmt. Ich habe Euch zwar befreit, aber Eure Begleitung brauche ich nicht. Sucht Euch einen anderen Weg hier raus.~
+@59 = ~Gleichfalls. Wie auch immer, wir sollten einen Weg aus diesem Kerker raus finden, ehe noch mehr Kreaturen des Magiers hier auftauchen.~
+@60 = ~Sicherlich. Lasst uns gehen.~
+@61 = ~Findet den Schlüssel.
+
+Adrian, der Magier, auf den ich in Irenicus Gefängnis gestoßen bin, war überglücklich, mich nach seiner Befreiung begleiten zu dürfen. Hoffentlich macht er es sich nicht zur Gewohnheit, entführt zu werden.~
+@62 = ~Das ist die beste Idee, die ich heute gehört habe.~
+@63 = ~Ihr macht Euch besser bewusst, wer hier das Sagen hat.~
+@64 = ~Ich habe Euch vielleicht befreit, aber ich habe kein Interesse daran, dass Ihr mich begleitet. Sucht Euch Euren eigenen Weg hier raus.~
+@65 = ~Ihr meint, abgesehen davon, dass Ihr Irenicus neuestes Versuchsobjekt wart? Nur sehr wenig. Wie auch immer, wir sollten zusehen, dass wir einen Weg aus diesem Kerker finden, ehe noch mehr Kreaturen des Magiers hier auftauchen.~
+@66 = ~Ganz recht. Nach Euch.~
+@67 = ~Ich versichere Euch, <PRO_LADYLORD>, dass daran kein Zweifel besteht.~
+@68 = ~Ich verstehe. Geht voran und klärt den Weg und ich werde Euch nachfolgen. Wir werden uns nicht wieder begegnen.~
+@69 = ~Findet den Schlüssel.
+
+Obwohl ich Adrian von seien Ketten befreit habe, hielt ich es für das Beste, dass wir getrennte Wege gingen. Er kann versuchen, das Gefängnis selbst zu verlassen.~
+@70 = ~Ihr... Ihr weckt also meine Hoffnung auf Befreiung, nur um sie dann wieder zu zerschlagen? Also gut. Vielleicht begegnen wir uns eines Tages wieder. In den Neun Höllen. Und wenn auch nur eines meiner Gebete erhört werden sollte, dann sehen wir uns dort eher früher als später.~
+@71 = ~Ihr seid wieder zurück? Habt Ihr Euch dazu entschlossen mir zu helfen? Oder seid Ihr nur gekommen, um mich zu verspotten? Nur zu, vergeudet ruhig Eure Zeit. Vielleicht werden wir ja doch noch zusammen hier sterben.~
+@72 = ~Hier ist Euer Schlüssel.~
+@73 = ~Eigentlich wollte ich Euch befreien. Aber ich bezweifle, dass Ihr das wirklich schätzen würdet.~
+@74 = ~Ich liebe es, Leute zu verspotten.~
+@75 = ~Eigentlich bin ich gekommen, um Euch zu töten.~
+@76 = ~Mein Dank ist Euch sicher. Aber nicht meine Freundschaft. Wir werden uns nicht wieder begegnen.~
+@77 = ~Findet den Schlüssel.
+
+Ich habe Adrian von seinen Ketten befreit, aber es gefiel ihm gar nicht, dass ich ihn zuvor verspottet habe, und so machte er sich alleine auf den Weg. Er kann versuchen, das Gefängnis selbst zu verlassen.~
+@78 = ~Ihr... also gut. Verzeiht mir. Bitte.~
+@79 = ~In Ordnung. Hier ist der Schlüssel.~
+@80 = ~Ihr bettelt wirklich ganz vorzüglich. Das gefällt mir.~
+@81 = ~Kommt nur einen Schritt näher und Ihr werdet herausfinden, ob es Euch auch gefällt, gebissen zu werden.~
+@82 = ~Ihr... zur Abyss mit Euch, <CHARNAME>!~

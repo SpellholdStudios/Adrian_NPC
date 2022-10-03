@@ -1,0 +1,74 @@
+@0    = ~Ihr möchtet, dass wir getrennte Wege gehen?~
+@1    = ~Eigentlich nicht. Nein.~
+@2    = ~Nur für kurze Zeit.~
+@3    = ~In der Tat. Viel Glück und auf Nimmerwiedersehen.~
+@4    = ~Ich bin froh, das zu hören.~
+@5    = ~Also gut. Falls Ihr wieder zu Sinnen kommen solltet, werdet Ihr mich vielleicht in Waukeens Promenade finden.~
+@6    = ~Das sollte besser auch nur für kurze Zeit sein, Veldrin. Ich werde zur Taverne gehen.~
+@7    = ~Ihr lasst mich im Unterreich zurück? Wunderbar.~
+@8    = ~In diesem Fall, "Freund", werde ich mich wohl auf andere Interessen konzentrieren müssen.~
+@9    = ~Ahh, gerade, als es unerträglich langweilig wurde, taucht plötzlich <CHARNAME> auf. Möchtet Ihr etwas?~
+@10   = ~Nicht direkt. Warum haltet Ihr Euch von allen denkbaren Orten Atkatlas ausgerechnet hier auf?~
+@11   = ~Ich möchte, dass Ihr Euch mir wieder anschließt.~
+@12   = ~Lediglich Euch töten.~
+@13   = ~Weil mich in diesem kleinen, selbstgefälligen Winkel von Atkatla niemand tot sehen möchte. Wenn das also alles war ... Ich genieße gerade den örtlichen Tratsch. Oder toleriere ihn eher.~
+@14   = ~Tatsächlich? So wie Eure Gruppe derzeit aussieht, wundert mich das nicht. Also gut.~
+@15   = ~Ich verstehe. Entschuldigt bitte, wenn ich nicht bleibe, um den Ausgang dieses kleinen Scharmützels abzuwarten.~
+@16   = ~Ahh, ein ... beinahe vertrautes Gesicht. Möchtet Ihr etwas, Veldrin?~
+@17   = ~Nicht direkt. Genießt Ihr die Aussicht?~
+@18   = ~So sehr, wie man das wohl erwarten kann.~
+@19   = ~Ihr folgt, weil Ihr hofft, etwas zurückzubekommen, das Euch sehr kostbar ist. Ich sage Euch, je länger Ihr das versucht, desto mehr werdet Ihr verlieren.~
+@20   = ~So, wie diesen Magier. Ein hübsches Ding, nicht wahr? Forsch und mutig, wenn es darauf ankommt. Aber zaghaft und scheu in Herzensdingen. Vielleicht sollte ich es für ihn herausreißen.~
+@21   = ~Eure Drohungen sind bedeutungslos, Vampir.~
+@22   = ~Und doch bedeuten sie mehr als Eure es je taten. Folgt mir weiter, <CHARNAME>, und Ihr werdet mehr verlieren, als Ihr Euch vorstellen könnt. Und es beginnt hier und jetzt!~
+@23   = ~Die letzte Schlacht mit Bodhi.
+
+Bodhi überfiel uns aus dem Hinterhalt, kurz bevor wir ihr Versteck erreichen konnten. Sie warnte mich, dass sie von meiner Jagd wüsste, und nahm mir denjenigen, der mir am meisten am Herzen liegt: Adrian. Bevor sie wieder verschwand und noch mehr ihrer untoten Geschöpfe auf uns entfesselte, sagte sie, ich würde weitaus mehr verlieren, als ich je für möglich gehalten hätte, sollte ich weiter vordringen. Ich kann die Rhynn-Lathorne nicht aufgeben ... aber jetzt stehen auch noch das Leben und die unsterbliche Seele des einen, den ich liebe, auf dem Spiel!~
+@24   = ~Ein Freund wurde mit Vampirismus infiziert. Wir haben in einem alten Buch den Hinweis gefunden, dass die Gefolgschaft des Oghma etwas darüber wissen könnte.~
+@25   = ~Ich habe jemanden, den ich liebe, im Kampf gegen seine Schwester, Bodhi, verloren. Ich suche nach einem Weg, um ihn zu heilen.~
+@26   = ~Seid Ihr gekommen, um Weisheit vom Bewahrer alles Bekannten zu erfahren? Der Weise Gott steht bereit.~
+@27   = ~Nein, danke. Ich brauche im Moment nichts.~
+@28   = ~Elhan! Euretwegen trage ich den fast vampirifizierten Körper von Adrian bei mir. Sprecht!~
+@29   = ~Jemand, den ich liebe, wurde von einem Vampir entführt. Worauf muss ich mich gefasst machen, wenn ich ihn finde?~
+@30   = ~Jemand, der mir sehr wichtig ist, ist . Gibt es eine Möglichkeit, ihn zu rettenSomeone I care about has fallen to a vampire. Is there any way to save him?~
+@31   = ~Aber... nein. Ich habe schon viel für dieses Treffen vorbereitet, <CHARNAME>. Ich habe Euch gewarnt, dass Ihr schwere Verluste erleiden würdet, wenn Ihr mich noch länger verfolgt. Ich habe nicht gelogen.~
+@32   = ~Ihr habt schon zu viel genommen! Ihr werdet Imoens Seele zurückgeben und Adrian auch!~
+@33   = ~Und Ihr habt Euer Versprechen erfüllt. Gebt Adrian zurück und vielleicht werde ich Euch verschonen.~
+@34   = ~Allein schon für Adrians Entführung hätte ich Euch gejagt. Er ist mir wichtig.~
+@35   = ~Ihr vertraut zu viel auf Gefühlsduselei. Adrians Entführung wird Euch nicht verschonen.~
+@36   = ~Welch interessante List. Aber ich bin mir sicher, dass sein Schicksal trotzdem als ein Beispiel dienen wird - ob Ihr ihn zurückhaben möchtet oder nicht.~
+@37   = ~Dieser hier? Ich bezweifle, dass Euer linkisches Getölpel dieselbe Loyalität in ihm hervorgerufen hätte wie die, die ich mit einem Kuss und einem Blick erwecken konnte. Er braucht eine starke Hand, die ihn zur Ordnung ruft. Nichts weniger ist er gewöhnt.~
+@38   = ~Die letzte Schlacht mit Bodhi.
+
+Bodhi hat Adrian in einen Vampir verwandelt! Oder ... fast zumindest. In der kurzen Zeit, in der Bodhi ihn festhält, mag der Prozess noch nicht abgeschlossen sein. Wenn nichts unternommen wird, dann werde ich Adrian für immer verlieren. Vielleicht weiß der Kriegsgelehrte der Elfen, wie man die Verwandlung aufhalten kann ... oder Elhan ...~
+@39   = ~Gehorsam, nicht wahr? Ich sollte seinen alten Herren vielleicht einmal meinen Gruß ausrichten. Doch jetzt ... Die Verwandlung mag noch nicht vollkommen sein, aber er wird Euch trotzdem vernichten, wenn ich es ihm befehle.~
+@40   = ~Was ... was benötigt Ihr, Herrin?~
+@41   = ~Ihr ... habt mich gerettet. <CHARNAME>...~
+@42   = ~Natürlich habe ich Euch gerettet! Seid nicht so überrascht.~
+@43   = ~Was habt Ihr von mir erwartet? Dass ich Euch bis ans Ende aller Zeiten so lasse?~
+@44   = ~Aber gern geschehen.~
+@45   = ~Ihr habt außerordentliches Glück gehabt, da stimme ich zu.~
+@46   = ~Was? Nein, nein, ich habe nur ...~
+@47   = ~Ich hätte nicht gedacht, dass man sie umkehren kann. Die Verwandlung in einen Vampir, meine ich. Ich bin in der Kunst der Nekromantie nicht so bewandert, wie ich es vielleicht sein sollte, aber ...~
+@48   = ~Wie genau habt Ihr das angestellt?~
+@49   = ~Indem wir das Symbol des uralten Sonnengottes Amaunator eingesetzt haben. Wir haben Hinweise darauf gefunden, dass seine Berührung den Untod heilen konnte.~
+@50   = ~Kaum ist er einen Augenblick unter den Sterblichen, schon grübelt er über magische Theorien. Ist das wirklich so wichtig?~
+@51   = ~Nun, zumindest scheint Ihr kein Trauma davongetragen zu haben.~
+@52   = ~Mit einer ganzen Menge Schwierigkeiten. Wie war es?~
+@53   = ~Ich verstehe. Mit der Gnade eines Gottes des Lichts. Hmm. Ich weiß nicht recht, was ich davon halten soll, aber ... nun, es ist besser als die Alternative.~
+@54   = ~Nein, Ihr habt recht ... Ihr habt natürlich recht. Es ist wahrscheinlich leichter als ... sich zu erinnern, denke ich. Ich war ... tot. Ich war ... mehr als tot. Ich ...~
+@55   = ~Nicht? Gut. Ich versuche, mich ... nicht zu erinnern, denke ich. Ich war ... tot. Ich war ... mehr als tot. Ich ...~
+@56   = ~Es war ... nun, es war. Ich bin nicht sicher, ob ich mich erinnern möchte. Ich denke, es hat mich beherrscht. Es ist schwierig, das mit Sicherheit zu sagen. Es war anders als eine gewöhnliche Beherrschung ... Ich war nicht einmal mehr ich selbst. Nicht wirklich.~
+@57   = ~Und ich war hungrig. So hungrig. Und ich habe alles ... gehasst. Nicht, dass das besonders ungewöhnlich für mich wäre, aber ...~
+@58   = ~(seufz) Erinnert mich daran, niemals ein Leichnam zu werden, <CHARNAME>.~
+@59   = ~Okay, jetzt wird es unheimlich.~
+@60   = ~Ha. Das werde ich.~
+@61   = ~Tja, da geht er dann wohl hin, dieser Traum.~
+@62   = ~Nun, immerhin seid Ihr wieder Ihr selbst.~
+@63   = ~(lächelt) Ich tue mein bestes.~
+@64   = ~(lächelt) Ihr werdet Euch nach einem anderen bösen Zauberer umsehen müssen, wenn es das ist, was Ihr möchtet, meine Teure.~
+@65   = ~Seid nicht so enttäuscht, meine Liebe.~
+@66   = ~Ich bin es müde, das zu sagen, aber ... Ich danke Euch, <CHARNAME>. Aufrichtig. Und ich werde Euch noch einmal danken, sobald wir aus dieser götterverlassenen Gruft entkommen sind.~
+@67   = ~Die letzte Schlacht mit Bodhi.
+
+Obwohl ich eine Zeit lang befürchtet hatte, dass Bodhis endgültige Rache mir Adrian für immer nehmen würde, scheint es so, als seien die Informationen in dem Buch korrekt gewesen: Das Symbol des Amaunator hat nicht nur Adrians Leben zurückgegeben, es hat auch den Vampirfluch aufgehoben, der auf ihm lag.~

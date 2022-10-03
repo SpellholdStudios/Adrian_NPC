@@ -2,7 +2,7 @@ BACKUP ~adrian/backup~
 //AUTHOR ~Rhaella at spellholdstudios.net~
 SUPPORT ~Spellhold Studios at http://www.shsforums.net/forum/627-adrian/~
 
-VERSION ~v5.0~
+VERSION ~v6~
 
 README ~adrian/readme/adrian-readme-%LANGUAGE%.html~ ~adrian/readme/adrian-readme-english.html~
 
@@ -61,12 +61,17 @@ LANGUAGE ~Francais (Traduction : Ixyon)~
          ~french~ 
          ~adrian/translations/french/setup.tra~
 
+LANGUAGE ~Deutsch (Teiluebersetzung fuer SvA, von Belryll)~ 
+         ~german~ 
+         ~adrian/translations/german/setup.tra~
+
 
 /* ================= *
  *  Adrian for BGII  *
  * ================= */
 BEGIN @100									// ~Adrian is a Sorcerer~
-DESIGNATED 0 LABEL ~adrian_sorcerer~
+DESIGNATED 0 
+LABEL ~adrian_sorcerer~
 SUBCOMPONENT @0								// ~Adrian for BGII~
 REQUIRE_PREDICATE GAME_INCLUDES ~tob~ @1	// ~You must have Throne of Bhaal or BG2:EE installed to install Adrian NPC mod.~
 
@@ -77,7 +82,8 @@ INCLUDE ~%MOD_FOLDER%/lib/main_component.tpa~
 
 
 BEGIN @101									// ~Change Adrian's class to Cleric/Mage~
-DESIGNATED 1 LABEL ~adrian_cleric_mage~
+DESIGNATED 1 
+LABEL ~adrian_cleric_mage~
 SUBCOMPONENT @0
 REQUIRE_PREDICATE GAME_INCLUDES ~tob~ @1
 
@@ -88,7 +94,8 @@ INCLUDE ~%MOD_FOLDER%/lib/main_component.tpa~
 
 
 BEGIN @102									// ~Change Adrian's class to Mage/Thief~
-DESIGNATED 2 LABEL ~adrian_mage_thief~
+DESIGNATED 2 
+LABEL ~adrian_mage_thief~
 SUBCOMPONENT @0
 REQUIRE_PREDICATE GAME_INCLUDES ~tob~ @1
 
@@ -102,7 +109,8 @@ INCLUDE ~%MOD_FOLDER%/lib/main_component.tpa~
  *  Install optional soundset for Adrian  *
  * ====================================== */
 BEGIN @111														// ~Phaelin's soundset~
-DESIGNATED 10 LABEL ~adrian_phaelin_soundset~
+DESIGNATED 10 
+LABEL ~adrian_phaelin_soundset~
 SUBCOMPONENT @110												// ~Install optional soundset for Adrian~
 REQUIRE_PREDICATE ((MOD_IS_INSTALLED ~adrian.tp2~ ~0~)
 				OR (MOD_IS_INSTALLED ~adrian.tp2~ ~1~)
@@ -117,7 +125,8 @@ END
 
 
 BEGIN @112														// ~Tatterdemalion's soundset~
-DESIGNATED 11 LABEL ~adrian_tatterdemalion_soundset~
+DESIGNATED 11 
+LABEL ~adrian_tatterdemalion_soundset~
 SUBCOMPONENT @110
 REQUIRE_PREDICATE ((MOD_IS_INSTALLED ~adrian.tp2~ ~0~)
 				OR (MOD_IS_INSTALLED ~adrian.tp2~ ~1~)
@@ -135,7 +144,8 @@ END
  *  Adrian Crossmod Content  *
  * ========================= */
 BEGIN @120														// ~Crossmod Content~
-DESIGNATED 20 LABEL ~adrian_crossmod_content~
+DESIGNATED 20 
+LABEL ~adrian_crossmod_content~
 REQUIRE_PREDICATE ((MOD_IS_INSTALLED ~adrian.tp2~ ~0~)
 				OR (MOD_IS_INSTALLED ~adrian.tp2~ ~1~)
 				OR (MOD_IS_INSTALLED ~adrian.tp2~ ~2~)) @130	// ~Please install Adrian NPC for BGII main component before additional content~

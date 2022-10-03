@@ -1,0 +1,323 @@
+@0    = ~Mein Fürst Vasiliev... und noch immer am Leben! Ich hatte fast nicht mehr damit gerechnet, Euch diesseits der Neun Höllen noch einmal zu begegnen.~
+@1    = ~Wie schön für Euch... wer auch immer Ihr seid. Ihr müsst mich verwechselt haben. Höllen, ist denn wirklich jeder in dieser Stadt ein götterverdammter Idiot?~
+@2    = ~Und noch bezaubernder als früher, wie ich sehe. Aber dieser protzige Elfenname, den Ihr Euch zugelegt habt, verbirgt rein gar nichts.~
+@3    = ~Zunächst dachte ich, dass Ihr womöglich wieder in verdeckter Mission unterwegs wärt. Doch dann wiederum kenne ich jeden Agenten in der Stadt, und Ihr, mein Fürst, gehört nicht dazu.~
+@4    = ~Wenn Ihr nicht aufgespürt werden wolltet, hättet Ihr vielleicht besser untertauchen sollen. Obwohl Ihr darin nie besonders geschickt wart.~
+@5    = ~Was wollt Ihr, Tanya?~
+@6    = ~Nun, zum Einen meinen Kopf behalten. Seid Euch versichert, mein Fürst: Sollte mir etwas widerfahren, dann werden ein paar Vögelchen auf direktem Weg nach Dunkelburg-...~
+@7    = ~Oh, aber ich sehe, Ihr möchtet nicht, dass ich diesen Namen erwähne, hm? Möchtet nicht, dass Eure neuen Freunde hier etwas über die Gesellschaft erfahren, in der Ihr Euch bewegt habt, was? Lüge über Lüge... Aber manche Dinge ändern sich wohl nie.~
+@8    = ~Achtet auf Eure Worte, meine Dame. Ich lasse nicht zu, dass Ihr so zu meinen Freunden sprecht.~
+@9    = ~Und was nun? Ich schätze, etwas Derartiges war früher oder später zu erwarten gewesen.~
+@10   = ~Was, bei den Höllen, geht hier eigentlich vor sich!?~
+@11   = ~Erinnert sich jemand an mich? Den Anführer der Gruppe? Hier drüben.~
+@12   = ~<CHARNAME>, nicht wahr? Ja, wir haben möglicherweise schon das eine oder andere über Euch gehört... mehr oder weniger zurechnungsfähig für einen Abkömmling des Bhaal. Aber manches lässt sich nicht ändern.~
+@13   = ~Doch zurück zu Eurem Freund hier, <PRO_LADYLORD> Bhaalskind... Verräter und Abtrünnige mögen wir gar nicht...~
+@14   = ~Verräter? Eure Meister in der Zitadelle haben uns dem Tod überlassen, Tanya. Alles, was ich denen noch schulde, ist eine Salve Feuerbälle.~
+@15   = ~Schau, schau. Auch noch frech. Auch das mögen wir leider nicht besonders.~
+@16   = ~Nun, ich habe Euch immer gemocht, mein Fürst. Ihr wart sehr nützlich, bevor Ihr Euch mit diesem calishitishen Flittchen eingelassen habt. Was ist übrigens aus dem geworden?~
+@17   = ~Ich bin gefährlich nahe dran, Euch zu töten und Eure verfluchten Vögel in Kauf zu nehmen, Tanya.~
+@18   = ~Und noch immer überempfindlich. Aber wie ich schon sagte, ich habe Euch immer gemocht. Und derzeit weiß nördlich von Atkatla noch niemand von Euren jüngsten Abenteuern. Ich bin also gewillt, Euch einen kleinen Handel vorzuschlagen...~
+@19   = ~Ich würde Euch ja darum bitten, ein paar kleine Aufgaben für mich zu erledigen, aber ich ziehe es vor, meine Angelegenheiten für mich zu behalten. Etwas... mehr Monetäres, denke ich.~
+@20   = ~1.000 Gold pro Zehntag und ich werde mein Schweigen bewahren. Und Ihr braucht Euch keine Sorgen darum zu machen, dass ein paar Auftragsmörder der Zentarim sich um Euren kostbaren kleinen Hexenmeister kümmern könnten. Wie klingt das, <PRO_LADYLORD> Bhaalskind?~
+@21   = ~1.000 Gold pro Zehntag und ich werde mein Schweigen bewahren. Und Ihr braucht Euch keine Sorgen darum zu machen, dass ein paar Auftragsmörder der Zentarim sich um Euren kostbaren kleinen Zauberer hier kümmern könnten. Wie klingt das, <PRO_LADYLORD> Bhaalskind?~
+@22   = ~<CHARNAME>, bitte.~
+@23   = ~Schön. Hier ist das Geld. Jetzt haut ab. Und denkt dran, wo's nicht glatt ist, könnt Ihr laufen.~
+@24   = ~Schön. Dieses Mal bekommt Ihr das Geld von mir, doch glaubt nicht, dass ich mir das zur Gewohnheit mache.~
+@25   = ~Ich habe nicht so viel Gold bei mir.~
+@26   = ~Und wie kann ich darauf vertrauen, dass Ihr nicht das Gold nehmen und Euch trotzdem gegen uns wendet?~
+@27   = ~Ich wusste ja, dass Ihr eine fürchterliche Person seid. Aber eine Gruppierung wie diese? Verschwindet. Sofort.~
+@28   = ~Jetzt seid Ihr nichts weiter als eine Bürde, Adrian. Ihr könnt ihn haben, Zent.~
+@29   = ~Ihr bekommt weder mein Geld noch bekommt Ihr Adrian.~
+@30   = ~Ich denke, ich werde Euch einfach hier und jetzt töten, Tanya.~
+@31   = ~Tja, nun. So schwer war das doch gar nicht, oder? Nächsten Zehntag werde ich Euch wieder besuchen kommen, <CHARNAME>. Und versucht besser nicht noch einmal zu fliehen, Adrian. Ihr seid nicht besonders gut darin.~
+@32   = ~Zentarisches Ränkespiel
+
+Ich hatte das Pech, einer von Adrians ehemaligen Verbündeten über den Weg zu laufen. Ihr Name lautet Tanya Damarov und sie ist eine Priesterin des Cyric. Adrians Vergangenheit scheint in der Tat ziemlich schillernd zu sein, denn er ist ein abtrünniges Mitglied der berüchtigten Zentarim. Tanya drohte, seine früheren Meister über seinen Aufenthaltsort in Kenntnis zu setzen und erpresst mich nun mit dieser Information. Hoffentlich ergibt sich noch ein besserer Plan als der, Tanya fortlaufend Gold zu zahlen.~
+@33   = ~Nein? Meister Linvail sollte sich besser nach einer anderen goldenen Gans umsehen. Nun, unter Berücksichtigung Eurer finanziellen Situation werde ich mich diesmal mit 500 Goldstücken zufrieden geben. Ihr werdet den Rest nächsten Zehntag bezahlen.~
+@34   = ~Linvail? Was wisst Ihr von mir und den Schattendieben?!~
+@35   = ~Ich habe nicht einmal so viel Geld dabei.~
+@36   = ~Nicht eine müde Münze in der Tasche und Ihr seid trotzdem an ihrer Seite geblieben, Vasiliev? Das finde ich doch etwas schwer zu glauben.~
+@37   = ~Also gut. Ich hatte zwar nicht erwartet, dass Ihr Euch als so unnütz herausstellen würdet, <CHARNAME>, aber ich denke, ich werde mir dafür einfach nehmen, was ich an magischen Kleinoden zwischen Euren toten Körpern auflesen kann.~
+@38   = ~Zentarisches Ränkespiel
+
+Ich hatte das Pech, einer von Adrians ehemaligen Verbündeten über den Weg zu laufen. Ihr Name lautet Tanya Damarov und sie ist eine Priesterin des Cyric. Adrians Vergangenheit scheint in der Tat ziemlich schillernd zu sein, denn er ist ein abtrünniges Mitglied der berüchtigten Zentarim. Und diese Vergangenheit hat ihn schließich eingeholt.~
+@39   = ~Welch unschuldiges Seelchen Ihr doch seid, <CHARNAME>. Vielleicht sollte mein werter ehemaliger Kollege hier Euch über die Bedeutung des Wortes "Erpressung" aufklären? Wenn ich mich gegen Euch wende, dann bekomme ich kein Geld von Euch. So sehr es mir auch gefallen würde, den Kopf dieses Verräters nach Hause zu tragen, gefällt mir die Aussicht auf Gold noch etwas besser.~
+@40   = ~Ich wusste ja, dass Ihr eine fürchterliche Person wärt. Aber eine Gruppierung wie diese? Verschwindet. Sofort.~
+@41   = ~<CHARNAME>, ich schwöre, Ihr werdet das bereuen-~
+@42   = ~Mir scheint, Ihr solltet Eure Freunde etwas sorgfältiger aussuchen, Adrian. Dann wiederum... warum jetzt damit anfangen?~
+@43   = ~<CHARNAME>, bitte, tut einfach, was sie sagt. Wir können die Angelegenheit später klären.~
+@44   = ~Es gibt nichts zu klären. Tanya? Zeit zu sterben.~
+@45   = ~Ach, welch Schande. Nun, ich denke, ich werde mir einfach das nehmen, was ich an magischen Kleinoden zwischen Euren toten Körpern auflesen kann.~
+@46   = ~Tut mir leid, <CHARNAME>, aber weckte ich vielleicht die irrige Hoffnung auf Verhandlung? Was mir über die Schattendiebe bekannt ist, bleibt mir vorbehalten. Ihr werdet tun, was ich sage, Bhaalskind. Oder nicht lange genug leben, um es bereuen.~
+@47   = ~Gut, nehmt ihn mit. Ich habe nicht die Absicht, einen Mann zu beschützen, der eine Gruppierung wie die Eure unterstützt hat.~
+@48   = ~Verdammt. Ich sollte wohl froh darüber sein, dass sie mehr an Profit als an Blut interessiert war. Aber es wird nur eine Frage der Zeit sein, bis sie ihre Meinung ändert.~
+@49   = ~Und nun werdet Ihr zweifelsohne verlangen, dass wir Euch Schutz gewähren. Ihr könnt von Glück sagen, dass <CHARNAME> Euch nicht einfach an diese Priesterin ausgehändigt hat.~
+@50   = ~Und ich dachte, Euresgleichen beschützt gerne Leute vor den Zentarim.~
+@51   = ~Ihr seid kein Opfer, Adrian.~
+@52   = ~Natürlich nicht. Höllen, Harfner, könnten wir dies bitte auf einen anderen Zeitpunkt verschieben? Derzeit bin ich vielmehr wegen Tanya besorgt.~
+@53   = ~Wenn ich mich recht entsinne, war sie immer schon sehr auf Ordnung und Organisation bedacht. Mehr, als ihr gut tat. Sie führte Buch über alle Geschäfte und Handel, die sie abschloss. Eine fatale Angewohnheit. Dann wiederum habe ich von einem Anhänger des Cyric auch nie besonders viel Weitsicht erwartet.~
+@54   = ~Wenn wir besonderes Glück haben, führt sie sogar Aufzeichnungen über ihre Geschäftspartner und Verbindungen. Wenn wir herausfinden könnten, wo in der Stadt sie sich aufhält, und anschließend ihre Kontakte aufspüren und zur Strecke bringen, dann sollte dieses Problem sich praktisch von selbst lösen. Hoffe ich. <CHARNAME>?~
+@55   = ~Erklärt Euch. Jetzt.~
+@56   = ~Ihr hättet mir früher davon erzählen sollen.~
+@57   = ~Ich hoffe, ich muss mir keine Sorgen darüber machen, dass plötzlich noch mehr Bekannte aus Eurer Vergangenheit auftauchen?~
+@58   = ~Ich mag Euch einen Vorsprung gegenüber Euren alten Freunden gewährt haben. Aber verwechselt das bloß nicht mit Duldung. Verschwindet. Sofort.~
+@59   = ~Ich... gebe zu, ich hatte gehofft, dass die Dinge nicht gerade auf diese Weise ans Licht kommen würden, aber ... nun. Was hätte ich denn sagen sollen? "Übrigens, <CHARNAME>, ich habe für die schrecklichste Vereinigung der Reiche gearbeitet, wurde abtrünnig und ihre Anhänger könnten mir jetzt auf den Fersen sein. Dürfte ich mich Euch anschließen?"~
+@60   = ~Wir werden uns um Tanya kümmern. Und dann... ich weiß nicht, <CHARNAME>. Wenn wir sie zum Schweigen bringen, dann sollten sie niemals Grund zur Annahme bekommen, dass ich noch am Leben sein könnte. Es ist unwahrscheinlich, dass ich derzeit von Bedeutung für sie bin, aber... versprechen kann ich es nicht. Ich habe die Vergeltungsoperationen der Zentarim miterlebt... sie nehmen ihren Ruf sehr ernst.~
+@61   = ~Ich sollte vielleicht erklären, was vorgefallen ist. Ich kann nicht gerade behaupten, selbst vor dem Fall der Zentilfeste besonderes Ansehen genossen zu haben, aber... Nun, ich nehme an, Ihr wart zu sehr damit beschäftigt, Euren eigenen Krieg zu verhindern, um von unserem etwas mitzubekommen.~
+@62   = ~Cyric war der sogenannte Schutzherr unserer Stadt. Stattdessen zerstörte der Verrückte Gott sie höchstselbst in einem Anfall größenwahnsinniger Inkompetenz, indem er versehentlich eine Armee Drachen und Giganten über uns entfesselte. Die halbe Stadt lag erschlagen darnieder. Und der Rest der Welt lachte.~
+@63   = ~"Die dekadente Zentilfeste, Geburtstätte der verderbten Zentarim, liegt endlich in Trümmern und Asche." Ganz zu schweigen davon, dass die Führerschaft der Zentarim in der Rabenzitadelle saß und nichts unternahm.~
+@64   = ~Damals war ich ein Himmelsmager, mit fliegendem Reittier und alledem. Also brachte ich die ersten Wochen damit zu, zornige Nachrichten zwischen der zerstörten Feste und der Zitadelle zu überbringen. Natürlich verweigerten die Bastarde uns jegliche Unterstützung. Keine große Überraschung. Doch schließlich habe ich... die Beherrschung verloren und bin geflohen. Geradewegs in die Arme melvauntanischer Banditen. Wir sind nicht die einzige Organisation am Mondsee, die Handel mit Sklaven treibt, und ich war damals verwundbarer als ich hätte sein dürfen.~
+@65   = ~Was danach geschah... nun, Ihr kennt den Rest.~
+@66   = ~Das ist eine verdammte Menge Blutvergießen und Aufruhr. Selbst für jemanden, der daran gewöhnt ist.~
+@67   = ~Ich schätze, das erklärt, weshalb Ihr ständig so unerfindlich wütend seid.~
+@68   = ~Das... tut mir leid für Euch. Wirklich.~
+@69   = ~Ein Zent, der in die Sklaverei verkauft wurde? Gebt mir einen Augenblick, um diese Ironie auszukosten.~
+@70   = ~Und ich erkenne nun, dass ich Euch besser bei den Duergar hätte lassen sollen. Verschwindet.~
+@71   = ~Ihr wärt überrascht. Nicht alle von uns sind in den Einsatz von Gewalt verliebt. Für mich jedenfalls war ihre Notwendigkeit immer ein Hinweis darauf, dass etwas auf fatale Weise schiefgelaufen ist.~
+@72   = ~Unerfindlich wütend? Ha! Ich habe es bisher nie so offenkundig nach außen getragen, aber... Ich fürchte, ich verlor meine Maske der Vornehmheit, als ich Sembia verließ.~
+@73   = ~<CHARNAME>, <PRO_SONDAUGHTER> des Bhaal... ja, ich kann nicht leugnen, dass Ihr selbst Opfer göttlicher Einmischung wurdet. Ich... danke Euch. Schätze ich.~
+@74   = ~Lacht, wenn Ihr müsst. Wenn Ihr glaubt, das würde mich beeindrucken, dann irrt Ihr.~
+@75   = ~Ich werde nicht behaupten, dass alles von dem, das Ihr gehört habt, Propaganda sei. Denn das ist es nicht. Aber was auf die Organisation als Ganzes zutreffen mag, trifft nicht zwingend auf jedes ihrer Mitglieder zu.~
+@76   = ~Ich werde Euch nicht ins Gesicht lügen und behaupten, ich hätte meine Lektionen gelernt und meinen Lebensweg geändert oder so einen Unsinn. Aber es stimmt, dass ich nicht mehr derjenige bin, der ich einmal war. Schon lange nicht mehr. Ich... warte nicht auf die nächstbeste Gelegenheit, Euch einen Dolch in den Rücken zu stoßen, <CHARNAME>.~
+@77   = ~Ihr wart also Mitglied einer Organisation, die sich auf die Übernahme der Weltherrschaft verlegt hat. Wenn Ihr mich fragt, ist das bloß ein weiterer Grund, Euch in der Gruppe zu behalten.~
+@78   = ~Ich bin zwar nicht sonderlich angetan von alldem, aber deswegen werde ich Euch nicht einfach aus der Gruppe werfen.~
+@79   = ~Bisher wart Ihr vertrauenswürdig, Adrian, daher werde ich Euch die Gunst des Zweifels gewähren. Ich werde jedoch ein wachsames Auge auf Euch haben.~
+@80   = ~Ich werde Euch nicht fortschicken, Adrian. Ich beurteile Leute nach ihren Taten im Hier und Jetzt, nicht nach ihrer Vergangenheit.~
+@81   = ~Es tut mir leid. Nach alldem kann ich Euch einfach nicht länger vertrauen.~
+@82   = ~Monster bekommen keinen Schutz von mir. Verschwindet. Sofort.~
+@83   = ~Ich... hatte nicht erwartet, dass Ihr das sein würdet. Trotzdem, <CHARNAME>... ich danke Euch.~
+@84   = ~Zentarisches Ränkespiel
+
+Adrian hat uns mitgeteilt, dass Tanya Damarov ausgiebig Buch über ihre persönlichen Geschäfte und Beziehungen führt: Für jemanden, der sich mit Spionage beschäftigt, ist das eine sehr gefährliche Angewohnheit. Aber für uns ein nützlicher Vorteil. Ich werde mich bei den Wirten in der Stadt umhören und herausfinden müssen, wo sie ihr Zimmer gemietet hat. Ich bezweifle, dass Adrian uns von großem Nutzen sein kann, bis diese Angelegenheit bereinigt ist.~
+@85   = ~Nichts anderes hätte ich erwartet. Ich bin mir dessen wohl bewusst, dass Ihr das vergangene Jahr nicht durch blindes Vertrauen überlebt habt. Trotzdem ... ich danke Euch, <CHARNAME>.~
+@86   = ~Diese Gutgläubigkeit wird Euch wahrscheinlich eines Tages das Leben kosten, <CHARNAME>. Diesmal jedoch bin ich dankbar dafür. Vielleicht kann ich Euch sogar helfen, Euch vor den Feinden zu schützen, die Ihr nicht wahrhaben wollt.~
+@87   = ~Ich schlage vor, Ihr dämpft Eure Begeisterung für den Ruch etwas, <CHARNAME>. An dieser Sache ist wirklich nichts komisch. Aber dennoch... ich danke Euch.~
+@88   = ~Einfach so, wie? Nun gut. Eigentlich würde ich Euch an dieser Stelle Glück wünschen, aber diesmal entscheide ich mich wohl eher für Drachen.~
+@89   = ~Zentarisches Ränkespiel
+
+Nachdem ich von den Verbindungen erfahren habe, die Adrian in seiner Vergangenheit unterhielt, entschied ich, dass es wohl das Beste wäre, ihn aus der Gruppe zu entlassen.~
+@90   = ~Das solltet Ihr vielleicht dem Roten Zauberer dort sagen. Nun gut. Eigentlich würde ich Euch an dieser Stelle Glück wünschen, aber diesmal entscheide ich mich wohl eher für Drachen.~
+@91   = ~Das solltet Ihr vielleicht der Drow dort sagen. Nun gut. Eigentlich würde ich Euch an dieser Stelle Glück wünschen, aber diesmal entscheide ich mich wohl eher für Drachen.~
+@92   = ~Ein Monster, wie? Nun gut. Eigentlich würde ich Euch an dieser Stelle Glück wünschen, aber diesmal entscheide ich mich wohl eher für Drachen.~
+@93   = ~Ich suche nach einer Frau mit blondem Haar, die vermutlich das heilige Symbol des Cyric trägt. Habt Ihr sie vielleicht hier irgendwo gesehen?~
+@94   = ~Eine Gläubige des Cyric? Nicht gerade die Sorte Angelegenheit, in die ich verstrickt werden möchte. Aber es könnte sein, dass ich von einer gehört habe, die im Brückenviertel ihr Unwesen treibt. Zumindest trifft Eure Beschreibung auf sie zu. Ich rate Euch, im Umgang mit diesem Pack vorsichtig zu sein. Aber das wisst Ihr vermutlich selbst.~
+@95   = ~Kann nicht behaupten, dass ich das habe. Es kommen nicht viel Fremde hierher.~
+@96   = ~Ah, diese Zent. Jepp, habe sie hin und wieder gesehen. Ihresgleichen ist hier nicht willkommen. An Eurer Stelle würde ich mich an den Docks umschauen oder vielleicht im Brückenviertel. Aber macht Euch eines bewusst: Wer auch immer ihr Unterschlupf gewährt, wird wahrscheinlich nicht riskieren, sie zu verraten. Solltet Euch vielleicht auch bei der Kundschaft umhören, besonders den Halblingen. Die wissen immer alles.~
+@97   = ~Bah! Cyric-Anbeter oder nicht, hab keine Zeit, hübschen Mädels hinterherzuglotzen. Und jetzt haut ab!~
+@98   = ~In der Tat, der Daumen bekommt eine Menge mit. Aber diese Dame, von der Ihr sprecht ... ne, kann nich' behaupten, die gesehen zu haben. Werd mich aber an Euch erinnern, wenn demnächst einer von Cyrics Leuten hier reinstolpert, Freund.~
+@99   = ~Na, aber sicher. Heerscharen von Frauen kommen her, seht ihr sie denn nicht? Ich wäre fast schon dankbar, wenn einer von Cyrics Meute hier auftauchte, solange es nur eine Frau ist.~
+@100  = ~Im Mithrest? Nein, <SIRMAAM>. Die Diener des Cyric sind hier nicht erwünscht.~
+@101  = ~Ah, mein Freund, ich kann nicht behaupten, dass ich das habe. Äh ... nein. Cyricjünger... Cyricjünger sind immer schlechte Nachrichten, mein Freund..~
+@102  = ~Hey! Ihr habt Euch doch nach dieser blonden Frau erkundigt, nicht wahr? Eine wahre Hexe. Sie hat ihr Zimmer hier, das ist so sicher wie der nächste Regenguss. Treppe rauf, erster Raum links.~
+@103  = ~Gut... sehr gut. Genau das, was ich zu finden hoffte. Habe ich es nicht gesagt? Zu blöd, um sich irgendwas zu merken.~
+@104  = ~Ihr solltet dankbar sein, Vasiliev, dass Eure Organisation ausschließlich Leute ohne Kompetenz anzieht.~
+@105  = ~So dankbar, dass ich Euch einfach ignoriere, Harfner.~
+@106  = ~Wunderbar, wunderbar. Ich hätte nicht gedacht, dass ich noch weniger von der Kompetenz dieser Vereinigung - oder eher dem Mangel daran - beeindruckt sein könnte. Welch eine erfreuliche Überraschung.~
+@107  = ~Haltet den Rand, Edwin.~
+@108  = ~Hmm. Die Aufzeichnungen sind nicht in der Gemeinsprache verfasst... aber sie hat auch nicht viel Einfallsreichtum bei der Wahl einer Fremdsprache bewiesen. Jeder aus den Talländern mit ein wenig Bildung könnte das hier lesen.~
+@109  = ~Es wird wohl einige Minuten dauern, bis ich alles durchgesehen habe. Ich halte es für keine gute Idee, einfach mit den Papieren davonzuspazieren. Hoffentlich kehrt Tanya also nicht plötzlich zurück, aber um diese Zeit ist sie wohl eher damit beschäftigt, an den Docks ihr Unwesen zu treiben.~
+@110  = ~Nehmt Euch ruhig die Zeit, die Ihr braucht.~
+@111  = ~Falls sie zurückkommt, wird die Nacht bloß etwas lebhafter als geplant.~
+@112  = ~Ich hoffe, Ihr seid ein schneller Leser.~
+@113  = ~Vergesst es. Ihr habt Eure Dokumente, kümmert Euch allein um den Rest.~
+@114  = ~Hmm. Dann wollen wir einmal sehen... die teure Tanya war wirklich vielbeschäftigt in den letzten Tagen.~
+@115  = ~Deryn hält sich in Delosars Schänke auf, Orlanna ist in der Kupferkrone. Und Salka befindet sich im Seeschatz. Ercias... nun, nach unserer letzten Begegnung habe ich jemanden damit beauftragt, sich um den Bastard zu kümmern. Er sollte uns keine Schwierigkeiten mehr bereiten. Also nur diese drei hier...~
+@116  = ~Deryn hält sich in Delosars Schänke auf, Orlanna in der Kupferkrone. Und Salka befindet sich im Seeschatz. Ercias... nun, Ercias scheint genau hier in den Fünf Krügen zu sein. Um den sollten wir uns zuallererst kümmern.~
+@117  = ~Deryn hält sich in Delosars Schänke auf, Orlanna ist in der Kupferkrone. Und Salka befindet sich im Seeschatz. Ercias... nun, nachdem er einem gewissen Harfner begegnet ist, scheint er spurlos verschwunden zu sein. Um den brauchen wir uns keine Gedanken mehr zu machen. Also sind es nur diese drei hier...~
+@118  = ~Deryn hält sich in Delosars Schänke auf, Orlanna ist in der Kupferkrone. Und Salka befindet sich im Seeschatz. Ercias... nun, da er nicht länger unter den Lebenden weilt, sollte er uns auch keine Schwierigkeiten mehr bereiten. Also sind es nur diese drei hier...~
+@119  = ~Tanyas kleine Vögel... Sie ist eine hervorragende Klerikerin. Aber wenn wir erst einmal ihre Handlanger aus dem Weg geräumt haben, sollten wir sie vernichten können, ohne... unangenehme Konsequenzen befürchten zu müssen. Wir sollten auf keinen Fall zu lange warten, nachdem wir ihre Schoßtiere beseitigt haben. Das könnte gefährlich für uns werden.~
+@120  = ~Seht es als bereits erledigt an.~
+@121  = ~Sicher. Ihr wollt also, dass ich... wie viele Morde für Euch begehe?~
+@122  = ~Und wenn sie noch mehr Schergen hat?~
+@123  = ~Nun, wir haben die Informationen jetzt. Wir kümmern uns darum, sobald wir Zeit dafür finden.~
+@124  = ~Können wir die Namen nicht einfach an die Harfner weitergeben und die sich um den Rest kümmern lassen?~
+@125  = ~Vergesst es. Ihr habt die Informationen, kümmert Euch alleine um den Rest. ~
+@126  = ~Ich danke euch. Aber denkt daran: Sobald wir einen von ihnen beseitigt haben, arbeiten wir praktisch gegen die Zeit.~
+@127  = ~Zentarisches Ränkespiel
+
+Nachdem wir Tanyas Unterlagen durchgesehen haben, hat Adrian drei Agenten identifizieren können: Deryn befindet sich in Delosars Schänke, Orlanna in der Kupferkrone und Salka hält sich im Seeschatz auf. Sobald ich einen von ihnen getötet habe, muss ich die anderen rasch beseitigen, ehe Tanya bemerkt, was vor sich geht.~
+@128  = ~Ich danke euch, <CHARNAME>. Aber denkt daran: Sobald wir einen von ihnen beseitigt haben, arbeiten wir praktisch gegen die Zeit.~
+@129  = ~Zentarisches Ränkespiel
+
+Nachdem wir Tanyas Unterlagen durchgesehen haben, hat Adrian vier Agenten identifizieren können: Deryn befindet sich in Delosars Schänke, Orlanna in der Kupferkrone und Salka im Seeschatz. Ercias hält sich hier in den fünf Krügen auf, am Ende des Gangs. Sobald ich einen von ihnen vernichtet habe, muss ich die anderen rasch beseitigen, ehe Tanya bemerkt, was vor sich geht.~
+@130  = ~Fünf oder sechs. Je nachdem, wie viele Wachen sie begleiten.~
+@131  = ~Drüben im Schattental, <CHARNAME>, gibt es ein Sprichwort: "Töte einen Zentarim, sobald du ihn erkennst. Er würde dasselbe für dich tun." Nicht gerade die Einstellung, die ich für gewöhnlich befürworte. Aber in diesem Fall heißt es: Sie oder ich. Wenn nicht jetzt, dann später. Wir haben es hier nicht mit unschuldigen Personen zu tun.~
+@132  = ~Nun gut. Wir kümmern uns also darum.~
+@133  = ~Und auch Ihr seid nicht unschuldig. Ihr habt Eure Informationen, kümmert Euch allein um den Rest.~
+@134  = ~Dann werde ich wahrscheinlich in großen, großen Schwierigkeiten stecken. Es ist jedoch ein Risiko, das wir eingehen müssen.~
+@135  = ~Dann tun wir das.~
+@136  = ~Nein, es ist ein Risiko, das IHR eingehen müsst. Ihr habt Eure Informationen, kümmert Euch allein um den Rest.~
+@137  = ~Ja, natürlich. Falls Ihr allerdings nicht gerade darauf versessen seid, ihr jeden Zehntag Euer Gold zu überlassen und darauf zu hoffen, dass sie ihre Meinung nicht doch irgendwann ändert... dann wäre früher besser als später. Aber denkt daran: Sobald wir einen von ihnen beseitigt haben, arbeiten wir praktisch gegen die Zeit.~
+@138  = ~Was!? Als würde ich mein Leben der Unfähigkeit von Harfnern anvertrauen. Außerdem würden sie mich wahrscheinlich töten.~
+@139  = ~Nun gut. Wir haben die Informationen jetzt. Wir kümmern uns darum, sobald wir Zeit dafür finden.~
+@140  = ~Nun gut. Wir haben die Informationen jetzt. Wir kümmern uns darum, sobald wir Zeit dafür finden.~
+@141  = ~Und ich kann nicht behaupten, dass ich ihnen das verdenken würde. Ihr habt Eure Informationen. Kümmert Euch allein um den Rest.~
+@142  = ~Ich... verstehe. Nun, erwartet nicht, dass wir uns noch einmal begegnen werden, <CHARNAME>. Ich plane, dieses Land so schnell wie möglich zu verlassen, wenn all das vorüber ist.~
+@143  = ~Zentarisches Ränkespiel
+
+Wir haben die Identität von Tanya Damarovs Schergen enthüllen können, jedoch hatte ich kein Interesse daran, auf Adrians Geheiß hin Morde zu verüben. Er ist fortgegangen, um sich selbt um diese Angelegenheit zu kümmern. Ich gehe nicht davon aus, dass ich ihm jemals wieder begegnen werde.~
+@144  = ~Bei Cyrics schwarzem Herzen! Wartet, ich möchte Euch ein Geschäft-~
+@145  = ~Bedaure, Deryn. Keine Geschäfte.~
+@146  = ~Götterverflucht! Tanya hätte euch einfach alle töten sollen!~
+@147  = ~Zentarisches Ränkespiel
+
+Ich habe Deryn, einen Agenten der Zentarim, getötet.~
+@148  = ~Ihr! Ihr seid doch Tanyas Goldgänse, oder? Ihr hättet das Angebot einfach so annehmen sollen, wie wir es Euch unterbreitet haben!~
+@149  = ~Zentarisches Ränkespiel
+
+Ich habe Orlanna, eine Agentin der Zentarim, getötet.~
+@150  = ~Was soll das? Habt ihr vielleicht gedacht, ihr könntet uns überlisten?~
+@151  = ~Zentarisches Ränkespiel
+
+Ich habe Salka, eine Agentin der Zentarim, getötet.~
+@152  = ~Ihr! Denkt ja nicht, ihr könntet mich so einfach besiegen!~
+@153  = ~Zentarisches Ränkespiel
+
+Ich habe Ercias, einen Agenten der Zentarim, getötet.~
+@154  = ~Gut. Nun, da wir das erledigt haben, sollten wir so schnell wie möglich zu den Fünf Krügen zurückkehren und Tanya aufhalten.~
+@155  = ~Zentarisches Ränkespiel
+
+Nun, da die Spione aus dem Weg geräumt sind, hat Adrian vorgeschlagen, dass wir uns zum Gasthaus 'Zu den Fünf Krügen' zurückbegeben und Tanya vernichten. Hoffentlich wird sie dort sein, wenn wir eintreffen.~
+@156  = ~Wie ich sehe, sind großzügige Gesten an Euch verschwendet, Vasiliev.~
+@157  = ~Ich habe Euch nichts zu sagen, Tanya.~
+@158  = ~Und Ihr, <CHARNAME>? Plant Ihr vielleicht, Euer Leben für Abschaum wie diesen zu riskieren? Er ist weder unschuldig noch ein Unbeteiligter.~
+@159  = ~Und Ihr, <CHARNAME>? Ihr seid kein selbstloser Rächer, kein Beschützer der Wehrlosen.~
+@160  = ~Es wäre klug, Euch aus Angelegenheiten rauszuhalten, die Euch nichts angehen.~
+@161  = ~Ich beschütze meine Freunde. Alles andere ist nebensächlich.~
+@162  = ~Ihr speit nur leere Drohungen, Tanya. Diese Unterhaltung ist beendet.~
+@163  = ~Nun, ich fürchte, ich war nie besonders klug.~
+@164  = ~Vielleicht habt ihr recht.~
+@165  = ~Und letztlich ist es doch nur eine leere Gefühlsbekundung... Wie Ihr wollt.~
+@166  = ~So tapfer... so närrisch. Wie Ihr wünscht.~
+@167  = ~Das erklärt eine ganze Menge.~
+@168  = ~Eine Wahrheit, die Ihr leider viel zu spät erkannt habt, <CHARNAME>.~
+@169  = ~Hmm. Und das wäre ein Cyricpriester weniger auf dieser Welt. Wunderbar. Ich werde es wirklich müde, immer wieder dieselben Worte auszusprechen, aber ... ich danke Euch, <CHARNAME>. Aufrichtig.~
+@170  = ~Mit etwas Glück brauchen wir uns keine Sorgen über weitere Begegnungen zu machen. Irgendwann wird ihnen vermutlich auffallen, dass einige ihrer Agenten in Atkatla verschwunden sind, aber... sollen wir dies eher den Schattendieben anlasten oder doch besser den Harfnern zuschieben? So viele Möglichkeiten...~
+@171  = ~Werdet nicht dreist, Zent. Es war Eure Dummheit, die uns überhaupt erst in diese Lage brachte.~
+@172  = ~Tut nicht so, als hättet Ihr es nicht genossen, Harfner.~
+@173  = ~Was die Dokumente anbelangt, die Tanya Damarov zurückließ... es ist wirklich schade, dass wir nicht genug Zeit haben, ihnen die gebührende Aufmerksamkeit zu widmen. Schmugglerei, Erpressung ... Ich würde jedoch davon abraten, mich mit dem hiesigen Untergrund einzulassen, bis die Situation sich wieder etwas stabilisiert hat.~
+@174  = ~Die Schattendiebe würden solche Vorhaben früher oder später ohnehin durchkreuzen... besser, sie dabei zu unterstützen, als sie zu behindern.~
+@175  = ~Mir gefällt die Aussicht auf Profit. Nehmt die Papiere mit.~
+@176  = ~Bodhi wird sie zweifelsohne haben wollen.~
+@177  = ~Ich bin sicher, die Harfner werden diese Unterlagen höchst aufschlussreich finden.~
+@178  = ~Der Magistrat wird einen Blick darauf werfen wollen.~
+@179  = ~Wenn ihr jetzt mit den Angelegenheiten der Zentarim herumpfuscht, werdet Ihr sie wahrscheinlich selbst bald wieder an den Fersen haben.~
+@180  = ~Ich habe genug von alledem. Lasst die Papiere dort liegen, wo Ihr sie gefunden habt.~
+@181  = ~Bitte sagt mir, dass keine große Intrige gegen Atkatla geplant ist, die wir verhindern müssen.~
+@182  = ~Aber gerne, mein Freund.~
+@183  = ~Bodhi wird zweifelsohne schon alles über sie wissen.~
+@184  = ~... Das hätte ich wohl ahnen müssen.~
+@185  = ~Ihr... nein, ich kann tatsächlich nicht gegen diese Logik argumentieren. Wir haben bereits genug Aufmerksamkeit auf uns gelenkt.~
+@186  = ~Nun gut. Ich schätze, wir haben ohnehin schon genug Aufmerksamkeit auf uns gelenkt.~
+@187  = ~Es ist nichts, das auch nur annähernd so interessant wäre, fürchte ich. Aber ich denke, ein paar dieser Informationen werde ich trotzdem behalten.~
+@188  = ~Bitte, nur zu. Mir gefällt die Aussicht auf Profit.~
+@189  = ~Ich dagegen denke, dass Ihr sie den Behörden überlassen werdet.~
+@190  = ~Wie auch immer... ich danke Euch, <CHARNAME>. Hoffentlich war dies das letzte Mal, dass ich Euch um Hilfe bitten musste.~
+@191  = ~Bitte sehr. Ihr denkt doch nicht wirklich, dass ich Euch schon beim kleinsten Anzeichen von Gefahr im Stich lassen würde, oder?~
+@192  = ~Als ob ich mich über eine Möglichkeit beschweren würde, Atkatla von seinen unansehnlicheren Elementen zu befreien.~
+@193  = ~Es war wohl das Mindeste, das ich tun konnte.~
+@194  = ~Das will ich verfluchtnochmal hoffen. Nächtliche Meuchelmissionen gefallen mir nicht.~
+@195  = ~Ich... nein. Vermutlich nicht. Lasst uns einfach weitermachen.~
+@196  = ~Zentarisches Ränkespiel
+
+Nachdem wir Tanyas Unterlagen durchesehen haben, hat Adrian drei Agenten identifiziert: Deryn befindet sich in Delosars Schänke, Orlanna in der Kupferkrone. Und Salka hält sich im Seeschatz auf. Sobald ich einen von ihnen getötet habe, muss ich die anderen rasch beseitigen, ehe Tanya bemerkt, was vor sich geht.~
+@197  = ~Zentarisches Ränkespiel
+
+Es ist mir gelungen, Tanya Damarov, eine Priesterin des Cyric und Mitglied der Zentarim, unschädlich zu machen. Adrian ist recht zuversichtlich, dass wir uns um weitere Verfolger keine Sorgen machen müssen. Die Zukunft wird zeigen, ob er recht behält.~
+@198  = ~Solange ihr mich nicht dazuzählt, habe ich nichts dagegen einzuwenden.~
+@199  = ~Ich... schätze nicht. Lasst uns einfach weitermachen.~
+@200  = ~Höllen, mir ebenfalls nicht.~
+@201  = ~Ich habe hier einige Informationen, an denen Ihr interessiert sein könntet.~
+@202  = ~Ich verstehe... mir war nicht bekannt, dass die Zentarim innerhalb von Atkatla aktiv waren, aber überraschen tut es mich nicht. Ich werde diese Dokumente umgehend entschlüsseln lassen. Habt Dank, Bürger.~
+@203  = ~In der Tat... höchst interessant. Mir scheint, dass Ihr selbst fast so sehr mit dem Schwarzen Netzwerk hadert wie wir, <CHARNAME>. Aber natürlich werde ich diese Dokumente gerne an mich nehmen.~
+@204  = ~Ich habe einige andere Informationen hier, an denen Ihr interessiert sein könntet.~
+@205  = ~Sieh an, wenn das nicht mein guter alter Freund <CHARNAME> ist. Ich habe ein besonderes Gespür dafür, wenn jemand mit guten Neuigkeiten zu mir kommt, wisst Ihr.~
+@206  = ~Ich habe Euch nichts mitzuteilen.~
+@207  = ~Habt Ihr das also... als wären die Dinge nicht ohnehin schon kompliziert genug. Ich danke Euch, <CHARNAME>. Hier ist etwas Gold für Eure Mühen.~
+@208  = ~Tatsächlich. Ich vertraue darauf, dass Ihr den Weg hinaus selbst findet.~
+@209  = ~Zwar nicht ganz das Resultat, auf das ich gehofft hatte, aber trotzdem zufriedenstellend. Und Euch rate ich, mir fortan aus dem Weg zu gehen, <CHARNAME>.~
+@210  = ~<CHARNAME>, ich... Höllen, <PRO_MANWOMAN>, ich hatte Euch gesagt, Ihr sollt es *nicht* tun!~
+@211  = ~Ich kann hier nicht länger bleiben. Nicht, wenn ihre Drohungen wahr sind. Es tut mir leid.~
+@212  = ~Ich hoffe, ich muss Euch nicht daran erinnern, dass wir uns so schnell wie möglich um diese Angelegenheit kümmern müssen... und Tanya?~
+@213  = ~Verdammt, <CHARNAME>! Habe ich Euch nicht gesagt, dass die Zeit drängt?~
+@214  = ~Ich kann nicht länger hierbleiben. Nicht nach alldem. Es tut mir leid.~
+@215  = ~Zentarisches Ränkespiel
+
+Es scheint, dass ich zu lange damit gewartet habe, Adrians alte Feinde zu vernichten. Es ist unwahrscheinlich, dass ich ihn jemals wiedersehen werde.~
+@216  = ~Nun, nun, welch ein Zufall. Ich hoffe, Ihr wisst mittlerweile, wie es läuft, <CHARNAME>.~
+@217  = ~1.000 Goldstücke und Ihr lasst uns noch eine Weile länger in Ruhe. Da.~
+@218  = ~Dieses Mal werdet Ihr das Gold bekommen. Aber erwartet nicht, dass dies noch eine Ewigkeit so weitergehen wird.~
+@219  = ~Ich habe das Geld nicht.~
+@220  = ~Ich mache das nicht noch einmal. Nehmt ihn einfach mit.~
+@221  = ~Ich denke, ich töte Euch einfach genau hier.~
+@222  = ~Ich wusste, dass es sich lohnen würde, mit Euch Geschäfte zu machen. Es war mir eine Freude, wie immer.~
+@223  = ~Was Ihr nicht sagt. Es war mir eine Freude, wie immer.~
+@224  = ~Ihr kanntet die Bedingungen unserer Vereinbarung, <CHARNAME>.~
+@225  = ~Nun gut. Dann werde ich mich wohl mit den magischen Kleinoden zufrieden geben müssen, die ich zwischen Euren toten Körpern finde.~
+@226  = ~Zentarisches Ränkespiel
+
+Ich habe Adrians ehemalige Kollegin, Tanya Damarov, vernichtet. Adrian scheint nicht sehr glücklich über diese Wendung der Ereignisse zu sein.~
+@227  = ~Zentarisches Ränkespiel
+
+Ich habe Adrian an seine ehemaligen Verbündeten ausgeliefert. Von diesen Leuten erwarte ich keine weiteren Störungen mehr.~
+@228  = ~Wirklich schade. Also gut. Dann werde ich mich wohl mit den magischen Kleinoden zufrieden geben müssen, die ich zwischen Euren toten Körpern finde.~
+@229  = ~Und hier sind sie also: Die Helden von Handelstreff.~
+@230  = ~Doch Ihr, Adrian, scheint Euch in dieser Fehde auf die falsche Seite verirrt zu haben. Eigentlich hätte ich erwartet, dass Ihr den Händlern eher schaden würdet.~
+@231  = ~Talsar Soargyl... und so weit von der Heimat entfernt. Das Exil bekommt Euch gut, wie mir scheint. Ist das goldbesticktes Gewebe?~
+@232  = ~Selbstverständlich. Und auch Euch schmeichelt diese schlammtriefende Abenteurerkluft mehr als gedacht.~
+@233  = ~So wie auch die Beute und Magie, die mit ihr einhergehen... aber ich bin sicher, Ihr habt Euch nicht an uns gewandt, um einen Plausch zu halten, Soargyl. Was wollt Ihr?~
+@234  = ~Ich habe Euch ein Angebot zu machen, so Ihr gewillt seid, es anzunehmen. Bevor die Genies den Handel übernahmen, hatte ich geplant, ein Geschäft mit einem calishitischen Händler abzuschließen... Die Details dieser Angelegenheit sind offensichtlich nicht für die Ohren der Öffentlichkeit bestimmt.~
+@235  = ~Ich sehe nicht, warum Eure früheren Geschäfte für uns von Belang sein sollten.~
+@236  = ~Ich bin nicht ganz überzeugt von der... Integrität meines Geschäftspartners, wenn Ihr denn so möchtet. Ihr wisst ja, wie Calishiten sind.~
+@237  = ~Ich weiß auch, wie Sembianer sind.~
+@238  = ~Ja... und das ist natürlich die Stelle, an der ihr ins Spiel kommt.~
+@239  = ~Ich versichere Euch, <PRO_LADYLORD> <CHARNAME>, die Belohnung wird angemessen sein. Wenn Ihr mir also zu meinem Haus folgen möchtet, wo wir die Details besprechen können?~
+@240  = ~Die Belohnung sollte auch besser angemessen sein.~
+@241  = ~Ich werde mir zumindest anhören, was Ihr zu sagen habt.~
+@242  = ~Ihr kennt diesen Mann, Adrian. Was denkt Ihr?~
+@243  = ~Ich möchte mit Euch und Euren Geschäften nichts zu tun haben.~
+@244  = ~Ich bin ein wohlhabender Mann, <CHARNAME>. Ihr müsst Euch wirklich keine Sorgen machen.~
+@245  = ~Ich bin sicher, Ihr werdet sie als Bereicherung empfinden.~
+@246  = ~Er ist ein listiger Bastard, und das sage ich nicht leichtfertig. Es würde mir gar nicht gefallen, diese Sache unerledigt zu lassen. Aber ich warne Euch, lasst Vorsicht walten.~
+@247  = ~Was sagt Ihr dazu, <CHARNAME>?~
+@248  = ~Nein? Eine Schande. Wenn Ihr Eure Meinung ändern solltet, könnt Ihr mich vielleicht in der Taverne treffen.~
+@249  = ~Am Ende rächt sich alles
+
+Talsar Soargyl, ein Händler aus Handelstreff, hat mich darum gebeten, mit ihm geschäftliche Angelegenheiten zu besprechen. Ich habe abgelehnt, kann ihn aber in der Taverne finden, wenn ich meine Meinung ändern sollte.~
+@250  = ~Das süße Versprechen des Goldes hat Euch geradewegs hierhergelockt, hm? Eigentlich sollte ich darüber nicht allzu überrascht sein.~
+@251  = ~Etwas heuchlerisch, findet Ihr nicht auch?~
+@252  = ~Fünf Jahre lang habe ich auf diesen Augenblick gewartet, Adrian. Fünf Jahre. Ihr habt mich benutzt. Ihr habt mich in Euer Nest aus Lügen gelockt und seid mir in den Rücken gefallen, als Ihr fertig mit mir wart. Denkt nicht, ich hätte nicht genaustens herausgefunden, was damals schiefgegangen ist.~
+@253  = ~Ihr wart gierig, Soargyl. Und dumm. Eine bekanntermaßen fatale Kombination.~
+@254  = ~Zuerst nahm ich an, die Fuchsmantels hätten Euch dazu veranlasst... um einen Rivalen aus dem Weg zu räumen. Aber sie wussten davon gar nichts, nicht wahr? Was für ein Spiel habt Ihr gespielt?~
+@255  = ~Ich würde es Euch wirklich gerne erzählen, aber... nun, Ihr kennt ja das Klischee. Zugegeben, ich beabsichtige, Euch trotzdem zu töten.~
+@256  = ~Wirklich? Und beabsichtigen Eure Freunde auch, Euch dabei zu helfen?~
+@257  = ~Ich werde mich nicht mit jedem anlegen, den Ihr Euch zum Feind gemacht habt, Adrian. Ihr seid auf Euch allein gestellt.~
+@258  = ~Ich lasse niemanden entkommen, der mir eine Falle stellt.~
+@259  = ~Ihr werdet tot sein, noch bevor er seinen ersten Spruch beendet hat.~
+@260  = ~Was immer auch geschehen ist, es ist jetzt Vergangenheit. Das hier muss nicht in Blutvergießen enden.~
+@261  = ~In diesem Fall: Entschuldigt mich bitte, wenn ich mich jetzt aus dem Staub mache.~
+@262  = ~Am Ende rächt sich alles
+
+Einer der Händler in Handelstreff war weniger über mein Eingreifen erfreut, als er es anfangs gewesen sein mochte. Talsar Soargyl, ein Sembianer im Exil, hatte einen Anschlag auf uns vorbereitet, weil wir seinem alten Feind, Adrian, Unterschlupf gewährt haben. Ich hatte jedoch kein Interesse daran, mich darin verwickeln zu lassen.~
+@263  = ~Das werden wir noch sehen.~
+@264  = ~Am Ende rächt sich alles
+
+Einer der Händler in Handelstreff war weniger über mein Eingreifen erfreut, als er es zunächst gewesen sein mochte. Talsar Soargyl, ein Sembianer im Exil, hatte einen Anschlag auf uns vorbereitet, weil wir seinem alten Feind, Adrian, Unterschlupf gewährt haben. Was auch immer sich zwischen den beiden zugetragen haben mag, es liegt nun in der Vergangenheit.~
+@265  = ~Ich fürchte, das muss es.~
+@266  = ~Feige bis zum Schluss, wie ich sehe. Ich habe keine Verwendung mehr für Euch, <CHARNAME>. Sicherlich findet Ihr Euren Weg selbst hier raus.~
+@267  = ~Ich erinnere mich nicht daran, dass er früher so begabt im Umgang mit der Nekromantie war. Vor fünf Jahren hat er kaum die einfachsten Zaubertricks zustande gebracht.~
+@268  = ~Was genau habt Ihr ihm angetan?~
+@269  = ~Das nennt Ihr begabt? Ihr zu besiegen, war ziemlich einfach.~
+@270  = ~Wie beabsichtigt Ihr, das dem Hohehändler zur erklären?~
+@271  = ~Ich heiße es nicht gut, jeden, mit dem Ihr Euch überworfen habt, umbringen zu müssen.~
+@272  = ~Ich nehme an, Ihr habt das vorausgesehen?~
+@273  = ~Er war... sagen wir, er war ein bequemes Opfer. Sembia ist voller Männer wie er, wenn man weiß, wie man mit ihnen umgehen muss.~
+@274  = ~Egal, wahrscheinlich ist es besser, wenn wir von hier verschwinden. Wenn Ihr mehr Einzelheiten wissen möchtet, könnt Ihr mich später danach fragen.~
+@275  = ~Im Vergleich mit magischen Spielereien war das bemerkenswert. Für die hoffnungslosen Narren scheinen Zorn und Rachedurst ein starker Antrieb zu sein.~
+@276  = ~Ich bezweifle, dass Talsar der erste sembianische Verbrecher ist, der tot irgendwo auftaucht. Darin sind sie ziemlich gut.~
+@277  = ~Ich kann zwar nicht behaupten, dass mich sein Groll trotz all dieser Zeit überrascht hat, aber ich habe wirklich nicht erwartet, ihn hier anzutreffen, <CHARNAME>. Andernfalls wäre ich vorsichtiger gewesen.~
+@278  = ~Nun, ich habe gewiss nicht vorgehabt, ihn mitten auf der Straße umzubringen.~
+@279  = ~Habt Ihr Euch anders entschieden, <PRO_LADYLORD>?~
+@280  = ~Das habe ich. Und die Bezahlung sollte besser angemessen sein.~
+@281  = ~Ich möchte noch immer nichts mit Euch und Euren Geschäften zu schaffen haben.~
+@282  = ~Wirklich schade. Ihr wisst, wo Ihr mich finden könnt, wenn Ihr Eure Meinung ändern solltet.~
