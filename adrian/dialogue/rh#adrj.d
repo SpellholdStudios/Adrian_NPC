@@ -622,7 +622,7 @@ END
 
 BEGIN RH#ORPH
 
-CHAIN IF ~Global("rh#OrphanSpawn","GLOBAL",1)~ THEN RH#ORPH rh#orphantalk
+CHAIN IF ~Global("rh#OrphanSpawn","GLOBAL",1) InParty("rh#Adrian") InMyArea("rh#Adrian") !StateCheck("rh#Adrian",CD_STATE_NOTVALID)~ THEN RH#ORPH rh#orphantalk
 @203 /* C-could you spare a c-couple of coins? */
 == RH#ADRJ @204 /* Here. Five gold. Buy yourself a dagger and go teach yourself how to cut purses if you hope to survive the year. And stop stuttering. */
 == RH#ORPH @205 /* Y-yes, sir! Thank you, sir. */
@@ -7973,7 +7973,7 @@ I_C_T NALIA 9 rh#AdrNalia3 // *You are very cruel. My family will be papers...th
 END
 
 I_C_T DELCIA 1 rh#AdrDelcia1 // *I dare say I have tried to wean Nalia off such charities, but I have failed. Why else would such as you be here? You sound like a noble, but you are obviously more adept at arms than societal graces.*
-== RH#ADRJ @2562 /* In some parts of the world, the two are indistinguishable, though I'd hardly expect such sense from an inbred southern dilettante. Show the proper respect when addressing your betters, woman, or you may yet find yourself decorating the slave quarters of a Calishite pasha. */
+== RH#ADRJ IF ~InParty("rh#Adrian") InMyArea("rh#Adrian") !StateCheck("rh#Adrian",CD_STATE_NOTVALID)~ THEN @2562 /* In some parts of the world, the two are indistinguishable, though I'd hardly expect such sense from an inbred southern dilettante. Show the proper respect when addressing your betters, woman, or you may yet find yourself decorating the slave quarters of a Calishite pasha. */
 == DELCIA @2563 /* Must I ever be subjected to such coarse manners? Your threats do not interest me in the slightest, peasant. */
 == RH#ADRJ @2564 /* ...hells, sometimes I wish I still worshiped a god who condoned the spectacular misuse of magic. */
 == DELCIA @2565 /* Your petty concerns are of little enough value to one of my station. I believe I was speaking with your employer. */

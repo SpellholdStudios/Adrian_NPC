@@ -4,7 +4,7 @@
 
 BEGIN RH#TANYA
 
-CHAIN IF ~Global("rh#DamarovQuest","GLOBAL",1)~ THEN RH#TANYA lolzhentblackmail
+CHAIN IF ~Global("rh#DamarovQuest","GLOBAL",1) InParty("rh#Adrian") See("rh#Adrian") !StateCheck("rh#Adrian",CD_STATE_NOTVALID)~ THEN RH#TANYA lolzhentblackmail
 @0 /* My lord Vasiliev... and still alive, I see. I hardly expected to see you this side of the Nine Hells. */
 == RH#ADRJ @1 /* That must be nice for you... whoever you are, but you've mistaken me. Gods, is everyone in this city a damned fool? */
 == RH#TANYA @2 /* More charming than ever, I see, but that flashy new elven name of yours doesn't hide much. */
