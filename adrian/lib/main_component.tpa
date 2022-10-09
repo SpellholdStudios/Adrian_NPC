@@ -37,6 +37,17 @@ ACTION_IF NOT FILE_EXISTS_IN_GAME ~bimoen2.dlg~ BEGIN
 	COMPILE ~adrian/dialogue/bimoen2.d~
 END
 
+/* ------------------------------ *
+ *  Fixing Anomen romance variable*
+ * ------------------------------ */
+
+/* adding action states to ensure Anomen romance gets closed correctly so it doesn't get set to committed silently */
+<<<<<<<< ...inlined/c#anomen_romance_fix.d
+ADD_TRANS_ACTION BANOMEN BEGIN 399 464 END BEGIN END ~SetGlobal("AnomenRomanceActive","GLOBAL",3)~ UNLESS ~SetGlobal("AnomenRomanceActive","GLOBAL",3)~
+>>>>>>>>
+COMPILE ~...inlined/c#anomen_romance_fix.d~
+
+
 
 /* ------------------------ *
  *  Installing music files  *
