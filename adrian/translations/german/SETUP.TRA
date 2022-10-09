@@ -16,6 +16,11 @@
 
 @130  = ~Bitte die Adrian-NPC-fuer-BGII-Hauptkomponente vor den zusaetzlichen Inhalten installieren ~
 
+@140  = ~Adrian toleriert hohen Ruf~
+@141  = ~Immer~
+@142  = ~In einer aktiven Romanze oder Freundschaft~
+
+
 /* DEPRECATED as of v5.0
 @85   = ~Change Adrian's class to Cleric/Mage~
 @86   = ~Install alternate class for Adrian?~

@@ -16,6 +16,11 @@
 
 @130  = ~Veuillez installer le composant principal d'Adrian pour BGII avant le contenu additionnel~
 
+@140  = ~Adrian Tolerates High Reputation~
+@141  = ~Always~
+@142  = ~For Active Romance or Friendship~
+
+
 /* DEPRECATED as of v5.0
 @85   = ~Changer la classe d'Adrian en Clerc/Mage~
 @86   = ~Installer classe alternative pour Adrian ?~

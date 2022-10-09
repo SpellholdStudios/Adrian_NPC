@@ -1,0 +1,39 @@
+/* Edwin is in romance. Make him ignore reputation on EE */
+
+IF
+	InParty(Myself)
+	!StateCheck("rh#Adrian",CD_STATE_NOTVALID)  
+	!See([ENEMY])
+	CombatCounter(0)
+	OR(3)
+		Global("rh#AdrianFriendshipActive","GLOBAL",1)
+		Global("rh#AdrianRomanceActive","GLOBAL",1)
+		Global("rh#AdrianRomanceActive","GLOBAL",2)
+	Global("C#AdrianRomance_IgnoreRep","LOCALS",0)
+THEN
+  RESPONSE #100
+		SetInterrupt(FALSE)
+		ReallyForceSpellRES("c#replv1","rh#Adrian") 
+		SetGlobal("C#AdrianRomance_IgnoreRep","LOCALS",1)
+		SetInterrupt(TRUE)	
+END
+
+
+/* Romance broke. Edwin will leave party again if rep is too high. */
+
+IF
+	InParty(Myself)
+	!StateCheck("rh#Adrian",CD_STATE_NOTVALID)  
+	!See([ENEMY])
+	CombatCounter(0)
+	!Global("rh#AdrianFriendshipActive","GLOBAL",1)
+	!Global("rh#AdrianRomanceActive","GLOBAL",1)
+	!Global("rh#AdrianRomanceActive","GLOBAL",2)
+	Global("C#AdrianRomance_IgnoreRep","LOCALS",1)
+THEN
+  RESPONSE #100
+	SetInterrupt(FALSE)
+	ReallyForceSpellRES("c#replv2","rh#Adrian")
+	SetGlobal("C#AdrianRomance_IgnoreRep","LOCALS",0)
+	SetInterrupt(TRUE)	
+END

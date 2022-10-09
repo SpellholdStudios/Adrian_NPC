@@ -1,0 +1,38 @@
+/* Adrian should stay in group for high rep if in active romance */
+COPY_EXISTING ~DPLAYER2.bcs~ ~override/DPLAYER2.bcs~
+  DECOMPILE_AND_PATCH BEGIN
+    REPLACE_TEXTUALLY ~\(BreakingPoint()\)~
+                      ~\1  
+		!Name("rh#Adrian",Myself)~
+  END
+
+/* Put in a scriptblock so NPC initiates dialogue if kicked out if "!HPGT(Myself,0)" to be safe */
+<<<<<<<< ...inlined/adrian_bg2_unhappyleave.baf
+
+IF
+	!InParty(Myself)
+	!HPGT(Myself,0)
+	Name("rh#Adrian",Myself)
+THEN
+	RESPONSE #100
+		SetLeavePartyDialogFile()
+		Dialog(Player1)
+		ChangeAIScript("",DEFAULT)
+END
+>>>>>>>>
+EXTEND_TOP ~dplayer2.bcs~ ~...inlined/adrian_bg2_unhappyleave.baf~ 
+
+/* disable his unhappy comments */
+COPY_EXISTING ~rh#adr.cre~ ~override~
+  SAY INTERACTION3 ~~ 
+  SAY COMPLIMENT1 ~~
+/* leaving party due to rep is hardcoded in EE, we need opcode 360 to prevent that: make him stay unrelated to rep for EE with opcode 360 */
+  PATCH_IF GAME_IS ~bg2ee eet~ BEGIN
+      LPF ADD_CRE_EFFECT
+          INT_VAR
+              opcode = 360 //Ignore reputation
+              timing = 9 //Permanent
+              target = 1 //Self
+              resist_dispel = 0 //Not dispellable + bypass resistance
+      END
+  END 

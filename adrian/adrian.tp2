@@ -151,3 +151,31 @@ REQUIRE_PREDICATE ((MOD_IS_INSTALLED ~adrian.tp2~ ~0~)
 				OR (MOD_IS_INSTALLED ~adrian.tp2~ ~2~)) @130	// ~Please install Adrian NPC for BGII main component before additional content~
 
 INCLUDE ~%MOD_FOLDER%/lib/adrian_crossmod.tpa~
+
+/* ========================= *
+ *  Adrian Tolerates High Reputation  *
+ * ========================= */
+BEGIN @141 /* Always */
+
+DESIGNATED 30 
+LABEL ~adrian_tolerates_high_reputation-always~
+SUBCOMPONENT @140 /* Adrian Tolerates High Reputation */
+REQUIRE_PREDICATE ((MOD_IS_INSTALLED ~adrian.tp2~ ~0~)
+				OR (MOD_IS_INSTALLED ~adrian.tp2~ ~1~)
+				OR (MOD_IS_INSTALLED ~adrian.tp2~ ~2~)) @130
+
+INCLUDE ~%MOD_FOLDER%/lib/adrian_highrep_always.tpa~
+
+BEGIN @142 /* For Active Romance or Friendship */
+
+DESIGNATED 31 
+LABEL ~adrian_tolerates_high_reputation-active_romance~
+SUBCOMPONENT @140 /* Adrian Tolerates High Reputation */
+REQUIRE_PREDICATE ((MOD_IS_INSTALLED ~adrian.tp2~ ~0~)
+				OR (MOD_IS_INSTALLED ~adrian.tp2~ ~1~)
+				OR (MOD_IS_INSTALLED ~adrian.tp2~ ~2~)) @130
+
+INCLUDE ~%MOD_FOLDER%/lib/adrian_highrep_romance.tpa~
+
+
+

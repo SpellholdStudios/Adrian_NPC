@@ -1,0 +1,48 @@
+/* Adrian should stay in group for high rep if in active romance */
+COPY_EXISTING ~DPLAYER2.bcs~ ~override/DPLAYER2.bcs~
+  DECOMPILE_AND_PATCH BEGIN
+    REPLACE_TEXTUALLY ~\(BreakingPoint()\)~
+                      ~\1  
+		OR(4)
+			!Name("rh#Adrian",Myself)
+			!Global("rh#AdrianFriendshipActive","GLOBAL",1)
+			!Global("rh#AdrianRomanceActive","GLOBAL",1)
+			!Global("rh#AdrianRomanceActive","GLOBAL",2)~
+  END
+
+/* Put in a scriptblock so NPC initiates dialogue if kicked out if "!HPGT(Myself,0)" to be safe */
+<<<<<<<< ...inlined/adrian_bg2_unhappyleave.baf
+
+IF
+	!InParty(Myself)
+	!HPGT(Myself,0)
+	Name("rh#Adrian",Myself)
+	OR(3)
+		Global("rh#AdrianFriendshipActive","GLOBAL",1)
+		Global("rh#AdrianRomanceActive","GLOBAL",1)
+		Global("rh#AdrianRomanceActive","GLOBAL",2)
+THEN
+	RESPONSE #100
+		SetLeavePartyDialogFile()
+		Dialog(Player1)
+		ChangeAIScript("",DEFAULT)
+END
+>>>>>>>>
+EXTEND_TOP ~dplayer2.bcs~ ~...inlined/adrian_bg2_unhappyleave.baf~ 
+
+
+/* leaving party due to rep is hardcoded in EE, we need opcode 360 to prevent that: make him stay unrelated to rep for EE with opcode 360 */
+ACTION_IF GAME_IS ~bg2ee eet~ THEN BEGIN
+  ADD_SECTYPE C#RepLeaveEffect ~~  
+
+/* opcode 360 effect so NPC ignores rep&breaking point */
+  COPY ~adrian/spells/c#replv1.spl~ ~override~
+  WRITE_BYTE 0x27 C#RepLeaveEffect
+  WRITE_BYTE 0xa2 C#RepLeaveEffect
+
+/* remove opcode 360 effect from c#replv1 */
+  COPY ~adrian/spells/c#replv2.spl~ ~override~
+  WRITE_BYTE 0xa2 C#RepLeaveEffect
+
+  EXTEND_BOTTOM ~rh#adr.bcs~ ~adrian/scripts/c#adrian_ignore_rep_ee.baf~
+END
