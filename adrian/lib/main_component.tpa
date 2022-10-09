@@ -47,8 +47,9 @@ COPY_EXISTING ~songlist.2da~ ~override~
 	SET_2DA_ENTRY 0 2 3 ~rh#blank.mus~
 
 LAF HANDLE_AUDIO
-	INT_VAR
+/*	INT_VAR
 		music = 1
+*/
 	STR_VAR
 		audio_path = ~adrian/audio/music~
 		oggdec_path = ~adrian/audio~
