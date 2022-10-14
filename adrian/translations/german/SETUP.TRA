@@ -1,24 +1,25 @@
-@0    = ~Adrian for BGII~
-@1    = ~You must have Throne of Bhaal or BG2:EE installed to install Adrian NPC mod.~
+@0    = ~Adrian fuer BGII~
+@1    = ~Um die Adrian-Mod zu installieren, muss Thron des Bhaal oder BG2:EE installiert sein.~
 
 /* ------------ *
  *  Components  *
  * ------------ */
-@100  = ~Adrian is a Sorcerer~
-@101  = ~Change Adrian's class to Cleric/Mage~
-@102  = ~Change Adrian's class to Mage/Thief~
+@100  = ~Adrian ist Hexenmeister~
+@101  = ~Aendere Adrians Klasse zu Kleriker/Magier~
+@102  = ~Aendere Adrians Klasse zu Magier/Dieb~
 
-@110  = ~Install optional soundset for Adrian (only in English)~
-@111  = ~Phaelin's soundset~
-@112  = ~Tatterdemalion's soundset~
+@110  = ~Optionales Soundset fuer Adrian installieren (nur englisch)?~
+@111  = ~Phaelins Soundset~
+@112  = ~Tatterdemalions Soundset~
 
-@120  = ~Crossmod content~
+@120  = ~Crossmod-Inhalte installieren~
 
-@130  = ~Please install Adrian NPC for BGII main component before additional content~
+@130  = ~Bitte die Adrian-NPC-fuer-BGII-Hauptkomponente vor den zusaetzlichen Inhalten installieren ~
 
-@140  = ~Adrian Tolerates High Reputation~
-@141  = ~Always~
-@142  = ~For Active Romance or Friendship~
+@140  = ~Adrian toleriert hohen Ruf~
+@141  = ~Immer~
+@142  = ~In einer aktiven Romanze oder Freundschaft~
+
 
 /* DEPRECATED as of v5.0
 @85   = ~Change Adrian's class to Cleric/Mage~
@@ -34,95 +35,95 @@
  *  Adrian NPC  *
  * ------------ */
 @2    = ~Adrian~
-@3    = ~When asked about his past, ADRIAN smiles slightly and says that there are enough demons to face in the present without worrying about yesterday's as well. Given his recent enslavement, it would appear that he has more than a few of his own with which to contend. Despite his slippery responses, you eventually glean that he spent some time in Sembia, working as a hirespell wizard for a rising merchant prince. You quickly learn that further prodding will win you nothing but headaches.~
+@3    = ~Als Ihr nach seiner Vergangenheit fragt, lächelt ADRIAN schwach und erwidert, dass es in der Gegenwart bereits genug Dämonen gebe, denen man sich stellen müsse, auch ohne sich um jene der Vergangenheit zu sorgen. Angesichts seiner Versklavung erscheint es Euch jedoch, dass er sich gegen eine ganze Menge davon behaupten muss. Trotz seiner ausweichenden Antworten erfahrt Ihr schließlich, dass er einige Zeit in Sembia verbracht hat, wo er angeheuert wurde, als Zauberer im Dienste eines Händlerfürsten zu arbeiten. Auch findet Ihr ziemlich schnell heraus, dass weiteres Nachfragen Euch nichts weiter einbringen wird als Kopfschmerzen.~
 	// Workaround to avoid WeiDU glitch which gives AUTO_TRA files high priority on other loaded files (their entries override files loaded with USING)
 	// It allows to traify and compile rh#adr.baf and rh#ad25.baf with setup.tra entries.
-@1004 = ~Oh, I don't think so.~ [rh#ad1]
-@1005 = ~I must admit, this is rather effective.~ [rh#ad2]
-@1006 = ~Well, we certainly know how to waste our time.~ [rh#ad3]
-@1007 = ~Is this sort of nonsense really necessary?~ [rh#ad4]
-@1008 = ~Oh, I don't mind this at all.~ [rh#ad5]
-@1009 = ~What is this, a Thayvian plantation? Couldn't we find an inn?~ [rh#ad6]
-@1010 = ~If I'm drunk again by the time you decide to do something, you've only yourself to blame.~ [rh#ad7]
-@1011 = ~Damn!~ [rh#ad8]
-@1012 = ~No... not like this...~ [rh#ad9]
-@1013 = ~Where's a damn cleric when I need one?~ [rh#ad10]
-@1014 = ~It's not exactly Cormanthor, is it?~ [rh#ad11]
-@1015 = ~Ah, the sights and smells of the city... I could do without the latter.~ [rh#ad12]
-@1016 = ~Quite the setting... I'm beginning to wish we'd simply paid someone to do this for us.~ [rh#ad13]
-@1017 = ~A lovely day, isn't it? Shame about the locale.~ [rh#ad14]
-@1018 = ~Mmm... the sun sets, and the day truly begins.~ [rh#ad15]
-@1019 = ~That should just about finish this.~ [rh#ad16]
-@1020 = ~Dammit!~ [rh#ad17]
-@1021 = ~Oh, this is working wonderfully. If you don't find me a better weapon soon, I might as well just sit in a corner and watch.~ [rh#ad18]
-@1022 = ~I'm a mage, not a pack mule.~ [rh#ad19]
-@1023 = ~Some cover over here, if you don't mind...~ [rh#ad20]
-@1024 = ~This is sure to be entertaining.~ [rh#ad21]
-@1025 = ~It's not quite invisibility, but I suppose it'll do.~ [rh#ad22]
-@1026 = ~Well, what have we here?~ [rh#ad23]
-@1027 = ~To the Abyss with you!~ [rh#ad24]
-@1028 = ~No mercy for scum like this!~ [rh#ad25]
-@1029 = ~Die, already!~ [rh#ad26]
-@1030 = ~I can already count the gold.~ [rh#ad27]
-@1031 = ~Don't even bother to run.~ [rh#ad28]
-@1032 = ~Yes?~ [rh#ad29]
-@1033 = ~What is it?~ [rh#ad30]
-@1034 = ~Speak up.~ [rh#ad31]
-@1035 = ~What now?~ [rh#ad32]
-@1036 = ~Spit it out already.~ [rh#ad33]
+@1004 = ~Nein, das glaube ich nicht.~ [rh#ad1]
+@1005 = ~Ich gebe zu, das ist ziemlich beeindruckend.~ [rh#ad2]
+@1006 = ~Nun, offensichtlich wissen wir, wie man seine Zeit vergeudet.~ [rh#ad3]
+@1007 = ~Ist dieser Schwachsinn denn wirklich notwendig?~ [rh#ad4]
+@1008 = ~Oh, das macht mir ganz und gar nichts aus.~ [rh#ad5]
+@1009 = ~Was soll das sein, eine tayvianische Plantage? Können wir nicht in die nächste Schänke gehen?~ [rh#ad6]
+@1010 = ~Sollte ich wieder betrunken sein, wenn Ihr Euch endlich dazu entschließt etwas zu tun, ist das Eure eigene Schuld.~ [rh#ad7]
+@1011 = ~Verdammt!~ [rh#ad8]
+@1012 = ~Nein... nicht so...~ [rh#ad9]
+@1013 = ~Wo ist der verdammte Kleriker, wenn man ihn braucht?~ [rh#ad10]
+@1014 = ~Nicht gerade Cormanthor, oder?~ [rh#ad11]
+@1015 = ~Ah, die Sehenswürdigkeiten und Düfte der Stadt. Auf Letztere kann ich verzichten.~ [rh#ad12]
+@1016 = ~Was ein Anblick... Allmählich wünsche ich mir, wir hätten einfach jemanden dafür bezahlt, diese Aufgabe für uns zu erledigen.~ [rh#ad13]
+@1017 = ~Ein reizender Tag, nicht wahr? Nur die Umgebung lässt zu wünschen übrig.~ [rh#ad14]
+@1018 = ~Mmmh... die Sonne versinkt und der Tag beginnt wahrhaftig.~ [rh#ad15]
+@1019 = ~Damit dürfte die Sache wohl erledigt sein.~ [rh#ad16]
+@1020 = ~Verdammt!~ [rh#ad17]
+@1021 = ~Das funktioniert wirklich großartig. Wenn Ihr mir nicht bald eine bessere Waffe gebt, kann ich mich auch einfach in eine Ecke setzen und abwarten.~ [rh#ad18]
+@1022 = ~Ich bin ein Magier, kein Packesel.~ [rh#ad19]
+@1023 = ~Ich bräuchte etwas Unterstützung, wenn es recht ist...~ [rh#ad20]
+@1024 = ~Das wird bestimmt unterhaltsam.~ [rh#ad21]
+@1025 = ~Zwar nicht ganz dasselbe wie Unsichtbarkeit, aber es sollte genügen.~ [rh#ad22]
+@1026 = ~Nun, was haben wir denn hier?~ [rh#ad23]
+@1027 = ~In die Abyss mit Euch!~ [rh#ad24]
+@1028 = ~Keine Gnade für Abschaum wie diesen!~ [rh#ad25]
+@1029 = ~Sterbt endlich!~ [rh#ad26]
+@1030 = ~Ich kann schon das Gold zählen.~ [rh#ad27]
+@1031 = ~Versucht gar nicht erst zu laufen.~ [rh#ad28]
+@1032 = ~Ja?~ [rh#ad29]
+@1033 = ~Was möchtet Ihr?~ [rh#ad30]
+@1034 = ~Sprecht.~ [rh#ad31]
+@1035 = ~Was jetzt?~ [rh#ad32]
+@1036 = ~Spuckt's endlich aus.~ [rh#ad33]
 @1037 = ~Hmm?~ [rh#ad34]
-@1038 = ~Certainly.~ [rh#ad35]
-@1039 = ~Of course.~ [rh#ad36]
-@1040 = ~If you insist. And you always do, don't you?~ [rh#ad37]
-@1041 = ~A waste of a mage's talents, if you ask me.~ [rh#ad38]
-@1042 = ~Yes, yes, yes. I'm working on it.~ [rh#ad39]
-@1043 = ~Oh, not this again.~ [rh#ad40]
-@1044 = ~You can do better than that.~ [rh#ad41]
-@1045 = ~Go point that thing at someone else.~ [rh#ad42]
-@1046 = ~Well, you do have a way with words, don't you?~ [rh#ad43]
-//@47   = ~It isn't exactly Cormanthor, is it?~ [rh#ad11]
-//@48   = ~Mmm, the sun sets, and the day truly begins.~ [rh#ad15]
+@1038 = ~Sicherlich.~ [rh#ad35]
+@1039 = ~Natürlich.~ [rh#ad36]
+@1040 = ~Wenn Ihr darauf besteht... und das tut Ihr immer, nicht wahr?~ [rh#ad37]
+@1041 = ~Eine Vergeudung der Talente eines Magiers, wenn Ihr mich fragt.~ [rh#ad38]
+@1042 = ~Ja, ja, ja. Ich arbeite dran.~ [rh#ad39]
+@1043 = ~Oh, nicht das schon wieder.~ [rh#ad40]
+@1044 = ~Das könnt Ihr besser.~ [rh#ad41]
+@1045 = ~Zeigt mit dem Ding auf jemand anderen.~ [rh#ad42]
+@1046 = ~Ihr wisst wirklich mit Worten umzugehen, wie?~ [rh#ad43]
+//@47   = ~Nicht gerade Cormanthor, nicht wahr?~ [rh#ad11]
+//@48   = ~Mmmh. die Sonne versinkt und der Tag beginnt wahrhaftig.~ [rh#ad15]
 
 /* ----------- *
  *  Creatures  *
  * ----------- */
-@49   = ~Girl~
-@50   = ~Tanya~
-@51   = ~Tanya Damarov~
-@52   = ~Zhentarim Guard~
-@53   = ~Deryn~
-@54   = ~Orlanna~
-@55   = ~Salka~
-@56   = ~Soargyl~
-@57   = ~Talsar Soargyl~
-@58   = ~Soargyl Guard~
-@59   = ~Mikail~
-@60   = ~Mikail Vasiliev~
+@49   = ~Mädchen~
+@50 = ~Tanya~
+@51 = ~Tanya Damarov~
+@52 = ~Wache der Zentarim~
+@53 = ~Deryn~
+@54 = ~Orlanna~
+@55 = ~Salka~
+@56 = ~Soargyl~
+@57 = ~Talsar Soargyl~
+@58 = ~Soargyls Wächter~
+@59 = ~Mikail~
+@60 = ~Mikail Vasiliev~
 
 /* ------- *
  *  Items  *
  * ------- */
-@61   = ~Vasiliev Signet Ring~
-@62   = ~This was once the signet ring of Adrian's grandfather, a minor lord of Zhentil Keep. While the ring has no magical properties, its significance to Adrian is obvious.~
+@61 = ~Siegelring der Vasilievs~
+@62 = ~Dieser Siegelring gehörte einst Adrians Großvater, einem niederen Fürsten der Zentilfeste. Obwohl der Ring keinerlei magische Eigenschaften besitzt, ist es offensichtlich, dass er für Adrian einen besonderen Wert hat.~
 
-@63   = ~Tanya's Documents~
-@64   = ~These documents, discovered in Tanya's room in the Five Flagons, are apparently what Adrian was hoping to find.~
+@63 = ~Tanyas Dokumente~
+@64 = ~Diese Dokumente habt ihr in Tanyas Gemächern in der Taverne 'Zu den Fünf Krügen' gefunden. Offenbar handelt es sich um die Aufzeichnungen, die Adrian zu finden hoffte.~
 
-@65   = ~Adrian's Body~
-@66   = ~Adrian was captured by Bodhi and infected with vampirism, forcing you to slay him. There may be some way to revive him, though you don't know what it would be.~
+@65 = ~Adrians Leichnam~
+@66 = ~Adrian wurde von Bodhi entführt und mit Vampirismus infiziert. Ihr wart gezwungen, ihn zu töten. Vielleicht gibt es eine Möglichkeit, ihn ins Leben zurückzurufen. Ihr wisst jedoch nicht, wie.~
 
-@67   = ~Headband~
-@68   = ~Headband of Intellect~
-@69   = ~This device is a light cord with a small gem set so that it rests upon the forehead of the wearer. Its purpose is uncertain.~
-@70   = ~This device is a light cord with a small gem set so that it rests upon the forehead of the wearer. The headband adds to the wearer's Intelligence score in the form of an enhancement bonus of +1.
+@67 = ~Stirnreif~
+@68 = ~Stirnreif des Intellekts~
+@69 = ~Ein leichtes Kopfband mit einem kleinen Edelstein, der auf der Stirn des Trägers ruht. Der Zweck dieses Gegenstands ist Euch unbekannt.~
+@70 = ~Ein leichtes Kopfband mit einem kleinen Edelstein, der auf der Stirn des Trägers ruht. Der Stirnreif gewährt einen Intelligenzbonus +1.
 
-STATISTICS:
+SPEZIFISCHE EIGENSCHAFTEN:
 
-Equipped abilities:
-- Intelligence: +1~
+Der Träger erhält einen Bonus +1 auf Intelligenz~
 
-@71   = ~Key~
-@72   = ~This is a fairly rusty looking key. It looks like it might fit Adrian's manacles.~
+
+@71 = ~Schlüssel~
+@72 = ~Dieser Schlüssel ist schwer angegriffen vom Rost. Vielleicht könnt ihr damit Adrians Handschellen öffen.~
 
 /* ----------- *
  *  Epilogues  *

@@ -1117,6 +1117,10 @@ END
 IF
     Dead("cefald01")
     InParty("rh#Adrian")
+	See(Player1)
+	!ActuallyInCombat()
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
     !Dead("rh#Adrian")
     Global("geniesgone","GLOBAL",1)
     AreaCheck("AR2000")
