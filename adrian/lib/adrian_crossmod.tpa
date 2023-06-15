@@ -48,7 +48,7 @@ END
 /* ------------------------------------ *
  *  Adrian-Kivan of Shilmista Material  *
  * ------------------------------------ */
-ACTION_IF FILE_EXISTS_IN_GAME ~p#kiv25.dlg~ BEGIN
+ACTION_IF FILE_EXISTS_IN_GAME ~BP#KIV.dlg~ BEGIN
 	PRINT ~Adding banters between Adrian and Kivan of Shilmista...~
 	COMPILE EVALUATE_BUFFER ~adrian/crossmod/kivan.d~ USING ~adrian/translations/%LANGUAGE%/crossmod.tra~
 	EXTEND_BOTTOM ~rh#adrd.bcs~ ~adrian/crossmod/kivan_rh#adrd.baf~
