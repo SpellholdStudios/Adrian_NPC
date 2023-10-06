@@ -1,4 +1,4 @@
-/* Edwin is in romance. Make him ignore reputation on EE */
+/* Adrian is in romance. Make him ignore reputation on EE */
 
 IF
 	InParty(Myself)
@@ -19,7 +19,7 @@ THEN
 END
 
 
-/* Romance broke. Edwin will leave party again if rep is too high. */
+/* Romance broke. Adrian will leave party again if rep is too high. */
 
 IF
 	InParty(Myself)
